@@ -43,10 +43,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  // /compare/[occupation]/[pair] 페이지 (30×10 = 300개)
+  const topCompareCountries = [
+    "south-korea", "japan", "germany", "united-kingdom", "france",
+    "switzerland", "australia", "canada", "india", "china",
+  ];
+  const comparePages: MetadataRoute.Sitemap = occupations.flatMap((occ) =>
+    topCompareCountries.map((countrySlug) => ({
+      url: `${BASE_URL}/compare/${occ.slug}/united-states-vs-${countrySlug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    }))
+  );
+
+  // 정적 페이지 (about, privacy)
+  const infoPages: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE_URL}/about`,
+      lastModified: new Date(),
+      changeFrequency: "yearly" as const,
+      priority: 0.4,
+    },
+    {
+      url: `${BASE_URL}/privacy`,
+      lastModified: new Date(),
+      changeFrequency: "yearly" as const,
+      priority: 0.3,
+    },
+  ];
+
   return [
     ...staticPages,
     ...occupationPages,
     ...occupationCountryPages,
     ...rankingPages,
+    ...comparePages,
+    ...infoPages,
   ];
 }
