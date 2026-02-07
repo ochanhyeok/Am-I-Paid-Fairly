@@ -27,6 +27,10 @@ export function getCountry(code: string): Country | undefined {
   return countries.find((c) => c.code === code);
 }
 
+export function getCountryBySlug(slug: string): Country | undefined {
+  return countries.find((c) => c.slug === slug);
+}
+
 export function getSalaryEntries(occupationSlug: string): SalaryEntry[] {
   return salaries.filter((s) => s.occupationSlug === occupationSlug);
 }
