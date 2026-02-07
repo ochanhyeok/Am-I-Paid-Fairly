@@ -1,0 +1,7562 @@
+[
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "US",
+    "estimatedSalary": 119000,
+    "pppAdjusted": 95058
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "KR",
+    "estimatedSalary": 72666,
+    "pppAdjusted": 40093
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "JP",
+    "estimatedSalary": 61655,
+    "pppAdjusted": 37821
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "DE",
+    "estimatedSalary": 87546,
+    "pppAdjusted": 58842
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "GB",
+    "estimatedSalary": 80186,
+    "pppAdjusted": 54464
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "FR",
+    "estimatedSalary": 78373,
+    "pppAdjusted": 50064
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "CH",
+    "estimatedSalary": 108420,
+    "pppAdjusted": 111390
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "AU",
+    "estimatedSalary": 88241,
+    "pppAdjusted": 72043
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "CA",
+    "estimatedSalary": 82202,
+    "pppAdjusted": 58018
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "NL",
+    "estimatedSalary": 93332,
+    "pppAdjusted": 68066
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "SE",
+    "estimatedSalary": 82021,
+    "pppAdjusted": 67498
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "NO",
+    "estimatedSalary": 86337,
+    "pppAdjusted": 92273
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "DK",
+    "estimatedSalary": 94015,
+    "pppAdjusted": 76087
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "IE",
+    "estimatedSalary": 82854,
+    "pppAdjusted": 115501
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "AT",
+    "estimatedSalary": 83521,
+    "pppAdjusted": 63276
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "BE",
+    "estimatedSalary": 82570,
+    "pppAdjusted": 57639
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "FI",
+    "estimatedSalary": 76994,
+    "pppAdjusted": 59767
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "NZ",
+    "estimatedSalary": 73450,
+    "pppAdjusted": 54341
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "IT",
+    "estimatedSalary": 66682,
+    "pppAdjusted": 41007
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "ES",
+    "estimatedSalary": 60364,
+    "pppAdjusted": 35281
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "PT",
+    "estimatedSalary": 46432,
+    "pppAdjusted": 29878
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "PL",
+    "estimatedSalary": 53606,
+    "pppAdjusted": 24898
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "CZ",
+    "estimatedSalary": 49819,
+    "pppAdjusted": 33498
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "HU",
+    "estimatedSalary": 42421,
+    "pppAdjusted": 23784
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "SK",
+    "estimatedSalary": 40372,
+    "pppAdjusted": 25767
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "GR",
+    "estimatedSalary": 43164,
+    "pppAdjusted": 25043
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "IL",
+    "estimatedSalary": 69891,
+    "pppAdjusted": 61828
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "TR",
+    "estimatedSalary": 30331,
+    "pppAdjusted": 14605
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "MX",
+    "estimatedSalary": 25370,
+    "pppAdjusted": 15618
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "CL",
+    "estimatedSalary": 43580,
+    "pppAdjusted": 19863
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "CO",
+    "estimatedSalary": 21567,
+    "pppAdjusted": 8311
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "CR",
+    "estimatedSalary": 28578,
+    "pppAdjusted": 15418
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "LT",
+    "estimatedSalary": 45392,
+    "pppAdjusted": 29477
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "LV",
+    "estimatedSalary": 41441,
+    "pppAdjusted": 25711
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "EE",
+    "estimatedSalary": 48051,
+    "pppAdjusted": 33643
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "SI",
+    "estimatedSalary": 47501,
+    "pppAdjusted": 36060
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "LU",
+    "estimatedSalary": 109406,
+    "pppAdjusted": 146269
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "IS",
+    "estimatedSalary": 118045,
+    "pppAdjusted": 82905
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "IN",
+    "estimatedSalary": 13220,
+    "pppAdjusted": 2908
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "CN",
+    "estimatedSalary": 23468,
+    "pppAdjusted": 14170
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "SG",
+    "estimatedSalary": 92834,
+    "pppAdjusted": 94368
+  },
+  {
+    "occupationSlug": "software-engineer",
+    "countryCode": "BR",
+    "estimatedSalary": 18270,
+    "pppAdjusted": 11597
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "US",
+    "estimatedSalary": 107900,
+    "pppAdjusted": 86192
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "KR",
+    "estimatedSalary": 65888,
+    "pppAdjusted": 36353
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "JP",
+    "estimatedSalary": 55904,
+    "pppAdjusted": 34293
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "DE",
+    "estimatedSalary": 79380,
+    "pppAdjusted": 53353
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "GB",
+    "estimatedSalary": 72707,
+    "pppAdjusted": 49384
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "FR",
+    "estimatedSalary": 71062,
+    "pppAdjusted": 45394
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "CH",
+    "estimatedSalary": 98307,
+    "pppAdjusted": 101000
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "AU",
+    "estimatedSalary": 80011,
+    "pppAdjusted": 65323
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "CA",
+    "estimatedSalary": 74534,
+    "pppAdjusted": 52606
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "NL",
+    "estimatedSalary": 84626,
+    "pppAdjusted": 61717
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "SE",
+    "estimatedSalary": 74370,
+    "pppAdjusted": 61202
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "NO",
+    "estimatedSalary": 78284,
+    "pppAdjusted": 83666
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "DK",
+    "estimatedSalary": 85246,
+    "pppAdjusted": 68990
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "IE",
+    "estimatedSalary": 75126,
+    "pppAdjusted": 104727
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "AT",
+    "estimatedSalary": 75730,
+    "pppAdjusted": 57374
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "BE",
+    "estimatedSalary": 74868,
+    "pppAdjusted": 52262
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "FI",
+    "estimatedSalary": 69813,
+    "pppAdjusted": 54192
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "NZ",
+    "estimatedSalary": 66599,
+    "pppAdjusted": 49273
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "IT",
+    "estimatedSalary": 60462,
+    "pppAdjusted": 37182
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "ES",
+    "estimatedSalary": 54734,
+    "pppAdjusted": 31990
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "PT",
+    "estimatedSalary": 42101,
+    "pppAdjusted": 27091
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "PL",
+    "estimatedSalary": 48606,
+    "pppAdjusted": 22576
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "CZ",
+    "estimatedSalary": 45172,
+    "pppAdjusted": 30374
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "HU",
+    "estimatedSalary": 38465,
+    "pppAdjusted": 21566
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "SK",
+    "estimatedSalary": 36606,
+    "pppAdjusted": 23364
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "GR",
+    "estimatedSalary": 39138,
+    "pppAdjusted": 22707
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "IL",
+    "estimatedSalary": 63372,
+    "pppAdjusted": 56060
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "TR",
+    "estimatedSalary": 27502,
+    "pppAdjusted": 13242
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "MX",
+    "estimatedSalary": 23003,
+    "pppAdjusted": 14162
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "CL",
+    "estimatedSalary": 39515,
+    "pppAdjusted": 18010
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "CO",
+    "estimatedSalary": 19555,
+    "pppAdjusted": 7535
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "CR",
+    "estimatedSalary": 25912,
+    "pppAdjusted": 13980
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "LT",
+    "estimatedSalary": 41158,
+    "pppAdjusted": 26727
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "LV",
+    "estimatedSalary": 37576,
+    "pppAdjusted": 23313
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "EE",
+    "estimatedSalary": 43569,
+    "pppAdjusted": 30505
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "SI",
+    "estimatedSalary": 43071,
+    "pppAdjusted": 32697
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "LU",
+    "estimatedSalary": 99201,
+    "pppAdjusted": 132626
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "IS",
+    "estimatedSalary": 107034,
+    "pppAdjusted": 75171
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "IN",
+    "estimatedSalary": 11986,
+    "pppAdjusted": 2636
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "CN",
+    "estimatedSalary": 21279,
+    "pppAdjusted": 12848
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "SG",
+    "estimatedSalary": 84175,
+    "pppAdjusted": 85565
+  },
+  {
+    "occupationSlug": "data-scientist",
+    "countryCode": "BR",
+    "estimatedSalary": 16566,
+    "pppAdjusted": 10515
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "US",
+    "estimatedSalary": 118900,
+    "pppAdjusted": 94979
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "KR",
+    "estimatedSalary": 72605,
+    "pppAdjusted": 40060
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "JP",
+    "estimatedSalary": 61603,
+    "pppAdjusted": 37789
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "DE",
+    "estimatedSalary": 87473,
+    "pppAdjusted": 58793
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "GB",
+    "estimatedSalary": 80119,
+    "pppAdjusted": 54418
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "FR",
+    "estimatedSalary": 78307,
+    "pppAdjusted": 50022
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "CH",
+    "estimatedSalary": 108329,
+    "pppAdjusted": 111296
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "AU",
+    "estimatedSalary": 88167,
+    "pppAdjusted": 71982
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "CA",
+    "estimatedSalary": 82133,
+    "pppAdjusted": 57969
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "NL",
+    "estimatedSalary": 93253,
+    "pppAdjusted": 68009
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "SE",
+    "estimatedSalary": 81952,
+    "pppAdjusted": 67441
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "NO",
+    "estimatedSalary": 86265,
+    "pppAdjusted": 92196
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "DK",
+    "estimatedSalary": 93936,
+    "pppAdjusted": 76023
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "IE",
+    "estimatedSalary": 82784,
+    "pppAdjusted": 115403
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "AT",
+    "estimatedSalary": 83451,
+    "pppAdjusted": 63223
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "BE",
+    "estimatedSalary": 82501,
+    "pppAdjusted": 57590
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "FI",
+    "estimatedSalary": 76930,
+    "pppAdjusted": 59716
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "NZ",
+    "estimatedSalary": 73389,
+    "pppAdjusted": 54296
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "IT",
+    "estimatedSalary": 66626,
+    "pppAdjusted": 40972
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "ES",
+    "estimatedSalary": 60314,
+    "pppAdjusted": 35251
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "PT",
+    "estimatedSalary": 46393,
+    "pppAdjusted": 29853
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "PL",
+    "estimatedSalary": 53561,
+    "pppAdjusted": 24877
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "CZ",
+    "estimatedSalary": 49777,
+    "pppAdjusted": 33470
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "HU",
+    "estimatedSalary": 42386,
+    "pppAdjusted": 23764
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "SK",
+    "estimatedSalary": 40338,
+    "pppAdjusted": 25745
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "GR",
+    "estimatedSalary": 43128,
+    "pppAdjusted": 25022
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "IL",
+    "estimatedSalary": 69833,
+    "pppAdjusted": 61776
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "TR",
+    "estimatedSalary": 30305,
+    "pppAdjusted": 14592
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "MX",
+    "estimatedSalary": 25348,
+    "pppAdjusted": 15605
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "CL",
+    "estimatedSalary": 43543,
+    "pppAdjusted": 19846
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "CO",
+    "estimatedSalary": 21549,
+    "pppAdjusted": 8304
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "CR",
+    "estimatedSalary": 28554,
+    "pppAdjusted": 15405
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "LT",
+    "estimatedSalary": 45354,
+    "pppAdjusted": 29452
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "LV",
+    "estimatedSalary": 41406,
+    "pppAdjusted": 25690
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "EE",
+    "estimatedSalary": 48011,
+    "pppAdjusted": 33615
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "SI",
+    "estimatedSalary": 47461,
+    "pppAdjusted": 36030
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "LU",
+    "estimatedSalary": 109314,
+    "pppAdjusted": 146147
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "IS",
+    "estimatedSalary": 117946,
+    "pppAdjusted": 82835
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "IN",
+    "estimatedSalary": 13208,
+    "pppAdjusted": 2905
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "CN",
+    "estimatedSalary": 23449,
+    "pppAdjusted": 14158
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "SG",
+    "estimatedSalary": 92756,
+    "pppAdjusted": 94288
+  },
+  {
+    "occupationSlug": "product-manager",
+    "countryCode": "BR",
+    "estimatedSalary": 18254,
+    "pppAdjusted": 11587
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "US",
+    "estimatedSalary": 84000,
+    "pppAdjusted": 67100
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "KR",
+    "estimatedSalary": 51294,
+    "pppAdjusted": 28301
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "JP",
+    "estimatedSalary": 43521,
+    "pppAdjusted": 26697
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "DE",
+    "estimatedSalary": 61797,
+    "pppAdjusted": 41536
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "GB",
+    "estimatedSalary": 56602,
+    "pppAdjusted": 38445
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "FR",
+    "estimatedSalary": 55322,
+    "pppAdjusted": 35339
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "CH",
+    "estimatedSalary": 76532,
+    "pppAdjusted": 78628
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "AU",
+    "estimatedSalary": 62288,
+    "pppAdjusted": 50854
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "CA",
+    "estimatedSalary": 58025,
+    "pppAdjusted": 40954
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "NL",
+    "estimatedSalary": 65881,
+    "pppAdjusted": 48047
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "SE",
+    "estimatedSalary": 57897,
+    "pppAdjusted": 47646
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "NO",
+    "estimatedSalary": 60944,
+    "pppAdjusted": 65134
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "DK",
+    "estimatedSalary": 66364,
+    "pppAdjusted": 53708
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "IE",
+    "estimatedSalary": 58485,
+    "pppAdjusted": 81530
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "AT",
+    "estimatedSalary": 58956,
+    "pppAdjusted": 44665
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "BE",
+    "estimatedSalary": 58285,
+    "pppAdjusted": 40686
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "FI",
+    "estimatedSalary": 54349,
+    "pppAdjusted": 42188
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "NZ",
+    "estimatedSalary": 51847,
+    "pppAdjusted": 38359
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "IT",
+    "estimatedSalary": 47069,
+    "pppAdjusted": 28946
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "ES",
+    "estimatedSalary": 42610,
+    "pppAdjusted": 24904
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "PT",
+    "estimatedSalary": 32775,
+    "pppAdjusted": 21090
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "PL",
+    "estimatedSalary": 37840,
+    "pppAdjusted": 17575
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "CZ",
+    "estimatedSalary": 35166,
+    "pppAdjusted": 23646
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "HU",
+    "estimatedSalary": 29945,
+    "pppAdjusted": 16789
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "SK",
+    "estimatedSalary": 28498,
+    "pppAdjusted": 18189
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "GR",
+    "estimatedSalary": 30469,
+    "pppAdjusted": 17677
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "IL",
+    "estimatedSalary": 49335,
+    "pppAdjusted": 43643
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "TR",
+    "estimatedSalary": 21410,
+    "pppAdjusted": 10309
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "MX",
+    "estimatedSalary": 17908,
+    "pppAdjusted": 11025
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "CL",
+    "estimatedSalary": 30762,
+    "pppAdjusted": 14021
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "CO",
+    "estimatedSalary": 15224,
+    "pppAdjusted": 5866
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "CR",
+    "estimatedSalary": 20173,
+    "pppAdjusted": 10883
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "LT",
+    "estimatedSalary": 32042,
+    "pppAdjusted": 20807
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "LV",
+    "estimatedSalary": 29253,
+    "pppAdjusted": 18149
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "EE",
+    "estimatedSalary": 33918,
+    "pppAdjusted": 23748
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "SI",
+    "estimatedSalary": 33530,
+    "pppAdjusted": 25454
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "LU",
+    "estimatedSalary": 77228,
+    "pppAdjusted": 103249
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "IS",
+    "estimatedSalary": 83326,
+    "pppAdjusted": 58521
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "IN",
+    "estimatedSalary": 9331,
+    "pppAdjusted": 2052
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "CN",
+    "estimatedSalary": 16566,
+    "pppAdjusted": 10002
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "SG",
+    "estimatedSalary": 65530,
+    "pppAdjusted": 66613
+  },
+  {
+    "occupationSlug": "ux-designer",
+    "countryCode": "BR",
+    "estimatedSalary": 12896,
+    "pppAdjusted": 8186
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "US",
+    "estimatedSalary": 113400,
+    "pppAdjusted": 90585
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "KR",
+    "estimatedSalary": 69247,
+    "pppAdjusted": 38206
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "JP",
+    "estimatedSalary": 58754,
+    "pppAdjusted": 36041
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "DE",
+    "estimatedSalary": 83426,
+    "pppAdjusted": 56073
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "GB",
+    "estimatedSalary": 76413,
+    "pppAdjusted": 51901
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "FR",
+    "estimatedSalary": 74685,
+    "pppAdjusted": 47708
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "CH",
+    "estimatedSalary": 103318,
+    "pppAdjusted": 106148
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "AU",
+    "estimatedSalary": 84089,
+    "pppAdjusted": 68653
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "CA",
+    "estimatedSalary": 78334,
+    "pppAdjusted": 55287
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "NL",
+    "estimatedSalary": 88940,
+    "pppAdjusted": 64863
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "SE",
+    "estimatedSalary": 78161,
+    "pppAdjusted": 64321
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "NO",
+    "estimatedSalary": 82274,
+    "pppAdjusted": 87931
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "DK",
+    "estimatedSalary": 89591,
+    "pppAdjusted": 72506
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "IE",
+    "estimatedSalary": 78955,
+    "pppAdjusted": 110065
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "AT",
+    "estimatedSalary": 79591,
+    "pppAdjusted": 60298
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "BE",
+    "estimatedSalary": 78685,
+    "pppAdjusted": 54926
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "FI",
+    "estimatedSalary": 73371,
+    "pppAdjusted": 56954
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "NZ",
+    "estimatedSalary": 69994,
+    "pppAdjusted": 51784
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "IT",
+    "estimatedSalary": 63544,
+    "pppAdjusted": 39077
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "ES",
+    "estimatedSalary": 57524,
+    "pppAdjusted": 33620
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "PT",
+    "estimatedSalary": 44247,
+    "pppAdjusted": 28472
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "PL",
+    "estimatedSalary": 51084,
+    "pppAdjusted": 23726
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "CZ",
+    "estimatedSalary": 47474,
+    "pppAdjusted": 31922
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "HU",
+    "estimatedSalary": 40425,
+    "pppAdjusted": 22665
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "SK",
+    "estimatedSalary": 38472,
+    "pppAdjusted": 24554
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "GR",
+    "estimatedSalary": 41133,
+    "pppAdjusted": 23864
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "IL",
+    "estimatedSalary": 66602,
+    "pppAdjusted": 58918
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "TR",
+    "estimatedSalary": 28903,
+    "pppAdjusted": 13917
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "MX",
+    "estimatedSalary": 24176,
+    "pppAdjusted": 14883
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "CL",
+    "estimatedSalary": 41529,
+    "pppAdjusted": 18928
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "CO",
+    "estimatedSalary": 20552,
+    "pppAdjusted": 7919
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "CR",
+    "estimatedSalary": 27233,
+    "pppAdjusted": 14692
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "LT",
+    "estimatedSalary": 43256,
+    "pppAdjusted": 28090
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "LV",
+    "estimatedSalary": 39491,
+    "pppAdjusted": 24501
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "EE",
+    "estimatedSalary": 45790,
+    "pppAdjusted": 32060
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "SI",
+    "estimatedSalary": 45266,
+    "pppAdjusted": 34364
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "LU",
+    "estimatedSalary": 104258,
+    "pppAdjusted": 139386
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "IS",
+    "estimatedSalary": 112490,
+    "pppAdjusted": 79003
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "IN",
+    "estimatedSalary": 12597,
+    "pppAdjusted": 2771
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "CN",
+    "estimatedSalary": 22364,
+    "pppAdjusted": 13503
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "SG",
+    "estimatedSalary": 88465,
+    "pppAdjusted": 89927
+  },
+  {
+    "occupationSlug": "devops-engineer",
+    "countryCode": "BR",
+    "estimatedSalary": 17410,
+    "pppAdjusted": 11051
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "US",
+    "estimatedSalary": 77900,
+    "pppAdjusted": 62227
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "KR",
+    "estimatedSalary": 47569,
+    "pppAdjusted": 26246
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "JP",
+    "estimatedSalary": 40361,
+    "pppAdjusted": 24758
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "DE",
+    "estimatedSalary": 57310,
+    "pppAdjusted": 38519
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "GB",
+    "estimatedSalary": 52492,
+    "pppAdjusted": 35653
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "FR",
+    "estimatedSalary": 51305,
+    "pppAdjusted": 32773
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "CH",
+    "estimatedSalary": 70974,
+    "pppAdjusted": 72918
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "AU",
+    "estimatedSalary": 57765,
+    "pppAdjusted": 47161
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "CA",
+    "estimatedSalary": 53811,
+    "pppAdjusted": 37980
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "NL",
+    "estimatedSalary": 61097,
+    "pppAdjusted": 44557
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "SE",
+    "estimatedSalary": 53693,
+    "pppAdjusted": 44186
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "NO",
+    "estimatedSalary": 56518,
+    "pppAdjusted": 60404
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "DK",
+    "estimatedSalary": 61544,
+    "pppAdjusted": 49808
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "IE",
+    "estimatedSalary": 54238,
+    "pppAdjusted": 75609
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "AT",
+    "estimatedSalary": 54675,
+    "pppAdjusted": 41422
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "BE",
+    "estimatedSalary": 54052,
+    "pppAdjusted": 37732
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "FI",
+    "estimatedSalary": 50402,
+    "pppAdjusted": 39125
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "NZ",
+    "estimatedSalary": 48082,
+    "pppAdjusted": 35573
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "IT",
+    "estimatedSalary": 43651,
+    "pppAdjusted": 26844
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "ES",
+    "estimatedSalary": 39516,
+    "pppAdjusted": 23096
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "PT",
+    "estimatedSalary": 30395,
+    "pppAdjusted": 19559
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "PL",
+    "estimatedSalary": 35092,
+    "pppAdjusted": 16299
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "CZ",
+    "estimatedSalary": 32612,
+    "pppAdjusted": 21929
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "HU",
+    "estimatedSalary": 27770,
+    "pppAdjusted": 15570
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "SK",
+    "estimatedSalary": 26428,
+    "pppAdjusted": 16868
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "GR",
+    "estimatedSalary": 28256,
+    "pppAdjusted": 16394
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "IL",
+    "estimatedSalary": 45752,
+    "pppAdjusted": 40474
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "TR",
+    "estimatedSalary": 19855,
+    "pppAdjusted": 9561
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "MX",
+    "estimatedSalary": 16608,
+    "pppAdjusted": 10224
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "CL",
+    "estimatedSalary": 28528,
+    "pppAdjusted": 13003
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "CO",
+    "estimatedSalary": 14118,
+    "pppAdjusted": 5440
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "CR",
+    "estimatedSalary": 18708,
+    "pppAdjusted": 10093
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "LT",
+    "estimatedSalary": 29715,
+    "pppAdjusted": 19296
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "LV",
+    "estimatedSalary": 27128,
+    "pppAdjusted": 16831
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "EE",
+    "estimatedSalary": 31455,
+    "pppAdjusted": 22024
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "SI",
+    "estimatedSalary": 31095,
+    "pppAdjusted": 23606
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "LU",
+    "estimatedSalary": 71620,
+    "pppAdjusted": 95751
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "IS",
+    "estimatedSalary": 77275,
+    "pppAdjusted": 54271
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "IN",
+    "estimatedSalary": 8654,
+    "pppAdjusted": 1903
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "CN",
+    "estimatedSalary": 15363,
+    "pppAdjusted": 9276
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "SG",
+    "estimatedSalary": 60771,
+    "pppAdjusted": 61775
+  },
+  {
+    "occupationSlug": "web-developer",
+    "countryCode": "BR",
+    "estimatedSalary": 11960,
+    "pppAdjusted": 7592
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "US",
+    "estimatedSalary": 99600,
+    "pppAdjusted": 79562
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "KR",
+    "estimatedSalary": 60820,
+    "pppAdjusted": 33557
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "JP",
+    "estimatedSalary": 51604,
+    "pppAdjusted": 31655
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "DE",
+    "estimatedSalary": 73274,
+    "pppAdjusted": 49249
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "GB",
+    "estimatedSalary": 67114,
+    "pppAdjusted": 45585
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "FR",
+    "estimatedSalary": 65596,
+    "pppAdjusted": 41902
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "CH",
+    "estimatedSalary": 90745,
+    "pppAdjusted": 93230
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "AU",
+    "estimatedSalary": 73856,
+    "pppAdjusted": 60298
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "CA",
+    "estimatedSalary": 68801,
+    "pppAdjusted": 48559
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "NL",
+    "estimatedSalary": 78116,
+    "pppAdjusted": 56970
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "SE",
+    "estimatedSalary": 68649,
+    "pppAdjusted": 56494
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "NO",
+    "estimatedSalary": 72262,
+    "pppAdjusted": 77231
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "DK",
+    "estimatedSalary": 78688,
+    "pppAdjusted": 63683
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "IE",
+    "estimatedSalary": 69347,
+    "pppAdjusted": 96671
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "AT",
+    "estimatedSalary": 69905,
+    "pppAdjusted": 52960
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "BE",
+    "estimatedSalary": 69109,
+    "pppAdjusted": 48242
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "FI",
+    "estimatedSalary": 64442,
+    "pppAdjusted": 50023
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "NZ",
+    "estimatedSalary": 61476,
+    "pppAdjusted": 45482
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "IT",
+    "estimatedSalary": 55811,
+    "pppAdjusted": 34322
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "ES",
+    "estimatedSalary": 50524,
+    "pppAdjusted": 29529
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "PT",
+    "estimatedSalary": 38862,
+    "pppAdjusted": 25007
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "PL",
+    "estimatedSalary": 44867,
+    "pppAdjusted": 20839
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "CZ",
+    "estimatedSalary": 41697,
+    "pppAdjusted": 28037
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "HU",
+    "estimatedSalary": 35506,
+    "pppAdjusted": 19907
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "SK",
+    "estimatedSalary": 33790,
+    "pppAdjusted": 21566
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "GR",
+    "estimatedSalary": 36127,
+    "pppAdjusted": 20960
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "IL",
+    "estimatedSalary": 58497,
+    "pppAdjusted": 51748
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "TR",
+    "estimatedSalary": 25386,
+    "pppAdjusted": 12224
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "MX",
+    "estimatedSalary": 21234,
+    "pppAdjusted": 13072
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "CL",
+    "estimatedSalary": 36475,
+    "pppAdjusted": 16625
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "CO",
+    "estimatedSalary": 18051,
+    "pppAdjusted": 6956
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "CR",
+    "estimatedSalary": 23919,
+    "pppAdjusted": 12904
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "LT",
+    "estimatedSalary": 37992,
+    "pppAdjusted": 24671
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "LV",
+    "estimatedSalary": 34685,
+    "pppAdjusted": 21520
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "EE",
+    "estimatedSalary": 40217,
+    "pppAdjusted": 28158
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "SI",
+    "estimatedSalary": 39757,
+    "pppAdjusted": 30182
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "LU",
+    "estimatedSalary": 91570,
+    "pppAdjusted": 122424
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "IS",
+    "estimatedSalary": 98801,
+    "pppAdjusted": 69389
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "IN",
+    "estimatedSalary": 11064,
+    "pppAdjusted": 2434
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "CN",
+    "estimatedSalary": 19643,
+    "pppAdjusted": 11860
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "SG",
+    "estimatedSalary": 77700,
+    "pppAdjusted": 78983
+  },
+  {
+    "occupationSlug": "cybersecurity-analyst",
+    "countryCode": "BR",
+    "estimatedSalary": 15291,
+    "pppAdjusted": 9706
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "US",
+    "estimatedSalary": 73800,
+    "pppAdjusted": 58952
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "KR",
+    "estimatedSalary": 45065,
+    "pppAdjusted": 24865
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "JP",
+    "estimatedSalary": 38237,
+    "pppAdjusted": 23455
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "DE",
+    "estimatedSalary": 54293,
+    "pppAdjusted": 36492
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "GB",
+    "estimatedSalary": 49729,
+    "pppAdjusted": 33777
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "FR",
+    "estimatedSalary": 48604,
+    "pppAdjusted": 31048
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "CH",
+    "estimatedSalary": 67239,
+    "pppAdjusted": 69080
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "AU",
+    "estimatedSalary": 54725,
+    "pppAdjusted": 44679
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "CA",
+    "estimatedSalary": 50979,
+    "pppAdjusted": 35981
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "NL",
+    "estimatedSalary": 57881,
+    "pppAdjusted": 42212
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "SE",
+    "estimatedSalary": 50867,
+    "pppAdjusted": 41860
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "NO",
+    "estimatedSalary": 53544,
+    "pppAdjusted": 57225
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "DK",
+    "estimatedSalary": 58305,
+    "pppAdjusted": 47187
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "IE",
+    "estimatedSalary": 51383,
+    "pppAdjusted": 71630
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "AT",
+    "estimatedSalary": 51797,
+    "pppAdjusted": 39242
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "BE",
+    "estimatedSalary": 51208,
+    "pppAdjusted": 35746
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "FI",
+    "estimatedSalary": 47749,
+    "pppAdjusted": 37065
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "NZ",
+    "estimatedSalary": 45552,
+    "pppAdjusted": 33701
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "IT",
+    "estimatedSalary": 41354,
+    "pppAdjusted": 25431
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "ES",
+    "estimatedSalary": 37436,
+    "pppAdjusted": 21880
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "PT",
+    "estimatedSalary": 28796,
+    "pppAdjusted": 18529
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "PL",
+    "estimatedSalary": 33245,
+    "pppAdjusted": 15441
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "CZ",
+    "estimatedSalary": 30896,
+    "pppAdjusted": 20775
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "HU",
+    "estimatedSalary": 26308,
+    "pppAdjusted": 14750
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "SK",
+    "estimatedSalary": 25037,
+    "pppAdjusted": 15980
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "GR",
+    "estimatedSalary": 26769,
+    "pppAdjusted": 15531
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "IL",
+    "estimatedSalary": 43344,
+    "pppAdjusted": 38343
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "TR",
+    "estimatedSalary": 18810,
+    "pppAdjusted": 9057
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "MX",
+    "estimatedSalary": 15733,
+    "pppAdjusted": 9686
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "CL",
+    "estimatedSalary": 27027,
+    "pppAdjusted": 12318
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "CO",
+    "estimatedSalary": 13375,
+    "pppAdjusted": 5154
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "CR",
+    "estimatedSalary": 17723,
+    "pppAdjusted": 9562
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "LT",
+    "estimatedSalary": 28151,
+    "pppAdjusted": 18281
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "LV",
+    "estimatedSalary": 25700,
+    "pppAdjusted": 15945
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "EE",
+    "estimatedSalary": 29800,
+    "pppAdjusted": 20864
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "SI",
+    "estimatedSalary": 29459,
+    "pppAdjusted": 22364
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "LU",
+    "estimatedSalary": 67850,
+    "pppAdjusted": 90712
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "IS",
+    "estimatedSalary": 73208,
+    "pppAdjusted": 51415
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "IN",
+    "estimatedSalary": 8198,
+    "pppAdjusted": 1803
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "CN",
+    "estimatedSalary": 14554,
+    "pppAdjusted": 8788
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "SG",
+    "estimatedSalary": 57573,
+    "pppAdjusted": 58524
+  },
+  {
+    "occupationSlug": "accountant",
+    "countryCode": "BR",
+    "estimatedSalary": 11330,
+    "pppAdjusted": 7192
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "US",
+    "estimatedSalary": 83600,
+    "pppAdjusted": 66781
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "KR",
+    "estimatedSalary": 51049,
+    "pppAdjusted": 28166
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "JP",
+    "estimatedSalary": 43314,
+    "pppAdjusted": 26570
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "DE",
+    "estimatedSalary": 61503,
+    "pppAdjusted": 41338
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "GB",
+    "estimatedSalary": 56333,
+    "pppAdjusted": 38262
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "FR",
+    "estimatedSalary": 55059,
+    "pppAdjusted": 35171
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "CH",
+    "estimatedSalary": 76167,
+    "pppAdjusted": 78254
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "AU",
+    "estimatedSalary": 61991,
+    "pppAdjusted": 50612
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "CA",
+    "estimatedSalary": 57749,
+    "pppAdjusted": 40759
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "NL",
+    "estimatedSalary": 65568,
+    "pppAdjusted": 47818
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "SE",
+    "estimatedSalary": 57621,
+    "pppAdjusted": 47419
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "NO",
+    "estimatedSalary": 60654,
+    "pppAdjusted": 64824
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "DK",
+    "estimatedSalary": 66048,
+    "pppAdjusted": 53453
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "IE",
+    "estimatedSalary": 58207,
+    "pppAdjusted": 81142
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "AT",
+    "estimatedSalary": 58675,
+    "pppAdjusted": 44453
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "BE",
+    "estimatedSalary": 58007,
+    "pppAdjusted": 40493
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "FI",
+    "estimatedSalary": 54090,
+    "pppAdjusted": 41987
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "NZ",
+    "estimatedSalary": 51600,
+    "pppAdjusted": 38176
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "IT",
+    "estimatedSalary": 46845,
+    "pppAdjusted": 28808
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "ES",
+    "estimatedSalary": 42407,
+    "pppAdjusted": 24785
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "PT",
+    "estimatedSalary": 32619,
+    "pppAdjusted": 20990
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "PL",
+    "estimatedSalary": 37659,
+    "pppAdjusted": 17491
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "CZ",
+    "estimatedSalary": 34999,
+    "pppAdjusted": 23533
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "HU",
+    "estimatedSalary": 29802,
+    "pppAdjusted": 16709
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "SK",
+    "estimatedSalary": 28362,
+    "pppAdjusted": 18102
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "GR",
+    "estimatedSalary": 30324,
+    "pppAdjusted": 17593
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "IL",
+    "estimatedSalary": 49100,
+    "pppAdjusted": 43435
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "TR",
+    "estimatedSalary": 21308,
+    "pppAdjusted": 10260
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "MX",
+    "estimatedSalary": 17823,
+    "pppAdjusted": 10972
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "CL",
+    "estimatedSalary": 30616,
+    "pppAdjusted": 13954
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "CO",
+    "estimatedSalary": 15151,
+    "pppAdjusted": 5838
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "CR",
+    "estimatedSalary": 20077,
+    "pppAdjusted": 10831
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "LT",
+    "estimatedSalary": 31889,
+    "pppAdjusted": 20708
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "LV",
+    "estimatedSalary": 29113,
+    "pppAdjusted": 18063
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "EE",
+    "estimatedSalary": 33757,
+    "pppAdjusted": 23635
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "SI",
+    "estimatedSalary": 33371,
+    "pppAdjusted": 25333
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "LU",
+    "estimatedSalary": 76860,
+    "pppAdjusted": 102757
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "IS",
+    "estimatedSalary": 82929,
+    "pppAdjusted": 58242
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "IN",
+    "estimatedSalary": 9287,
+    "pppAdjusted": 2043
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "CN",
+    "estimatedSalary": 16487,
+    "pppAdjusted": 9955
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "SG",
+    "estimatedSalary": 65218,
+    "pppAdjusted": 66295
+  },
+  {
+    "occupationSlug": "financial-analyst",
+    "countryCode": "BR",
+    "estimatedSalary": 12835,
+    "pppAdjusted": 8147
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "US",
+    "estimatedSalary": 153000,
+    "pppAdjusted": 122218
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "KR",
+    "estimatedSalary": 93428,
+    "pppAdjusted": 51548
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "JP",
+    "estimatedSalary": 79271,
+    "pppAdjusted": 48627
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "DE",
+    "estimatedSalary": 112560,
+    "pppAdjusted": 75654
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "GB",
+    "estimatedSalary": 103097,
+    "pppAdjusted": 70025
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "FR",
+    "estimatedSalary": 100765,
+    "pppAdjusted": 64367
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "CH",
+    "estimatedSalary": 139397,
+    "pppAdjusted": 143215
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "AU",
+    "estimatedSalary": 113453,
+    "pppAdjusted": 92627
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "CA",
+    "estimatedSalary": 105688,
+    "pppAdjusted": 74594
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "NL",
+    "estimatedSalary": 119998,
+    "pppAdjusted": 87513
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "SE",
+    "estimatedSalary": 105455,
+    "pppAdjusted": 86783
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "NO",
+    "estimatedSalary": 111005,
+    "pppAdjusted": 118637
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "DK",
+    "estimatedSalary": 120876,
+    "pppAdjusted": 97826
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "IE",
+    "estimatedSalary": 106527,
+    "pppAdjusted": 148501
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "AT",
+    "estimatedSalary": 107384,
+    "pppAdjusted": 81355
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "BE",
+    "estimatedSalary": 106162,
+    "pppAdjusted": 74107
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "FI",
+    "estimatedSalary": 98993,
+    "pppAdjusted": 76843
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "NZ",
+    "estimatedSalary": 94436,
+    "pppAdjusted": 69868
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "IT",
+    "estimatedSalary": 85734,
+    "pppAdjusted": 52723
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "ES",
+    "estimatedSalary": 77611,
+    "pppAdjusted": 45361
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "PT",
+    "estimatedSalary": 59698,
+    "pppAdjusted": 38414
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "PL",
+    "estimatedSalary": 68922,
+    "pppAdjusted": 32012
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "CZ",
+    "estimatedSalary": 64052,
+    "pppAdjusted": 43069
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "HU",
+    "estimatedSalary": 54542,
+    "pppAdjusted": 30580
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "SK",
+    "estimatedSalary": 51906,
+    "pppAdjusted": 33129
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "GR",
+    "estimatedSalary": 55497,
+    "pppAdjusted": 32198
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "IL",
+    "estimatedSalary": 89860,
+    "pppAdjusted": 79493
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "TR",
+    "estimatedSalary": 38997,
+    "pppAdjusted": 18777
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "MX",
+    "estimatedSalary": 32618,
+    "pppAdjusted": 20081
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "CL",
+    "estimatedSalary": 56032,
+    "pppAdjusted": 25538
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "CO",
+    "estimatedSalary": 27729,
+    "pppAdjusted": 10685
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "CR",
+    "estimatedSalary": 36743,
+    "pppAdjusted": 19823
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "LT",
+    "estimatedSalary": 58361,
+    "pppAdjusted": 37899
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "LV",
+    "estimatedSalary": 53281,
+    "pppAdjusted": 33057
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "EE",
+    "estimatedSalary": 61780,
+    "pppAdjusted": 43255
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "SI",
+    "estimatedSalary": 61073,
+    "pppAdjusted": 46363
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "LU",
+    "estimatedSalary": 140665,
+    "pppAdjusted": 188061
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "IS",
+    "estimatedSalary": 151772,
+    "pppAdjusted": 106592
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "IN",
+    "estimatedSalary": 16997,
+    "pppAdjusted": 3738
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "CN",
+    "estimatedSalary": 30174,
+    "pppAdjusted": 18219
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "SG",
+    "estimatedSalary": 119358,
+    "pppAdjusted": 121330
+  },
+  {
+    "occupationSlug": "investment-banker",
+    "countryCode": "BR",
+    "estimatedSalary": 23490,
+    "pppAdjusted": 14910
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "US",
+    "estimatedSalary": 60200,
+    "pppAdjusted": 48088
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "KR",
+    "estimatedSalary": 36761,
+    "pppAdjusted": 20282
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "JP",
+    "estimatedSalary": 31190,
+    "pppAdjusted": 19133
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "DE",
+    "estimatedSalary": 44288,
+    "pppAdjusted": 29767
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "GB",
+    "estimatedSalary": 40565,
+    "pppAdjusted": 27552
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "FR",
+    "estimatedSalary": 39647,
+    "pppAdjusted": 25326
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "CH",
+    "estimatedSalary": 54848,
+    "pppAdjusted": 56350
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "AU",
+    "estimatedSalary": 44640,
+    "pppAdjusted": 36445
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "CA",
+    "estimatedSalary": 41585,
+    "pppAdjusted": 29350
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "NL",
+    "estimatedSalary": 47215,
+    "pppAdjusted": 34433
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "SE",
+    "estimatedSalary": 41493,
+    "pppAdjusted": 34146
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "NO",
+    "estimatedSalary": 43676,
+    "pppAdjusted": 46679
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "DK",
+    "estimatedSalary": 47561,
+    "pppAdjusted": 38491
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "IE",
+    "estimatedSalary": 41914,
+    "pppAdjusted": 58430
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "AT",
+    "estimatedSalary": 42252,
+    "pppAdjusted": 32010
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "BE",
+    "estimatedSalary": 41771,
+    "pppAdjusted": 29158
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "FI",
+    "estimatedSalary": 38950,
+    "pppAdjusted": 30235
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "NZ",
+    "estimatedSalary": 37157,
+    "pppAdjusted": 27490
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "IT",
+    "estimatedSalary": 33733,
+    "pppAdjusted": 20745
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "ES",
+    "estimatedSalary": 30537,
+    "pppAdjusted": 17848
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "PT",
+    "estimatedSalary": 23489,
+    "pppAdjusted": 15115
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "PL",
+    "estimatedSalary": 27118,
+    "pppAdjusted": 12596
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "CZ",
+    "estimatedSalary": 25202,
+    "pppAdjusted": 16946
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "HU",
+    "estimatedSalary": 21460,
+    "pppAdjusted": 12032
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "SK",
+    "estimatedSalary": 20423,
+    "pppAdjusted": 13035
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "GR",
+    "estimatedSalary": 21836,
+    "pppAdjusted": 12669
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "IL",
+    "estimatedSalary": 35357,
+    "pppAdjusted": 31277
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "TR",
+    "estimatedSalary": 15344,
+    "pppAdjusted": 7388
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "MX",
+    "estimatedSalary": 12834,
+    "pppAdjusted": 7901
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "CL",
+    "estimatedSalary": 22046,
+    "pppAdjusted": 10048
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "CO",
+    "estimatedSalary": 10910,
+    "pppAdjusted": 4204
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "CR",
+    "estimatedSalary": 14457,
+    "pppAdjusted": 7800
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "LT",
+    "estimatedSalary": 22963,
+    "pppAdjusted": 14912
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "LV",
+    "estimatedSalary": 20964,
+    "pppAdjusted": 13007
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "EE",
+    "estimatedSalary": 24308,
+    "pppAdjusted": 17019
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "SI",
+    "estimatedSalary": 24030,
+    "pppAdjusted": 18242
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "LU",
+    "estimatedSalary": 55347,
+    "pppAdjusted": 73995
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "IS",
+    "estimatedSalary": 59717,
+    "pppAdjusted": 41940
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "IN",
+    "estimatedSalary": 6688,
+    "pppAdjusted": 1471
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "CN",
+    "estimatedSalary": 11872,
+    "pppAdjusted": 7168
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "SG",
+    "estimatedSalary": 46963,
+    "pppAdjusted": 47739
+  },
+  {
+    "occupationSlug": "nurse",
+    "countryCode": "BR",
+    "estimatedSalary": 9242,
+    "pppAdjusted": 5867
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "US",
+    "estimatedSalary": 143000,
+    "pppAdjusted": 114230
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "KR",
+    "estimatedSalary": 87321,
+    "pppAdjusted": 48179
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "JP",
+    "estimatedSalary": 74090,
+    "pppAdjusted": 45448
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "DE",
+    "estimatedSalary": 105203,
+    "pppAdjusted": 70709
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "GB",
+    "estimatedSalary": 96358,
+    "pppAdjusted": 65448
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "FR",
+    "estimatedSalary": 94179,
+    "pppAdjusted": 60160
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "CH",
+    "estimatedSalary": 130286,
+    "pppAdjusted": 133855
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "AU",
+    "estimatedSalary": 106038,
+    "pppAdjusted": 86573
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "CA",
+    "estimatedSalary": 98781,
+    "pppAdjusted": 69719
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "NL",
+    "estimatedSalary": 112155,
+    "pppAdjusted": 81794
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "SE",
+    "estimatedSalary": 98563,
+    "pppAdjusted": 81111
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "NO",
+    "estimatedSalary": 103750,
+    "pppAdjusted": 110883
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "DK",
+    "estimatedSalary": 112976,
+    "pppAdjusted": 91432
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "IE",
+    "estimatedSalary": 99564,
+    "pppAdjusted": 138795
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "AT",
+    "estimatedSalary": 100366,
+    "pppAdjusted": 76037
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "BE",
+    "estimatedSalary": 99223,
+    "pppAdjusted": 69264
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "FI",
+    "estimatedSalary": 92523,
+    "pppAdjusted": 71820
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "NZ",
+    "estimatedSalary": 88264,
+    "pppAdjusted": 65301
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "IT",
+    "estimatedSalary": 80130,
+    "pppAdjusted": 49277
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "ES",
+    "estimatedSalary": 72539,
+    "pppAdjusted": 42396
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "PT",
+    "estimatedSalary": 55796,
+    "pppAdjusted": 35904
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "PL",
+    "estimatedSalary": 64417,
+    "pppAdjusted": 29920
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "CZ",
+    "estimatedSalary": 59866,
+    "pppAdjusted": 40254
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "HU",
+    "estimatedSalary": 50977,
+    "pppAdjusted": 28581
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "SK",
+    "estimatedSalary": 48514,
+    "pppAdjusted": 30964
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "GR",
+    "estimatedSalary": 51870,
+    "pppAdjusted": 30094
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "IL",
+    "estimatedSalary": 83987,
+    "pppAdjusted": 74297
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "TR",
+    "estimatedSalary": 36448,
+    "pppAdjusted": 17550
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "MX",
+    "estimatedSalary": 30486,
+    "pppAdjusted": 18768
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "CL",
+    "estimatedSalary": 52369,
+    "pppAdjusted": 23869
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "CO",
+    "estimatedSalary": 25917,
+    "pppAdjusted": 9987
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "CR",
+    "estimatedSalary": 34342,
+    "pppAdjusted": 18527
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "LT",
+    "estimatedSalary": 54547,
+    "pppAdjusted": 35422
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "LV",
+    "estimatedSalary": 49799,
+    "pppAdjusted": 30897
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "EE",
+    "estimatedSalary": 57742,
+    "pppAdjusted": 40428
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "SI",
+    "estimatedSalary": 57081,
+    "pppAdjusted": 43333
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "LU",
+    "estimatedSalary": 131471,
+    "pppAdjusted": 175769
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "IS",
+    "estimatedSalary": 141852,
+    "pppAdjusted": 99625
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "IN",
+    "estimatedSalary": 15886,
+    "pppAdjusted": 3494
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "CN",
+    "estimatedSalary": 28202,
+    "pppAdjusted": 17028
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "SG",
+    "estimatedSalary": 111557,
+    "pppAdjusted": 113400
+  },
+  {
+    "occupationSlug": "doctor",
+    "countryCode": "BR",
+    "estimatedSalary": 21954,
+    "pppAdjusted": 13936
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "US",
+    "estimatedSalary": 95040,
+    "pppAdjusted": 75919
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "KR",
+    "estimatedSalary": 58035,
+    "pppAdjusted": 32021
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "JP",
+    "estimatedSalary": 49241,
+    "pppAdjusted": 30206
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "DE",
+    "estimatedSalary": 69919,
+    "pppAdjusted": 46994
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "GB",
+    "estimatedSalary": 64041,
+    "pppAdjusted": 43498
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "FR",
+    "estimatedSalary": 62593,
+    "pppAdjusted": 39984
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "CH",
+    "estimatedSalary": 86590,
+    "pppAdjusted": 88962
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "AU",
+    "estimatedSalary": 70475,
+    "pppAdjusted": 57538
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "CA",
+    "estimatedSalary": 65651,
+    "pppAdjusted": 46336
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "NL",
+    "estimatedSalary": 74540,
+    "pppAdjusted": 54361
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "SE",
+    "estimatedSalary": 65506,
+    "pppAdjusted": 53908
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "NO",
+    "estimatedSalary": 68954,
+    "pppAdjusted": 73695
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "DK",
+    "estimatedSalary": 75086,
+    "pppAdjusted": 60767
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "IE",
+    "estimatedSalary": 66172,
+    "pppAdjusted": 92245
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "AT",
+    "estimatedSalary": 66705,
+    "pppAdjusted": 50536
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "BE",
+    "estimatedSalary": 65945,
+    "pppAdjusted": 46034
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "FI",
+    "estimatedSalary": 61492,
+    "pppAdjusted": 47733
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "NZ",
+    "estimatedSalary": 58662,
+    "pppAdjusted": 43400
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "IT",
+    "estimatedSalary": 53256,
+    "pppAdjusted": 32750
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "ES",
+    "estimatedSalary": 48210,
+    "pppAdjusted": 28177
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "PT",
+    "estimatedSalary": 37083,
+    "pppAdjusted": 23862
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "PL",
+    "estimatedSalary": 42813,
+    "pppAdjusted": 19885
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "CZ",
+    "estimatedSalary": 39788,
+    "pppAdjusted": 26754
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "HU",
+    "estimatedSalary": 33880,
+    "pppAdjusted": 18995
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "SK",
+    "estimatedSalary": 32243,
+    "pppAdjusted": 20579
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "GR",
+    "estimatedSalary": 34473,
+    "pppAdjusted": 20001
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "IL",
+    "estimatedSalary": 55819,
+    "pppAdjusted": 49379
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "TR",
+    "estimatedSalary": 24224,
+    "pppAdjusted": 11664
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "MX",
+    "estimatedSalary": 20262,
+    "pppAdjusted": 12474
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "CL",
+    "estimatedSalary": 34805,
+    "pppAdjusted": 15864
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "CO",
+    "estimatedSalary": 17225,
+    "pppAdjusted": 6637
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "CR",
+    "estimatedSalary": 22824,
+    "pppAdjusted": 12314
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "LT",
+    "estimatedSalary": 36253,
+    "pppAdjusted": 23542
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "LV",
+    "estimatedSalary": 33097,
+    "pppAdjusted": 20535
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "EE",
+    "estimatedSalary": 38376,
+    "pppAdjusted": 26869
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "SI",
+    "estimatedSalary": 37937,
+    "pppAdjusted": 28800
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "LU",
+    "estimatedSalary": 87378,
+    "pppAdjusted": 116819
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "IS",
+    "estimatedSalary": 94277,
+    "pppAdjusted": 66212
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "IN",
+    "estimatedSalary": 10558,
+    "pppAdjusted": 2322
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "CN",
+    "estimatedSalary": 18743,
+    "pppAdjusted": 11317
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "SG",
+    "estimatedSalary": 74142,
+    "pppAdjusted": 75367
+  },
+  {
+    "occupationSlug": "pharmacist",
+    "countryCode": "BR",
+    "estimatedSalary": 14591,
+    "pppAdjusted": 9262
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "US",
+    "estimatedSalary": 115600,
+    "pppAdjusted": 92342
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "KR",
+    "estimatedSalary": 70590,
+    "pppAdjusted": 38948
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "JP",
+    "estimatedSalary": 59894,
+    "pppAdjusted": 36740
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "DE",
+    "estimatedSalary": 85045,
+    "pppAdjusted": 57161
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "GB",
+    "estimatedSalary": 77895,
+    "pppAdjusted": 52908
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "FR",
+    "estimatedSalary": 76134,
+    "pppAdjusted": 48633
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "CH",
+    "estimatedSalary": 105322,
+    "pppAdjusted": 108207
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "AU",
+    "estimatedSalary": 85720,
+    "pppAdjusted": 69985
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "CA",
+    "estimatedSalary": 79853,
+    "pppAdjusted": 56360
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "NL",
+    "estimatedSalary": 90665,
+    "pppAdjusted": 66121
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "SE",
+    "estimatedSalary": 79677,
+    "pppAdjusted": 65569
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "NO",
+    "estimatedSalary": 83870,
+    "pppAdjusted": 89637
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "DK",
+    "estimatedSalary": 91329,
+    "pppAdjusted": 73913
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "IE",
+    "estimatedSalary": 80487,
+    "pppAdjusted": 112201
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "AT",
+    "estimatedSalary": 81135,
+    "pppAdjusted": 61468
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "BE",
+    "estimatedSalary": 80211,
+    "pppAdjusted": 55992
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "FI",
+    "estimatedSalary": 74795,
+    "pppAdjusted": 58059
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "NZ",
+    "estimatedSalary": 71352,
+    "pppAdjusted": 52789
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "IT",
+    "estimatedSalary": 64776,
+    "pppAdjusted": 39835
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "ES",
+    "estimatedSalary": 58640,
+    "pppAdjusted": 34273
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "PT",
+    "estimatedSalary": 45105,
+    "pppAdjusted": 29024
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "PL",
+    "estimatedSalary": 52075,
+    "pppAdjusted": 24187
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "CZ",
+    "estimatedSalary": 48395,
+    "pppAdjusted": 32541
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "HU",
+    "estimatedSalary": 41209,
+    "pppAdjusted": 23105
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "SK",
+    "estimatedSalary": 39218,
+    "pppAdjusted": 25031
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "GR",
+    "estimatedSalary": 41931,
+    "pppAdjusted": 24327
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "IL",
+    "estimatedSalary": 67895,
+    "pppAdjusted": 60061
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "TR",
+    "estimatedSalary": 29464,
+    "pppAdjusted": 14187
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "MX",
+    "estimatedSalary": 24645,
+    "pppAdjusted": 15172
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "CL",
+    "estimatedSalary": 42335,
+    "pppAdjusted": 19295
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "CO",
+    "estimatedSalary": 20951,
+    "pppAdjusted": 8073
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "CR",
+    "estimatedSalary": 27762,
+    "pppAdjusted": 14977
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "LT",
+    "estimatedSalary": 44095,
+    "pppAdjusted": 28635
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "LV",
+    "estimatedSalary": 40257,
+    "pppAdjusted": 24977
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "EE",
+    "estimatedSalary": 46678,
+    "pppAdjusted": 32682
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "SI",
+    "estimatedSalary": 46144,
+    "pppAdjusted": 35030
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "LU",
+    "estimatedSalary": 106280,
+    "pppAdjusted": 142090
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "IS",
+    "estimatedSalary": 114672,
+    "pppAdjusted": 80536
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "IN",
+    "estimatedSalary": 12842,
+    "pppAdjusted": 2824
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "CN",
+    "estimatedSalary": 22798,
+    "pppAdjusted": 13765
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "SG",
+    "estimatedSalary": 90182,
+    "pppAdjusted": 91672
+  },
+  {
+    "occupationSlug": "dentist",
+    "countryCode": "BR",
+    "estimatedSalary": 17748,
+    "pppAdjusted": 11266
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "US",
+    "estimatedSalary": 69840,
+    "pppAdjusted": 55789
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "KR",
+    "estimatedSalary": 42647,
+    "pppAdjusted": 23530
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "JP",
+    "estimatedSalary": 36185,
+    "pppAdjusted": 22197
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "DE",
+    "estimatedSalary": 51380,
+    "pppAdjusted": 34534
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "GB",
+    "estimatedSalary": 47061,
+    "pppAdjusted": 31964
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "FR",
+    "estimatedSalary": 45996,
+    "pppAdjusted": 29382
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "CH",
+    "estimatedSalary": 63631,
+    "pppAdjusted": 65374
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "AU",
+    "estimatedSalary": 51788,
+    "pppAdjusted": 42281
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "CA",
+    "estimatedSalary": 48244,
+    "pppAdjusted": 34050
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "NL",
+    "estimatedSalary": 54776,
+    "pppAdjusted": 39947
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "SE",
+    "estimatedSalary": 48137,
+    "pppAdjusted": 39614
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "NO",
+    "estimatedSalary": 50671,
+    "pppAdjusted": 54154
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "DK",
+    "estimatedSalary": 55177,
+    "pppAdjusted": 44655
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "IE",
+    "estimatedSalary": 48626,
+    "pppAdjusted": 67786
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "AT",
+    "estimatedSalary": 49018,
+    "pppAdjusted": 37136
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "BE",
+    "estimatedSalary": 48460,
+    "pppAdjusted": 33828
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "FI",
+    "estimatedSalary": 45187,
+    "pppAdjusted": 35076
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "NZ",
+    "estimatedSalary": 43107,
+    "pppAdjusted": 31892
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "IT",
+    "estimatedSalary": 39135,
+    "pppAdjusted": 24066
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "ES",
+    "estimatedSalary": 35427,
+    "pppAdjusted": 20706
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "PT",
+    "estimatedSalary": 27250,
+    "pppAdjusted": 17535
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "PL",
+    "estimatedSalary": 31461,
+    "pppAdjusted": 14612
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "CZ",
+    "estimatedSalary": 29238,
+    "pppAdjusted": 19660
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "HU",
+    "estimatedSalary": 24897,
+    "pppAdjusted": 13959
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "SK",
+    "estimatedSalary": 23694,
+    "pppAdjusted": 15122
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "GR",
+    "estimatedSalary": 25333,
+    "pppAdjusted": 14697
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "IL",
+    "estimatedSalary": 41019,
+    "pppAdjusted": 36286
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "TR",
+    "estimatedSalary": 17801,
+    "pppAdjusted": 8571
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "MX",
+    "estimatedSalary": 14889,
+    "pppAdjusted": 9166
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "CL",
+    "estimatedSalary": 25577,
+    "pppAdjusted": 11657
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "CO",
+    "estimatedSalary": 12658,
+    "pppAdjusted": 4877
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "CR",
+    "estimatedSalary": 16772,
+    "pppAdjusted": 9049
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "LT",
+    "estimatedSalary": 26640,
+    "pppAdjusted": 17300
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "LV",
+    "estimatedSalary": 24321,
+    "pppAdjusted": 15090
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "EE",
+    "estimatedSalary": 28201,
+    "pppAdjusted": 19745
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "SI",
+    "estimatedSalary": 27878,
+    "pppAdjusted": 21164
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "LU",
+    "estimatedSalary": 64209,
+    "pppAdjusted": 85844
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "IS",
+    "estimatedSalary": 69279,
+    "pppAdjusted": 48656
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "IN",
+    "estimatedSalary": 7758,
+    "pppAdjusted": 1706
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "CN",
+    "estimatedSalary": 13773,
+    "pppAdjusted": 8316
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "SG",
+    "estimatedSalary": 54483,
+    "pppAdjusted": 55384
+  },
+  {
+    "occupationSlug": "physical-therapist",
+    "countryCode": "BR",
+    "estimatedSalary": 10722,
+    "pppAdjusted": 6806
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "US",
+    "estimatedSalary": 71500,
+    "pppAdjusted": 57115
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "KR",
+    "estimatedSalary": 43661,
+    "pppAdjusted": 24090
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "JP",
+    "estimatedSalary": 37045,
+    "pppAdjusted": 22724
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "DE",
+    "estimatedSalary": 52601,
+    "pppAdjusted": 35355
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "GB",
+    "estimatedSalary": 48179,
+    "pppAdjusted": 32724
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "FR",
+    "estimatedSalary": 47090,
+    "pppAdjusted": 30080
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "CH",
+    "estimatedSalary": 65143,
+    "pppAdjusted": 66928
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "AU",
+    "estimatedSalary": 53019,
+    "pppAdjusted": 43286
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "CA",
+    "estimatedSalary": 49390,
+    "pppAdjusted": 34859
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "NL",
+    "estimatedSalary": 56077,
+    "pppAdjusted": 40897
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "SE",
+    "estimatedSalary": 49281,
+    "pppAdjusted": 40555
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "NO",
+    "estimatedSalary": 51875,
+    "pppAdjusted": 55442
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "DK",
+    "estimatedSalary": 56488,
+    "pppAdjusted": 45716
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "IE",
+    "estimatedSalary": 49782,
+    "pppAdjusted": 69397
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "AT",
+    "estimatedSalary": 50183,
+    "pppAdjusted": 38019
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "BE",
+    "estimatedSalary": 49612,
+    "pppAdjusted": 34632
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "FI",
+    "estimatedSalary": 46261,
+    "pppAdjusted": 35910
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "NZ",
+    "estimatedSalary": 44132,
+    "pppAdjusted": 32651
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "IT",
+    "estimatedSalary": 40065,
+    "pppAdjusted": 24638
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "ES",
+    "estimatedSalary": 36269,
+    "pppAdjusted": 21198
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "PT",
+    "estimatedSalary": 27898,
+    "pppAdjusted": 17952
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "PL",
+    "estimatedSalary": 32209,
+    "pppAdjusted": 14960
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "CZ",
+    "estimatedSalary": 29933,
+    "pppAdjusted": 20127
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "HU",
+    "estimatedSalary": 25489,
+    "pppAdjusted": 14290
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "SK",
+    "estimatedSalary": 24257,
+    "pppAdjusted": 15482
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "GR",
+    "estimatedSalary": 25935,
+    "pppAdjusted": 15047
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "IL",
+    "estimatedSalary": 41994,
+    "pppAdjusted": 37148
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "TR",
+    "estimatedSalary": 18224,
+    "pppAdjusted": 8775
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "MX",
+    "estimatedSalary": 15243,
+    "pppAdjusted": 9384
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "CL",
+    "estimatedSalary": 26185,
+    "pppAdjusted": 11934
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "CO",
+    "estimatedSalary": 12958,
+    "pppAdjusted": 4993
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "CR",
+    "estimatedSalary": 17171,
+    "pppAdjusted": 9264
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "LT",
+    "estimatedSalary": 27273,
+    "pppAdjusted": 17711
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "LV",
+    "estimatedSalary": 24900,
+    "pppAdjusted": 15448
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "EE",
+    "estimatedSalary": 28871,
+    "pppAdjusted": 20214
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "SI",
+    "estimatedSalary": 28541,
+    "pppAdjusted": 21667
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "LU",
+    "estimatedSalary": 65736,
+    "pppAdjusted": 87885
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "IS",
+    "estimatedSalary": 70926,
+    "pppAdjusted": 49812
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "IN",
+    "estimatedSalary": 7943,
+    "pppAdjusted": 1747
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "CN",
+    "estimatedSalary": 14101,
+    "pppAdjusted": 8514
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "SG",
+    "estimatedSalary": 55778,
+    "pppAdjusted": 56700
+  },
+  {
+    "occupationSlug": "teacher",
+    "countryCode": "BR",
+    "estimatedSalary": 10977,
+    "pppAdjusted": 6968
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "US",
+    "estimatedSalary": 99750,
+    "pppAdjusted": 79681
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "KR",
+    "estimatedSalary": 60911,
+    "pppAdjusted": 33608
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "JP",
+    "estimatedSalary": 51682,
+    "pppAdjusted": 31703
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "DE",
+    "estimatedSalary": 73384,
+    "pppAdjusted": 49323
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "GB",
+    "estimatedSalary": 67215,
+    "pppAdjusted": 45654
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "FR",
+    "estimatedSalary": 65695,
+    "pppAdjusted": 41965
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "CH",
+    "estimatedSalary": 90881,
+    "pppAdjusted": 93371
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "AU",
+    "estimatedSalary": 73967,
+    "pppAdjusted": 60389
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "CA",
+    "estimatedSalary": 68905,
+    "pppAdjusted": 48632
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "NL",
+    "estimatedSalary": 78234,
+    "pppAdjusted": 57055
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "SE",
+    "estimatedSalary": 68753,
+    "pppAdjusted": 56579
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "NO",
+    "estimatedSalary": 72371,
+    "pppAdjusted": 77347
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "DK",
+    "estimatedSalary": 78807,
+    "pppAdjusted": 63779
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "IE",
+    "estimatedSalary": 69451,
+    "pppAdjusted": 96817
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "AT",
+    "estimatedSalary": 70010,
+    "pppAdjusted": 53040
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "BE",
+    "estimatedSalary": 69213,
+    "pppAdjusted": 48315
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "FI",
+    "estimatedSalary": 64539,
+    "pppAdjusted": 50098
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "NZ",
+    "estimatedSalary": 61569,
+    "pppAdjusted": 45551
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "IT",
+    "estimatedSalary": 55895,
+    "pppAdjusted": 34373
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "ES",
+    "estimatedSalary": 50600,
+    "pppAdjusted": 29574
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "PT",
+    "estimatedSalary": 38921,
+    "pppAdjusted": 25045
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "PL",
+    "estimatedSalary": 44935,
+    "pppAdjusted": 20870
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "CZ",
+    "estimatedSalary": 41760,
+    "pppAdjusted": 28079
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "HU",
+    "estimatedSalary": 35559,
+    "pppAdjusted": 19937
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "SK",
+    "estimatedSalary": 33841,
+    "pppAdjusted": 21599
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "GR",
+    "estimatedSalary": 36182,
+    "pppAdjusted": 20992
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "IL",
+    "estimatedSalary": 58586,
+    "pppAdjusted": 51826
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "TR",
+    "estimatedSalary": 25424,
+    "pppAdjusted": 12242
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "MX",
+    "estimatedSalary": 21266,
+    "pppAdjusted": 13092
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "CL",
+    "estimatedSalary": 36530,
+    "pppAdjusted": 16650
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "CO",
+    "estimatedSalary": 18078,
+    "pppAdjusted": 6966
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "CR",
+    "estimatedSalary": 23955,
+    "pppAdjusted": 12924
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "LT",
+    "estimatedSalary": 38049,
+    "pppAdjusted": 24708
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "LV",
+    "estimatedSalary": 34737,
+    "pppAdjusted": 21552
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "EE",
+    "estimatedSalary": 40278,
+    "pppAdjusted": 28201
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "SI",
+    "estimatedSalary": 39817,
+    "pppAdjusted": 30227
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "LU",
+    "estimatedSalary": 91708,
+    "pppAdjusted": 122608
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "IS",
+    "estimatedSalary": 98949,
+    "pppAdjusted": 69494
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "IN",
+    "estimatedSalary": 11081,
+    "pppAdjusted": 2437
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "CN",
+    "estimatedSalary": 19672,
+    "pppAdjusted": 11878
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "SG",
+    "estimatedSalary": 77817,
+    "pppAdjusted": 79102
+  },
+  {
+    "occupationSlug": "professor",
+    "countryCode": "BR",
+    "estimatedSalary": 15314,
+    "pppAdjusted": 9721
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "US",
+    "estimatedSalary": 88320,
+    "pppAdjusted": 70551
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "KR",
+    "estimatedSalary": 53932,
+    "pppAdjusted": 29757
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "JP",
+    "estimatedSalary": 45760,
+    "pppAdjusted": 28070
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "DE",
+    "estimatedSalary": 64976,
+    "pppAdjusted": 43672
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "GB",
+    "estimatedSalary": 59513,
+    "pppAdjusted": 40422
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "FR",
+    "estimatedSalary": 58167,
+    "pppAdjusted": 37156
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "CH",
+    "estimatedSalary": 80468,
+    "pppAdjusted": 82672
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "AU",
+    "estimatedSalary": 65491,
+    "pppAdjusted": 53469
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "CA",
+    "estimatedSalary": 61009,
+    "pppAdjusted": 43060
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "NL",
+    "estimatedSalary": 69269,
+    "pppAdjusted": 50518
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "SE",
+    "estimatedSalary": 60875,
+    "pppAdjusted": 50096
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "NO",
+    "estimatedSalary": 64078,
+    "pppAdjusted": 68484
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "DK",
+    "estimatedSalary": 69777,
+    "pppAdjusted": 56471
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "IE",
+    "estimatedSalary": 61493,
+    "pppAdjusted": 85723
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "AT",
+    "estimatedSalary": 61988,
+    "pppAdjusted": 46962
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "BE",
+    "estimatedSalary": 61283,
+    "pppAdjusted": 42779
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "FI",
+    "estimatedSalary": 57144,
+    "pppAdjusted": 44358
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "NZ",
+    "estimatedSalary": 54514,
+    "pppAdjusted": 40331
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "IT",
+    "estimatedSalary": 49490,
+    "pppAdjusted": 30435
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "ES",
+    "estimatedSalary": 44802,
+    "pppAdjusted": 26185
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "PT",
+    "estimatedSalary": 34461,
+    "pppAdjusted": 22175
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "PL",
+    "estimatedSalary": 39786,
+    "pppAdjusted": 18479
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "CZ",
+    "estimatedSalary": 36975,
+    "pppAdjusted": 24862
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "HU",
+    "estimatedSalary": 31485,
+    "pppAdjusted": 17652
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "SK",
+    "estimatedSalary": 29963,
+    "pppAdjusted": 19124
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "GR",
+    "estimatedSalary": 32036,
+    "pppAdjusted": 18586
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "IL",
+    "estimatedSalary": 51872,
+    "pppAdjusted": 45887
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "TR",
+    "estimatedSalary": 22511,
+    "pppAdjusted": 10839
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "MX",
+    "estimatedSalary": 18829,
+    "pppAdjusted": 11592
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "CL",
+    "estimatedSalary": 32344,
+    "pppAdjusted": 14742
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "CO",
+    "estimatedSalary": 16007,
+    "pppAdjusted": 6168
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "CR",
+    "estimatedSalary": 21210,
+    "pppAdjusted": 11443
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "LT",
+    "estimatedSalary": 33689,
+    "pppAdjusted": 21877
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "LV",
+    "estimatedSalary": 30757,
+    "pppAdjusted": 19083
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "EE",
+    "estimatedSalary": 35663,
+    "pppAdjusted": 24969
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "SI",
+    "estimatedSalary": 35255,
+    "pppAdjusted": 26764
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "LU",
+    "estimatedSalary": 81200,
+    "pppAdjusted": 108559
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "IS",
+    "estimatedSalary": 87611,
+    "pppAdjusted": 61531
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "IN",
+    "estimatedSalary": 9811,
+    "pppAdjusted": 2158
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "CN",
+    "estimatedSalary": 17418,
+    "pppAdjusted": 10517
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "SG",
+    "estimatedSalary": 68900,
+    "pppAdjusted": 70038
+  },
+  {
+    "occupationSlug": "mechanical-engineer",
+    "countryCode": "BR",
+    "estimatedSalary": 13560,
+    "pppAdjusted": 8607
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "US",
+    "estimatedSalary": 88350,
+    "pppAdjusted": 70575
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "KR",
+    "estimatedSalary": 53950,
+    "pppAdjusted": 29767
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "JP",
+    "estimatedSalary": 45775,
+    "pppAdjusted": 28079
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "DE",
+    "estimatedSalary": 64998,
+    "pppAdjusted": 43686
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "GB",
+    "estimatedSalary": 59533,
+    "pppAdjusted": 40436
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "FR",
+    "estimatedSalary": 58187,
+    "pppAdjusted": 37169
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "CH",
+    "estimatedSalary": 80495,
+    "pppAdjusted": 82700
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "AU",
+    "estimatedSalary": 65514,
+    "pppAdjusted": 53487
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "CA",
+    "estimatedSalary": 61030,
+    "pppAdjusted": 43074
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "NL",
+    "estimatedSalary": 69293,
+    "pppAdjusted": 50535
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "SE",
+    "estimatedSalary": 60895,
+    "pppAdjusted": 50113
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "NO",
+    "estimatedSalary": 64100,
+    "pppAdjusted": 68507
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "DK",
+    "estimatedSalary": 69800,
+    "pppAdjusted": 56490
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "IE",
+    "estimatedSalary": 61514,
+    "pppAdjusted": 85752
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "AT",
+    "estimatedSalary": 62009,
+    "pppAdjusted": 46978
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "BE",
+    "estimatedSalary": 61303,
+    "pppAdjusted": 42793
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "FI",
+    "estimatedSalary": 57163,
+    "pppAdjusted": 44373
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "NZ",
+    "estimatedSalary": 54532,
+    "pppAdjusted": 40345
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "IT",
+    "estimatedSalary": 49507,
+    "pppAdjusted": 30445
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "ES",
+    "estimatedSalary": 44817,
+    "pppAdjusted": 26194
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "PT",
+    "estimatedSalary": 34473,
+    "pppAdjusted": 22182
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "PL",
+    "estimatedSalary": 39799,
+    "pppAdjusted": 18485
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "CZ",
+    "estimatedSalary": 36987,
+    "pppAdjusted": 24870
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "HU",
+    "estimatedSalary": 31495,
+    "pppAdjusted": 17658
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "SK",
+    "estimatedSalary": 29973,
+    "pppAdjusted": 19130
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "GR",
+    "estimatedSalary": 32047,
+    "pppAdjusted": 18593
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "IL",
+    "estimatedSalary": 51890,
+    "pppAdjusted": 45903
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "TR",
+    "estimatedSalary": 22519,
+    "pppAdjusted": 10843
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "MX",
+    "estimatedSalary": 18835,
+    "pppAdjusted": 11596
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "CL",
+    "estimatedSalary": 32355,
+    "pppAdjusted": 14747
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "CO",
+    "estimatedSalary": 16012,
+    "pppAdjusted": 6170
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "CR",
+    "estimatedSalary": 21217,
+    "pppAdjusted": 11447
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "LT",
+    "estimatedSalary": 33701,
+    "pppAdjusted": 21885
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "LV",
+    "estimatedSalary": 30767,
+    "pppAdjusted": 19089
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "EE",
+    "estimatedSalary": 35675,
+    "pppAdjusted": 24978
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "SI",
+    "estimatedSalary": 35267,
+    "pppAdjusted": 26773
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "LU",
+    "estimatedSalary": 81227,
+    "pppAdjusted": 108596
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "IS",
+    "estimatedSalary": 87641,
+    "pppAdjusted": 61551
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "IN",
+    "estimatedSalary": 9815,
+    "pppAdjusted": 2159
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "CN",
+    "estimatedSalary": 17424,
+    "pppAdjusted": 10520
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "SG",
+    "estimatedSalary": 68923,
+    "pppAdjusted": 70062
+  },
+  {
+    "occupationSlug": "civil-engineer",
+    "countryCode": "BR",
+    "estimatedSalary": 13564,
+    "pppAdjusted": 8610
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "US",
+    "estimatedSalary": 94500,
+    "pppAdjusted": 75488
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "KR",
+    "estimatedSalary": 57705,
+    "pppAdjusted": 31839
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "JP",
+    "estimatedSalary": 48962,
+    "pppAdjusted": 30034
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "DE",
+    "estimatedSalary": 69522,
+    "pppAdjusted": 46727
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "GB",
+    "estimatedSalary": 63677,
+    "pppAdjusted": 43251
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "FR",
+    "estimatedSalary": 62237,
+    "pppAdjusted": 39756
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "CH",
+    "estimatedSalary": 86098,
+    "pppAdjusted": 88457
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "AU",
+    "estimatedSalary": 70074,
+    "pppAdjusted": 57211
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "CA",
+    "estimatedSalary": 65278,
+    "pppAdjusted": 46073
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "NL",
+    "estimatedSalary": 74116,
+    "pppAdjusted": 54052
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "SE",
+    "estimatedSalary": 65134,
+    "pppAdjusted": 53601
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "NO",
+    "estimatedSalary": 68562,
+    "pppAdjusted": 73276
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "DK",
+    "estimatedSalary": 74659,
+    "pppAdjusted": 60422
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "IE",
+    "estimatedSalary": 65796,
+    "pppAdjusted": 91721
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "AT",
+    "estimatedSalary": 66326,
+    "pppAdjusted": 50248
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "BE",
+    "estimatedSalary": 65571,
+    "pppAdjusted": 45772
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "FI",
+    "estimatedSalary": 61143,
+    "pppAdjusted": 47462
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "NZ",
+    "estimatedSalary": 58328,
+    "pppAdjusted": 43153
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "IT",
+    "estimatedSalary": 52953,
+    "pppAdjusted": 32564
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "ES",
+    "estimatedSalary": 47936,
+    "pppAdjusted": 28017
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "PT",
+    "estimatedSalary": 36872,
+    "pppAdjusted": 23726
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "PL",
+    "estimatedSalary": 42570,
+    "pppAdjusted": 19772
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "CZ",
+    "estimatedSalary": 39562,
+    "pppAdjusted": 26602
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "HU",
+    "estimatedSalary": 33688,
+    "pppAdjusted": 18887
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "SK",
+    "estimatedSalary": 32060,
+    "pppAdjusted": 20462
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "GR",
+    "estimatedSalary": 34277,
+    "pppAdjusted": 19887
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "IL",
+    "estimatedSalary": 55502,
+    "pppAdjusted": 49098
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "TR",
+    "estimatedSalary": 24086,
+    "pppAdjusted": 11598
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "MX",
+    "estimatedSalary": 20147,
+    "pppAdjusted": 12403
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "CL",
+    "estimatedSalary": 34608,
+    "pppAdjusted": 15773
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "CO",
+    "estimatedSalary": 17127,
+    "pppAdjusted": 6600
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "CR",
+    "estimatedSalary": 22694,
+    "pppAdjusted": 12244
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "LT",
+    "estimatedSalary": 36047,
+    "pppAdjusted": 23408
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "LV",
+    "estimatedSalary": 32909,
+    "pppAdjusted": 20418
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "EE",
+    "estimatedSalary": 38158,
+    "pppAdjusted": 26717
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "SI",
+    "estimatedSalary": 37722,
+    "pppAdjusted": 28636
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "LU",
+    "estimatedSalary": 86881,
+    "pppAdjusted": 116155
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "IS",
+    "estimatedSalary": 93742,
+    "pppAdjusted": 65836
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "IN",
+    "estimatedSalary": 10498,
+    "pppAdjusted": 2309
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "CN",
+    "estimatedSalary": 18637,
+    "pppAdjusted": 11253
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "SG",
+    "estimatedSalary": 73721,
+    "pppAdjusted": 74939
+  },
+  {
+    "occupationSlug": "electrical-engineer",
+    "countryCode": "BR",
+    "estimatedSalary": 14508,
+    "pppAdjusted": 9209
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "US",
+    "estimatedSalary": 116000,
+    "pppAdjusted": 92662
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "KR",
+    "estimatedSalary": 70834,
+    "pppAdjusted": 39082
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "JP",
+    "estimatedSalary": 60101,
+    "pppAdjusted": 36867
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "DE",
+    "estimatedSalary": 85339,
+    "pppAdjusted": 57359
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "GB",
+    "estimatedSalary": 78165,
+    "pppAdjusted": 53091
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "FR",
+    "estimatedSalary": 76397,
+    "pppAdjusted": 48801
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "CH",
+    "estimatedSalary": 105687,
+    "pppAdjusted": 108582
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "AU",
+    "estimatedSalary": 86017,
+    "pppAdjusted": 70227
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "CA",
+    "estimatedSalary": 80130,
+    "pppAdjusted": 56555
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "NL",
+    "estimatedSalary": 90979,
+    "pppAdjusted": 66350
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "SE",
+    "estimatedSalary": 79953,
+    "pppAdjusted": 65796
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "NO",
+    "estimatedSalary": 84161,
+    "pppAdjusted": 89947
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "DK",
+    "estimatedSalary": 91645,
+    "pppAdjusted": 74169
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "IE",
+    "estimatedSalary": 80765,
+    "pppAdjusted": 112589
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "AT",
+    "estimatedSalary": 81415,
+    "pppAdjusted": 61681
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "BE",
+    "estimatedSalary": 80489,
+    "pppAdjusted": 56186
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "FI",
+    "estimatedSalary": 75053,
+    "pppAdjusted": 58260
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "NZ",
+    "estimatedSalary": 71599,
+    "pppAdjusted": 52971
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "IT",
+    "estimatedSalary": 65001,
+    "pppAdjusted": 39973
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "ES",
+    "estimatedSalary": 58843,
+    "pppAdjusted": 34391
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "PT",
+    "estimatedSalary": 45261,
+    "pppAdjusted": 29125
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "PL",
+    "estimatedSalary": 52255,
+    "pppAdjusted": 24270
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "CZ",
+    "estimatedSalary": 48563,
+    "pppAdjusted": 32654
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "HU",
+    "estimatedSalary": 41352,
+    "pppAdjusted": 23185
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "SK",
+    "estimatedSalary": 39354,
+    "pppAdjusted": 25117
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "GR",
+    "estimatedSalary": 42076,
+    "pppAdjusted": 24412
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "IL",
+    "estimatedSalary": 68130,
+    "pppAdjusted": 60269
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "TR",
+    "estimatedSalary": 29566,
+    "pppAdjusted": 14236
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "MX",
+    "estimatedSalary": 24730,
+    "pppAdjusted": 15225
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "CL",
+    "estimatedSalary": 42481,
+    "pppAdjusted": 19362
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "CO",
+    "estimatedSalary": 21024,
+    "pppAdjusted": 8101
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "CR",
+    "estimatedSalary": 27858,
+    "pppAdjusted": 15029
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "LT",
+    "estimatedSalary": 44248,
+    "pppAdjusted": 28734
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "LV",
+    "estimatedSalary": 40396,
+    "pppAdjusted": 25063
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "EE",
+    "estimatedSalary": 46840,
+    "pppAdjusted": 32795
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "SI",
+    "estimatedSalary": 46304,
+    "pppAdjusted": 35151
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "LU",
+    "estimatedSalary": 106648,
+    "pppAdjusted": 142582
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "IS",
+    "estimatedSalary": 115069,
+    "pppAdjusted": 80815
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "IN",
+    "estimatedSalary": 12886,
+    "pppAdjusted": 2834
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "CN",
+    "estimatedSalary": 22877,
+    "pppAdjusted": 13813
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "SG",
+    "estimatedSalary": 90494,
+    "pppAdjusted": 91989
+  },
+  {
+    "occupationSlug": "lawyer",
+    "countryCode": "BR",
+    "estimatedSalary": 17809,
+    "pppAdjusted": 11304
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "US",
+    "estimatedSalary": 105600,
+    "pppAdjusted": 84354
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "KR",
+    "estimatedSalary": 64484,
+    "pppAdjusted": 35579
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "JP",
+    "estimatedSalary": 54713,
+    "pppAdjusted": 33562
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "DE",
+    "estimatedSalary": 77688,
+    "pppAdjusted": 52216
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "GB",
+    "estimatedSalary": 71157,
+    "pppAdjusted": 48331
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "FR",
+    "estimatedSalary": 69548,
+    "pppAdjusted": 44426
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "CH",
+    "estimatedSalary": 96211,
+    "pppAdjusted": 98847
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "AU",
+    "estimatedSalary": 78305,
+    "pppAdjusted": 63931
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "CA",
+    "estimatedSalary": 72946,
+    "pppAdjusted": 51485
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "NL",
+    "estimatedSalary": 82822,
+    "pppAdjusted": 60401
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "SE",
+    "estimatedSalary": 72785,
+    "pppAdjusted": 59897
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "NO",
+    "estimatedSalary": 76615,
+    "pppAdjusted": 81883
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "DK",
+    "estimatedSalary": 83428,
+    "pppAdjusted": 67519
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "IE",
+    "estimatedSalary": 73524,
+    "pppAdjusted": 102495
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "AT",
+    "estimatedSalary": 74116,
+    "pppAdjusted": 56151
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "BE",
+    "estimatedSalary": 73273,
+    "pppAdjusted": 51148
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "FI",
+    "estimatedSalary": 68324,
+    "pppAdjusted": 53037
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "NZ",
+    "estimatedSalary": 65179,
+    "pppAdjusted": 48222
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "IT",
+    "estimatedSalary": 59173,
+    "pppAdjusted": 36389
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "ES",
+    "estimatedSalary": 53567,
+    "pppAdjusted": 31308
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "PT",
+    "estimatedSalary": 41203,
+    "pppAdjusted": 26513
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "PL",
+    "estimatedSalary": 47570,
+    "pppAdjusted": 22094
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "CZ",
+    "estimatedSalary": 44209,
+    "pppAdjusted": 29726
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "HU",
+    "estimatedSalary": 37645,
+    "pppAdjusted": 21106
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "SK",
+    "estimatedSalary": 35826,
+    "pppAdjusted": 22866
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "GR",
+    "estimatedSalary": 38304,
+    "pppAdjusted": 22223
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "IL",
+    "estimatedSalary": 62021,
+    "pppAdjusted": 54865
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "TR",
+    "estimatedSalary": 26915,
+    "pppAdjusted": 12960
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "MX",
+    "estimatedSalary": 22513,
+    "pppAdjusted": 13860
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "CL",
+    "estimatedSalary": 38673,
+    "pppAdjusted": 17626
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "CO",
+    "estimatedSalary": 19139,
+    "pppAdjusted": 7375
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "CR",
+    "estimatedSalary": 25360,
+    "pppAdjusted": 13682
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "LT",
+    "estimatedSalary": 40281,
+    "pppAdjusted": 26157
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "LV",
+    "estimatedSalary": 36775,
+    "pppAdjusted": 22816
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "EE",
+    "estimatedSalary": 42640,
+    "pppAdjusted": 29855
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "SI",
+    "estimatedSalary": 42152,
+    "pppAdjusted": 32000
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "LU",
+    "estimatedSalary": 97086,
+    "pppAdjusted": 129799
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "IS",
+    "estimatedSalary": 104752,
+    "pppAdjusted": 73569
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "IN",
+    "estimatedSalary": 11731,
+    "pppAdjusted": 2580
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "CN",
+    "estimatedSalary": 20826,
+    "pppAdjusted": 12575
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "SG",
+    "estimatedSalary": 82381,
+    "pppAdjusted": 83741
+  },
+  {
+    "occupationSlug": "marketing-manager",
+    "countryCode": "BR",
+    "estimatedSalary": 16212,
+    "pppAdjusted": 10291
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "US",
+    "estimatedSalary": 55250,
+    "pppAdjusted": 44134
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "KR",
+    "estimatedSalary": 33738,
+    "pppAdjusted": 18615
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "JP",
+    "estimatedSalary": 28626,
+    "pppAdjusted": 17560
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "DE",
+    "estimatedSalary": 40647,
+    "pppAdjusted": 27319
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "GB",
+    "estimatedSalary": 37229,
+    "pppAdjusted": 25287
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "FR",
+    "estimatedSalary": 36387,
+    "pppAdjusted": 23244
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "CH",
+    "estimatedSalary": 50338,
+    "pppAdjusted": 51717
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "AU",
+    "estimatedSalary": 40969,
+    "pppAdjusted": 33449
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "CA",
+    "estimatedSalary": 38165,
+    "pppAdjusted": 26937
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "NL",
+    "estimatedSalary": 43333,
+    "pppAdjusted": 31602
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "SE",
+    "estimatedSalary": 38081,
+    "pppAdjusted": 31338
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "NO",
+    "estimatedSalary": 40085,
+    "pppAdjusted": 42841
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "DK",
+    "estimatedSalary": 43650,
+    "pppAdjusted": 35326
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "IE",
+    "estimatedSalary": 38468,
+    "pppAdjusted": 53625
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "AT",
+    "estimatedSalary": 38778,
+    "pppAdjusted": 29378
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "BE",
+    "estimatedSalary": 38336,
+    "pppAdjusted": 26761
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "FI",
+    "estimatedSalary": 35747,
+    "pppAdjusted": 27749
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "NZ",
+    "estimatedSalary": 34102,
+    "pppAdjusted": 25230
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "IT",
+    "estimatedSalary": 30959,
+    "pppAdjusted": 19039
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "ES",
+    "estimatedSalary": 28026,
+    "pppAdjusted": 16380
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "PT",
+    "estimatedSalary": 21558,
+    "pppAdjusted": 13872
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "PL",
+    "estimatedSalary": 24889,
+    "pppAdjusted": 11560
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "CZ",
+    "estimatedSalary": 23130,
+    "pppAdjusted": 15553
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "HU",
+    "estimatedSalary": 19696,
+    "pppAdjusted": 11043
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "SK",
+    "estimatedSalary": 18744,
+    "pppAdjusted": 11963
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "GR",
+    "estimatedSalary": 20041,
+    "pppAdjusted": 11627
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "IL",
+    "estimatedSalary": 32450,
+    "pppAdjusted": 28706
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "TR",
+    "estimatedSalary": 14082,
+    "pppAdjusted": 6781
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "MX",
+    "estimatedSalary": 11779,
+    "pppAdjusted": 7251
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "CL",
+    "estimatedSalary": 20234,
+    "pppAdjusted": 9222
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "CO",
+    "estimatedSalary": 10013,
+    "pppAdjusted": 3858
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "CR",
+    "estimatedSalary": 13268,
+    "pppAdjusted": 7158
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "LT",
+    "estimatedSalary": 21075,
+    "pppAdjusted": 13686
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "LV",
+    "estimatedSalary": 19241,
+    "pppAdjusted": 11937
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "EE",
+    "estimatedSalary": 22309,
+    "pppAdjusted": 15620
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "SI",
+    "estimatedSalary": 22054,
+    "pppAdjusted": 16742
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "LU",
+    "estimatedSalary": 50796,
+    "pppAdjusted": 67911
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "IS",
+    "estimatedSalary": 54807,
+    "pppAdjusted": 38491
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "IN",
+    "estimatedSalary": 6138,
+    "pppAdjusted": 1350
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "CN",
+    "estimatedSalary": 10896,
+    "pppAdjusted": 6579
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "SG",
+    "estimatedSalary": 43102,
+    "pppAdjusted": 43814
+  },
+  {
+    "occupationSlug": "graphic-designer",
+    "countryCode": "BR",
+    "estimatedSalary": 8482,
+    "pppAdjusted": 5384
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "US",
+    "estimatedSalary": 58000,
+    "pppAdjusted": 46331
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "KR",
+    "estimatedSalary": 35417,
+    "pppAdjusted": 19541
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "JP",
+    "estimatedSalary": 30050,
+    "pppAdjusted": 18434
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "DE",
+    "estimatedSalary": 42670,
+    "pppAdjusted": 28679
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "GB",
+    "estimatedSalary": 39082,
+    "pppAdjusted": 26545
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "FR",
+    "estimatedSalary": 38199,
+    "pppAdjusted": 24401
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "CH",
+    "estimatedSalary": 52843,
+    "pppAdjusted": 54291
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "AU",
+    "estimatedSalary": 43008,
+    "pppAdjusted": 35113
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "CA",
+    "estimatedSalary": 40065,
+    "pppAdjusted": 28277
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "NL",
+    "estimatedSalary": 45489,
+    "pppAdjusted": 33175
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "SE",
+    "estimatedSalary": 39977,
+    "pppAdjusted": 32898
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "NO",
+    "estimatedSalary": 42080,
+    "pppAdjusted": 44974
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "DK",
+    "estimatedSalary": 45822,
+    "pppAdjusted": 37084
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "IE",
+    "estimatedSalary": 40383,
+    "pppAdjusted": 56294
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "AT",
+    "estimatedSalary": 40708,
+    "pppAdjusted": 30840
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "BE",
+    "estimatedSalary": 40244,
+    "pppAdjusted": 28093
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "FI",
+    "estimatedSalary": 37527,
+    "pppAdjusted": 29130
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "NZ",
+    "estimatedSalary": 35799,
+    "pppAdjusted": 26486
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "IT",
+    "estimatedSalary": 32500,
+    "pppAdjusted": 19986
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "ES",
+    "estimatedSalary": 29421,
+    "pppAdjusted": 17196
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "PT",
+    "estimatedSalary": 22631,
+    "pppAdjusted": 14562
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "PL",
+    "estimatedSalary": 26127,
+    "pppAdjusted": 12135
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "CZ",
+    "estimatedSalary": 24281,
+    "pppAdjusted": 16327
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "HU",
+    "estimatedSalary": 20676,
+    "pppAdjusted": 11592
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "SK",
+    "estimatedSalary": 19677,
+    "pppAdjusted": 12559
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "GR",
+    "estimatedSalary": 21038,
+    "pppAdjusted": 12206
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "IL",
+    "estimatedSalary": 34065,
+    "pppAdjusted": 30134
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "TR",
+    "estimatedSalary": 14783,
+    "pppAdjusted": 7118
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "MX",
+    "estimatedSalary": 12365,
+    "pppAdjusted": 7612
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "CL",
+    "estimatedSalary": 21241,
+    "pppAdjusted": 9681
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "CO",
+    "estimatedSalary": 10512,
+    "pppAdjusted": 4051
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "CR",
+    "estimatedSalary": 13929,
+    "pppAdjusted": 7515
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "LT",
+    "estimatedSalary": 22124,
+    "pppAdjusted": 14367
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "LV",
+    "estimatedSalary": 20198,
+    "pppAdjusted": 12532
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "EE",
+    "estimatedSalary": 23420,
+    "pppAdjusted": 16397
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "SI",
+    "estimatedSalary": 23152,
+    "pppAdjusted": 17576
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "LU",
+    "estimatedSalary": 53324,
+    "pppAdjusted": 71291
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "IS",
+    "estimatedSalary": 57534,
+    "pppAdjusted": 40407
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "IN",
+    "estimatedSalary": 6443,
+    "pppAdjusted": 1417
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "CN",
+    "estimatedSalary": 11438,
+    "pppAdjusted": 6906
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "SG",
+    "estimatedSalary": 45247,
+    "pppAdjusted": 45994
+  },
+  {
+    "occupationSlug": "chef",
+    "countryCode": "BR",
+    "estimatedSalary": 8905,
+    "pppAdjusted": 5652
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "US",
+    "estimatedSalary": 52250,
+    "pppAdjusted": 41738
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "KR",
+    "estimatedSalary": 31906,
+    "pppAdjusted": 17604
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "JP",
+    "estimatedSalary": 27071,
+    "pppAdjusted": 16606
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "DE",
+    "estimatedSalary": 38439,
+    "pppAdjusted": 25836
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "GB",
+    "estimatedSalary": 35208,
+    "pppAdjusted": 23914
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "FR",
+    "estimatedSalary": 34412,
+    "pppAdjusted": 21982
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "CH",
+    "estimatedSalary": 47605,
+    "pppAdjusted": 48909
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "AU",
+    "estimatedSalary": 38745,
+    "pppAdjusted": 31632
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "CA",
+    "estimatedSalary": 36093,
+    "pppAdjusted": 25474
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "NL",
+    "estimatedSalary": 40980,
+    "pppAdjusted": 29886
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "SE",
+    "estimatedSalary": 36013,
+    "pppAdjusted": 29637
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "NO",
+    "estimatedSalary": 37909,
+    "pppAdjusted": 40515
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "DK",
+    "estimatedSalary": 41280,
+    "pppAdjusted": 33408
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "IE",
+    "estimatedSalary": 36379,
+    "pppAdjusted": 50713
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "AT",
+    "estimatedSalary": 36672,
+    "pppAdjusted": 27783
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "BE",
+    "estimatedSalary": 36255,
+    "pppAdjusted": 25308
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "FI",
+    "estimatedSalary": 33806,
+    "pppAdjusted": 26242
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "NZ",
+    "estimatedSalary": 32250,
+    "pppAdjusted": 23860
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "IT",
+    "estimatedSalary": 29278,
+    "pppAdjusted": 18005
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "ES",
+    "estimatedSalary": 26505,
+    "pppAdjusted": 15491
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "PT",
+    "estimatedSalary": 20387,
+    "pppAdjusted": 13119
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "PL",
+    "estimatedSalary": 23537,
+    "pppAdjusted": 10932
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "CZ",
+    "estimatedSalary": 21874,
+    "pppAdjusted": 14708
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "HU",
+    "estimatedSalary": 18626,
+    "pppAdjusted": 10443
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "SK",
+    "estimatedSalary": 17726,
+    "pppAdjusted": 11314
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "GR",
+    "estimatedSalary": 18952,
+    "pppAdjusted": 10996
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "IL",
+    "estimatedSalary": 30688,
+    "pppAdjusted": 27147
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "TR",
+    "estimatedSalary": 13318,
+    "pppAdjusted": 6413
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "MX",
+    "estimatedSalary": 11139,
+    "pppAdjusted": 6858
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "CL",
+    "estimatedSalary": 19135,
+    "pppAdjusted": 8721
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "CO",
+    "estimatedSalary": 9470,
+    "pppAdjusted": 3649
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "CR",
+    "estimatedSalary": 12548,
+    "pppAdjusted": 6770
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "LT",
+    "estimatedSalary": 19931,
+    "pppAdjusted": 12942
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "LV",
+    "estimatedSalary": 18196,
+    "pppAdjusted": 11289
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "EE",
+    "estimatedSalary": 21098,
+    "pppAdjusted": 14772
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "SI",
+    "estimatedSalary": 20857,
+    "pppAdjusted": 15833
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "LU",
+    "estimatedSalary": 48038,
+    "pppAdjusted": 64223
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "IS",
+    "estimatedSalary": 51831,
+    "pppAdjusted": 36401
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "IN",
+    "estimatedSalary": 5804,
+    "pppAdjusted": 1277
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "CN",
+    "estimatedSalary": 10304,
+    "pppAdjusted": 6222
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "SG",
+    "estimatedSalary": 40761,
+    "pppAdjusted": 41435
+  },
+  {
+    "occupationSlug": "journalist",
+    "countryCode": "BR",
+    "estimatedSalary": 8022,
+    "pppAdjusted": 5092
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "US",
+    "estimatedSalary": 83700,
+    "pppAdjusted": 66860
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "KR",
+    "estimatedSalary": 51111,
+    "pppAdjusted": 28200
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "JP",
+    "estimatedSalary": 43366,
+    "pppAdjusted": 26602
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "DE",
+    "estimatedSalary": 61577,
+    "pppAdjusted": 41387
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "GB",
+    "estimatedSalary": 56400,
+    "pppAdjusted": 38308
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "FR",
+    "estimatedSalary": 55124,
+    "pppAdjusted": 35213
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "CH",
+    "estimatedSalary": 76258,
+    "pppAdjusted": 78347
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "AU",
+    "estimatedSalary": 62066,
+    "pppAdjusted": 50672
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "CA",
+    "estimatedSalary": 57818,
+    "pppAdjusted": 40807
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "NL",
+    "estimatedSalary": 65646,
+    "pppAdjusted": 47875
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "SE",
+    "estimatedSalary": 57690,
+    "pppAdjusted": 47475
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "NO",
+    "estimatedSalary": 60726,
+    "pppAdjusted": 64902
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "DK",
+    "estimatedSalary": 66127,
+    "pppAdjusted": 53517
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "IE",
+    "estimatedSalary": 58276,
+    "pppAdjusted": 81239
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "AT",
+    "estimatedSalary": 58745,
+    "pppAdjusted": 44506
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "BE",
+    "estimatedSalary": 58077,
+    "pppAdjusted": 40541
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "FI",
+    "estimatedSalary": 54155,
+    "pppAdjusted": 42038
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "NZ",
+    "estimatedSalary": 51662,
+    "pppAdjusted": 38222
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "IT",
+    "estimatedSalary": 46901,
+    "pppAdjusted": 28843
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "ES",
+    "estimatedSalary": 42458,
+    "pppAdjusted": 24815
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "PT",
+    "estimatedSalary": 32658,
+    "pppAdjusted": 21015
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "PL",
+    "estimatedSalary": 37704,
+    "pppAdjusted": 17512
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "CZ",
+    "estimatedSalary": 35040,
+    "pppAdjusted": 23561
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "HU",
+    "estimatedSalary": 29838,
+    "pppAdjusted": 16729
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "SK",
+    "estimatedSalary": 28396,
+    "pppAdjusted": 18124
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "GR",
+    "estimatedSalary": 30360,
+    "pppAdjusted": 17614
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "IL",
+    "estimatedSalary": 49159,
+    "pppAdjusted": 43487
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "TR",
+    "estimatedSalary": 21333,
+    "pppAdjusted": 10272
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "MX",
+    "estimatedSalary": 17844,
+    "pppAdjusted": 10985
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "CL",
+    "estimatedSalary": 30653,
+    "pppAdjusted": 13971
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "CO",
+    "estimatedSalary": 15170,
+    "pppAdjusted": 5845
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "CR",
+    "estimatedSalary": 20101,
+    "pppAdjusted": 10844
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "LT",
+    "estimatedSalary": 31927,
+    "pppAdjusted": 20733
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "LV",
+    "estimatedSalary": 29148,
+    "pppAdjusted": 18084
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "EE",
+    "estimatedSalary": 33797,
+    "pppAdjusted": 23663
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "SI",
+    "estimatedSalary": 33411,
+    "pppAdjusted": 25364
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "LU",
+    "estimatedSalary": 76952,
+    "pppAdjusted": 102880
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "IS",
+    "estimatedSalary": 83028,
+    "pppAdjusted": 58312
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "IN",
+    "estimatedSalary": 9298,
+    "pppAdjusted": 2045
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "CN",
+    "estimatedSalary": 16507,
+    "pppAdjusted": 9967
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "SG",
+    "estimatedSalary": 65296,
+    "pppAdjusted": 66375
+  },
+  {
+    "occupationSlug": "architect",
+    "countryCode": "BR",
+    "estimatedSalary": 12850,
+    "pppAdjusted": 8157
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "US",
+    "estimatedSalary": 90000,
+    "pppAdjusted": 71893
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "KR",
+    "estimatedSalary": 54958,
+    "pppAdjusted": 30323
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "JP",
+    "estimatedSalary": 46630,
+    "pppAdjusted": 28604
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "DE",
+    "estimatedSalary": 66211,
+    "pppAdjusted": 44502
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "GB",
+    "estimatedSalary": 60645,
+    "pppAdjusted": 41191
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "FR",
+    "estimatedSalary": 59274,
+    "pppAdjusted": 37863
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "CH",
+    "estimatedSalary": 81998,
+    "pppAdjusted": 84244
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "AU",
+    "estimatedSalary": 66737,
+    "pppAdjusted": 54486
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "CA",
+    "estimatedSalary": 62170,
+    "pppAdjusted": 43879
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "NL",
+    "estimatedSalary": 70587,
+    "pppAdjusted": 51478
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "SE",
+    "estimatedSalary": 62033,
+    "pppAdjusted": 51049
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "NO",
+    "estimatedSalary": 65297,
+    "pppAdjusted": 69787
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "DK",
+    "estimatedSalary": 71104,
+    "pppAdjusted": 57545
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "IE",
+    "estimatedSalary": 62663,
+    "pppAdjusted": 87353
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "AT",
+    "estimatedSalary": 63167,
+    "pppAdjusted": 47856
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "BE",
+    "estimatedSalary": 62448,
+    "pppAdjusted": 43592
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "FI",
+    "estimatedSalary": 58231,
+    "pppAdjusted": 45202
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "NZ",
+    "estimatedSalary": 55551,
+    "pppAdjusted": 41099
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "IT",
+    "estimatedSalary": 50431,
+    "pppAdjusted": 31013
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "ES",
+    "estimatedSalary": 45654,
+    "pppAdjusted": 26683
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "PT",
+    "estimatedSalary": 35117,
+    "pppAdjusted": 22597
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "PL",
+    "estimatedSalary": 40542,
+    "pppAdjusted": 18831
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "CZ",
+    "estimatedSalary": 37678,
+    "pppAdjusted": 25335
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "HU",
+    "estimatedSalary": 32083,
+    "pppAdjusted": 17988
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "SK",
+    "estimatedSalary": 30533,
+    "pppAdjusted": 19488
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "GR",
+    "estimatedSalary": 32645,
+    "pppAdjusted": 18940
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "IL",
+    "estimatedSalary": 52859,
+    "pppAdjusted": 46760
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "TR",
+    "estimatedSalary": 22939,
+    "pppAdjusted": 11046
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "MX",
+    "estimatedSalary": 19187,
+    "pppAdjusted": 11812
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "CL",
+    "estimatedSalary": 32960,
+    "pppAdjusted": 15022
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "CO",
+    "estimatedSalary": 16311,
+    "pppAdjusted": 6285
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "CR",
+    "estimatedSalary": 21614,
+    "pppAdjusted": 11661
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "LT",
+    "estimatedSalary": 34330,
+    "pppAdjusted": 22293
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "LV",
+    "estimatedSalary": 31342,
+    "pppAdjusted": 19446
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "EE",
+    "estimatedSalary": 36341,
+    "pppAdjusted": 25444
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "SI",
+    "estimatedSalary": 35925,
+    "pppAdjusted": 27273
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "LU",
+    "estimatedSalary": 82744,
+    "pppAdjusted": 110624
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "IS",
+    "estimatedSalary": 89278,
+    "pppAdjusted": 62701
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "IN",
+    "estimatedSalary": 9998,
+    "pppAdjusted": 2199
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "CN",
+    "estimatedSalary": 17749,
+    "pppAdjusted": 10717
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "SG",
+    "estimatedSalary": 70211,
+    "pppAdjusted": 71371
+  },
+  {
+    "occupationSlug": "project-manager",
+    "countryCode": "BR",
+    "estimatedSalary": 13817,
+    "pppAdjusted": 8771
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "US",
+    "estimatedSalary": 96600,
+    "pppAdjusted": 77165
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "KR",
+    "estimatedSalary": 58988,
+    "pppAdjusted": 32546
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "JP",
+    "estimatedSalary": 50050,
+    "pppAdjusted": 30701
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "DE",
+    "estimatedSalary": 71067,
+    "pppAdjusted": 47766
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "GB",
+    "estimatedSalary": 65093,
+    "pppAdjusted": 44212
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "FR",
+    "estimatedSalary": 63620,
+    "pppAdjusted": 40640
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "CH",
+    "estimatedSalary": 88011,
+    "pppAdjusted": 90422
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "AU",
+    "estimatedSalary": 71631,
+    "pppAdjusted": 58482
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "CA",
+    "estimatedSalary": 66729,
+    "pppAdjusted": 47097
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "NL",
+    "estimatedSalary": 75763,
+    "pppAdjusted": 55254
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "SE",
+    "estimatedSalary": 66582,
+    "pppAdjusted": 54792
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "NO",
+    "estimatedSalary": 70086,
+    "pppAdjusted": 74904
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "DK",
+    "estimatedSalary": 76318,
+    "pppAdjusted": 61765
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "IE",
+    "estimatedSalary": 67258,
+    "pppAdjusted": 93759
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "AT",
+    "estimatedSalary": 67799,
+    "pppAdjusted": 51365
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "BE",
+    "estimatedSalary": 67028,
+    "pppAdjusted": 46789
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "FI",
+    "estimatedSalary": 62501,
+    "pppAdjusted": 48516
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "NZ",
+    "estimatedSalary": 59624,
+    "pppAdjusted": 44112
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "IT",
+    "estimatedSalary": 54130,
+    "pppAdjusted": 33288
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "ES",
+    "estimatedSalary": 49002,
+    "pppAdjusted": 28640
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "PT",
+    "estimatedSalary": 37692,
+    "pppAdjusted": 24254
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "PL",
+    "estimatedSalary": 43516,
+    "pppAdjusted": 20211
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "CZ",
+    "estimatedSalary": 40441,
+    "pppAdjusted": 27193
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "HU",
+    "estimatedSalary": 34436,
+    "pppAdjusted": 19307
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "SK",
+    "estimatedSalary": 32772,
+    "pppAdjusted": 20917
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "GR",
+    "estimatedSalary": 35039,
+    "pppAdjusted": 20329
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "IL",
+    "estimatedSalary": 56735,
+    "pppAdjusted": 50189
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "TR",
+    "estimatedSalary": 24621,
+    "pppAdjusted": 11856
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "MX",
+    "estimatedSalary": 20594,
+    "pppAdjusted": 12678
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "CL",
+    "estimatedSalary": 35377,
+    "pppAdjusted": 16124
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "CO",
+    "estimatedSalary": 17508,
+    "pppAdjusted": 6746
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "CR",
+    "estimatedSalary": 23199,
+    "pppAdjusted": 12516
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "LT",
+    "estimatedSalary": 36848,
+    "pppAdjusted": 23928
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "LV",
+    "estimatedSalary": 33640,
+    "pppAdjusted": 20872
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "EE",
+    "estimatedSalary": 39006,
+    "pppAdjusted": 27310
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "SI",
+    "estimatedSalary": 38560,
+    "pppAdjusted": 29273
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "LU",
+    "estimatedSalary": 88812,
+    "pppAdjusted": 118736
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "IS",
+    "estimatedSalary": 95825,
+    "pppAdjusted": 67299
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "IN",
+    "estimatedSalary": 10731,
+    "pppAdjusted": 2360
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "CN",
+    "estimatedSalary": 19051,
+    "pppAdjusted": 11503
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "SG",
+    "estimatedSalary": 75359,
+    "pppAdjusted": 76604
+  },
+  {
+    "occupationSlug": "human-resources-manager",
+    "countryCode": "BR",
+    "estimatedSalary": 14831,
+    "pppAdjusted": 9414
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "US",
+    "estimatedSalary": 75600,
+    "pppAdjusted": 60390
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "KR",
+    "estimatedSalary": 46164,
+    "pppAdjusted": 25471
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "JP",
+    "estimatedSalary": 39169,
+    "pppAdjusted": 24027
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "DE",
+    "estimatedSalary": 55618,
+    "pppAdjusted": 37382
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "GB",
+    "estimatedSalary": 50942,
+    "pppAdjusted": 34601
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "FR",
+    "estimatedSalary": 49790,
+    "pppAdjusted": 31805
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "CH",
+    "estimatedSalary": 68879,
+    "pppAdjusted": 70765
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "AU",
+    "estimatedSalary": 56059,
+    "pppAdjusted": 45768
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "CA",
+    "estimatedSalary": 52222,
+    "pppAdjusted": 36858
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "NL",
+    "estimatedSalary": 59293,
+    "pppAdjusted": 43242
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "SE",
+    "estimatedSalary": 52107,
+    "pppAdjusted": 42881
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "NO",
+    "estimatedSalary": 54850,
+    "pppAdjusted": 58621
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "DK",
+    "estimatedSalary": 59727,
+    "pppAdjusted": 48338
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "IE",
+    "estimatedSalary": 52637,
+    "pppAdjusted": 73377
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "AT",
+    "estimatedSalary": 53060,
+    "pppAdjusted": 40199
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "BE",
+    "estimatedSalary": 52456,
+    "pppAdjusted": 36618
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "FI",
+    "estimatedSalary": 48914,
+    "pppAdjusted": 37969
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "NZ",
+    "estimatedSalary": 46663,
+    "pppAdjusted": 34523
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "IT",
+    "estimatedSalary": 42362,
+    "pppAdjusted": 26051
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "ES",
+    "estimatedSalary": 38349,
+    "pppAdjusted": 22414
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "PT",
+    "estimatedSalary": 29498,
+    "pppAdjusted": 18981
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "PL",
+    "estimatedSalary": 34056,
+    "pppAdjusted": 15818
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "CZ",
+    "estimatedSalary": 31649,
+    "pppAdjusted": 21281
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "HU",
+    "estimatedSalary": 26950,
+    "pppAdjusted": 15110
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "SK",
+    "estimatedSalary": 25648,
+    "pppAdjusted": 16370
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "GR",
+    "estimatedSalary": 27422,
+    "pppAdjusted": 15910
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "IL",
+    "estimatedSalary": 44402,
+    "pppAdjusted": 39279
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "TR",
+    "estimatedSalary": 19269,
+    "pppAdjusted": 9278
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "MX",
+    "estimatedSalary": 16117,
+    "pppAdjusted": 9922
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "CL",
+    "estimatedSalary": 27686,
+    "pppAdjusted": 12619
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "CO",
+    "estimatedSalary": 13702,
+    "pppAdjusted": 5280
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "CR",
+    "estimatedSalary": 18155,
+    "pppAdjusted": 9795
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "LT",
+    "estimatedSalary": 28837,
+    "pppAdjusted": 18726
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "LV",
+    "estimatedSalary": 26327,
+    "pppAdjusted": 16334
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "EE",
+    "estimatedSalary": 30526,
+    "pppAdjusted": 21373
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "SI",
+    "estimatedSalary": 30177,
+    "pppAdjusted": 22909
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "LU",
+    "estimatedSalary": 69505,
+    "pppAdjusted": 92924
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "IS",
+    "estimatedSalary": 74993,
+    "pppAdjusted": 52669
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "IN",
+    "estimatedSalary": 8398,
+    "pppAdjusted": 1847
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "CN",
+    "estimatedSalary": 14909,
+    "pppAdjusted": 9002
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "SG",
+    "estimatedSalary": 58977,
+    "pppAdjusted": 59951
+  },
+  {
+    "occupationSlug": "police-officer",
+    "countryCode": "BR",
+    "estimatedSalary": 11607,
+    "pppAdjusted": 7367
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "US",
+    "estimatedSalary": 140800,
+    "pppAdjusted": 112473
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "KR",
+    "estimatedSalary": 85978,
+    "pppAdjusted": 47438
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "JP",
+    "estimatedSalary": 72950,
+    "pppAdjusted": 44749
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "DE",
+    "estimatedSalary": 103584,
+    "pppAdjusted": 69621
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "GB",
+    "estimatedSalary": 94876,
+    "pppAdjusted": 64441
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "FR",
+    "estimatedSalary": 92730,
+    "pppAdjusted": 59235
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "CH",
+    "estimatedSalary": 128282,
+    "pppAdjusted": 131796
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "AU",
+    "estimatedSalary": 104407,
+    "pppAdjusted": 85241
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "CA",
+    "estimatedSalary": 97261,
+    "pppAdjusted": 68646
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "NL",
+    "estimatedSalary": 110429,
+    "pppAdjusted": 80535
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "SE",
+    "estimatedSalary": 97046,
+    "pppAdjusted": 79863
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "NO",
+    "estimatedSalary": 102154,
+    "pppAdjusted": 109177
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "DK",
+    "estimatedSalary": 111238,
+    "pppAdjusted": 90025
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "IE",
+    "estimatedSalary": 98032,
+    "pppAdjusted": 136659
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "AT",
+    "estimatedSalary": 98822,
+    "pppAdjusted": 74867
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "BE",
+    "estimatedSalary": 97697,
+    "pppAdjusted": 68198
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "FI",
+    "estimatedSalary": 91099,
+    "pppAdjusted": 70715
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "NZ",
+    "estimatedSalary": 86906,
+    "pppAdjusted": 64296
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "IT",
+    "estimatedSalary": 78897,
+    "pppAdjusted": 48519
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "ES",
+    "estimatedSalary": 71423,
+    "pppAdjusted": 41744
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "PT",
+    "estimatedSalary": 54938,
+    "pppAdjusted": 35351
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "PL",
+    "estimatedSalary": 63426,
+    "pppAdjusted": 29459
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "CZ",
+    "estimatedSalary": 58945,
+    "pppAdjusted": 39635
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "HU",
+    "estimatedSalary": 50193,
+    "pppAdjusted": 28141
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "SK",
+    "estimatedSalary": 47768,
+    "pppAdjusted": 30487
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "GR",
+    "estimatedSalary": 51072,
+    "pppAdjusted": 29631
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "IL",
+    "estimatedSalary": 82695,
+    "pppAdjusted": 73154
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "TR",
+    "estimatedSalary": 35887,
+    "pppAdjusted": 17280
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "MX",
+    "estimatedSalary": 30017,
+    "pppAdjusted": 18480
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "CL",
+    "estimatedSalary": 51564,
+    "pppAdjusted": 23502
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "CO",
+    "estimatedSalary": 25518,
+    "pppAdjusted": 9833
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "CR",
+    "estimatedSalary": 33813,
+    "pppAdjusted": 18242
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "LT",
+    "estimatedSalary": 53708,
+    "pppAdjusted": 34877
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "LV",
+    "estimatedSalary": 49033,
+    "pppAdjusted": 30421
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "EE",
+    "estimatedSalary": 56854,
+    "pppAdjusted": 39806
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "SI",
+    "estimatedSalary": 56203,
+    "pppAdjusted": 42667
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "LU",
+    "estimatedSalary": 129449,
+    "pppAdjusted": 173065
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "IS",
+    "estimatedSalary": 139670,
+    "pppAdjusted": 98092
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "IN",
+    "estimatedSalary": 15641,
+    "pppAdjusted": 3440
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "CN",
+    "estimatedSalary": 27768,
+    "pppAdjusted": 16766
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "SG",
+    "estimatedSalary": 109841,
+    "pppAdjusted": 111655
+  },
+  {
+    "occupationSlug": "pilot",
+    "countryCode": "BR",
+    "estimatedSalary": 21617,
+    "pppAdjusted": 13721
+  }
+]
