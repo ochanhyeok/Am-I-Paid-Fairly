@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ContactModal from "@/components/ContactModal";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Am I Paid Fairly?",
@@ -267,9 +268,7 @@ export default function PrivacyPolicyPage() {
                 If you have any questions or concerns about this Privacy Policy,
                 please contact us at:
               </p>
-              <p className="text-emerald-400 text-sm font-semibold mt-2">
-                contact@amipaidfairly.com
-              </p>
+              <ContactModal />
             </div>
           </section>
         </div>
