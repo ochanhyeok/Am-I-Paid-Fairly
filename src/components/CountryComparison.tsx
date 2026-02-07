@@ -42,7 +42,7 @@ export default function CountryComparisonList({
                   : "hover:bg-slate-800/50"
               }`}
             >
-              <span className="text-2xl">{comp.country.flag}</span>
+              <span className="text-xl sm:text-2xl shrink-0">{comp.country.flag}</span>
               <div className="flex-1 min-w-0">
                 <div className="text-slate-200 font-semibold text-sm truncate">
                   {comp.country.name}
@@ -52,14 +52,13 @@ export default function CountryComparisonList({
                     </span>
                   )}
                 </div>
-                <div className="text-slate-500 text-xs">
-                  {formatCurrency(comp.estimatedSalary)} ·{" "}
-                  PPP {formatCurrency(comp.pppAdjusted)} ·{" "}
-                  🍔 {formatNumber(comp.bigMacCount)}
+                <div className="text-slate-500 text-[11px] sm:text-xs truncate">
+                  {formatCurrency(comp.estimatedSalary)} · PPP {formatCurrency(comp.pppAdjusted)}
+                  <span className="hidden sm:inline"> · 🍔 {formatNumber(comp.bigMacCount)}</span>
                 </div>
               </div>
               <div
-                className={`${pctColor} font-bold text-xs text-right min-w-[60px]`}
+                className={`${pctColor} font-bold text-xs text-right shrink-0`}
               >
                 {pctText}
               </div>

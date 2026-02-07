@@ -92,21 +92,21 @@ export default function ShareCard({
       <div className="flex gap-2 mt-4">
         <button
           onClick={shareTwitter}
-          className="flex-1 bg-dark-border hover:bg-slate-600 text-slate-300 text-sm py-2.5 rounded-lg transition-colors font-medium"
+          className="flex-1 bg-dark-border hover:bg-slate-600 active:bg-slate-500 text-slate-300 text-xs sm:text-sm py-2.5 rounded-lg transition-colors font-medium"
         >
           𝕏 Share
         </button>
         <button
           onClick={shareReddit}
-          className="flex-1 bg-dark-border hover:bg-slate-600 text-slate-300 text-sm py-2.5 rounded-lg transition-colors font-medium"
+          className="flex-1 bg-dark-border hover:bg-slate-600 active:bg-slate-500 text-slate-300 text-xs sm:text-sm py-2.5 rounded-lg transition-colors font-medium"
         >
           Reddit
         </button>
         <button
           onClick={copyLink}
-          className="flex-1 bg-dark-border hover:bg-slate-600 text-slate-300 text-sm py-2.5 rounded-lg transition-colors font-medium"
+          className="flex-1 bg-dark-border hover:bg-slate-600 active:bg-slate-500 text-slate-300 text-xs sm:text-sm py-2.5 rounded-lg transition-colors font-medium"
         >
-          {copied ? "Copied!" : "📋 Copy Link"}
+          {copied ? "Copied!" : "Copy Link"}
         </button>
       </div>
     </div>

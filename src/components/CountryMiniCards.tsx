@@ -9,7 +9,7 @@ interface Props {
 
 export default function CountryMiniCards({ comparisons }: Props) {
   return (
-    <div className="flex gap-2">
+    <div className="grid grid-cols-3 gap-2">
       {comparisons.map((comp) => {
         const pctText = formatPercentile(comp.percentile);
         const isTop = pctText.startsWith("Top");
@@ -22,7 +22,7 @@ export default function CountryMiniCards({ comparisons }: Props) {
         return (
           <div
             key={comp.country.code}
-            className="flex-1 bg-dark-card rounded-lg p-3 text-center min-w-[90px]"
+            className="bg-dark-card rounded-lg p-3 text-center"
           >
             <div className="text-xl">{comp.country.flag}</div>
             <div className="text-slate-500 text-xs mt-1">

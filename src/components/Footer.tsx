@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-dark-border bg-slate-950 mt-auto">
       <div className="max-w-5xl mx-auto px-4 py-8">
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-sm mb-8">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 text-sm mb-8">
           {/* Popular Occupations */}
           <div>
             <h4 className="text-slate-300 font-semibold mb-3">Top Salaries</h4>

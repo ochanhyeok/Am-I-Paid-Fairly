@@ -6,7 +6,7 @@ export default function Home() {
   const countries = getCountries();
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-950 to-slate-900 flex flex-col items-center justify-center px-4 py-12">
+    <main className="min-h-[calc(100dvh-3.5rem)] bg-gradient-to-br from-slate-950 to-slate-900 flex flex-col items-center justify-center px-4 py-12 sm:py-16">
       {/* Header */}
       <div className="text-center mb-8">
         <p className="text-slate-500 text-sm mb-2">
