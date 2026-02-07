@@ -270,6 +270,49 @@ export default function OccupationSalaryPage({
           </div>
         </section>
 
+        {/* Compare Countries Section */}
+        <section>
+          <h2 className="text-slate-200 font-bold text-lg mb-4">
+            Compare Countries
+          </h2>
+          <p className="text-slate-500 text-sm mb-4">
+            See how {occupation.title} salaries compare between the United States and other countries
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {["south-korea", "japan", "germany", "united-kingdom", "france"].map((countrySlug) => (
+              <Link
+                key={countrySlug}
+                href={`/compare/${occupation.slug}/united-states-vs-${countrySlug}`}
+                className="text-sm bg-dark-card hover:bg-slate-800/50 border border-dark-border hover:border-slate-600 text-slate-300 hover:text-emerald-400 transition-colors px-4 py-2 rounded-lg"
+              >
+                US vs {countrySlug.split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")}
+              </Link>
+            ))}
+          </div>
+          <div className="mt-4">
+            <Link
+              href={`/rankings/${occupation.slug}`}
+              className="text-emerald-400 hover:text-emerald-300 transition-colors text-sm inline-flex items-center gap-1"
+            >
+              See full global rankings
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
+        </section>
+
         {/* CTA */}
         <div className="text-center py-6">
           <Link

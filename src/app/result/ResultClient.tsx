@@ -1,12 +1,34 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import type { SalaryResult, CountryComparison } from "@/types";
 import ResultCard from "@/components/ResultCard";
 import CountryMiniCards from "@/components/CountryMiniCards";
-import ChoroplethMap from "@/components/ChoroplethMap";
 import CountryComparisonList from "@/components/CountryComparison";
 import ShareCard from "@/components/ShareCard";
+import AdUnit from "@/components/AdUnit";
 import Link from "next/link";
+
+// Lazy load ChoroplethMap with loading skeleton
+const ChoroplethMap = dynamic(
+  () => import("@/components/ChoroplethMap"),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="bg-dark-card rounded-2xl p-4 border border-dark-border">
+        <div className="h-4 w-48 bg-slate-700/50 rounded animate-pulse mb-3" />
+        <div className="relative bg-slate-950 rounded-xl overflow-hidden h-[200px] sm:h-[250px] flex items-center justify-center">
+          <div className="text-slate-600 text-sm animate-pulse">
+            Loading map...
+          </div>
+        </div>
+        <div className="flex items-center justify-center gap-2 mt-3">
+          <div className="h-2 w-32 bg-slate-700/50 rounded animate-pulse" />
+        </div>
+      </div>
+    ),
+  }
+);
 
 interface Props {
   result: SalaryResult;
@@ -54,6 +76,9 @@ export default function ResultClient({
         {/* Mini country cards */}
         <CountryMiniCards comparisons={miniCountries} />
 
+        {/* Ad slot 1 */}
+        <AdUnit slot="result-top" format="horizontal" />
+
         {/* World map */}
         <ChoroplethMap
           comparisons={result.countryComparisons}
@@ -66,6 +91,9 @@ export default function ResultClient({
           comparisons={result.countryComparisons}
           userCountryCode={result.userCountry.code}
         />
+
+        {/* Ad slot 2 */}
+        <AdUnit slot="result-bottom" format="rectangle" />
 
         {/* Share card */}
         <ShareCard

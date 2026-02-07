@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import AdSenseScript from "@/components/AdSense";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -33,6 +34,7 @@ export default function RootLayout({
     <html lang="en" className="dark" suppressHydrationWarning>
       <body className={`${dmSans.variable} font-sans min-h-screen flex flex-col`}>
         <GoogleAnalytics />
+        <AdSenseScript />
         <Header />
         <div className="flex-1">{children}</div>
         <Footer />

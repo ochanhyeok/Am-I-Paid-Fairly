@@ -403,6 +403,51 @@ export default async function OccupationCountryPage({ params }: PageProps) {
             </div>
           </div>
 
+          {/* Country Comparison Links */}
+          <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
+            <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
+              Compare {country.name} with Other Countries
+            </h2>
+            <p className="text-slate-500 text-xs mb-4">
+              See how {occupation.title} salaries in {country.name} stack up against other countries
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {["south-korea", "japan", "germany", "united-kingdom", "france", "switzerland", "australia", "canada"].filter(
+                (slug) => slug !== country.slug
+              ).slice(0, 5).map((countrySlug) => (
+                <Link
+                  key={countrySlug}
+                  href={`/compare/${occSlug}/${country.slug}-vs-${countrySlug}`}
+                  className="text-xs bg-slate-800/50 hover:bg-slate-700/50 text-slate-400 hover:text-emerald-400 transition-colors px-3 py-1.5 rounded-lg border border-slate-700/50"
+                >
+                  {country.name} vs {countrySlug.split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")}
+                </Link>
+              ))}
+            </div>
+            <div className="mt-4 flex items-center gap-4 text-sm">
+              <Link
+                href={`/rankings/${occSlug}`}
+                className="text-emerald-400 hover:text-emerald-300 transition-colors inline-flex items-center gap-1"
+              >
+                View global rankings
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+
           {/* CTA: Compare your own salary */}
           <div className="text-center">
             <Link

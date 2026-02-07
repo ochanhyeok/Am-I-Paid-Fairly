@@ -261,6 +261,27 @@ export default async function RankingsPage({ params }: PageProps) {
           </div>
         </section>
 
+        {/* Country Comparisons Section */}
+        <section className="mb-12">
+          <h2 className="text-xl font-bold text-slate-200 mb-4">
+            Country Comparisons
+          </h2>
+          <p className="text-slate-400 text-sm mb-4">
+            Compare {occupation.title} salaries between the United States and other top-paying countries
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {["south-korea", "japan", "germany", "united-kingdom", "france"].map((countrySlug) => (
+              <Link
+                key={countrySlug}
+                href={`/compare/${slug}/united-states-vs-${countrySlug}`}
+                className="text-sm bg-dark-card hover:bg-slate-800/50 border border-dark-border hover:border-slate-600 text-slate-300 hover:text-emerald-400 transition-colors px-4 py-2 rounded-lg"
+              >
+                US vs {countrySlug.split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")}
+              </Link>
+            ))}
+          </div>
+        </section>
+
         {/* CTA + 네비게이션 */}
         <section className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
           <Link
@@ -273,7 +294,7 @@ export default async function RankingsPage({ params }: PageProps) {
             href={`/salary/${slug}`}
             className="inline-flex items-center justify-center px-6 py-3 border border-dark-border text-slate-300 hover:text-slate-100 hover:border-slate-500 font-medium rounded-lg transition-colors text-sm"
           >
-            View {occupation.title} global overview
+            See salary details &rarr;
           </Link>
         </section>
 
