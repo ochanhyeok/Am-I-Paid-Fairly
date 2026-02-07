@@ -23,6 +23,9 @@ export const metadata: Metadata = {
     "salary percentile",
     "international salary",
   ],
+  verification: {
+    google: "MrECvrjpt3wmdi56cllNejohfsaWjgcWO-xS15ZWp00",
+  },
   other: {
     "google-adsense-account": "ca-pub-2403565022366483",
   },
