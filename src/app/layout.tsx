@@ -23,6 +23,9 @@ export const metadata: Metadata = {
     "salary percentile",
     "international salary",
   ],
+  other: {
+    "google-adsense-account": "ca-pub-2403565022366483",
+  },
 };
 
 export default function RootLayout({
