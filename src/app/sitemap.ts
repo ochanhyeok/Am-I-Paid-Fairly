@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 import { getOccupations, getCountries } from "@/lib/data-loader";
 
-const BASE_URL = "https://am-i-paid-fairly.vercel.app";
+const BASE_URL = "https://amipaidfairly.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const occupations = getOccupations();

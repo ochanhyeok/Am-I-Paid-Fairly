@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: "https://am-i-paid-fairly.vercel.app/sitemap.xml",
+    sitemap: "https://amipaidfairly.com/sitemap.xml",
   };
 }
