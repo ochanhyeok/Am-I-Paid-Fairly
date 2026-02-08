@@ -11,20 +11,31 @@ interface Props {
 
 export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
   const params = await searchParams;
-  const { job, country } = params;
+  const { job, country, salary } = params;
   const occ = job ? getOccupation(job) : undefined;
   const cty = country ? getCountry(country) : undefined;
+
+  // 퍼센타일 계산 (OG 이미지에 표시)
+  let percentile: number | undefined;
+  if (occ && cty && salary) {
+    const salaryNum = parseInt(salary, 10);
+    if (!isNaN(salaryNum) && salaryNum > 0) {
+      const result = calculateSalaryResult(job!, country!, salaryNum);
+      if (result) percentile = result.globalPercentile;
+    }
+  }
 
   const title = occ && cty
     ? `${occ.title} Salary in ${cty.name} | Am I Paid Fairly?`
     : "Salary Comparison Result | Am I Paid Fairly?";
-  const description = occ && cty
-    ? `See how ${occ.title} salary in ${cty.name} compares to 42 countries worldwide.`
+  const description = occ && cty && percentile !== undefined
+    ? `As a ${occ.title} in ${cty.name}, I earn more than ${percentile}% of professionals worldwide. See how your salary compares across 42 countries.`
     : "Compare your salary with the same job in 42 countries.";
 
   const ogParams = new URLSearchParams();
   if (occ) ogParams.set("occupation", occ.title);
   if (cty) ogParams.set("country", cty.name);
+  if (percentile !== undefined) ogParams.set("percentile", String(percentile));
 
   return {
     title,

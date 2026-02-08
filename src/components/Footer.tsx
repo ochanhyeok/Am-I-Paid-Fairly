@@ -87,11 +87,14 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Legal */}
+          {/* Explore & Legal */}
           <div>
-            <h4 className="text-slate-300 font-semibold mb-3">Legal</h4>
+            <h4 className="text-slate-300 font-semibold mb-3">Explore</h4>
             <ul className="space-y-1.5">
               {[
+                ["Browse All Jobs", "/browse"],
+                ["Top Paying Jobs", "/top-paying-jobs"],
+                ["Countries", "/countries"],
                 ["About", "/about"],
                 ["Privacy Policy", "/privacy"],
               ].map(([label, href]) => (
