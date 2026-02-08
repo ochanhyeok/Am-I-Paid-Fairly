@@ -15,7 +15,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Am I Paid Fairly? — Global Salary Comparison",
   description:
-    "Compare your salary with the same job in 38+ countries. See your global percentile, world salary map, and Big Mac purchasing power — all free, no login required.",
+    "Compare your salary with the same job in 42 countries. See your global percentile, world salary map, and Big Mac purchasing power — all free, no login required.",
   keywords: [
     "salary comparison",
     "global salary",

@@ -29,7 +29,7 @@ export function generateMetadata({
   }
 
   const title = `${occupation.title} Salary Worldwide (2025) | Am I Paid Fairly?`;
-  const description = `Compare ${occupation.title} salaries across 38+ countries. See estimated earnings in USD, PPP-adjusted values, and Big Mac purchasing power for every country.`;
+  const description = `Compare ${occupation.title} salaries across 42 countries. See estimated earnings in USD, PPP-adjusted values, and Big Mac purchasing power for every country.`;
 
   return {
     title,

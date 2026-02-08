@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About | Am I Paid Fairly?",
   description:
-    "Learn about Am I Paid Fairly? — a free global salary comparison tool that lets you see how your pay compares to the same job in 38+ countries.",
+    "Learn about Am I Paid Fairly? — a free global salary comparison tool that lets you see how your pay compares to the same job in 42 countries.",
   alternates: {
     canonical: "https://amipaidfairly.com/about",
   },
@@ -30,7 +30,7 @@ export default function AboutPage() {
           </h1>
           <p className="text-slate-400 text-sm mt-3 max-w-lg mx-auto">
             A free, open tool to compare your salary with the same job across
-            38+ countries worldwide.
+            42 countries worldwide.
           </p>
         </header>
 
@@ -48,7 +48,7 @@ export default function AboutPage() {
                 you where you stand compared to professionals doing the same work
                 around the world. You can see your global percentile ranking,
                 explore an interactive world salary map, and compare what your
-                job pays in over 38 countries &mdash; all without creating an
+                job pays in 42 countries &mdash; all without creating an
                 account or paying a fee.
               </p>
             </div>
@@ -94,7 +94,7 @@ export default function AboutPage() {
                   <span className="text-emerald-400 font-bold text-sm">3</span>
                 </div>
                 <h3 className="text-sm font-semibold text-slate-200 mb-1.5">
-                  Compare with 38+ Countries
+                  Compare with 42 Countries
                 </h3>
                 <p className="text-slate-400 text-xs leading-relaxed">
                   Explore a world map and detailed country list showing estimated
@@ -191,7 +191,7 @@ export default function AboutPage() {
                       OECD Average Wages
                     </a>
                     <p className="text-slate-400 text-xs mt-0.5">
-                      Average annual wages for 38+ member countries
+                      Average annual wages for 42 countries
                     </p>
                   </div>
                 </li>

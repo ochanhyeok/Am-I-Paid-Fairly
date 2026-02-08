@@ -92,7 +92,7 @@ export async function GET(request: NextRequest) {
               {title}
             </div>
             <div style={{ fontSize: 24, color: "#64748b", marginTop: 16 }}>
-              Compare your salary with 38+ countries
+              Compare your salary with 42 countries
             </div>
           </div>
         )}

@@ -72,11 +72,13 @@ export default function SalaryForm({ occupations, countries }: Props) {
           <option value="" disabled>
             Select your country
           </option>
-          {countries.map((c) => (
-            <option key={c.code} value={c.code}>
-              {c.flag} {c.name}
-            </option>
-          ))}
+          {[...countries]
+            .sort((a, b) => a.name.localeCompare(b.name))
+            .map((c) => (
+              <option key={c.code} value={c.code}>
+                {c.flag} {c.name}
+              </option>
+            ))}
         </select>
       </div>
 

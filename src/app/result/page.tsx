@@ -19,8 +19,8 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
     ? `${occ.title} Salary in ${cty.name} | Am I Paid Fairly?`
     : "Salary Comparison Result | Am I Paid Fairly?";
   const description = occ && cty
-    ? `See how ${occ.title} salary in ${cty.name} compares to 38+ countries worldwide.`
-    : "Compare your salary with the same job in 38+ countries.";
+    ? `See how ${occ.title} salary in ${cty.name} compares to 42 countries worldwide.`
+    : "Compare your salary with the same job in 42 countries.";
 
   const ogParams = new URLSearchParams();
   if (occ) ogParams.set("occupation", occ.title);
@@ -72,12 +72,27 @@ export default async function ResultPage({ searchParams }: Props) {
   );
   const userSalaryUSDFormatted = formatCurrency(result.userSalaryUSD);
 
+  // JSON-LD 구조화 데이터
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: `${result.occupation.title} Salary in ${result.userCountry.name}`,
+    description: `${result.occupation.title} salary comparison across 42 countries. Global percentile: top ${100 - result.globalPercentile}%.`,
+    url: `https://amipaidfairly.com/result?job=${job}&country=${country}&salary=${salary}`,
+  };
+
   return (
-    <ResultClient
-      result={result}
-      miniCountries={miniCountries}
-      userSalaryFormatted={userSalaryFormatted}
-      userSalaryUSDFormatted={userSalaryUSDFormatted}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <ResultClient
+        result={result}
+        miniCountries={miniCountries}
+        userSalaryFormatted={userSalaryFormatted}
+        userSalaryUSDFormatted={userSalaryUSDFormatted}
+      />
+    </>
   );
 }

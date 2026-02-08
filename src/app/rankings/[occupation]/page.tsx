@@ -37,7 +37,7 @@ export async function generateMetadata({
   }
 
   const title = `Highest Paying Countries for ${occupation.title}s (2025) | Am I Paid Fairly?`;
-  const description = `Global salary rankings for ${occupation.title}s across 38+ countries. See which countries pay the highest salaries, PPP-adjusted wages, and Big Mac purchasing power.`;
+  const description = `Global salary rankings for ${occupation.title}s across 42 countries. See which countries pay the highest salaries, PPP-adjusted wages, and Big Mac purchasing power.`;
 
   return {
     title,
