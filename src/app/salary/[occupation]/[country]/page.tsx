@@ -55,7 +55,7 @@ export async function generateMetadata({
     return { title: "Not Found | Am I Paid Fairly?" };
   }
 
-  const title = `${occupation.title} Salary in ${country.name} (2025) | Am I Paid Fairly?`;
+  const title = `${occupation.title} Salary in ${country.name} (2026) | Am I Paid Fairly?`;
   const description = `How much does a ${occupation.title} earn in ${country.name}? See estimated salary in USD and ${country.currency}, PPP adjusted salary, Big Mac purchasing power, and global percentile ranking.`;
 
   return {
@@ -70,6 +70,9 @@ export async function generateMetadata({
       card: "summary_large_image",
       title,
       description,
+    },
+    alternates: {
+      canonical: `https://amipaidfairly.com/salary/${occSlug}/${countrySlug}`,
     },
   };
 }
@@ -199,7 +202,7 @@ export default async function OccupationCountryPage({ params }: PageProps) {
           {/* H1 & Subtitle */}
           <div className="text-center">
             <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-50 leading-tight">
-              {occupation.title} Salary in {country.name} (2025)
+              {occupation.title} Salary in {country.name} (2026)
             </h1>
             <p className="text-slate-500 text-sm mt-3 flex items-center justify-center gap-2">
               <span className="text-xl">{country.flag}</span>

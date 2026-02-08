@@ -57,8 +57,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  // 정적 페이지 (about, privacy)
+  // 정적 페이지 (browse, about, privacy)
   const infoPages: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE_URL}/browse`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
     {
       url: `${BASE_URL}/about`,
       lastModified: new Date(),

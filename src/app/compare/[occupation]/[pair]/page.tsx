@@ -77,7 +77,7 @@ export async function generateMetadata({
     return { title: "Not Found | Am I Paid Fairly?" };
   }
 
-  const title = `${occupation.title} Salary: ${countryA.name} vs ${countryB.name} (2025) | Am I Paid Fairly?`;
+  const title = `${occupation.title} Salary: ${countryA.name} vs ${countryB.name} (2026) | Am I Paid Fairly?`;
   const description = `Compare ${occupation.title} salaries between ${countryA.name} and ${countryB.name}. See side-by-side salary in USD, local currency, PPP, Big Mac purchasing power, and global percentile.`;
 
   return {
@@ -92,6 +92,9 @@ export async function generateMetadata({
       card: "summary_large_image",
       title,
       description,
+    },
+    alternates: {
+      canonical: `https://amipaidfairly.com/compare/${occSlug}/${pair}`,
     },
   };
 }

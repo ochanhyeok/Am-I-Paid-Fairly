@@ -15,10 +15,10 @@ export default function Header() {
 
         <nav className="flex items-center gap-0.5 sm:gap-1 text-xs sm:text-sm">
           <Link
-            href="/salary/software-engineer"
+            href="/browse"
             className="px-2 sm:px-3 py-1.5 text-slate-400 hover:text-slate-100 hover:bg-slate-800 rounded-lg transition-colors"
           >
-            Salaries
+            Browse
           </Link>
           <Link
             href="/rankings/software-engineer"

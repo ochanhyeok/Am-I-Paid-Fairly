@@ -28,7 +28,7 @@ export function generateMetadata({
     return { title: "Not Found | Am I Paid Fairly?" };
   }
 
-  const title = `${occupation.title} Salary Worldwide (2025) | Am I Paid Fairly?`;
+  const title = `${occupation.title} Salary Worldwide (2026) | Am I Paid Fairly?`;
   const description = `Compare ${occupation.title} salaries across 42 countries. See estimated earnings in USD, PPP-adjusted values, and Big Mac purchasing power for every country.`;
 
   return {
@@ -189,7 +189,7 @@ export default function OccupationSalaryPage({
         <header className="text-center">
           <h1 className="text-3xl md:text-4xl font-extrabold text-slate-50 leading-tight">
             {occupation.title} Salary Worldwide{" "}
-            <span className="text-slate-500">(2025)</span>
+            <span className="text-slate-500">(2026)</span>
           </h1>
           <p className="text-slate-500 text-sm mt-2">
             Estimated based on OECD &amp; BLS data

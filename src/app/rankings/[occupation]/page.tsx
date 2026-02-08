@@ -36,7 +36,7 @@ export async function generateMetadata({
     return { title: "Ranking Not Found | Am I Paid Fairly?" };
   }
 
-  const title = `Highest Paying Countries for ${occupation.title}s (2025) | Am I Paid Fairly?`;
+  const title = `Highest Paying Countries for ${occupation.title}s (2026) | Am I Paid Fairly?`;
   const description = `Global salary rankings for ${occupation.title}s across 42 countries. See which countries pay the highest salaries, PPP-adjusted wages, and Big Mac purchasing power.`;
 
   return {
@@ -46,6 +46,9 @@ export async function generateMetadata({
       title,
       description,
       type: "website",
+    },
+    alternates: {
+      canonical: `https://amipaidfairly.com/rankings/${slug}`,
     },
   };
 }
@@ -149,7 +152,7 @@ export default async function RankingsPage({ params }: PageProps) {
         {/* 헤더 */}
         <div className="text-center mb-10">
           <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-50 leading-tight">
-            Highest Paying Countries for {occupation.title}s (2025)
+            Highest Paying Countries for {occupation.title}s (2026)
           </h1>
           <p className="text-slate-400 text-base mt-3">
             Ranked by estimated annual salary (USD)

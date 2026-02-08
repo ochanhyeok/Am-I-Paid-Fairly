@@ -15,6 +15,8 @@ export default function Footer() {
                 ["Product Manager", "/salary/product-manager"],
                 ["Doctor", "/salary/doctor"],
                 ["Lawyer", "/salary/lawyer"],
+                ["Nurse", "/salary/nurse"],
+                ["Accountant", "/salary/accountant"],
               ].map(([label, href]) => (
                 <li key={href}>
                   <Link
@@ -25,6 +27,14 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link
+                  href="/browse"
+                  className="text-emerald-500 hover:text-emerald-400 transition-colors text-xs font-medium"
+                >
+                  View all 175+ →
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -38,6 +48,8 @@ export default function Footer() {
                 ["Teachers", "/rankings/teacher"],
                 ["Accountants", "/rankings/accountant"],
                 ["Pilots", "/rankings/pilot"],
+                ["Dentists", "/rankings/dentist"],
+                ["Pharmacists", "/rankings/pharmacist"],
               ].map(([label, href]) => (
                 <li key={href}>
                   <Link

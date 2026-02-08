@@ -29,6 +29,9 @@ export const metadata: Metadata = {
       "KOmBTqyLAC9drkNnmkacfOREc89-kvZ-cY2HWFAdRpM",
     ],
   },
+  alternates: {
+    canonical: "https://amipaidfairly.com",
+  },
   other: {
     "google-adsense-account": "ca-pub-2403565022366483",
   },
