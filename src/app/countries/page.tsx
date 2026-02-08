@@ -35,8 +35,26 @@ export default function CountriesPage() {
     )
     .sort((a, b) => b.baseUSA - a.baseUSA);
 
+  // JSON-LD
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Salary by Country — 42 Countries Compared",
+    description: "Countries ranked by OECD average wage",
+    numberOfItems: sorted.length,
+    itemListElement: sorted.slice(0, 10).map((country, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: country.name,
+    })),
+  };
+
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-950 to-slate-900 px-4 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="max-w-4xl mx-auto">
         {/* Breadcrumb */}
         <nav className="text-sm text-slate-500 mb-8">

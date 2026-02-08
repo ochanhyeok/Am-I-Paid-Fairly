@@ -38,8 +38,27 @@ export default function TopPayingJobsPage() {
     Agriculture: "bg-lime-500/20 text-lime-400",
   };
 
+  // JSON-LD
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Top Paying Jobs Worldwide (2026)",
+    description: "Highest paying occupations ranked by U.S. base salary",
+    numberOfItems: sorted.length,
+    itemListElement: sorted.slice(0, 10).map((occ, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: occ.title,
+      url: `https://amipaidfairly.com/salary/${occ.slug}`,
+    })),
+  };
+
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-950 to-slate-900 px-4 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="max-w-4xl mx-auto">
         {/* Breadcrumb */}
         <nav className="text-sm text-slate-500 mb-8">
