@@ -24,7 +24,10 @@ export const metadata: Metadata = {
     "international salary",
   ],
   verification: {
-    google: "MrECvrjpt3wmdi56cllNejohfsaWjgcWO-xS15ZWp00",
+    google: [
+      "MrECvrjpt3wmdi56cllNejohfsaWjgcWO-xS15ZWp00",
+      "KOmBTqyLAC9drkNnmkacfOREc89-kvZ-cY2HWFAdRpM",
+    ],
   },
   other: {
     "google-adsense-account": "ca-pub-2403565022366483",
