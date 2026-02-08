@@ -43,7 +43,7 @@ export default function BrowsePage() {
   });
 
   // 카테고리 수 기준 내림차순 정렬
-  const sortedCategories = [...grouped.entries()].sort(
+  const sortedCategories = Array.from(grouped.entries()).sort(
     (a, b) => b[1].length - a[1].length
   );
 
