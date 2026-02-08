@@ -285,6 +285,108 @@ export default async function RankingsPage({ params }: PageProps) {
           </div>
         </section>
 
+        {/* Narrative Content — SEO 본문 텍스트 */}
+        <article className="mb-12">
+          <div className="flex flex-col gap-6">
+            <section>
+              <h2 className="text-xl font-bold text-slate-200 mb-3">
+                {occupation.title} Salary Rankings: Key Insights
+              </h2>
+              <div className="text-slate-400 text-sm leading-relaxed space-y-3">
+                <p>
+                  Our global salary rankings for {occupation.title}s cover{" "}
+                  {rankedCountries.length} countries, revealing significant
+                  variations in compensation across different economies.
+                  {rankedCountries.length >= 2 && (
+                    <>
+                      {" "}The highest-paying country,{" "}
+                      <strong className="text-slate-200">
+                        {rankedCountries[0].country.name}
+                      </strong>
+                      , offers an estimated salary of{" "}
+                      {formatCurrency(rankedCountries[0].salaryEntry.estimatedSalary)}{" "}
+                      USD per year — roughly{" "}
+                      {rankedCountries[rankedCountries.length - 1].salaryEntry.estimatedSalary > 0
+                        ? `${Math.round(
+                            rankedCountries[0].salaryEntry.estimatedSalary /
+                              rankedCountries[rankedCountries.length - 1].salaryEntry.estimatedSalary
+                          )}x`
+                        : "significantly"}{" "}
+                      more than{" "}
+                      <strong className="text-slate-200">
+                        {rankedCountries[rankedCountries.length - 1].country.name}
+                      </strong>
+                      , the lowest-paying country at{" "}
+                      {formatCurrency(
+                        rankedCountries[rankedCountries.length - 1].salaryEntry.estimatedSalary
+                      )}{" "}
+                      USD.
+                    </>
+                  )}
+                </p>
+                <p>
+                  These salary differences are driven by multiple factors
+                  including local economic conditions, cost of living, labor
+                  supply and demand, industry maturity, and government wage
+                  policies. Countries with strong economies and high demand for{" "}
+                  {occupation.title}s tend to offer higher compensation, though
+                  this doesn&apos;t always translate to better purchasing power.
+                </p>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-bold text-slate-200 mb-3">
+                Beyond Nominal Salary: Purchasing Power Matters
+              </h2>
+              <div className="text-slate-400 text-sm leading-relaxed space-y-3">
+                <p>
+                  While nominal salary rankings provide a useful overview, they
+                  don&apos;t account for differences in cost of living. Our
+                  PPP-adjusted figures offer a more realistic picture of what{" "}
+                  {occupation.title}s can actually afford in each country. In some
+                  cases, countries with lower nominal salaries may rank higher
+                  when adjusted for purchasing power.
+                </p>
+                <p>
+                  The Big Mac Index column provides an intuitive, everyday measure
+                  of purchasing power. Developed by The Economist, it uses the
+                  price of a McDonald&apos;s Big Mac to compare the real value of
+                  currencies and salaries across countries. A higher Big Mac count
+                  means your salary stretches further in terms of everyday
+                  purchases.
+                </p>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-bold text-slate-200 mb-3">
+                How We Calculate These Rankings
+              </h2>
+              <div className="text-slate-400 text-sm leading-relaxed space-y-3">
+                <p>
+                  These rankings are based on publicly available data from the
+                  U.S. Bureau of Labor Statistics (BLS), OECD average wage
+                  statistics, World Bank purchasing power parity data, and
+                  The Economist&apos;s Big Mac Index. We use the U.S. salary for{" "}
+                  {occupation.title}s as a baseline (
+                  {formatCurrency(occupation.baseUSA)} USD) and adjust it for
+                  each country using wage ratios derived from OECD and World Bank
+                  data, along with occupation-specific sector multipliers.
+                </p>
+                <p>
+                  These estimates are intended as approximate benchmarks for
+                  international salary comparison. Actual compensation varies
+                  based on experience level, specific employer, city or region,
+                  education, certifications, and current market conditions. We
+                  update our data periodically to reflect the latest available
+                  statistics.
+                </p>
+              </div>
+            </section>
+          </div>
+        </article>
+
         {/* CTA + 네비게이션 */}
         <section className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
           <Link

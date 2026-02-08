@@ -451,6 +451,137 @@ export default async function OccupationCountryPage({ params }: PageProps) {
             </div>
           </div>
 
+          {/* Narrative Content — SEO 본문 텍스트 */}
+          <article className="flex flex-col gap-6">
+            <section>
+              <h2 className="text-lg font-bold text-slate-100 mb-3">
+                {occupation.title} Salary in {country.name}: What You Need to Know
+              </h2>
+              <div className="text-slate-400 text-sm leading-relaxed space-y-3">
+                <p>
+                  {occupation.title}s in {country.name} earn an estimated{" "}
+                  <strong className="text-slate-200">
+                    {formatCurrency(salaryEntry.estimatedSalary)} USD
+                  </strong>{" "}
+                  per year, which is approximately{" "}
+                  <strong className="text-slate-200">
+                    {formatCurrency(localSalary, country.currencySymbol)} {country.currency}
+                  </strong>{" "}
+                  at current exchange rates. This places {country.name} at{" "}
+                  <strong className="text-slate-200">
+                    #{currentRank} out of {rankedCountries.length} countries
+                  </strong>{" "}
+                  in our global salary ranking for this occupation.
+                </p>
+                <p>
+                  Compared to the United States, where {occupation.title}s earn
+                  an estimated {formatCurrency(occupation.baseUSA)} USD per year,
+                  the salary in {country.name} is{" "}
+                  {salaryEntry.estimatedSalary >= occupation.baseUSA ? (
+                    <>
+                      <strong className="text-emerald-400">
+                        {Math.round(((salaryEntry.estimatedSalary - occupation.baseUSA) / occupation.baseUSA) * 100)}% higher
+                      </strong>
+                    </>
+                  ) : (
+                    <>
+                      <strong className="text-red-400">
+                        {Math.round(((occupation.baseUSA - salaryEntry.estimatedSalary) / occupation.baseUSA) * 100)}% lower
+                      </strong>
+                    </>
+                  )}
+                  . This difference reflects variations in local economies,
+                  cost of living, labor market conditions, and industry demand
+                  for {occupation.title}s in {country.name}.
+                </p>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-lg font-bold text-slate-100 mb-3">
+                Purchasing Power and Cost of Living
+              </h2>
+              <div className="text-slate-400 text-sm leading-relaxed space-y-3">
+                <p>
+                  While nominal salary figures provide a useful starting point,
+                  they don&apos;t tell the full story. When adjusted for
+                  purchasing power parity (PPP), the salary for a {occupation.title}{" "}
+                  in {country.name} is equivalent to{" "}
+                  <strong className="text-slate-200">
+                    {formatCurrency(salaryEntry.pppAdjusted)} USD
+                  </strong>
+                  . This means that after accounting for differences in the cost
+                  of goods and services, the real buying power of this salary is{" "}
+                  {salaryEntry.pppAdjusted >= salaryEntry.estimatedSalary ? (
+                    <>
+                      actually <strong className="text-emerald-400">higher</strong> than the
+                      nominal figure suggests, indicating a relatively lower cost
+                      of living in {country.name}
+                    </>
+                  ) : (
+                    <>
+                      actually <strong className="text-red-400">lower</strong> than the
+                      nominal figure suggests, indicating a relatively higher
+                      cost of living in {country.name}
+                    </>
+                  )}
+                  .
+                </p>
+                {bigMacCount > 0 && (
+                  <p>
+                    To put this in more tangible terms, using The Economist&apos;s
+                    Big Mac Index as an informal measure of purchasing power, a{" "}
+                    {occupation.title}&apos;s annual salary in {country.name} could
+                    buy approximately{" "}
+                    <strong className="text-slate-200">
+                      {formatNumber(bigMacCount)} Big Macs
+                    </strong>{" "}
+                    per year. This everyday comparison helps illustrate the real-world
+                    purchasing power of this salary beyond abstract currency conversions.
+                  </p>
+                )}
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-lg font-bold text-slate-100 mb-3">
+                How {country.name} Compares Globally
+              </h2>
+              <div className="text-slate-400 text-sm leading-relaxed space-y-3">
+                <p>
+                  Among the {rankedCountries.length} countries we track, a{" "}
+                  {occupation.title} in {country.name} earns more than{" "}
+                  <strong className="text-slate-200">{globalPercentile}%</strong>{" "}
+                  of {occupation.title}s worldwide.
+                  {rankedCountries.length > 0 && (
+                    <> The highest-paying country for this role is{" "}
+                      <strong className="text-slate-200">
+                        {rankedCountries[0].country.name}
+                      </strong>{" "}
+                      at {formatCurrency(rankedCountries[0].estimatedSalary)} USD,
+                      while the lowest is{" "}
+                      <strong className="text-slate-200">
+                        {rankedCountries[rankedCountries.length - 1].country.name}
+                      </strong>{" "}
+                      at {formatCurrency(rankedCountries[rankedCountries.length - 1].estimatedSalary)} USD.
+                    </>
+                  )}
+                </p>
+                <p>
+                  These estimates are derived from publicly available data
+                  from the U.S. Bureau of Labor Statistics (BLS), OECD average
+                  wages, World Bank purchasing power parity factors, and
+                  The Economist&apos;s Big Mac Index. The salary for each country
+                  is calculated by adjusting the U.S. baseline salary using
+                  country-specific wage ratios and sector multipliers. While
+                  these figures provide a useful benchmark, actual salaries can
+                  vary significantly based on experience level, company size,
+                  specific city or region, education, and industry sector.
+                </p>
+              </div>
+            </section>
+          </article>
+
           {/* CTA: Compare your own salary */}
           <div className="text-center">
             <Link

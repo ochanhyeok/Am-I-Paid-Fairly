@@ -313,6 +313,106 @@ export default function OccupationSalaryPage({
           </div>
         </section>
 
+        {/* Narrative Content — SEO 본문 텍스트 */}
+        <article className="flex flex-col gap-6">
+          <section>
+            <h2 className="text-slate-200 font-bold text-lg mb-3">
+              {occupation.title} Salary Overview: A Global Perspective
+            </h2>
+            <div className="text-slate-400 text-sm leading-relaxed space-y-3">
+              <p>
+                The average {occupation.title} salary varies dramatically across
+                the globe. In the United States, {occupation.title}s earn an
+                estimated{" "}
+                <strong className="text-slate-200">
+                  {formatCurrency(occupation.baseUSA)} USD
+                </strong>{" "}
+                per year, which serves as our baseline for international
+                comparisons. Across all {totalCountries} countries we track, the
+                global average salary for this occupation is approximately{" "}
+                <strong className="text-slate-200">
+                  {formatCurrency(globalAvg)} USD
+                </strong>
+                .
+              </p>
+              <p>
+                {rows.length >= 2 && (
+                  <>
+                    The highest-paying country for {occupation.title}s is{" "}
+                    <strong className="text-slate-200">{rows[0].name}</strong> at{" "}
+                    {formatCurrency(rows[0].estimatedSalary)} USD per year,
+                    while the lowest among tracked countries is{" "}
+                    <strong className="text-slate-200">
+                      {rows[rows.length - 1].name}
+                    </strong>{" "}
+                    at {formatCurrency(rows[rows.length - 1].estimatedSalary)}{" "}
+                    USD. This{" "}
+                    {rows[0].estimatedSalary > 0 && rows[rows.length - 1].estimatedSalary > 0
+                      ? `${Math.round(rows[0].estimatedSalary / rows[rows.length - 1].estimatedSalary)}x`
+                      : "significant"}{" "}
+                    difference reflects the vast disparities in economic
+                    development, labor market conditions, and industry demand
+                    across different regions.
+                  </>
+                )}
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-slate-200 font-bold text-lg mb-3">
+              Understanding Salary Differences
+            </h2>
+            <div className="text-slate-400 text-sm leading-relaxed space-y-3">
+              <p>
+                Nominal salary figures only tell part of the story. A higher
+                salary in one country doesn&apos;t necessarily mean a better
+                standard of living. That&apos;s why we include Purchasing Power
+                Parity (PPP) adjusted salaries and the Big Mac Index in our
+                comparisons. PPP adjustments account for differences in the cost
+                of goods and services between countries, giving you a more
+                accurate picture of what your salary can actually buy.
+              </p>
+              <p>
+                For example, a {occupation.title} earning{" "}
+                {rows.length > 0 && formatCurrency(rows[0].estimatedSalary)} in{" "}
+                {rows.length > 0 && rows[0].name} might have{" "}
+                {rows.length > 0 &&
+                rows[0].pppAdjusted < rows[0].estimatedSalary
+                  ? "less purchasing power than the nominal figure suggests due to a higher cost of living"
+                  : "more purchasing power than expected due to a lower cost of living"}
+                . The Big Mac Index, developed by The Economist, offers an
+                intuitive way to compare purchasing power using the price of a
+                McDonald&apos;s Big Mac as a universal benchmark.
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-slate-200 font-bold text-lg mb-3">
+              Methodology and Data Sources
+            </h2>
+            <div className="text-slate-400 text-sm leading-relaxed space-y-3">
+              <p>
+                Our salary estimates are calculated using data from the U.S.
+                Bureau of Labor Statistics (BLS) as a baseline, adjusted per
+                country using OECD average wage data and GDP per capita figures
+                from the World Bank. Each occupation also has a sector-specific
+                multiplier that accounts for how wages in that particular field
+                differ from the national average.
+              </p>
+              <p>
+                These figures should be used as approximate benchmarks rather
+                than precise predictions. Actual salaries can vary significantly
+                based on years of experience, education level, specific employer,
+                city or region within a country, and current market conditions.
+                For the most accurate salary information, we recommend combining
+                these estimates with local job market data and salary surveys.
+              </p>
+            </div>
+          </section>
+        </article>
+
         {/* CTA */}
         <div className="text-center py-6">
           <Link

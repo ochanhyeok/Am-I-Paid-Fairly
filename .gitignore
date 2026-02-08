@@ -36,5 +36,6 @@ next-env.d.ts
 
 # project confidential
 CLAUDE.md
+SITE_ANALYSIS.md
 am-i-paid-fairly-spec.jsx
 .claude/
