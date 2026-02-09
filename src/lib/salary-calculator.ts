@@ -1,4 +1,4 @@
-import type { SalaryResult, CountryComparison, City, CitySalaryEntry } from "@/types";
+import type { SalaryResult, CountryComparison, City, CitySalaryEntry, RelocationResult } from "@/types";
 import {
   getOccupation,
   getCountry,
@@ -7,6 +7,7 @@ import {
   getSalaryEntry,
   getBigMacEntry,
   getCitySalaryEntries,
+  getCitySalaryEntry,
   getCity,
 } from "./data-loader";
 
@@ -205,4 +206,85 @@ export function getTopCitiesForOccupation(
     .filter(Boolean)
     .sort((a, b) => b!.estimatedSalary - a!.estimatedSalary)
     .slice(0, limit) as CityRanked[];
+}
+
+// --- Relocation Calculator ---
+
+export function calculateRelocation(
+  occupationSlug: string,
+  fromCitySlug: string,
+  toCitySlug: string
+): RelocationResult | null {
+  const occupation = getOccupation(occupationSlug);
+  const fromCity = getCity(fromCitySlug);
+  const toCity = getCity(toCitySlug);
+  if (!occupation || !fromCity || !toCity) return null;
+
+  const fromCountry = getCountry(fromCity.countryCode);
+  const toCountry = getCountry(toCity.countryCode);
+  if (!fromCountry || !toCountry) return null;
+
+  const fromSalary = getCitySalaryEntry(occupationSlug, fromCitySlug);
+  const toSalary = getCitySalaryEntry(occupationSlug, toCitySlug);
+  if (!fromSalary || !toSalary) return null;
+
+  // 변화율 계산
+  const nominalChange = fromSalary.estimatedSalary > 0
+    ? ((toSalary.estimatedSalary - fromSalary.estimatedSalary) / fromSalary.estimatedSalary) * 100
+    : 0;
+
+  const colAdjustedChange = fromSalary.colAdjusted > 0
+    ? ((toSalary.colAdjusted - fromSalary.colAdjusted) / fromSalary.colAdjusted) * 100
+    : 0;
+
+  // 빅맥 구매력
+  const bigMacFrom = calculateCityBigMacCount(fromCity.countryCode, fromSalary.estimatedSalary);
+  const bigMacTo = calculateCityBigMacCount(toCity.countryCode, toSalary.estimatedSalary);
+  const bigMacChange = bigMacFrom > 0
+    ? ((bigMacTo - bigMacFrom) / bigMacFrom) * 100
+    : 0;
+
+  // 글로벌 백분위
+  const percentileFrom = calculateCityPercentile(occupationSlug, fromSalary.estimatedSalary);
+  const percentileTo = calculateCityPercentile(occupationSlug, toSalary.estimatedSalary);
+
+  // 종합 판정 (COL-adjusted 기준이 핵심)
+  let verdict: RelocationResult["verdict"];
+  let verdictReason: string;
+
+  if (colAdjustedChange >= 20) {
+    verdict = "strong-yes";
+    verdictReason = `Moving to ${toCity.name} significantly boosts your real purchasing power by ${Math.round(colAdjustedChange)}%.`;
+  } else if (colAdjustedChange >= 5) {
+    verdict = "yes";
+    verdictReason = `${toCity.name} offers a meaningful improvement in cost-of-living-adjusted income.`;
+  } else if (colAdjustedChange >= -5) {
+    verdict = "neutral";
+    verdictReason = `Your real purchasing power stays roughly the same — the move is lifestyle-driven, not financially driven.`;
+  } else if (colAdjustedChange >= -20) {
+    verdict = "no";
+    verdictReason = `You'd lose about ${Math.round(Math.abs(colAdjustedChange))}% in real purchasing power. Consider carefully.`;
+  } else {
+    verdict = "strong-no";
+    verdictReason = `Significant drop in purchasing power (${Math.round(Math.abs(colAdjustedChange))}%). Only worth it for non-financial reasons.`;
+  }
+
+  return {
+    occupation,
+    fromCity,
+    toCity,
+    fromCountry,
+    toCountry,
+    fromSalary,
+    toSalary,
+    nominalChange: Math.round(nominalChange),
+    colAdjustedChange: Math.round(colAdjustedChange),
+    bigMacFrom,
+    bigMacTo,
+    bigMacChange: Math.round(bigMacChange),
+    percentileFrom,
+    percentileTo,
+    verdict,
+    verdictReason,
+  };
 }

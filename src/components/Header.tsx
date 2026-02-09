@@ -33,6 +33,12 @@ export default function Header() {
             Cities
           </Link>
           <Link
+            href="/relocate"
+            className="px-2 sm:px-3 py-1.5 text-slate-400 hover:text-slate-100 hover:bg-slate-800 rounded-lg transition-colors"
+          >
+            Relocate
+          </Link>
+          <Link
             href="/top-paying-jobs"
             className="hidden sm:block px-2 sm:px-3 py-1.5 text-slate-400 hover:text-slate-100 hover:bg-slate-800 rounded-lg transition-colors"
           >

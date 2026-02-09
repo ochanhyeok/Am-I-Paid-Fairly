@@ -12,16 +12,16 @@
 
 ### 개선 필요 사항
 
-| 우선순위 | 문제 | 영향도 |
-|---------|------|--------|
-| **높음** | 구글 미인덱싱 (`site:amipaidfairly.com` 결과 0건) | 트래픽 제로 |
-| **높음** | 데이터 신뢰도 — "추정치" 느낌, 업데이트 날짜 없음 | 재방문 없음 |
-| **높음** | Header에 중복 링크 (Browse와 Salaries 모두 /browse) | UX 혼란 |
-| **중간** | 국가 드롭다운에 검색 없음 (42개 스크롤) | 모바일 UX |
-| **중간** | 폼 에러 메시지 없음 (disabled 상태만) | 입력 포기율 |
-| **중간** | 연봉 맥락 부재 (세전/세후, 경력 수준) | 데이터 해석 혼란 |
-| **낮음** | 모바일 타이포그래피 너무 작음 (일부 10px) | 가독성 |
-| **낮음** | 지도 터치 툴팁 미작동 | 모바일 기능 |
+| 우선순위 | 문제 | 영향도 | 상태 |
+|---------|------|--------|------|
+| **높음** | 구글 미인덱싱 (`site:amipaidfairly.com` 결과 0건) | 트래픽 제로 | ⏳ 도메인 에이징 대기 |
+| **높음** | 데이터 신뢰도 — "추정치" 느낌, 업데이트 날짜 없음 | 재방문 없음 | ✅ 완료 (stats banner + Last Updated) |
+| **높음** | Header에 중복 링크 (Browse와 Salaries 모두 /browse) | UX 혼란 | ✅ 완료 (Jobs/Countries/Cities/Rankings/Blog/About) |
+| **중간** | 국가 드롭다운에 검색 없음 (42개 스크롤) | 모바일 UX | ✅ 완료 (CountryCombobox) |
+| **중간** | 폼 에러 메시지 없음 (disabled 상태만) | 입력 포기율 | ✅ 완료 (구체적 에러 표시) |
+| **중간** | 연봉 맥락 부재 (세전/세후, 경력 수준) | 데이터 해석 혼란 | ✅ 완료 ("Gross salary before tax") |
+| **낮음** | 모바일 타이포그래피 너무 작음 (일부 10px) | 가독성 | ✅ 부분 완료 (disclaimer 11px) |
+| **낮음** | 지도 터치 툴팁 미작동 | 모바일 기능 | ❌ 미해결 |
 
 ---
 
@@ -53,12 +53,17 @@
 
 ## 3. 핵심 개선 권장사항 (우선순위순)
 
-1. **구글 인덱싱 확인** — Search Console에서 sitemap 크롤링 상태 점검, 인덱싱 요청
-2. **데이터 신뢰도 향상** — "Last updated: Feb 2026", 데이터 소스 페이지 강화
-3. **Header 네비 정리** — 중복 링크 제거, Cities 강조
-4. **국가 드롭다운 검색** — Combobox로 변경
-5. **연봉 맥락 추가** — "Gross annual salary (before tax)" 명시
-6. **Relocation Calculator** — "이 도시에서 저 도시로 가면?" 전용 기능 (킬러 피처 후보)
+1. ⏳ **구글 인덱싱 확인** — Search Console에서 sitemap 크롤링 상태 점검, 인덱싱 요청
+2. ✅ **데이터 신뢰도 향상** — "Last updated: Feb 2026", stats 배너, 데이터 소스 강화
+3. ✅ **Header 네비 정리** — Jobs/Countries/Cities/Rankings/Blog/About로 재구성
+4. ✅ **국가 드롭다운 검색** — CountryCombobox 구현 (인기 국가 바로가기 포함)
+5. ✅ **연봉 맥락 추가** — "Annual Gross Salary (before tax)" 명시 + 에러 메시지
+6. ❌ **Relocation Calculator** — "이 도시에서 저 도시로 가면?" 전용 기능 (킬러 피처 후보)
+
+### 추가 완료 항목 (분석 이후)
+7. ✅ **브랜드 파비콘** — 저울(balance scale) 아이콘, 6개 사이즈 (Google 크롤러 호환)
+8. ✅ **블로그 15개 추가** (총 20개) — AdSense 승인 대비, 리서치 기반 고품질 콘텐츠
+9. ✅ **CSP AdSense 호환** — adtrafficquality.google 등 모든 필요 도메인 추가
 
 ---
 

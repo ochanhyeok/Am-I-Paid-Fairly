@@ -190,6 +190,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
+  // --- Relocation Calculator 페이지 ---
+  const relocatePage: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE_URL}/relocate`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+  ];
+
+  const relocatePages: MetadataRoute.Sitemap = occupations.flatMap((occ) =>
+    cityPairs.map(([a, b]) => ({
+      url: `${BASE_URL}/relocate/${occ.slug}/${a}-vs-${b}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    }))
+  );
+
   return [
     ...staticPages,
     ...occupationPages,
@@ -203,5 +222,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...cityPages,
     ...cityDetailPages,
     ...compareCityPages,
+    ...relocatePage,
+    ...relocatePages,
   ];
 }

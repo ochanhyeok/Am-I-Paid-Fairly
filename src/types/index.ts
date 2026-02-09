@@ -67,3 +67,25 @@ export interface CitySalaryEntry {
   pppAdjusted: number;      // PPP 조정
   colAdjusted: number;      // 생활비 보정 실질 구매력
 }
+
+// Relocation Calculator 결과
+export interface RelocationResult {
+  occupation: Occupation;
+  fromCity: City;
+  toCity: City;
+  fromCountry: Country;
+  toCountry: Country;
+  fromSalary: CitySalaryEntry;
+  toSalary: CitySalaryEntry;
+  // 변화율 (양수 = 증가)
+  nominalChange: number;        // 명목 연봉 변화율 (%)
+  colAdjustedChange: number;    // COL 보정 구매력 변화율 (%)
+  bigMacFrom: number;           // 출발 도시 빅맥 수
+  bigMacTo: number;             // 도착 도시 빅맥 수
+  bigMacChange: number;         // 빅맥 구매력 변화율 (%)
+  percentileFrom: number;       // 출발 도시 글로벌 백분위
+  percentileTo: number;         // 도착 도시 글로벌 백분위
+  // 종합 판정
+  verdict: "strong-yes" | "yes" | "neutral" | "no" | "strong-no";
+  verdictReason: string;
+}

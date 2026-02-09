@@ -1,3 +1,4 @@
+import Link from "next/link";
 import SalaryForm from "@/components/SalaryForm";
 import { getOccupations, getCountries } from "@/lib/data-loader";
 
@@ -156,6 +157,17 @@ export default function Home() {
             <p className="text-lg sm:text-xl font-bold text-slate-100">98</p>
             <p className="text-[11px] text-slate-500">Cities</p>
           </div>
+        </div>
+
+        {/* Relocate CTA */}
+        <div className="mt-8">
+          <Link
+            href="/relocate"
+            className="inline-flex items-center gap-2 bg-slate-800/60 hover:bg-slate-700/60 border border-dark-border hover:border-slate-600 transition-colors rounded-xl px-5 py-3 text-sm text-slate-300 hover:text-slate-100"
+          >
+            <span>Thinking about relocating?</span>
+            <span className="text-emerald-400 font-semibold">Try Relocation Calculator &rarr;</span>
+          </Link>
         </div>
 
         {/* Footer */}
