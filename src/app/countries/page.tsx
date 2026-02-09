@@ -7,6 +7,16 @@ export const metadata: Metadata = {
   title: "Salary by Country — 42 Countries Compared | Am I Paid Fairly?",
   description:
     "Compare average wages, GDP per capita, and salary data across 42 countries. See which countries pay the most and explore occupation-specific salaries.",
+  openGraph: {
+    title: "Salary by Country — 42 Countries Compared | Am I Paid Fairly?",
+    description: "Compare average wages and salary data across 42 countries.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Salary by Country — 42 Countries Compared",
+    description: "Compare average wages and salary data across 42 countries.",
+  },
   alternates: {
     canonical: "https://amipaidfairly.com/countries",
   },

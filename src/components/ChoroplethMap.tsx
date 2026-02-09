@@ -10,8 +10,7 @@ import {
 import type { CountryComparison } from "@/types";
 import { formatCurrency, formatPercentile } from "@/lib/format";
 
-const GEO_URL =
-  "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
+const GEO_URL = "/data/countries-110m.json";
 
 // ISO 3166-1 numeric → alpha-2 매핑 (주요 국가)
 const numericToAlpha2: Record<string, string> = {

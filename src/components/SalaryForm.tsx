@@ -38,9 +38,11 @@ export default function SalaryForm({ occupations, countries }: Props) {
     if (!selectedOccupation || !countryCode || !salary) return;
 
     const numericSalary = salary.replace(/,/g, "");
-    router.push(
-      `/result?job=${selectedOccupation.slug}&country=${countryCode}&salary=${numericSalary}`
-    );
+    const params = new URLSearchParams();
+    params.set("job", selectedOccupation.slug);
+    params.set("country", countryCode);
+    params.set("salary", numericSalary);
+    router.push(`/result?${params.toString()}`);
   }
 
   const isValid = selectedOccupation && countryCode && salary;

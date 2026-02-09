@@ -28,12 +28,12 @@ export default function ShareCard({
 
   function shareTwitter() {
     const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
-    window.open(url, "_blank", "width=550,height=420");
+    window.open(url, "_blank", "noopener,noreferrer,width=550,height=420");
   }
 
   function shareReddit() {
     const url = `https://www.reddit.com/submit?url=${encodeURIComponent(shareUrl)}&title=${encodeURIComponent(shareText)}`;
-    window.open(url, "_blank");
+    window.open(url, "_blank", "noopener,noreferrer");
   }
 
   async function copyLink() {

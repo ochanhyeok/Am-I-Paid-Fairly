@@ -84,13 +84,18 @@ export default async function ResultPage({ searchParams }: Props) {
   );
   const userSalaryUSDFormatted = formatCurrency(result.userSalaryUSD);
 
-  // JSON-LD 구조화 데이터
+  // JSON-LD 구조화 데이터 (URLSearchParams로 새니타이징)
+  const jsonLdParams = new URLSearchParams();
+  jsonLdParams.set("job", result.occupation.slug);
+  jsonLdParams.set("country", result.userCountry.code);
+  jsonLdParams.set("salary", String(salaryNum));
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
     name: `${result.occupation.title} Salary in ${result.userCountry.name}`,
     description: `${result.occupation.title} salary comparison across 42 countries. Global percentile: top ${100 - result.globalPercentile}%.`,
-    url: `https://amipaidfairly.com/result?job=${job}&country=${country}&salary=${salary}`,
+    url: `https://amipaidfairly.com/result?${jsonLdParams.toString()}`,
   };
 
   return (

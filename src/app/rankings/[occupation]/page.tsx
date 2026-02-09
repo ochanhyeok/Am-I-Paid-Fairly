@@ -39,6 +39,11 @@ export async function generateMetadata({
   const title = `Highest Paying Countries for ${occupation.title}s (2026) | Am I Paid Fairly?`;
   const description = `Global salary rankings for ${occupation.title}s across 42 countries. See which countries pay the highest salaries, PPP-adjusted wages, and Big Mac purchasing power.`;
 
+  const ogParams = new URLSearchParams();
+  ogParams.set("title", `Highest Paying Countries for ${occupation.title}s`);
+  ogParams.set("subtitle", `Global salary rankings (2026)`);
+  const ogImage = `/api/og?${ogParams.toString()}`;
+
   return {
     title,
     description,
@@ -46,6 +51,13 @@ export async function generateMetadata({
       title,
       description,
       type: "website",
+      images: [ogImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImage],
     },
     alternates: {
       canonical: `https://amipaidfairly.com/rankings/${slug}`,
@@ -146,6 +158,20 @@ export default async function RankingsPage({ params }: PageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://amipaidfairly.com" },
+              { "@type": "ListItem", position: 2, name: "Rankings", item: "https://amipaidfairly.com/browse" },
+              { "@type": "ListItem", position: 3, name: occupation.title, item: `https://amipaidfairly.com/rankings/${slug}` },
+            ],
+          }),
+        }}
       />
 
       <div className="max-w-5xl mx-auto">

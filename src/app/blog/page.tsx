@@ -6,6 +6,16 @@ export const metadata: Metadata = {
   title: "Salary Insights Blog | Am I Paid Fairly?",
   description:
     "Expert guides and data-driven articles about global salaries, purchasing power parity, the Big Mac Index, and salary comparisons across 42 countries.",
+  openGraph: {
+    title: "Salary Insights Blog | Am I Paid Fairly?",
+    description: "Data-driven articles about global salaries and purchasing power.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Salary Insights Blog | Am I Paid Fairly?",
+    description: "Data-driven articles about global salaries and purchasing power.",
+  },
   alternates: {
     canonical: "https://amipaidfairly.com/blog",
   },

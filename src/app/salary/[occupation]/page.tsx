@@ -34,6 +34,11 @@ export async function generateMetadata({
   const title = `${occupation.title} Salary Worldwide (2026) | Am I Paid Fairly?`;
   const description = `Compare ${occupation.title} salaries across 42 countries. See estimated earnings in USD, purchasing power-adjusted values, and Big Mac Index for every country.`;
 
+  const ogParams = new URLSearchParams();
+  ogParams.set("title", `${occupation.title} Salary Worldwide (2026)`);
+  ogParams.set("subtitle", `Compare across 42 countries`);
+  const ogImage = `/api/og?${ogParams.toString()}`;
+
   return {
     title,
     description,
@@ -42,11 +47,13 @@ export async function generateMetadata({
       description,
       type: "website",
       url: `https://amipaidfairly.com/salary/${occupation.slug}`,
+      images: [ogImage],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [ogImage],
     },
     alternates: {
       canonical: `https://amipaidfairly.com/salary/${occupation.slug}`,
@@ -171,10 +178,23 @@ export default async function OccupationSalaryPage({
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-950 to-slate-900 px-4 py-10">
-      {/* FAQ 구조화 데이터 */}
+      {/* 구조화 데이터 */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://amipaidfairly.com" },
+              { "@type": "ListItem", position: 2, name: occupation.title, item: `https://amipaidfairly.com/salary/${slug}` },
+            ],
+          }),
+        }}
       />
 
       <div className="max-w-3xl mx-auto flex flex-col gap-8">

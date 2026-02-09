@@ -8,6 +8,16 @@ export const metadata: Metadata = {
   title: "Browse All Occupations | Am I Paid Fairly?",
   description:
     "Explore salary data for 175 occupations across 42 countries. Compare salaries by category: Tech, Healthcare, Finance, Engineering, and more.",
+  openGraph: {
+    title: "Browse All Occupations | Am I Paid Fairly?",
+    description: "Explore salary data for 175 occupations across 42 countries.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Browse All Occupations | Am I Paid Fairly?",
+    description: "Explore salary data for 175 occupations across 42 countries.",
+  },
   alternates: {
     canonical: "https://amipaidfairly.com/browse",
   },

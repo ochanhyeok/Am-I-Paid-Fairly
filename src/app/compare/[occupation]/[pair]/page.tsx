@@ -95,6 +95,11 @@ export async function generateMetadata({
   const title = `${occupation.title} Salary: ${countryA.name} vs ${countryB.name} (2026) | Am I Paid Fairly?`;
   const description = `Compare ${occupation.title} salaries between ${countryA.name} and ${countryB.name}. See side-by-side salary in USD, local currency, purchasing power, Big Mac Index, and global percentile.`;
 
+  const ogParams = new URLSearchParams();
+  ogParams.set("title", `${occupation.title} Salary`);
+  ogParams.set("subtitle", `${countryA.name} vs ${countryB.name} (2026)`);
+  const ogImage = `/api/og?${ogParams.toString()}`;
+
   return {
     title,
     description,
@@ -102,11 +107,13 @@ export async function generateMetadata({
       title,
       description,
       type: "website",
+      images: [ogImage],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [ogImage],
     },
     alternates: {
       canonical: `https://amipaidfairly.com/compare/${occSlug}/${pair}`,
@@ -254,6 +261,20 @@ export default async function ComparePage({ params }: PageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://amipaidfairly.com" },
+              { "@type": "ListItem", position: 2, name: occupation.title, item: `https://amipaidfairly.com/salary/${occSlug}` },
+              { "@type": "ListItem", position: 3, name: `${countryA.name} vs ${countryB.name}`, item: `https://amipaidfairly.com/compare/${occSlug}/${pair}` },
+            ],
+          }),
+        }}
       />
 
       <main className="min-h-screen bg-gradient-to-br from-slate-950 to-slate-900 px-4 py-8">

@@ -7,6 +7,16 @@ export const metadata: Metadata = {
   title: "Top Paying Jobs Worldwide (2026) | Am I Paid Fairly?",
   description:
     "Discover the highest paying occupations globally. See salary rankings for 175 jobs across 42 countries, based on OECD and BLS data.",
+  openGraph: {
+    title: "Top Paying Jobs Worldwide (2026) | Am I Paid Fairly?",
+    description: "Discover the highest paying occupations globally across 42 countries.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Top Paying Jobs Worldwide (2026)",
+    description: "Discover the highest paying occupations globally across 42 countries.",
+  },
   alternates: {
     canonical: "https://amipaidfairly.com/top-paying-jobs",
   },

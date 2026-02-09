@@ -2,6 +2,27 @@ import SalaryForm from "@/components/SalaryForm";
 import { getOccupations, getCountries } from "@/lib/data-loader";
 
 // JSON-LD 구조화 데이터
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Am I Paid Fairly?",
+  url: "https://amipaidfairly.com",
+  description:
+    "Free global salary comparison platform covering 42 countries and 175+ occupations.",
+};
+
+const webSiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  url: "https://amipaidfairly.com",
+  name: "Am I Paid Fairly?",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: "https://amipaidfairly.com/browse?q={search_term_string}",
+    "query-input": "required name=search_term_string",
+  },
+};
+
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
@@ -80,6 +101,14 @@ export default function Home() {
   return (
     <main className="bg-gradient-to-br from-slate-950 to-slate-900 px-4">
       {/* JSON-LD 구조화 데이터 */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteJsonLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}

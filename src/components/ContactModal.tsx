@@ -2,7 +2,12 @@
 
 import { useState, useEffect, useRef } from "react";
 
-const EMAIL = "pon07084@gmail.com";
+// 이메일 난독화 (봇 스크래핑 방지)
+const _u = "pon07084";
+const _d = "gmail.com";
+function getEmail() {
+  return `${_u}@${_d}`;
+}
 
 export default function ContactModal() {
   const [open, setOpen] = useState(false);
@@ -34,7 +39,7 @@ export default function ContactModal() {
   }, [open]);
 
   function handleSend() {
-    const mailto = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailto = `mailto:${getEmail()}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.open(mailto, "_self");
     setSent(true);
     setTimeout(() => {
@@ -58,7 +63,7 @@ export default function ContactModal() {
         onClick={() => setOpen(true)}
         className="text-emerald-400 text-sm font-semibold mt-2 hover:text-emerald-300 transition-colors cursor-pointer underline underline-offset-2"
       >
-        {EMAIL}
+        {getEmail()}
       </button>
 
       {/* 모달 */}
@@ -84,7 +89,7 @@ export default function ContactModal() {
             <div className="mb-3">
               <label className="block text-xs text-slate-500 mb-1">To</label>
               <div className="w-full bg-slate-800/50 border border-dark-border rounded-lg px-4 py-2.5 text-slate-300 text-sm">
-                {EMAIL}
+                {getEmail()}
               </div>
             </div>
 
