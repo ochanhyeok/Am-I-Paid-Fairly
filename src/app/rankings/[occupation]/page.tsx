@@ -196,72 +196,117 @@ export default async function RankingsPage({ params }: PageProps) {
           </div>
         </section>
 
-        {/* 전체 국가 랭킹 테이블 */}
+        {/* Regional Breakdown */}
         <section className="mb-12">
           <h2 className="text-xl font-bold text-slate-200 mb-4">
-            Full Country Rankings
+            Regional Breakdown
           </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {(() => {
+              const regions: { name: string; codes: string[]; emoji: string }[] = [
+                { name: "Americas", codes: ["US","CA","MX","BR","CL","CO","CR"], emoji: "🌎" },
+                { name: "Europe", codes: ["DE","GB","FR","CH","SE","NO","DK","NL","BE","FI","IE","AT","IT","ES","PT","PL","CZ","HU","SK","GR","LT","LV","EE","SI","LU","IS","TR"], emoji: "🌍" },
+                { name: "Asia-Pacific", codes: ["JP","KR","AU","NZ","IN","CN","SG","IL"], emoji: "🌏" },
+              ];
+              return regions.map((region) => {
+                const regionCountries = rankedCountries.filter((rc) =>
+                  region.codes.includes(rc.country.code)
+                );
+                if (regionCountries.length === 0) return null;
+                const avgSalary = Math.round(
+                  regionCountries.reduce((s, r) => s + r.salaryEntry.estimatedSalary, 0) / regionCountries.length
+                );
+                const best = regionCountries[0];
+                const worst = regionCountries[regionCountries.length - 1];
+                return (
+                  <div key={region.name} className="bg-dark-card border border-dark-border rounded-xl p-5">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="text-xl">{region.emoji}</span>
+                      <h3 className="text-sm font-bold text-slate-200">{region.name}</h3>
+                    </div>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex justify-between">
+                        <span className="text-slate-500">Average</span>
+                        <span className="text-slate-200 font-semibold">{formatCurrency(avgSalary)}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-slate-500">Highest</span>
+                        <span className="text-emerald-400">{best.country.flag} {formatCurrency(best.salaryEntry.estimatedSalary)}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-slate-500">Lowest</span>
+                        <span className="text-red-400">{worst.country.flag} {formatCurrency(worst.salaryEntry.estimatedSalary)}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-slate-500">Countries</span>
+                        <span className="text-slate-300">{regionCountries.length}</span>
+                      </div>
+                    </div>
+                  </div>
+                );
+              });
+            })()}
+          </div>
+        </section>
+
+        {/* How Rankings Change with Purchasing Power */}
+        <section className="mb-12">
+          <h2 className="text-xl font-bold text-slate-200 mb-4">
+            How Rankings Change with Purchasing Power
+          </h2>
+          <p className="text-slate-400 text-sm mb-4">
+            Nominal salary rankings don&apos;t account for cost of living. Here&apos;s how the top 10 changes when adjusted for purchasing power using the Big Mac Index.
+          </p>
           <div className="bg-dark-card border border-dark-border rounded-xl overflow-hidden">
-            {/* 테이블 헤더 */}
-            <div className="hidden sm:grid sm:grid-cols-[60px_1fr_140px_140px_120px] gap-2 px-6 py-3 bg-slate-800/50 border-b border-dark-border text-xs font-semibold text-slate-400 uppercase tracking-wider">
+            <div className="hidden sm:grid sm:grid-cols-[60px_1fr_120px_120px_80px] gap-2 px-6 py-3 bg-slate-800/50 border-b border-dark-border text-xs font-semibold text-slate-400 uppercase tracking-wider">
               <span>Rank</span>
               <span>Country</span>
-              <span className="text-right">Salary (USD)</span>
-              <span className="text-right">PPP Adjusted</span>
-              <span className="text-right">Big Macs/yr</span>
+              <span className="text-right">Nominal</span>
+              <span className="text-right">Purch. Power</span>
+              <span className="text-right">Change</span>
             </div>
-
-            {/* 테이블 행 */}
-            {rankedCountries.map((item) => (
-              <Link
-                key={item.country.code}
-                href={`/salary/${slug}/${item.country.slug}`}
-                className="grid grid-cols-[40px_1fr_auto] sm:grid-cols-[60px_1fr_140px_140px_120px] gap-2 px-4 sm:px-6 py-3 border-b border-dark-border last:border-b-0 hover:bg-slate-800/40 transition-colors items-center group"
-              >
-                {/* Rank */}
-                <span
-                  className={`text-sm font-bold ${
-                    item.rank <= 3
-                      ? "text-emerald-400"
-                      : "text-slate-500"
-                  }`}
-                >
-                  #{item.rank}
-                </span>
-
-                {/* Country name + flag */}
-                <span className="flex items-center gap-2">
-                  <span className="text-lg">{item.country.flag}</span>
-                  <span className="text-sm text-slate-200 group-hover:text-emerald-400 transition-colors">
-                    {item.country.name}
-                  </span>
-                </span>
-
-                {/* Salary USD */}
-                <span className="text-sm font-semibold text-slate-100 text-right">
-                  {formatCurrency(item.salaryEntry.estimatedSalary)}
-                </span>
-
-                {/* PPP Adjusted */}
-                <span className="hidden sm:block text-sm text-slate-400 text-right">
-                  {formatCurrency(item.salaryEntry.pppAdjusted)}
-                </span>
-
-                {/* Big Mac count */}
-                <span className="hidden sm:block text-sm text-slate-400 text-right">
-                  {item.bigMacCount > 0
-                    ? formatNumber(item.bigMacCount)
-                    : "N/A"}
-                </span>
-              </Link>
-            ))}
-
-            {rankedCountries.length === 0 && (
-              <div className="px-6 py-8 text-center text-slate-500">
-                No salary data available for this occupation.
-              </div>
-            )}
+            {(() => {
+              const ppRanked = [...rankedCountries]
+                .sort((a, b) => b.salaryEntry.pppAdjusted - a.salaryEntry.pppAdjusted)
+                .slice(0, 10);
+              return ppRanked.map((item, idx) => {
+                const nominalRank = item.rank;
+                const ppRank = idx + 1;
+                const diff = nominalRank - ppRank;
+                return (
+                  <Link
+                    key={item.country.code}
+                    href={`/salary/${slug}/${item.country.slug}`}
+                    className="grid grid-cols-[40px_1fr_auto_auto] sm:grid-cols-[60px_1fr_120px_120px_80px] gap-2 px-4 sm:px-6 py-3 border-b border-dark-border last:border-b-0 hover:bg-slate-800/40 transition-colors items-center group"
+                  >
+                    <span className="text-sm font-bold text-slate-500">#{ppRank}</span>
+                    <span className="flex items-center gap-2 text-sm text-slate-200 group-hover:text-emerald-400 transition-colors">
+                      <span>{item.country.flag}</span> {item.country.name}
+                    </span>
+                    <span className="text-sm text-slate-400 text-right">{formatCurrency(item.salaryEntry.estimatedSalary)}</span>
+                    <span className="text-sm font-semibold text-slate-100 text-right">{formatCurrency(item.salaryEntry.pppAdjusted)}</span>
+                    <span className={`hidden sm:block text-sm font-bold text-right ${diff > 0 ? "text-emerald-400" : diff < 0 ? "text-red-400" : "text-slate-500"}`}>
+                      {diff > 0 ? `+${diff}` : diff < 0 ? `${diff}` : "—"}
+                    </span>
+                  </Link>
+                );
+              });
+            })()}
           </div>
+          <p className="text-slate-500 text-xs mt-2">
+            &ldquo;Change&rdquo; shows how many positions each country moved compared to the nominal salary ranking. Positive means the country ranks higher after purchasing power adjustment.
+          </p>
+        </section>
+
+        {/* Full Rankings Link */}
+        <section className="mb-12 text-center">
+          <Link
+            href={`/salary/${slug}`}
+            className="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition-colors text-sm font-medium"
+          >
+            View all {rankedCountries.length} countries with detailed salary data
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+          </Link>
         </section>
 
         {/* Country Comparisons Section */}

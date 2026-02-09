@@ -56,7 +56,7 @@ export async function generateMetadata({
   }
 
   const title = `${occupation.title} Salary in ${country.name} (2026) | Am I Paid Fairly?`;
-  const description = `How much does a ${occupation.title} earn in ${country.name}? See estimated salary in USD and ${country.currency}, PPP adjusted salary, Big Mac purchasing power, and global percentile ranking.`;
+  const description = `How much does a ${occupation.title} earn in ${country.name}? See estimated salary in USD and ${country.currency}, purchasing power-adjusted salary, Big Mac Index, and global percentile ranking.`;
 
   return {
     title,
@@ -157,8 +157,8 @@ export default async function OccupationCountryPage({ params }: PageProps) {
     {
       question: `What is the purchasing power of a ${occupation.title} salary in ${country.name}?`,
       answer: bigMacCount > 0
-        ? `Based on the Big Mac Index, a ${occupation.title} salary in ${country.name} can buy approximately ${formatNumber(bigMacCount)} Big Macs per year. The PPP-adjusted salary is ${formatCurrency(salaryEntry.pppAdjusted)} USD.`
-        : `The PPP-adjusted salary for a ${occupation.title} in ${country.name} is ${formatCurrency(salaryEntry.pppAdjusted)} USD.`,
+        ? `Based on the Big Mac Index, a ${occupation.title} salary in ${country.name} can buy approximately ${formatNumber(bigMacCount)} Big Macs per year. The purchasing power-adjusted salary is ${formatCurrency(salaryEntry.pppAdjusted)} USD.`
+        : `The purchasing power-adjusted salary for a ${occupation.title} in ${country.name} is ${formatCurrency(salaryEntry.pppAdjusted)} USD.`,
     },
     {
       question: `Which country pays ${occupation.title}s the most?`,
@@ -236,9 +236,9 @@ export default async function OccupationCountryPage({ params }: PageProps) {
                 <p className="text-slate-500 text-xs mt-1">per year</p>
               </div>
 
-              {/* PPP Adjusted */}
+              {/* Purchasing Power */}
               <div className="bg-slate-800/50 rounded-xl p-4">
-                <p className="text-slate-500 text-xs mb-1">PPP Adjusted</p>
+                <p className="text-slate-500 text-xs mb-1">Purchasing Power</p>
                 <p className="text-2xl font-bold text-slate-50">
                   {formatCurrency(salaryEntry.pppAdjusted)}
                 </p>
@@ -307,7 +307,7 @@ export default async function OccupationCountryPage({ params }: PageProps) {
                     <th className="text-left py-2 pr-2">#</th>
                     <th className="text-left py-2">Country</th>
                     <th className="text-right py-2">Salary (USD)</th>
-                    <th className="text-right py-2 pl-2">PPP</th>
+                    <th className="text-right py-2 pl-2">Purch. Pwr</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -361,7 +361,7 @@ export default async function OccupationCountryPage({ params }: PageProps) {
                     <th className="text-left py-2 pr-2">#</th>
                     <th className="text-left py-2">Country</th>
                     <th className="text-right py-2">Salary (USD)</th>
-                    <th className="text-right py-2 pl-2">PPP</th>
+                    <th className="text-right py-2 pl-2">Purch. Pwr</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -505,7 +505,7 @@ export default async function OccupationCountryPage({ params }: PageProps) {
                 <p>
                   While nominal salary figures provide a useful starting point,
                   they don&apos;t tell the full story. When adjusted for
-                  purchasing power parity (PPP), the salary for a {occupation.title}{" "}
+                  purchasing power (using the Big Mac Index), the salary for a {occupation.title}{" "}
                   in {country.name} is equivalent to{" "}
                   <strong className="text-slate-200">
                     {formatCurrency(salaryEntry.pppAdjusted)} USD

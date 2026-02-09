@@ -173,10 +173,17 @@ export default async function BlogPostPage({ params }: PageProps) {
         {/* Article body */}
         <article className="prose-dark">
           {post.occupationSlug ? (
-            <DataDrivenContent
-              occupationSlug={post.occupationSlug}
-              postSlug={post.slug}
-            />
+            <>
+              <DataDrivenContent
+                occupationSlug={post.occupationSlug}
+                postSlug={post.slug}
+              />
+              {post.sections && post.sections.length > 0 && (
+                <div className="mt-8">
+                  <EditorialContent sections={post.sections} />
+                </div>
+              )}
+            </>
           ) : post.sections ? (
             <EditorialContent sections={post.sections} />
           ) : null}
@@ -393,7 +400,7 @@ function DataDrivenContent({
         </div>
       </section>
 
-      {/* PPP Analysis */}
+      {/* Purchasing Power Analysis */}
       <section>
         <h2 className="text-xl font-bold text-slate-100 mb-3">
           Beyond Nominal Salary: Purchasing Power Analysis
@@ -411,14 +418,14 @@ function DataDrivenContent({
               For example,{" "}
               {top10[0].ppp < top10[0].salary ? (
                 <>
-                  the top-paying country {top10[0].name} has a PPP-adjusted
+                  the top-paying country {top10[0].name} has a purchasing power-adjusted
                   salary of {formatCurrency(top10[0].ppp)} USD — actually{" "}
                   <strong className="text-red-400">lower</strong> than the
                   nominal figure, indicating a relatively high cost of living
                 </>
               ) : (
                 <>
-                  the top-paying country {top10[0].name} has a PPP-adjusted
+                  the top-paying country {top10[0].name} has a purchasing power-adjusted
                   salary of {formatCurrency(top10[0].ppp)} USD —{" "}
                   <strong className="text-emerald-400">higher</strong> than
                   the nominal figure, indicating relatively affordable living
@@ -427,18 +434,18 @@ function DataDrivenContent({
               )}
               . Meanwhile, countries like {medianRow.name} with a nominal
               salary of {formatCurrency(medianRow.salary)} have a
-              PPP-adjusted value of {formatCurrency(medianRow.ppp)} USD.
+              purchasing power-adjusted value of {formatCurrency(medianRow.ppp)} USD.
             </p>
           )}
         </div>
 
-        {/* PPP vs Nominal table for top 10 */}
+        {/* Purchasing Power vs Nominal table for top 10 */}
         <div className="bg-dark-card border border-dark-border rounded-xl overflow-hidden mt-4">
           <div className="hidden sm:grid sm:grid-cols-[3rem_1fr_7rem_7rem_6rem] gap-2 px-4 py-2 bg-slate-800/50 border-b border-dark-border text-xs font-medium text-slate-500 uppercase">
             <span>#</span>
             <span>Country</span>
             <span className="text-right">Nominal</span>
-            <span className="text-right">PPP</span>
+            <span className="text-right">Purch. Power</span>
             <span className="text-right">Big Macs</span>
           </div>
           {top10.map((row) => (
@@ -532,7 +539,7 @@ function DataDrivenContent({
           <p>
             However, it&apos;s important to remember that these lower nominal
             salaries often come with significantly lower living costs.
-            PPP-adjusted figures provide a more balanced view of actual living
+            purchasing power-adjusted figures provide a more balanced view of actual living
             standards. In many developing countries, a {occupation.title} is
             still a well-respected, middle-to-upper-class profession with a
             comfortable lifestyle.
@@ -585,7 +592,7 @@ function DataDrivenContent({
             These salary estimates are calculated using U.S. Bureau of Labor
             Statistics (BLS) occupational data as a baseline, adjusted per
             country using OECD average wage data and World Bank GDP per capita
-            figures. PPP-adjusted values use World Bank purchasing power parity
+            figures. purchasing power-adjusted values use World Bank purchasing power parity
             factors. Big Mac counts are based on The Economist&apos;s Big Mac
             Index data.
           </p>

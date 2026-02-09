@@ -78,7 +78,7 @@ export async function generateMetadata({
   }
 
   const title = `${occupation.title} Salary: ${countryA.name} vs ${countryB.name} (2026) | Am I Paid Fairly?`;
-  const description = `Compare ${occupation.title} salaries between ${countryA.name} and ${countryB.name}. See side-by-side salary in USD, local currency, PPP, Big Mac purchasing power, and global percentile.`;
+  const description = `Compare ${occupation.title} salaries between ${countryA.name} and ${countryB.name}. See side-by-side salary in USD, local currency, purchasing power, Big Mac Index, and global percentile.`;
 
   return {
     title,
@@ -168,15 +168,15 @@ export default async function ComparePage({ params }: PageProps) {
   const pppRatio = salaryA.pppAdjusted / (salaryB.pppAdjusted || 1);
   if (pppRatio > 1.1) {
     takeaways.push(
-      `After adjusting for purchasing power (PPP), ${countryA.name} still leads by ${Math.round((pppRatio - 1) * 100)}%.`
+      `After adjusting for purchasing power, ${countryA.name} still leads by ${Math.round((pppRatio - 1) * 100)}%.`
     );
   } else if (pppRatio < 0.9) {
     takeaways.push(
-      `After adjusting for purchasing power (PPP), ${countryB.name} actually leads by ${Math.round((1 / pppRatio - 1) * 100)}%.`
+      `After adjusting for purchasing power, ${countryB.name} actually leads by ${Math.round((1 / pppRatio - 1) * 100)}%.`
     );
   } else {
     takeaways.push(
-      `After adjusting for purchasing power (PPP), both countries offer similar real value.`
+      `After adjusting for purchasing power, both countries offer similar real value.`
     );
   }
 
@@ -201,15 +201,15 @@ export default async function ComparePage({ params }: PageProps) {
           : `${countryB.name} pays ${occupation.title}s an estimated ${formatCurrency(salaryB.estimatedSalary)} USD per year, which is ${percentageDiff}% more than ${countryA.name}'s estimated ${formatCurrency(salaryA.estimatedSalary)} USD.`,
     },
     {
-      question: `What is the PPP-adjusted salary for a ${occupation.title} in ${countryA.name} vs ${countryB.name}?`,
-      answer: `The PPP-adjusted salary is ${formatCurrency(salaryA.pppAdjusted)} USD in ${countryA.name} and ${formatCurrency(salaryB.pppAdjusted)} USD in ${countryB.name}. PPP adjustment accounts for cost of living differences between the two countries.`,
+      question: `What is the purchasing power-adjusted salary for a ${occupation.title} in ${countryA.name} vs ${countryB.name}?`,
+      answer: `The purchasing power-adjusted salary is ${formatCurrency(salaryA.pppAdjusted)} USD in ${countryA.name} and ${formatCurrency(salaryB.pppAdjusted)} USD in ${countryB.name}. This adjustment uses the Big Mac Index to account for cost of living differences.`,
     },
     {
       question: `How does the purchasing power compare for ${occupation.title}s?`,
       answer:
         bigMacCountA > 0 && bigMacCountB > 0
           ? `Using the Big Mac Index, a ${occupation.title} in ${countryA.name} can buy about ${formatNumber(bigMacCountA)} Big Macs per year, while in ${countryB.name} it's about ${formatNumber(bigMacCountB)} Big Macs.`
-          : `PPP-adjusted values show ${formatCurrency(salaryA.pppAdjusted)} in ${countryA.name} vs ${formatCurrency(salaryB.pppAdjusted)} in ${countryB.name}.`,
+          : `Purchasing power-adjusted values show ${formatCurrency(salaryA.pppAdjusted)} in ${countryA.name} vs ${formatCurrency(salaryB.pppAdjusted)} in ${countryB.name}.`,
     },
   ];
 
@@ -323,9 +323,9 @@ export default async function ComparePage({ params }: PageProps) {
                   <p className="text-slate-500 text-xs mt-1">per year</p>
                 </div>
 
-                {/* PPP Adjusted */}
+                {/* Purchasing Power */}
                 <div className="bg-slate-800/50 rounded-xl p-4">
-                  <p className="text-slate-500 text-xs mb-1">PPP Adjusted</p>
+                  <p className="text-slate-500 text-xs mb-1">Purchasing Power</p>
                   <p className="text-xl font-bold text-slate-50">
                     {formatCurrency(salaryA.pppAdjusted)}
                   </p>
@@ -401,9 +401,9 @@ export default async function ComparePage({ params }: PageProps) {
                   <p className="text-slate-500 text-xs mt-1">per year</p>
                 </div>
 
-                {/* PPP Adjusted */}
+                {/* Purchasing Power */}
                 <div className="bg-slate-800/50 rounded-xl p-4">
-                  <p className="text-slate-500 text-xs mb-1">PPP Adjusted</p>
+                  <p className="text-slate-500 text-xs mb-1">Purchasing Power</p>
                   <p className="text-xl font-bold text-slate-50">
                     {formatCurrency(salaryB.pppAdjusted)}
                   </p>
@@ -490,9 +490,9 @@ export default async function ComparePage({ params }: PageProps) {
                 </div>
               </div>
 
-              {/* PPP Adjusted Bar */}
+              {/* Purchasing Power Bar */}
               <div>
-                <p className="text-slate-400 text-xs mb-2 font-medium">PPP Adjusted (USD)</p>
+                <p className="text-slate-400 text-xs mb-2 font-medium">Purchasing Power (USD)</p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-3">
                     <span className="text-sm text-slate-300 w-24 sm:w-32 shrink-0 truncate">

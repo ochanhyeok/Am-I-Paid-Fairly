@@ -11,9 +11,11 @@ export function formatCurrency(
 // 상위% 포맷: "Top 32%" 또는 "Bottom 12%"
 export function formatPercentile(value: number): string {
   if (value >= 50) {
-    return `Top ${100 - Math.round(value)}%`;
+    const top = 100 - Math.round(value);
+    return `Top ${Math.max(top, 1)}%`;
   }
-  return `Bottom ${Math.round(value)}%`;
+  const bottom = Math.round(value);
+  return `Bottom ${Math.max(bottom, 1)}%`;
 }
 
 // 숫자 포맷: "8,181"

@@ -53,7 +53,7 @@ export default function CountryComparisonList({
                   )}
                 </div>
                 <div className="text-slate-500 text-[11px] sm:text-xs truncate">
-                  {formatCurrency(comp.estimatedSalary)} · PPP {formatCurrency(comp.pppAdjusted)}
+                  {formatCurrency(comp.estimatedSalary)} · Purch. Power {formatCurrency(comp.pppAdjusted)}
                   <span className="hidden sm:inline"> · 🍔 {formatNumber(comp.bigMacCount)}</span>
                 </div>
               </div>

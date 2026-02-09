@@ -34,6 +34,24 @@ export const blogPosts: BlogPost[] = [
       "best countries for software engineers",
     ],
     occupationSlug: "software-engineer",
+    sections: [
+      {
+        heading: "Why Do Tech Salaries Vary So Much by Country?",
+        paragraphs: [
+          "The global software engineering salary landscape is shaped by several interconnected factors. Countries with mature tech ecosystems — like the United States, Switzerland, and Israel — tend to offer the highest salaries because of intense competition for talent among major tech companies, venture-funded startups, and established enterprises.",
+          "The rise of remote work since 2020 has started to compress salary differences, but geographic pay gaps remain significant. Many companies still use location-based pay bands, meaning a remote engineer in Poland working for a US company may earn more than local market rate but less than their San Francisco counterpart.",
+          "Currency strength also plays a role. Countries with strong currencies relative to the US dollar (Switzerland, Norway, Denmark) often appear higher in nominal rankings, even if local purchasing power tells a different story.",
+        ],
+      },
+      {
+        heading: "Tips for Software Engineers Considering International Relocation",
+        paragraphs: [
+          "If you're a software engineer considering a move abroad, salary is just one piece of the puzzle. Tax rates vary enormously — Scandinavian countries offer high gross salaries but take 40-55% in income tax, while Singapore and the UAE have minimal income tax. After-tax income can flip the rankings entirely.",
+          "Visa and work permit accessibility is another crucial factor. Countries like Canada, Australia, and Germany have streamlined tech visa programs, while others have restrictive immigration policies that make relocation impractical regardless of salary levels.",
+          "Quality of life factors — healthcare, safety, work-life balance, climate — often matter more than a 10-20% salary difference. Many engineers who relocate from high-paying markets to moderate-paying ones report higher life satisfaction due to better work-life balance and lower stress levels.",
+        ],
+      },
+    ],
   },
   {
     slug: "top-10-highest-paying-countries-for-nurses-2026",
@@ -52,6 +70,24 @@ export const blogPosts: BlogPost[] = [
       "best countries for nurses salary",
     ],
     occupationSlug: "nurse",
+    sections: [
+      {
+        heading: "What Drives Nursing Salary Differences Between Countries?",
+        paragraphs: [
+          "Nursing salaries are heavily influenced by each country's healthcare system structure. Countries with private healthcare systems (like the US) tend to pay nurses more in nominal terms, while countries with universal public healthcare (like the UK or Canada) often have more standardized — and sometimes lower — pay scales.",
+          "Nurse-to-patient ratios also play a role. Countries experiencing severe nursing shortages (the US, Australia, UK) often offer higher salaries and signing bonuses to attract and retain talent. The global nursing shortage, projected to reach 13 million by 2030, is putting upward pressure on salaries in many countries.",
+          "Specialization matters too. While our data reflects general nursing salaries, specialized nurses (ICU, surgical, anesthesia) can earn 30-70% more in many countries, which would significantly change the rankings if we could measure specialties separately.",
+        ],
+      },
+      {
+        heading: "International Nursing: Immigration and Credential Recognition",
+        paragraphs: [
+          "For nurses considering international work, credential recognition is a major barrier. Most countries require foreign-trained nurses to pass local licensing exams — the NCLEX in the US, NMC in the UK, AHPRA in Australia. The process can take 6 months to 2 years.",
+          "Several countries have created fast-track immigration pathways for nurses due to shortages. Australia's Skilled Migration Program, Canada's Express Entry, and the UK's Health and Care Worker Visa all offer expedited routes for qualified nurses. These programs often include pathways to permanent residency.",
+          "Language requirements are another consideration. English-speaking countries are the most popular destinations for internationally trained nurses, but countries like Germany and Japan are increasingly offering language training programs to attract nursing talent from abroad.",
+        ],
+      },
+    ],
   },
   {
     slug: "big-mac-index-salary-comparison-guide",
@@ -187,6 +223,24 @@ export const blogPosts: BlogPost[] = [
       "doctor salary worldwide",
     ],
     occupationSlug: "doctor",
+    sections: [
+      {
+        heading: "Why Doctor Salaries Vary More Than Almost Any Other Profession",
+        paragraphs: [
+          "The gap between the highest and lowest paying countries for doctors is among the widest of any profession. This is driven by fundamental differences in how countries structure their healthcare systems and medical education.",
+          "In the United States, doctors carry enormous student debt (averaging $200,000+) and undergo 7-15 years of post-secondary training. High salaries partially compensate for this investment. In contrast, many European countries offer free or heavily subsidized medical education, which allows them to pay doctors less while still attracting talented candidates.",
+          "The public vs. private healthcare divide is crucial. In countries with single-payer systems (UK, Canada, Scandinavia), doctor salaries are set by government pay scales and are generally lower than in market-driven systems. However, these doctors typically enjoy better work-life balance, more vacation time, and less administrative burden.",
+        ],
+      },
+      {
+        heading: "The Hidden Factors Behind Doctor Compensation",
+        paragraphs: [
+          "Our data shows estimated salaries for general practitioners, but the reality is more nuanced. Specialists in the US can earn 2-4x more than GPs — a cardiac surgeon might earn $500,000+ while a family doctor earns $220,000. This specialist premium exists in most countries but is particularly extreme in the US.",
+          "Work hours are a critical but often overlooked factor. US doctors average 50-60 hours per week, while many European doctors work closer to 40-48 hours due to working time regulations. When calculated on a per-hour basis, the salary gap between the US and Europe narrows considerably.",
+          "Malpractice insurance costs, which can exceed $50,000/year for some US specialties, also eat into nominal salary figures. Countries with government-backed liability systems (most of Europe, Japan) effectively eliminate this cost for individual doctors.",
+        ],
+      },
+    ],
   },
 ];
 

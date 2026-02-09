@@ -29,7 +29,7 @@ export function generateMetadata({
   }
 
   const title = `${occupation.title} Salary Worldwide (2026) | Am I Paid Fairly?`;
-  const description = `Compare ${occupation.title} salaries across 42 countries. See estimated earnings in USD, PPP-adjusted values, and Big Mac purchasing power for every country.`;
+  const description = `Compare ${occupation.title} salaries across 42 countries. See estimated earnings in USD, purchasing power-adjusted values, and Big Mac Index for every country.`;
 
   return {
     title,
@@ -122,11 +122,11 @@ function buildFaqJsonLd(occupationTitle: string, rows: CountryRow[]) {
     },
     {
       question: `How are these salary estimates calculated?`,
-      answer: `Salary estimates are calculated using U.S. Bureau of Labor Statistics (BLS) occupational data as a baseline, adjusted per country using OECD average wage data, GDP per capita, and sector-specific multipliers. PPP-adjusted values use World Bank purchasing power parity factors. Big Mac counts use The Economist's Big Mac Index.`,
+      answer: `Salary estimates are calculated using U.S. Bureau of Labor Statistics (BLS) occupational data as a baseline, adjusted per country using OECD average wage data, GDP per capita, and sector-specific multipliers. Purchasing power-adjusted values use the Big Mac Index from The Economist as a cost-of-living proxy.`,
     },
     {
-      question: `What does PPP-adjusted salary mean?`,
-      answer: `PPP (Purchasing Power Parity) adjusted salary reflects what a salary can actually buy in a given country. A lower nominal salary in one country may go further than a higher salary in another due to differences in cost of living.`,
+      question: `What does the purchasing power-adjusted salary mean?`,
+      answer: `The purchasing power-adjusted salary reflects what a salary can actually buy in a given country, using the Big Mac Index as a cost-of-living proxy. A lower nominal salary in one country may go further than a higher salary in another due to differences in cost of living.`,
     },
   ];
 
@@ -229,7 +229,7 @@ export default function OccupationSalaryPage({
             <span>#</span>
             <span>Country</span>
             <span className="text-right">Salary (USD)</span>
-            <span className="text-right">PPP Adjusted</span>
+            <span className="text-right">Purchasing Power</span>
             <span className="text-right">Big Macs</span>
           </div>
 
@@ -256,7 +256,7 @@ export default function OccupationSalaryPage({
                   {formatCurrency(row.estimatedSalary)}
                 </span>
 
-                {/* PPP Adjusted - hidden on mobile */}
+                {/* Purchasing Power - hidden on mobile */}
                 <span className="hidden md:block text-slate-400 text-sm text-right w-[8rem] shrink-0">
                   {formatCurrency(row.pppAdjusted)}
                 </span>
@@ -368,8 +368,8 @@ export default function OccupationSalaryPage({
                 Nominal salary figures only tell part of the story. A higher
                 salary in one country doesn&apos;t necessarily mean a better
                 standard of living. That&apos;s why we include Purchasing Power
-                Parity (PPP) adjusted salaries and the Big Mac Index in our
-                comparisons. PPP adjustments account for differences in the cost
+                adjusted salaries and the Big Mac Index in our
+                comparisons. Purchasing power adjustments account for differences in the cost
                 of goods and services between countries, giving you a more
                 accurate picture of what your salary can actually buy.
               </p>
