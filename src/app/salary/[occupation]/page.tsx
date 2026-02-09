@@ -18,12 +18,15 @@ export function generateStaticParams() {
 }
 
 // ---------- Dynamic SEO meta ----------
-export function generateMetadata({
+interface PageParams {
+  params: Promise<{ occupation: string }>;
+}
+
+export async function generateMetadata({
   params,
-}: {
-  params: { occupation: string };
-}): Metadata {
-  const occupation = getOccupation(params.occupation);
+}: PageParams): Promise<Metadata> {
+  const { occupation: slug } = await params;
+  const occupation = getOccupation(slug);
   if (!occupation) {
     return { title: "Not Found | Am I Paid Fairly?" };
   }
@@ -145,12 +148,11 @@ function buildFaqJsonLd(occupationTitle: string, rows: CountryRow[]) {
 }
 
 // ---------- Page component ----------
-export default function OccupationSalaryPage({
+export default async function OccupationSalaryPage({
   params,
-}: {
-  params: { occupation: string };
-}) {
-  const occupation = getOccupation(params.occupation);
+}: PageParams) {
+  const { occupation: slug } = await params;
+  const occupation = getOccupation(slug);
   if (!occupation) {
     redirect("/");
   }
@@ -199,7 +201,7 @@ export default function OccupationSalaryPage({
         {/* Stats row */}
         <div className="grid grid-cols-3 gap-3">
           <div className="bg-dark-card rounded-2xl p-4 border border-dark-border text-center">
-            <p className="text-slate-500 text-xs mb-1">US Base Salary</p>
+            <p className="text-slate-500 text-xs mb-1">US Salary (BLS)</p>
             <p className="text-xl md:text-2xl font-bold text-slate-50">
               {formatCurrency(occupation.baseUSA)}
             </p>
@@ -276,16 +278,25 @@ export default function OccupationSalaryPage({
             Compare Countries
           </h2>
           <p className="text-slate-500 text-sm mb-4">
-            See how {occupation.title} salaries compare between the United States and other countries
+            See how {occupation.title} salaries compare between countries
           </p>
           <div className="flex flex-wrap gap-2">
-            {["south-korea", "japan", "germany", "united-kingdom", "france"].map((countrySlug) => (
+            {[
+              { pair: "united-states-vs-south-korea", label: "US vs South Korea" },
+              { pair: "united-states-vs-japan", label: "US vs Japan" },
+              { pair: "united-states-vs-germany", label: "US vs Germany" },
+              { pair: "united-states-vs-united-kingdom", label: "US vs UK" },
+              { pair: "south-korea-vs-japan", label: "Korea vs Japan" },
+              { pair: "united-kingdom-vs-germany", label: "UK vs Germany" },
+              { pair: "australia-vs-canada", label: "Australia vs Canada" },
+              { pair: "india-vs-china", label: "India vs China" },
+            ].map(({ pair, label }) => (
               <Link
-                key={countrySlug}
-                href={`/compare/${occupation.slug}/united-states-vs-${countrySlug}`}
+                key={pair}
+                href={`/compare/${occupation.slug}/${pair}`}
                 className="text-sm bg-dark-card hover:bg-slate-800/50 border border-dark-border hover:border-slate-600 text-slate-300 hover:text-emerald-400 transition-colors px-4 py-2 rounded-lg"
               >
-                US vs {countrySlug.split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")}
+                {label}
               </Link>
             ))}
           </div>

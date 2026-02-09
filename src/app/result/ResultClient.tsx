@@ -108,6 +108,39 @@ export default function ResultClient({
           }
         />
 
+        {/* Explore more links */}
+        <div className="bg-dark-card rounded-2xl p-5 border border-dark-border">
+          <h3 className="text-slate-200 font-bold text-sm mb-3">
+            Explore More
+          </h3>
+          <div className="flex flex-col gap-2">
+            <Link
+              href={`/salary/${result.occupation.slug}`}
+              className="text-sm text-slate-400 hover:text-emerald-400 transition-colors"
+            >
+              {result.occupation.title} salary in all {result.countryComparisons.length} countries →
+            </Link>
+            <Link
+              href={`/salary/${result.occupation.slug}/${result.userCountry.slug}`}
+              className="text-sm text-slate-400 hover:text-emerald-400 transition-colors"
+            >
+              {result.occupation.title} salary in {result.userCountry.name} — detailed breakdown →
+            </Link>
+            <Link
+              href={`/rankings/${result.occupation.slug}`}
+              className="text-sm text-slate-400 hover:text-emerald-400 transition-colors"
+            >
+              Global rankings for {result.occupation.title}s →
+            </Link>
+            <Link
+              href="/browse"
+              className="text-sm text-slate-400 hover:text-emerald-400 transition-colors"
+            >
+              Browse all 175+ occupations →
+            </Link>
+          </div>
+        </div>
+
         {/* Disclaimer */}
         <p className="text-slate-600 text-[10px] text-center pb-4">
           Estimated based on OECD &amp; BLS data. Actual salaries vary by

@@ -20,19 +20,26 @@ import {
 } from "@/lib/format";
 
 // --- Static Params (SSG) ---
-// 30개 직업 x 미국 vs 상위 10개국 = 300 페이지
 
-const TOP_COMPARE_COUNTRIES = [
-  "south-korea",
-  "japan",
-  "germany",
-  "united-kingdom",
-  "france",
-  "switzerland",
-  "australia",
-  "canada",
-  "india",
-  "china",
+const US_VS_COUNTRIES = [
+  "south-korea", "japan", "germany", "united-kingdom", "france",
+  "switzerland", "australia", "canada", "india", "china",
+];
+
+// 인기 비미국 비교 쌍
+const NON_US_PAIRS = [
+  ["south-korea", "japan"],
+  ["united-kingdom", "germany"],
+  ["australia", "canada"],
+  ["india", "china"],
+  ["france", "germany"],
+  ["japan", "germany"],
+  ["south-korea", "india"],
+  ["united-kingdom", "france"],
+  ["australia", "united-kingdom"],
+  ["canada", "united-kingdom"],
+  ["switzerland", "germany"],
+  ["japan", "australia"],
 ];
 
 export function generateStaticParams() {
@@ -41,10 +48,18 @@ export function generateStaticParams() {
   const params: { occupation: string; pair: string }[] = [];
 
   for (const occ of occupations) {
-    for (const countrySlug of TOP_COMPARE_COUNTRIES) {
+    // US vs X
+    for (const countrySlug of US_VS_COUNTRIES) {
       params.push({
         occupation: occ.slug,
         pair: `united-states-vs-${countrySlug}`,
+      });
+    }
+    // 비미국 쌍
+    for (const [a, b] of NON_US_PAIRS) {
+      params.push({
+        occupation: occ.slug,
+        pair: `${a}-vs-${b}`,
       });
     }
   }

@@ -44,19 +44,33 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  // /compare/[occupation]/[pair] 페이지 (30×10 = 300개)
-  const topCompareCountries = [
+  // /compare/[occupation]/[pair] 페이지
+  const usVsCountries = [
     "south-korea", "japan", "germany", "united-kingdom", "france",
     "switzerland", "australia", "canada", "india", "china",
   ];
-  const comparePages: MetadataRoute.Sitemap = occupations.flatMap((occ) =>
-    topCompareCountries.map((countrySlug) => ({
+  const nonUsPairs = [
+    ["south-korea", "japan"], ["united-kingdom", "germany"],
+    ["australia", "canada"], ["india", "china"],
+    ["france", "germany"], ["japan", "germany"],
+    ["south-korea", "india"], ["united-kingdom", "france"],
+    ["australia", "united-kingdom"], ["canada", "united-kingdom"],
+    ["switzerland", "germany"], ["japan", "australia"],
+  ];
+  const comparePages: MetadataRoute.Sitemap = occupations.flatMap((occ) => [
+    ...usVsCountries.map((countrySlug) => ({
       url: `${BASE_URL}/compare/${occ.slug}/united-states-vs-${countrySlug}`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.7,
-    }))
-  );
+    })),
+    ...nonUsPairs.map(([a, b]) => ({
+      url: `${BASE_URL}/compare/${occ.slug}/${a}-vs-${b}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+  ]);
 
   // 정적 페이지 (browse, about, privacy)
   const infoPages: MetadataRoute.Sitemap = [
@@ -86,6 +100,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE_URL}/privacy`,
+      lastModified: new Date(),
+      changeFrequency: "yearly" as const,
+      priority: 0.3,
+    },
+    {
+      url: `${BASE_URL}/contact`,
+      lastModified: new Date(),
+      changeFrequency: "yearly" as const,
+      priority: 0.4,
+    },
+    {
+      url: `${BASE_URL}/terms`,
       lastModified: new Date(),
       changeFrequency: "yearly" as const,
       priority: 0.3,

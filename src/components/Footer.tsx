@@ -97,7 +97,9 @@ export default function Footer() {
                 ["Countries", "/countries"],
                 ["Blog", "/blog"],
                 ["About", "/about"],
+                ["Contact", "/contact"],
                 ["Privacy Policy", "/privacy"],
+                ["Terms of Service", "/terms"],
               ].map(([label, href]) => (
                 <li key={href}>
                   <Link

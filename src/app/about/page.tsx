@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ContactModal from "@/components/ContactModal";
 
 export const metadata: Metadata = {
   title: "About | Am I Paid Fairly?",
@@ -279,6 +280,27 @@ export default function AboutPage() {
                 publicly available, and our methodology is openly described
                 above.
               </p>
+            </div>
+          </section>
+
+          {/* Contact */}
+          <section>
+            <h2 className="text-xl font-bold text-slate-100 mb-3">
+              Contact Us
+            </h2>
+            <div className="bg-dark-card rounded-xl border border-dark-border p-5">
+              <p className="text-slate-300 text-sm leading-relaxed">
+                Have questions, feedback, or data correction requests? We&apos;d
+                love to hear from you. Reach out via email or visit our{" "}
+                <Link
+                  href="/contact"
+                  className="text-emerald-400 hover:text-emerald-300 underline transition-colors"
+                >
+                  Contact page
+                </Link>
+                .
+              </p>
+              <ContactModal />
             </div>
           </section>
 

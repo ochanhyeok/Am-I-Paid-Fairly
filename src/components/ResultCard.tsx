@@ -9,7 +9,7 @@ interface Props {
 
 export default function ResultCard({ percentile, occupationTitle }: Props) {
   const isTop = percentile >= 50;
-  const displayValue = isTop ? 100 - percentile : percentile;
+  const displayValue = Math.max(isTop ? 100 - percentile : percentile, 1);
 
   // 색상: 상위 50%↑ → green, 30~50% → yellow, 30%↓ → red
   const bgColor =

@@ -40,6 +40,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   return {
     title,
     description,
+    robots: { index: false, follow: true },
     openGraph: {
       title,
       description,
