@@ -85,6 +85,9 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+            <p className="text-slate-600 text-[11px] mt-3">
+              Updated: Feb 2026
+            </p>
           </div>
 
           {/* Explore & Legal */}
@@ -139,7 +142,7 @@ export default function Footer() {
           <p className="text-slate-600 text-xs">
             &copy; {new Date().getFullYear()} Am I Paid Fairly? All rights reserved.
           </p>
-          <p className="text-slate-700 text-[10px] text-center">
+          <p className="text-slate-600 text-[11px] text-center">
             Estimated based on OECD &amp; BLS data. Not financial advice.
           </p>
         </div>

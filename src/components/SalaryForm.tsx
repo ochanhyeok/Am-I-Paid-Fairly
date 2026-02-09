@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import type { Occupation, Country } from "@/types";
 import AutocompleteInput from "./AutocompleteInput";
+import CountryCombobox from "./CountryCombobox";
 
 interface Props {
   occupations: Occupation[];
@@ -16,6 +17,7 @@ export default function SalaryForm({ occupations, countries }: Props) {
   const [jobQuery, setJobQuery] = useState("");
   const [countryCode, setCountryCode] = useState("");
   const [salary, setSalary] = useState("");
+  const [showErrors, setShowErrors] = useState(false);
 
   const selectedCountry = useMemo(
     () => countries.find((c) => c.code === countryCode) ?? null,
@@ -35,7 +37,10 @@ export default function SalaryForm({ occupations, countries }: Props) {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!selectedOccupation || !countryCode || !salary) return;
+    if (!selectedOccupation || !countryCode || !salary) {
+      setShowErrors(true);
+      return;
+    }
 
     const numericSalary = salary.replace(/,/g, "");
     const params = new URLSearchParams();
@@ -66,28 +71,17 @@ export default function SalaryForm({ occupations, countries }: Props) {
       {/* Country */}
       <div>
         <label className="block text-xs text-slate-500 mb-1 ml-1">Country</label>
-        <select
+        <CountryCombobox
+          countries={countries}
           value={countryCode}
-          onChange={(e) => setCountryCode(e.target.value)}
-          className="w-full bg-dark-card border border-dark-border rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:border-accent-blue focus:ring-1 focus:ring-accent-blue transition-colors appearance-none"
-        >
-          <option value="" disabled>
-            Select your country
-          </option>
-          {[...countries]
-            .sort((a, b) => a.name.localeCompare(b.name))
-            .map((c) => (
-              <option key={c.code} value={c.code}>
-                {c.flag} {c.name}
-              </option>
-            ))}
-        </select>
+          onChange={(code) => setCountryCode(code)}
+        />
       </div>
 
       {/* Annual Salary */}
       <div>
         <label className="block text-xs text-slate-500 mb-1 ml-1">
-          Annual Salary{" "}
+          Annual Gross Salary (before tax){" "}
           {selectedCountry && (
             <span className="text-slate-400">({selectedCountry.currency})</span>
           )}
@@ -106,6 +100,17 @@ export default function SalaryForm({ occupations, countries }: Props) {
           />
         </div>
       </div>
+
+      {/* Error messages */}
+      {showErrors && !isValid && (
+        <p className="text-red-400 text-xs ml-1">
+          {!selectedOccupation
+            ? "Please select a job title."
+            : !countryCode
+            ? "Please select a country."
+            : "Please enter your salary."}
+        </p>
+      )}
 
       {/* Submit */}
       <button

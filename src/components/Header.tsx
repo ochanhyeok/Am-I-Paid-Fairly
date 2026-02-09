@@ -18,19 +18,25 @@ export default function Header() {
             href="/browse"
             className="px-2 sm:px-3 py-1.5 text-slate-400 hover:text-slate-100 hover:bg-slate-800 rounded-lg transition-colors"
           >
-            Browse
+            Jobs
           </Link>
           <Link
-            href="/browse"
+            href="/countries"
             className="px-2 sm:px-3 py-1.5 text-slate-400 hover:text-slate-100 hover:bg-slate-800 rounded-lg transition-colors"
           >
-            Salaries
+            Countries
           </Link>
           <Link
             href="/cities"
             className="px-2 sm:px-3 py-1.5 text-slate-400 hover:text-slate-100 hover:bg-slate-800 rounded-lg transition-colors"
           >
             Cities
+          </Link>
+          <Link
+            href="/top-paying-jobs"
+            className="hidden sm:block px-2 sm:px-3 py-1.5 text-slate-400 hover:text-slate-100 hover:bg-slate-800 rounded-lg transition-colors"
+          >
+            Rankings
           </Link>
           <Link
             href="/blog"

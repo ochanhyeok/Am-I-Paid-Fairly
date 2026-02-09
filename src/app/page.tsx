@@ -140,13 +140,34 @@ export default function Home() {
           <SalaryForm occupations={occupations} countries={countries} />
         </div>
 
+        {/* Stats banner */}
+        <div className="flex items-center justify-center gap-4 sm:gap-6 mt-8">
+          <div className="text-center">
+            <p className="text-lg sm:text-xl font-bold text-slate-100">42</p>
+            <p className="text-[11px] text-slate-500">Countries</p>
+          </div>
+          <div className="w-px h-8 bg-dark-border" />
+          <div className="text-center">
+            <p className="text-lg sm:text-xl font-bold text-slate-100">175+</p>
+            <p className="text-[11px] text-slate-500">Occupations</p>
+          </div>
+          <div className="w-px h-8 bg-dark-border" />
+          <div className="text-center">
+            <p className="text-lg sm:text-xl font-bold text-slate-100">98</p>
+            <p className="text-[11px] text-slate-500">Cities</p>
+          </div>
+        </div>
+
         {/* Footer */}
-        <p className="text-slate-600 text-xs mt-8 text-center">
+        <p className="text-slate-600 text-xs mt-6 text-center">
           No login required · 100% free · Data from OECD &amp; BLS
         </p>
 
-        {/* Disclaimer */}
-        <p className="text-slate-700 text-[10px] mt-4 text-center max-w-sm">
+        {/* Last Updated + Disclaimer */}
+        <p className="text-slate-600 text-[11px] mt-3 text-center">
+          Data last updated: February 2026
+        </p>
+        <p className="text-slate-700 text-[11px] mt-1 text-center max-w-sm">
           Estimated based on OECD &amp; BLS data. Actual salaries vary by
           experience, company, and region.
         </p>
