@@ -1,4 +1,4 @@
-import type { SalaryResult, CountryComparison } from "@/types";
+import type { SalaryResult, CountryComparison, City, CitySalaryEntry } from "@/types";
 import {
   getOccupation,
   getCountry,
@@ -6,6 +6,8 @@ import {
   getSalaryEntries,
   getSalaryEntry,
   getBigMacEntry,
+  getCitySalaryEntries,
+  getCity,
 } from "./data-loader";
 
 // 현지 통화 → USD 변환
@@ -149,4 +151,58 @@ export function pickRepresentativeCountries(
   }
 
   return picks;
+}
+
+// --- 도시 관련 계산 함수 ---
+
+// 도시 연봉의 빅맥 환산
+export function calculateCityBigMacCount(
+  countryCode: string,
+  citySalaryUSD: number
+): number {
+  return calculateBigMacCount(countryCode, citySalaryUSD);
+}
+
+// 도시 연봉의 글로벌 도시 분포에서의 백분위
+export function calculateCityPercentile(
+  occupationSlug: string,
+  citySalaryUSD: number
+): number {
+  const entries = getCitySalaryEntries(occupationSlug);
+  if (entries.length === 0) return 50;
+
+  const salaries = entries.map((e) => e.estimatedSalary).sort((a, b) => a - b);
+  const belowCount = salaries.filter((s) => s <= citySalaryUSD).length;
+
+  return Math.round((belowCount / salaries.length) * 100);
+}
+
+export interface CityRanked {
+  city: City;
+  estimatedSalary: number;
+  pppAdjusted: number;
+  colAdjusted: number;
+}
+
+// 특정 직업에서 연봉이 높은 상위 N개 도시
+export function getTopCitiesForOccupation(
+  occupationSlug: string,
+  limit: number
+): CityRanked[] {
+  const entries = getCitySalaryEntries(occupationSlug);
+
+  return entries
+    .map((entry) => {
+      const city = getCity(entry.citySlug);
+      if (!city) return null;
+      return {
+        city,
+        estimatedSalary: entry.estimatedSalary,
+        pppAdjusted: entry.pppAdjusted,
+        colAdjusted: entry.colAdjusted,
+      };
+    })
+    .filter(Boolean)
+    .sort((a, b) => b!.estimatedSalary - a!.estimatedSalary)
+    .slice(0, limit) as CityRanked[];
 }

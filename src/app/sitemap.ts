@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import { getOccupations, getCountries } from "@/lib/data-loader";
+import { getOccupations, getCountries, getCities } from "@/lib/data-loader";
 import { blogPosts } from "@/data/blog-posts";
 
 const BASE_URL = "https://amipaidfairly.com";
@@ -135,6 +135,61 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  // --- 도시 관련 페이지 ---
+  const cities = getCities();
+
+  // /cities 브라우즈 페이지
+  const citiesBrowsePage: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE_URL}/cities`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+  ];
+
+  // /cities/[city] 개별 도시 페이지 (86개)
+  const cityPages: MetadataRoute.Sitemap = cities.map((city) => ({
+    url: `${BASE_URL}/cities/${city.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  // /salary/[occupation]/[country]/[city] 도시 상세 페이지
+  const cityDetailPages: MetadataRoute.Sitemap = occupations.flatMap((occ) =>
+    cities.map((city) => {
+      const country = countries.find((c) => c.code === city.countryCode);
+      if (!country) return null;
+      return {
+        url: `${BASE_URL}/salary/${occ.slug}/${country.slug}/${city.slug}`,
+        lastModified: new Date(),
+        changeFrequency: "monthly" as const,
+        priority: 0.7,
+      };
+    }).filter(Boolean)
+  ) as MetadataRoute.Sitemap;
+
+  // /compare-cities/[occupation]/[pair] 도시 비교 페이지
+  const cityPairs: [string, string][] = [
+    ["new-york", "london"], ["new-york", "san-francisco"],
+    ["san-francisco", "seattle"], ["new-york", "tokyo"],
+    ["london", "berlin"], ["london", "paris"],
+    ["seoul", "tokyo"], ["singapore", "tokyo"],
+    ["sydney", "melbourne"], ["toronto", "vancouver"],
+    ["bangalore", "singapore"], ["mumbai", "delhi"],
+    ["san-francisco", "london"], ["zurich", "new-york"],
+    ["berlin", "amsterdam"],
+  ];
+  const compareCityPages: MetadataRoute.Sitemap = occupations.flatMap((occ) =>
+    cityPairs.map(([a, b]) => ({
+      url: `${BASE_URL}/compare-cities/${occ.slug}/${a}-vs-${b}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    }))
+  );
+
   return [
     ...staticPages,
     ...occupationPages,
@@ -144,5 +199,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...infoPages,
     ...blogListPage,
     ...blogPostPages,
+    ...citiesBrowsePage,
+    ...cityPages,
+    ...cityDetailPages,
+    ...compareCityPages,
   ];
 }

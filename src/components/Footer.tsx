@@ -95,11 +95,31 @@ export default function Footer() {
                 ["Browse All Jobs", "/browse"],
                 ["Top Paying Jobs", "/top-paying-jobs"],
                 ["Countries", "/countries"],
+                ["Cities", "/cities"],
                 ["Blog", "/blog"],
                 ["About", "/about"],
                 ["Contact", "/contact"],
                 ["Privacy Policy", "/privacy"],
                 ["Terms of Service", "/terms"],
+              ].map(([label, href]) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className="text-slate-500 hover:text-slate-300 transition-colors"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <h4 className="text-slate-300 font-semibold mt-4 mb-2">Popular Cities</h4>
+            <ul className="space-y-1.5">
+              {[
+                ["New York", "/cities/new-york"],
+                ["San Francisco", "/cities/san-francisco"],
+                ["London", "/cities/london"],
+                ["Tokyo", "/cities/tokyo"],
+                ["Seoul", "/cities/seoul"],
               ].map(([label, href]) => (
                 <li key={href}>
                   <Link

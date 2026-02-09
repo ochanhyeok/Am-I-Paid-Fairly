@@ -27,6 +27,12 @@ export default function Header() {
             Salaries
           </Link>
           <Link
+            href="/cities"
+            className="px-2 sm:px-3 py-1.5 text-slate-400 hover:text-slate-100 hover:bg-slate-800 rounded-lg transition-colors"
+          >
+            Cities
+          </Link>
+          <Link
             href="/blog"
             className="px-2 sm:px-3 py-1.5 text-slate-400 hover:text-slate-100 hover:bg-slate-800 rounded-lg transition-colors"
           >

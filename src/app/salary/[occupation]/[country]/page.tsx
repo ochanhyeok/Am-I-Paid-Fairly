@@ -8,6 +8,8 @@ import {
   getCountryBySlug,
   getSalaryEntry,
   getSalaryEntries,
+  getCitySalaryEntriesByCountry,
+  getCity,
 } from "@/lib/data-loader";
 import {
   calculateBigMacCount,
@@ -58,6 +60,11 @@ export async function generateMetadata({
   const title = `${occupation.title} Salary in ${country.name} (2026) | Am I Paid Fairly?`;
   const description = `How much does a ${occupation.title} earn in ${country.name}? See estimated salary in USD and ${country.currency}, purchasing power-adjusted salary, Big Mac Index, and global percentile ranking.`;
 
+  const ogParams = new URLSearchParams();
+  ogParams.set("title", `${occupation.title} Salary in ${country.name}`);
+  ogParams.set("subtitle", `Estimated annual salary (2026)`);
+  const ogImage = `/api/og?${ogParams.toString()}`;
+
   return {
     title,
     description,
@@ -65,11 +72,13 @@ export async function generateMetadata({
       title,
       description,
       type: "website",
+      images: [ogImage],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [ogImage],
     },
     alternates: {
       canonical: `https://amipaidfairly.com/salary/${occSlug}/${countrySlug}`,
@@ -129,6 +138,28 @@ export default async function OccupationCountryPage({ params }: PageProps) {
   // 다른 국가 링크용 (현재 국가 제외)
   const otherCountries = rankedCountries.filter((r) => r.country.code !== country.code);
 
+  // 이 국가의 도시별 연봉 데이터
+  const citySalaryEntries = getCitySalaryEntriesByCountry(occSlug, country.code);
+  const citiesWithSalary = citySalaryEntries
+    .map((entry) => {
+      const c = getCity(entry.citySlug);
+      if (!c) return null;
+      const vsAvg = Math.round(
+        ((entry.estimatedSalary - salaryEntry.estimatedSalary) /
+          salaryEntry.estimatedSalary) *
+          100
+      );
+      return { city: c, ...entry, vsAvg };
+    })
+    .filter(Boolean)
+    .sort((a, b) => b!.estimatedSalary - a!.estimatedSalary) as {
+    city: NonNullable<ReturnType<typeof getCity>>;
+    estimatedSalary: number;
+    colAdjusted: number;
+    citySlug: string;
+    vsAvg: number;
+  }[];
+
   // Percentile bar 색상
   const percentileColor =
     globalPercentile >= 50
@@ -187,6 +218,20 @@ export default async function OccupationCountryPage({ params }: PageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://amipaidfairly.com" },
+              { "@type": "ListItem", position: 2, name: occupation.title, item: `https://amipaidfairly.com/salary/${occSlug}` },
+              { "@type": "ListItem", position: 3, name: country.name, item: `https://amipaidfairly.com/salary/${occSlug}/${countrySlug}` },
+            ],
+          }),
+        }}
       />
 
       <main className="min-h-screen bg-gradient-to-br from-slate-950 to-slate-900 px-4 py-8">
@@ -406,6 +451,67 @@ export default async function OccupationCountryPage({ params }: PageProps) {
             </div>
           </div>
 
+          {/* Salary by City */}
+          {citiesWithSalary.length > 0 && (
+            <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
+              <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
+                {occupation.title} Salary by City in {country.name}
+              </h2>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="text-slate-500 text-xs border-b border-dark-border">
+                      <th className="text-left py-2">City</th>
+                      <th className="text-right py-2">Salary (USD)</th>
+                      <th className="text-right py-2">COL Adjusted</th>
+                      <th className="text-right py-2">vs Avg</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {citiesWithSalary.map((entry) => (
+                      <tr
+                        key={entry.citySlug}
+                        className="border-b border-slate-800/50"
+                      >
+                        <td className="py-2.5">
+                          <Link
+                            href={`/salary/${occSlug}/${country.slug}/${entry.citySlug}`}
+                            className="text-accent-blue hover:text-blue-400 transition-colors"
+                          >
+                            {entry.city.name}
+                            {entry.city.isTechHub && (
+                              <span className="ml-1.5 text-[9px] bg-blue-500/20 text-blue-400 px-1 py-0.5 rounded">
+                                Tech
+                              </span>
+                            )}
+                          </Link>
+                        </td>
+                        <td className="py-2.5 text-right text-slate-300">
+                          {formatUSDShort(entry.estimatedSalary)}
+                        </td>
+                        <td className="py-2.5 text-right text-slate-500">
+                          {formatUSDShort(entry.colAdjusted)}
+                        </td>
+                        <td className="py-2.5 text-right">
+                          <span
+                            className={
+                              entry.vsAvg >= 0
+                                ? "text-emerald-400"
+                                : "text-red-400"
+                            }
+                          >
+                            {entry.vsAvg >= 0 ? "+" : ""}
+                            {entry.vsAvg}%
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
+
           {/* Country Comparison Links */}
           <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
             <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
@@ -593,6 +699,41 @@ export default async function OccupationCountryPage({ params }: PageProps) {
             <p className="text-slate-600 text-xs mt-2">
               Free &middot; No login required
             </p>
+          </div>
+
+          {/* Internal Links: Other Jobs in this Country */}
+          <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
+            <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
+              Other Jobs in {country.name}
+            </h2>
+            <div className="flex flex-wrap gap-2">
+              {getOccupations()
+                .filter((o) => o.slug !== occSlug)
+                .sort((a, b) => {
+                  // 같은 카테고리 우선
+                  if (a.category === occupation.category && b.category !== occupation.category) return -1;
+                  if (a.category !== occupation.category && b.category === occupation.category) return 1;
+                  return a.title.localeCompare(b.title);
+                })
+                .slice(0, 12)
+                .map((o) => (
+                  <Link
+                    key={o.slug}
+                    href={`/salary/${o.slug}/${countrySlug}`}
+                    className="text-xs bg-slate-800/50 hover:bg-slate-700/50 text-slate-400 hover:text-slate-200 transition-colors px-3 py-1.5 rounded-lg border border-slate-700/50"
+                  >
+                    {o.title}
+                  </Link>
+                ))}
+            </div>
+            <div className="mt-3">
+              <Link
+                href="/browse"
+                className="text-accent-blue hover:text-blue-400 transition-colors text-xs"
+              >
+                View all occupations &rarr;
+              </Link>
+            </div>
           </div>
 
           {/* Internal Links: Other Countries */}

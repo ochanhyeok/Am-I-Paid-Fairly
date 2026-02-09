@@ -48,3 +48,22 @@ export interface CountryComparison {
   percentile: number; // 해당 직업 글로벌 분포에서의 상위%
   relativeToUser: "higher" | "similar" | "lower";
 }
+
+export interface City {
+  slug: string;           // "new-york"
+  name: string;           // "New York"
+  countryCode: string;    // "US"
+  population: number;
+  isCapital: boolean;
+  isTechHub: boolean;
+  colMultiplier: number;  // 생활비 배수 (국가 평균 대비)
+}
+
+export interface CitySalaryEntry {
+  occupationSlug: string;
+  countryCode: string;
+  citySlug: string;
+  estimatedSalary: number;  // USD (도시 조정 후)
+  pppAdjusted: number;      // PPP 조정
+  colAdjusted: number;      // 생활비 보정 실질 구매력
+}
