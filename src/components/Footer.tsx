@@ -95,6 +95,7 @@ export default function Footer() {
                 ["Browse All Jobs", "/browse"],
                 ["Top Paying Jobs", "/top-paying-jobs"],
                 ["Countries", "/countries"],
+                ["Blog", "/blog"],
                 ["About", "/about"],
                 ["Privacy Policy", "/privacy"],
               ].map(([label, href]) => (

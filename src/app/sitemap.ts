@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { getOccupations, getCountries } from "@/lib/data-loader";
+import { blogPosts } from "@/data/blog-posts";
 
 const BASE_URL = "https://amipaidfairly.com";
 
@@ -91,6 +92,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
+  // /blog 페이지
+  const blogListPage: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE_URL}/blog`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    },
+  ];
+
+  const blogPostPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: `${BASE_URL}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
   return [
     ...staticPages,
     ...occupationPages,
@@ -98,5 +116,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...rankingPages,
     ...comparePages,
     ...infoPages,
+    ...blogListPage,
+    ...blogPostPages,
   ];
 }

@@ -27,6 +27,12 @@ export default function Header() {
             Rankings
           </Link>
           <Link
+            href="/blog"
+            className="px-2 sm:px-3 py-1.5 text-slate-400 hover:text-slate-100 hover:bg-slate-800 rounded-lg transition-colors"
+          >
+            Blog
+          </Link>
+          <Link
             href="/about"
             className="px-2 sm:px-3 py-1.5 text-slate-400 hover:text-slate-100 hover:bg-slate-800 rounded-lg transition-colors"
           >
