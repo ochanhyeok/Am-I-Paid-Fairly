@@ -43,6 +43,10 @@ function getColor(estimatedSalary: number, userSalaryUSD: number): string {
 }
 
 function ChoroplethMap({ comparisons, userSalaryUSD, occupationTitle }: Props) {
+  // 터치 디바이스 감지
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
+
   const [tooltip, setTooltip] = useState<{
     name: string;
     salary: string;
@@ -50,6 +54,13 @@ function ChoroplethMap({ comparisons, userSalaryUSD, occupationTitle }: Props) {
     x: number;
     y: number;
   } | null>(null);
+
+  // 터치 디바이스 감지 (첫 터치 시)
+  useState(() => {
+    if (typeof window !== "undefined" && "ontouchstart" in window) {
+      setIsTouchDevice(true);
+    }
+  });
 
   // 국가 코드 → 비교 데이터 맵
   const compMap = useMemo(() => {
@@ -95,7 +106,7 @@ function ChoroplethMap({ comparisons, userSalaryUSD, occupationTitle }: Props) {
                         pressed: { outline: "none" },
                       }}
                       onMouseEnter={(e) => {
-                        if (comp) {
+                        if (comp && !isTouchDevice) {
                           const rect = (e.target as SVGElement)
                             .closest("svg")
                             ?.getBoundingClientRect();
@@ -108,7 +119,35 @@ function ChoroplethMap({ comparisons, userSalaryUSD, occupationTitle }: Props) {
                           });
                         }
                       }}
-                      onMouseLeave={() => setTooltip(null)}
+                      onMouseLeave={() => {
+                        if (!isTouchDevice) setTooltip(null);
+                      }}
+                      onClick={(e) => {
+                        if (comp) {
+                          // 토글: 같은 국가 재탭 → 닫기
+                          if (selectedCountry === alpha2) {
+                            setSelectedCountry(null);
+                            setTooltip(null);
+                            return;
+                          }
+                          setSelectedCountry(alpha2 ?? null);
+                          const rect = (e.target as SVGElement)
+                            .closest("svg")
+                            ?.getBoundingClientRect();
+                          const svgWidth = rect?.width ?? 800;
+                          setTooltip({
+                            name: comp.country.name,
+                            salary: formatCurrency(comp.estimatedSalary),
+                            percentile: formatPercentile(comp.percentile),
+                            x: svgWidth / 2,
+                            y: 12,
+                          });
+                        } else {
+                          // 데이터 없는 국가 탭 → 닫기
+                          setSelectedCountry(null);
+                          setTooltip(null);
+                        }
+                      }}
                     />
                   );
                 })
@@ -120,12 +159,14 @@ function ChoroplethMap({ comparisons, userSalaryUSD, occupationTitle }: Props) {
         {/* Tooltip */}
         {tooltip && (
           <div
-            className="absolute pointer-events-none bg-slate-800 border border-slate-600 rounded-lg px-3 py-2 text-xs shadow-xl z-10"
-            style={{
-              left: tooltip.x,
-              top: tooltip.y,
-              transform: "translate(-50%, -100%)",
-            }}
+            className={`absolute pointer-events-none bg-slate-800 border border-slate-600 rounded-lg px-3 py-2 text-xs shadow-xl z-10 ${
+              selectedCountry ? "pointer-events-auto" : ""
+            }`}
+            style={
+              selectedCountry
+                ? { left: "50%", top: 8, transform: "translateX(-50%)" }
+                : { left: tooltip.x, top: tooltip.y, transform: "translate(-50%, -100%)" }
+            }
           >
             <div className="text-white font-semibold">{tooltip.name}</div>
             <div className="text-slate-300">{tooltip.salary} USD</div>

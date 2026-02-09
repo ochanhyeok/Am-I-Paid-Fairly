@@ -15,12 +15,14 @@ export const metadata: Metadata = {
     description:
       "Should you relocate? Compare your salary, cost of living, and purchasing power between 98 global cities.",
     type: "website",
+    images: ["/api/og?title=Relocation%20Salary%20Calculator&subtitle=Compare%2098%20cities%20worldwide"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Relocation Salary Calculator (2026) | Am I Paid Fairly?",
     description:
       "Should you relocate? Compare your salary, cost of living, and purchasing power between 98 global cities.",
+    images: ["/api/og?title=Relocation%20Salary%20Calculator&subtitle=Compare%2098%20cities%20worldwide"],
   },
 };
 

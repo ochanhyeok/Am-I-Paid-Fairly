@@ -31,6 +31,11 @@ export async function generateMetadata({
     return { title: "Post Not Found | Am I Paid Fairly?" };
   }
 
+  const ogParams = new URLSearchParams();
+  ogParams.set("title", post.title);
+  ogParams.set("subtitle", post.description.slice(0, 100));
+  const ogImage = `/api/og?${ogParams.toString()}`;
+
   return {
     title: post.title,
     description: post.description,
@@ -40,11 +45,13 @@ export async function generateMetadata({
       description: post.description,
       type: "article",
       publishedTime: post.date,
+      images: [ogImage],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.description,
+      images: [ogImage],
     },
     alternates: {
       canonical: `https://amipaidfairly.com/blog/${slug}`,

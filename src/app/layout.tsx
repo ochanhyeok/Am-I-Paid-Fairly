@@ -38,6 +38,29 @@ export const metadata: Metadata = {
       "KOmBTqyLAC9drkNnmkacfOREc89-kvZ-cY2HWFAdRpM",
     ],
   },
+  openGraph: {
+    title: "Am I Paid Fairly? — Global Salary Comparison",
+    description:
+      "Compare your salary with the same job in 42 countries. See your global percentile, world salary map, and Big Mac purchasing power.",
+    url: "https://amipaidfairly.com",
+    siteName: "Am I Paid Fairly?",
+    type: "website",
+    images: [
+      {
+        url: "/api/og",
+        width: 1200,
+        height: 630,
+        alt: "Am I Paid Fairly? — Global Salary Comparison",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Am I Paid Fairly? — Global Salary Comparison",
+    description:
+      "Compare your salary with the same job in 42 countries. Free, no login required.",
+    images: ["/api/og"],
+  },
   alternates: {
     canonical: "https://amipaidfairly.com",
   },
