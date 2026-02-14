@@ -39,6 +39,16 @@ const CITY_PAIRS: [string, string][] = [
   ["san-francisco", "london"],
   ["zurich", "new-york"],
   ["berlin", "amsterdam"],
+  ["new-york", "toronto"],
+  ["london", "sydney"],
+  ["san-francisco", "bangalore"],
+  ["tokyo", "shanghai"],
+  ["paris", "berlin"],
+  ["seoul", "singapore"],
+  ["munich", "berlin"],
+  ["boston", "new-york"],
+  ["toronto", "london"],
+  ["shanghai", "singapore"],
 ];
 
 // --- Static Params (SSG) ---

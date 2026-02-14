@@ -24,6 +24,7 @@ import {
 const US_VS_COUNTRIES = [
   "south-korea", "japan", "germany", "united-kingdom", "france",
   "switzerland", "australia", "canada", "india", "china",
+  "singapore", "brazil", "netherlands",
 ];
 
 // 인기 비미국 비교 쌍
@@ -40,6 +41,8 @@ const NON_US_PAIRS = [
   ["canada", "united-kingdom"],
   ["switzerland", "germany"],
   ["japan", "australia"],
+  ["germany", "netherlands"],
+  ["india", "singapore"],
 ];
 
 export function generateStaticParams() {

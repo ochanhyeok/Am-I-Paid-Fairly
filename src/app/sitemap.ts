@@ -48,6 +48,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const usVsCountries = [
     "south-korea", "japan", "germany", "united-kingdom", "france",
     "switzerland", "australia", "canada", "india", "china",
+    "singapore", "brazil", "netherlands",
   ];
   const nonUsPairs = [
     ["south-korea", "japan"], ["united-kingdom", "germany"],
@@ -56,6 +57,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["south-korea", "india"], ["united-kingdom", "france"],
     ["australia", "united-kingdom"], ["canada", "united-kingdom"],
     ["switzerland", "germany"], ["japan", "australia"],
+    ["germany", "netherlands"], ["india", "singapore"],
   ];
   const comparePages: MetadataRoute.Sitemap = occupations.flatMap((occ) => [
     ...usVsCountries.map((countrySlug) => ({
@@ -180,6 +182,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["bangalore", "singapore"], ["mumbai", "delhi"],
     ["san-francisco", "london"], ["zurich", "new-york"],
     ["berlin", "amsterdam"],
+    ["new-york", "toronto"], ["london", "sydney"],
+    ["san-francisco", "bangalore"], ["tokyo", "shanghai"],
+    ["paris", "berlin"], ["seoul", "singapore"],
+    ["munich", "berlin"], ["boston", "new-york"],
+    ["toronto", "london"], ["shanghai", "singapore"],
   ];
   const compareCityPages: MetadataRoute.Sitemap = occupations.flatMap((occ) =>
     cityPairs.map(([a, b]) => ({
