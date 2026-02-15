@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { calculateSalaryResult, pickRepresentativeCountries } from "@/lib/salary-calculator";
 import { formatCurrency } from "@/lib/format";
-import { getOccupation, getCountry } from "@/lib/data-loader";
+import { getOccupation, getCountry, getCity, getCitySalaryEntry } from "@/lib/data-loader";
 import ResultClient from "./ResultClient";
 
 interface Props {
@@ -78,6 +78,29 @@ export default async function ResultPage({ searchParams }: Props) {
     country
   );
 
+  // Pick diverse cities for "What if you moved?" section
+  const suggestedCitySlugs = ["new-york", "london", "tokyo", "singapore", "sydney", "berlin", "seoul", "toronto"];
+  const citySuggestions = suggestedCitySlugs
+    .map((slug) => {
+      const city = getCity(slug);
+      if (!city || city.countryCode === country) return null;
+      const entry = getCitySalaryEntry(job, slug);
+      if (!entry) return null;
+      const cityCountry = getCountry(city.countryCode);
+      if (!cityCountry) return null;
+      return {
+        cityName: city.name,
+        citySlug: city.slug,
+        countryName: cityCountry.name,
+        countrySlug: cityCountry.slug,
+        countryFlag: cityCountry.flag,
+        estimatedSalary: entry.estimatedSalary,
+        colAdjusted: entry.colAdjusted,
+      };
+    })
+    .filter((s): s is NonNullable<typeof s> => s !== null)
+    .slice(0, 4);
+
   const userSalaryFormatted = formatCurrency(
     result.userSalaryLocal,
     result.userCountry.currencySymbol
@@ -109,6 +132,7 @@ export default async function ResultPage({ searchParams }: Props) {
         miniCountries={miniCountries}
         userSalaryFormatted={userSalaryFormatted}
         userSalaryUSDFormatted={userSalaryUSDFormatted}
+        citySuggestions={citySuggestions}
       />
     </>
   );

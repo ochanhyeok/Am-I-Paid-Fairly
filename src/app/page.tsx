@@ -170,6 +170,31 @@ export default function Home() {
           </Link>
         </div>
 
+        {/* Popular Comparisons */}
+        <div className="mt-8 w-full max-w-md">
+          <h2 className="text-sm font-semibold text-slate-300 mb-3 text-center">
+            Popular Comparisons
+          </h2>
+          <div className="grid grid-cols-2 gap-2">
+            {[
+              { href: "/compare/software-engineer/united-states-vs-india", label: "SW Engineer: US vs India" },
+              { href: "/compare/software-engineer/united-states-vs-united-kingdom", label: "SW Engineer: US vs UK" },
+              { href: "/compare-cities/software-engineer/new-york-vs-london", label: "SW Engineer: NYC vs London" },
+              { href: "/compare/data-scientist/united-states-vs-germany", label: "Data Scientist: US vs DE" },
+              { href: "/compare/nurse/united-states-vs-australia", label: "Nurse: US vs Australia" },
+              { href: "/compare-cities/data-scientist/san-francisco-vs-london", label: "Data Scientist: SF vs London" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-xs text-slate-400 hover:text-emerald-400 transition-colors bg-slate-800/40 rounded-lg px-3 py-2 border border-dark-border hover:border-slate-600"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+
         {/* Footer */}
         <p className="text-slate-600 text-xs mt-6 text-center">
           No login required · 100% free · Data from OECD &amp; BLS

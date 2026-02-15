@@ -9,6 +9,7 @@ import {
 } from "@/lib/data-loader";
 import { formatCurrency, formatNumber } from "@/lib/format";
 import { calculateBigMacCount } from "@/lib/salary-calculator";
+import { blogPosts } from "@/data/blog-posts";
 import type { SalaryEntry } from "@/types";
 
 // ---------- SSG ----------
@@ -467,6 +468,36 @@ export default async function OccupationSalaryPage({
             </svg>
           </Link>
         </div>
+
+        {/* Related Articles */}
+        {(() => {
+          const relatedPosts = blogPosts
+            .filter(
+              (post) =>
+                post.occupationSlug === occupation.slug ||
+                post.keywords.some((kw) =>
+                  kw.toLowerCase().includes(occupation.title.toLowerCase())
+                )
+            )
+            .slice(0, 3);
+          return relatedPosts.length > 0 ? (
+            <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
+              <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
+                Related Articles
+              </h2>
+              <div className="flex flex-col gap-3">
+                {relatedPosts.map((post) => (
+                  <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
+                    <p className="text-slate-300 text-sm font-medium group-hover:text-emerald-400 transition-colors">
+                      {post.title}
+                    </p>
+                    <p className="text-slate-500 text-xs mt-1">{post.readTime} min read · {post.category}</p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ) : null;
+        })()}
 
         {/* FAQ Section */}
         <section>

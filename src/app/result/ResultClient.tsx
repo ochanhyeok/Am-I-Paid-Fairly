@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import dynamic from "next/dynamic";
 import type { SalaryResult, CountryComparison } from "@/types";
 import ResultCard from "@/components/ResultCard";
@@ -30,11 +31,22 @@ const ChoroplethMap = dynamic(
   }
 );
 
+interface CitySuggestion {
+  cityName: string;
+  citySlug: string;
+  countryName: string;
+  countrySlug: string;
+  countryFlag: string;
+  estimatedSalary: number;
+  colAdjusted: number;
+}
+
 interface Props {
   result: SalaryResult;
   miniCountries: CountryComparison[];
   userSalaryFormatted: string;
   userSalaryUSDFormatted: string;
+  citySuggestions?: CitySuggestion[];
 }
 
 export default function ResultClient({
@@ -42,17 +54,62 @@ export default function ResultClient({
   miniCountries,
   userSalaryFormatted,
   userSalaryUSDFormatted,
+  citySuggestions = [],
 }: Props) {
+  const [showRecompare, setShowRecompare] = useState(false);
+  const [newSalary, setNewSalary] = useState("");
+
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-950 to-slate-900 px-4 py-8">
       <div className="max-w-lg mx-auto flex flex-col gap-6">
-        {/* Back link */}
-        <Link
-          href="/"
-          className="text-slate-500 text-sm hover:text-slate-300 transition-colors"
-        >
-          ← Compare another salary
-        </Link>
+        {/* Back link + Quick re-compare */}
+        <div className="flex items-center justify-between">
+          <Link
+            href="/"
+            className="text-slate-500 text-sm hover:text-slate-300 transition-colors"
+          >
+            ← New comparison
+          </Link>
+          <button
+            onClick={() => setShowRecompare(!showRecompare)}
+            className="text-slate-500 text-sm hover:text-emerald-400 transition-colors"
+          >
+            {showRecompare ? "Cancel" : "Change salary ▾"}
+          </button>
+        </div>
+
+        {showRecompare && (
+          <form action="/result" className="bg-dark-card rounded-xl p-4 border border-dark-border">
+            <p className="text-slate-400 text-xs mb-2">
+              Quick re-compare as {result.occupation.title} in {result.userCountry.name}
+            </p>
+            <input type="hidden" name="job" value={result.occupation.slug} />
+            <input type="hidden" name="country" value={result.userCountry.code} />
+            <div className="flex gap-2">
+              <div className="flex-1 relative">
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-sm">
+                  {result.userCountry.currencySymbol}
+                </span>
+                <input
+                  type="number"
+                  name="salary"
+                  placeholder="Enter new salary"
+                  value={newSalary}
+                  onChange={(e) => setNewSalary(e.target.value)}
+                  className="w-full bg-slate-800 rounded-lg pl-8 pr-3 py-2.5 text-sm text-slate-200 border border-dark-border focus:border-emerald-500 outline-none"
+                  required
+                  min="1"
+                />
+              </div>
+              <button
+                type="submit"
+                className="bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors shrink-0"
+              >
+                Compare
+              </button>
+            </div>
+          </form>
+        )}
 
         {/* User input summary */}
         <div className="text-center">
@@ -107,6 +164,87 @@ export default function ResultClient({
             )?.bigMacCount ?? 0
           }
         />
+
+        {/* What if you moved? — City suggestions */}
+        {citySuggestions.length > 0 && (
+          <div className="bg-dark-card rounded-2xl p-5 border border-dark-border">
+            <h3 className="text-slate-200 font-bold text-sm mb-1">
+              What if you moved?
+            </h3>
+            <p className="text-slate-500 text-xs mb-3">
+              Estimated {result.occupation.title} salary in other cities
+            </p>
+            <div className="grid grid-cols-2 gap-2">
+              {citySuggestions.map((city) => (
+                <Link
+                  key={city.citySlug}
+                  href={`/salary/${result.occupation.slug}/${city.countrySlug}/${city.citySlug}`}
+                  className="bg-slate-800/50 hover:bg-slate-700/50 rounded-xl p-3 border border-dark-border hover:border-slate-600 transition-colors"
+                >
+                  <div className="flex items-center gap-1.5 mb-1">
+                    <span className="text-base">{city.countryFlag}</span>
+                    <span className="text-xs text-slate-300 font-medium truncate">{city.cityName}</span>
+                  </div>
+                  <p className="text-emerald-400 font-bold text-sm">
+                    ${Math.round(city.estimatedSalary).toLocaleString("en-US")}
+                  </p>
+                  <p className="text-slate-500 text-[10px]">
+                    Real value: ${Math.round(city.colAdjusted).toLocaleString("en-US")}
+                  </p>
+                </Link>
+              ))}
+            </div>
+            <Link
+              href="/relocate"
+              className="block mt-3 text-center text-xs text-slate-400 hover:text-emerald-400 transition-colors"
+            >
+              Try Relocation Calculator for detailed analysis →
+            </Link>
+          </div>
+        )}
+
+        {/* Popular Comparisons */}
+        <div className="bg-dark-card rounded-2xl p-5 border border-dark-border">
+          <h3 className="text-slate-200 font-bold text-sm mb-3">
+            Popular Comparisons
+          </h3>
+          <div className="flex flex-col gap-1.5">
+            {[
+              { pair: "united-states-vs-india", label: "US vs India" },
+              { pair: "united-states-vs-united-kingdom", label: "US vs UK" },
+              { pair: "united-states-vs-germany", label: "US vs Germany" },
+              { pair: "united-states-vs-japan", label: "US vs Japan" },
+              { pair: "south-korea-vs-japan", label: "Korea vs Japan" },
+              { pair: "united-states-vs-canada", label: "US vs Canada" },
+            ].map((p) => (
+              <Link
+                key={p.pair}
+                href={`/compare/${result.occupation.slug}/${p.pair}`}
+                className="text-xs text-slate-400 hover:text-emerald-400 transition-colors"
+              >
+                {result.occupation.title}: {p.label} →
+              </Link>
+            ))}
+          </div>
+          <div className="border-t border-dark-border mt-3 pt-3">
+            <p className="text-slate-500 text-[10px] mb-2">City Comparisons</p>
+            <div className="flex flex-col gap-1.5">
+              {[
+                { pair: "new-york-vs-london", label: "New York vs London" },
+                { pair: "singapore-vs-tokyo", label: "Singapore vs Tokyo" },
+                { pair: "seoul-vs-singapore", label: "Seoul vs Singapore" },
+              ].map((p) => (
+                <Link
+                  key={p.pair}
+                  href={`/compare-cities/${result.occupation.slug}/${p.pair}`}
+                  className="text-xs text-slate-400 hover:text-emerald-400 transition-colors"
+                >
+                  {result.occupation.title}: {p.label} →
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
 
         {/* Explore more links */}
         <div className="bg-dark-card rounded-2xl p-5 border border-dark-border">

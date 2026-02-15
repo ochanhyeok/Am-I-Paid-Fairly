@@ -210,6 +210,34 @@ export default async function BlogPostPage({ params }: PageProps) {
           ) : null}
         </article>
 
+        {/* Explore the Data */}
+        <div className="mt-10 bg-dark-card border border-dark-border rounded-2xl p-6">
+          <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
+            Explore the Data
+          </h2>
+          <div className="flex flex-col gap-2">
+            {post.occupationSlug && (() => {
+              const occupation = getOccupation(post.occupationSlug);
+              return (
+                <>
+                  <Link href={`/salary/${post.occupationSlug}`} className="text-sm text-slate-400 hover:text-emerald-400 transition-colors">
+                    See {occupation?.title ?? post.occupationSlug} salaries in 42 countries &rarr;
+                  </Link>
+                  <Link href={`/rankings/${post.occupationSlug}`} className="text-sm text-slate-400 hover:text-emerald-400 transition-colors">
+                    View global salary rankings &rarr;
+                  </Link>
+                </>
+              );
+            })()}
+            <Link href="/relocate" className="text-sm text-slate-400 hover:text-emerald-400 transition-colors">
+              Try the Relocation Calculator &rarr;
+            </Link>
+            <Link href="/browse" className="text-sm text-slate-400 hover:text-emerald-400 transition-colors">
+              Browse all 175+ occupations &rarr;
+            </Link>
+          </div>
+        </div>
+
         {/* Related posts */}
         {relatedPosts.length > 0 && (
           <section className="mt-12 border-t border-dark-border pt-8">
