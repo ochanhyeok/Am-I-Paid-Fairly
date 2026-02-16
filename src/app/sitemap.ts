@@ -49,6 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "south-korea", "japan", "germany", "united-kingdom", "france",
     "switzerland", "australia", "canada", "india", "china",
     "singapore", "brazil", "netherlands",
+    "mexico", "poland", "israel", "ireland", "italy",
   ];
   const nonUsPairs = [
     ["south-korea", "japan"], ["united-kingdom", "germany"],
@@ -58,6 +59,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["australia", "united-kingdom"], ["canada", "united-kingdom"],
     ["switzerland", "germany"], ["japan", "australia"],
     ["germany", "netherlands"], ["india", "singapore"],
+    ["poland", "germany"], ["turkey", "germany"],
+    ["australia", "new-zealand"], ["spain", "italy"],
+    ["united-kingdom", "ireland"], ["china", "japan"],
+    ["brazil", "mexico"], ["india", "united-kingdom"],
   ];
   const comparePages: MetadataRoute.Sitemap = occupations.flatMap((occ) => [
     ...usVsCountries.map((countrySlug) => ({
