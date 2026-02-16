@@ -1750,6 +1750,214 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  // --- Search Console 쿼리 기반 블로그 (2026-02-17) ---
+  {
+    slug: "working-in-india-salary-guide-top-professions-2026",
+    title: "Working in India: Salary Guide for Top Professions (2026)",
+    description:
+      "Complete salary guide for working in India in 2026. Compare pilot, engineer, architect, designer, and tech salaries across Mumbai, Bangalore, Delhi, and more.",
+    excerpt:
+      "India is one of the world's fastest-growing economies — but how do salaries compare globally? We break down pay for top professions across India's major cities.",
+    date: "2026-02-17",
+    category: "Country Guide",
+    readTime: 10,
+    keywords: [
+      "salary in india 2026",
+      "pilot salary india",
+      "software engineer salary india",
+      "highest paying jobs india",
+      "architect salary india",
+      "painter salary india",
+      "working in india",
+      "india salary guide",
+      "best cities for jobs in india",
+    ],
+    sections: [
+      {
+        heading: "India's Salary Landscape in 2026",
+        paragraphs: [
+          "India's economy continues its rapid ascent as the world's fifth-largest by nominal GDP. With a massive population of over 1.4 billion and a booming tech sector, India offers unique career opportunities — but salaries remain significantly lower than Western countries in nominal terms. However, when adjusted for cost of living and purchasing power (PPP), the picture shifts dramatically.",
+          "The average salary in India varies enormously by profession, city, and experience level. A software engineer in Bangalore can earn 5-10x what a teacher in a tier-2 city makes. Understanding these dynamics is crucial whether you're an Indian professional benchmarking your salary, an expat considering relocation, or a company setting compensation for Indian teams.",
+          "Key factors shaping Indian salaries in 2026: the AI and tech boom driving up tech salaries by 15-25% annually, a growing startup ecosystem creating premium-paying companies, multinational corporations offering globally competitive packages, and increasing remote work opportunities connecting Indian professionals to international pay scales.",
+        ],
+      },
+      {
+        heading: "Top Paying Professions in India (2026)",
+        paragraphs: [
+          "Technology leads the pack: Software Engineers earn an estimated $12,000-$35,000 USD annually (₹10-29 lakh), with senior engineers at top companies like Google, Microsoft, and Indian unicorns reaching $50,000-$80,000+. Machine Learning Engineers and Data Scientists command similar ranges, with AI specialists seeing the fastest salary growth — up 30% year-over-year in major tech hubs.",
+          "Aviation is another high-paying field: Airline Pilots earn $18,000-$45,000 USD (₹15-37 lakh) depending on the airline and experience. Senior captains at international carriers like Air India or IndiGo can earn significantly more. The pilot shortage in India (the country needs 1,700+ new pilots annually) continues to push salaries upward.",
+          "Medical professionals see wide ranges: Doctors (General Practitioners) earn $8,000-$25,000, while specialists in metro hospitals can reach $40,000-$60,000. Dentists and pharmacists earn $6,000-$15,000 on average. Healthcare salaries are rising as India's medical tourism and private hospital sectors expand rapidly.",
+          "Architecture and design: Architects earn $5,000-$15,000 in India, with senior architects at major firms reaching $20,000+. Fashion Designers average $4,000-$12,000, though top designers in Mumbai's fashion industry can earn considerably more. Painters (commercial/industrial) average $3,000-$8,000, though skilled painters in construction-heavy cities like Hyderabad and Pune can earn at the higher end.",
+          "Finance pays well in India's financial centers: Investment Bankers at top firms in Mumbai earn $20,000-$50,000, while Chartered Accountants average $8,000-$20,000. Financial Analysts at multinational banks earn $10,000-$25,000.",
+        ],
+      },
+      {
+        heading: "Best Cities for Earning in India",
+        paragraphs: [
+          "Bangalore (Bengaluru) is India's undisputed tech capital. Software engineers here earn 20-40% more than the national average. The city hosts offices of Google, Amazon, Microsoft, Flipkart, Infosys, and hundreds of startups. However, Bangalore's cost of living has risen sharply — rents in areas like Koramangala and Whitefield have doubled since 2022.",
+          "Mumbai remains India's financial hub. Investment banking, media, fashion, and entertainment salaries are highest here. Mumbai's cost of living is India's highest — a decent apartment in South Mumbai can cost ₹50,000-₹1,00,000 per month. But for finance professionals, the salary premium often justifies the cost.",
+          "Delhi-NCR (including Gurgaon and Noida) offers a blend of government, corporate, and tech jobs. Gurgaon specifically has become a major corporate hub with multinational headquarters. Salaries are 10-20% lower than Bangalore for tech but cost of living is comparable.",
+          "Hyderabad is emerging as a strong alternative to Bangalore. Lower cost of living (30-40% cheaper than Bangalore), growing tech ecosystem (Apple, Google, Amazon, Microsoft all have major offices), and better infrastructure make it increasingly attractive. Tech salaries are catching up — currently about 10-15% below Bangalore.",
+          "Pune offers a good balance of salary and livability. Strong in automotive engineering, IT services, and manufacturing. Salaries are 15-20% below Bangalore but cost of living is 35-45% lower, making purchasing power actually higher.",
+        ],
+      },
+      {
+        heading: "India vs. the World: How Do Salaries Compare?",
+        paragraphs: [
+          "In nominal terms, Indian salaries are a fraction of Western equivalents. A software engineer in India earns roughly $15,000-$25,000 on average versus $140,000 in the US — about 6-9x less. But this comparison is misleading without purchasing power adjustment.",
+          "Using PPP (Purchasing Power Parity), the gap narrows significantly. India's PPP multiplier is roughly 3-4x, meaning $15,000 in India buys what $45,000-$60,000 buys in the US. In Big Mac terms, an Indian software engineer's salary buys approximately 5,500 Big Macs versus 23,000 for a US counterpart — a 4x gap rather than 9x.",
+          "The comparison with other Asian countries is more interesting: Indian tech salaries are now competitive with Thailand, Vietnam, and the Philippines, and approaching levels seen in Malaysia and Eastern Europe. China's tech salaries (especially in Beijing and Shanghai) are 2-3x India's, but the gap is closing.",
+          "For Indian professionals considering international relocation, the biggest salary jumps come from moving to the US, Switzerland, Australia, or Singapore. A mid-level Indian software engineer moving to the US can expect a 5-8x nominal salary increase, though living expenses in cities like San Francisco or New York consume much of that difference.",
+        ],
+      },
+      {
+        heading: "Tips for Maximizing Your Salary in India",
+        paragraphs: [
+          "Skill premiums matter enormously in India. An AI/ML engineer earns 40-60% more than a generic web developer. Cloud certifications (AWS, Azure, GCP) add 15-25% salary premium. DevOps and cybersecurity specialists are in acute shortage, commanding premium packages.",
+          "Company type determines salary bands: Indian MNC subsidiaries (Google India, Goldman Sachs India) pay 2-5x what local IT services companies (Infosys, TCS, Wipro) pay for similar roles. Funded startups often offer competitive base salaries plus significant equity. Government jobs pay less but offer unmatched job security and benefits including pensions.",
+          "Negotiation culture in India is changing. Historically, Indian professionals accepted initial offers, but the talent war — especially in tech — has made negotiation not just acceptable but expected. Having competing offers increases negotiating power significantly. Job-hopping every 2-3 years typically yields 30-50% salary increases versus 8-15% annual raises at the same company.",
+          "Remote work for international companies is the emerging path to higher earnings. Platforms like Turing, Toptal, and direct remote hiring by US/European companies allow Indian professionals to earn $40,000-$80,000 while enjoying India's cost of living — creating purchasing power that rivals or exceeds in-country salaries in developed nations.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "software-engineer-salary-china-2026-beijing-shanghai-shenzhen",
+    title: "Software Engineer Salary in China 2026: Beijing, Shanghai, Shenzhen",
+    description:
+      "How much do software engineers earn in China in 2026? Compare tech salaries in Beijing, Shanghai, Shenzhen, Guangzhou, and Hangzhou with global benchmarks.",
+    excerpt:
+      "China's tech industry is the world's second largest. But how do Chinese software engineer salaries stack up globally? We analyze pay across 5 major cities.",
+    date: "2026-02-17",
+    category: "Country Guide",
+    readTime: 9,
+    keywords: [
+      "software engineer salary china",
+      "software engineer salary china 2026",
+      "average salary in china for software engineer",
+      "average salary shenzhen china tech",
+      "software engineering salary china",
+      "tech salary beijing shanghai",
+      "china tech worker salary",
+      "software engineer salary comparison countries",
+    ],
+    occupationSlug: "software-engineer",
+    sections: [
+      {
+        heading: "China's Tech Salary Landscape in 2026",
+        paragraphs: [
+          "China's technology industry employs over 8 million software engineers, making it the world's second-largest tech workforce after the US. The sector is dominated by giants like Alibaba, Tencent, ByteDance, Huawei, and Baidu, along with thousands of fast-growing startups in AI, fintech, electric vehicles, and enterprise software.",
+          "Average software engineer salaries in China range from $20,000 to $55,000 USD annually, varying dramatically by city, company, and experience. This puts China roughly 3-5x below the US in nominal terms — but when adjusted for purchasing power, the gap narrows to about 1.5-2.5x.",
+          "The Chinese tech salary landscape has shifted since 2021. The government's 'common prosperity' policies and tech regulation crackdowns initially dampened salary growth. However, by 2025-2026, the AI boom — particularly in large language models and autonomous driving — has reignited fierce competition for talent, with AI engineers seeing 25-40% salary increases.",
+        ],
+      },
+      {
+        heading: "Salaries by City: The Big Five Tech Hubs",
+        paragraphs: [
+          "Beijing is China's highest-paying tech city. As headquarters of ByteDance, Baidu, JD.com, and Xiaomi, plus major offices of virtually every tech company, Beijing software engineers earn $25,000-$60,000 USD. Senior engineers at top companies can reach $80,000-$120,000 with stock options. The 996 work culture (9am-9pm, 6 days a week) is being phased out but remains common at some companies. Cost of living is high — rent for a decent apartment near Zhongguancun (Beijing's tech hub) runs $800-$1,500/month.",
+          "Shanghai is China's most cosmopolitan city and a growing tech hub. Salaries are comparable to Beijing: $24,000-$55,000 for mid-level engineers. Shanghai has a stronger presence of international tech companies and fintech startups. The city's international character makes it the preferred base for foreign tech workers in China. Cost of living is similar to Beijing, with slightly higher housing costs in central areas like Pudong and Jing'an.",
+          "Shenzhen is the hardware and manufacturing capital, home to Tencent, Huawei, DJI, and OnePlus. Software engineers here earn $22,000-$50,000. Shenzhen's unique advantage is its proximity to hardware manufacturing — software engineers working on embedded systems, IoT, and consumer electronics find unique opportunities here. The city's cost of living is slightly lower than Beijing/Shanghai, making real purchasing power competitive.",
+          "Hangzhou has emerged as China's e-commerce and fintech capital, anchored by Alibaba (and Ant Group) headquarters. Software engineers earn $20,000-$45,000. Despite being a 'second-tier' city officially, tech salaries in Hangzhou rival Beijing and Shanghai, while cost of living is 20-30% lower. Hangzhou is increasingly seen as the best value city for Chinese tech professionals.",
+          "Guangzhou rounds out the five, with salaries of $18,000-$40,000 for software engineers. The city has a growing gaming industry (NetEase's southern hub) and AI research presence. Cost of living is the lowest of the five major tech cities, making real purchasing power attractive. The Pearl River Delta ecosystem — connecting Guangzhou, Shenzhen, and Hong Kong — offers interesting cross-border career opportunities.",
+        ],
+      },
+      {
+        heading: "How China Compares Globally",
+        paragraphs: [
+          "In raw USD terms, Chinese software engineer salaries are roughly: 3-5x below the US, 2-3x below Switzerland and Australia, 1.5-2x below Western Europe (UK, Germany, France), roughly equal to Japan and South Korea, and 1.5-2x above India and Southeast Asia.",
+          "But PPP-adjusted comparison changes the picture significantly. China's purchasing power multiplier is approximately 2x, meaning a $30,000 Chinese salary has the buying power of roughly $60,000 in the US. In Big Mac terms (a useful informal PPP measure), a Chinese software engineer's annual salary buys about 8,000-12,000 Big Macs versus 20,000-25,000 for an American counterpart.",
+          "The stock option factor is increasingly important. Top Chinese tech companies offer equity packages that can double total compensation. However, post-IPO stock performance at Chinese tech companies has been volatile since 2021, making equity compensation less predictable than at US tech giants.",
+          "One often-overlooked factor: Chinese tech companies typically provide generous benefits beyond salary — subsidized housing or housing allowances, meal subsidies, transportation allowances, and annual bonuses of 2-6 months' salary (the '13th month' to '18th month' pay). Total compensation is often 30-50% above base salary.",
+        ],
+      },
+      {
+        heading: "The AI Premium in China's Tech Market",
+        paragraphs: [
+          "China's 'AI arms race' — both domestically and with the US — has created extraordinary salary premiums for AI and machine learning specialists. Senior AI engineers at companies like Baidu Research, Tencent AI Lab, SenseTime, and ByteDance earn $60,000-$150,000+, rivaling international compensation levels.",
+          "The demand is driven by China's national AI strategy, which targets AI as a core economic driver. Companies are aggressively hiring for computer vision, NLP, autonomous driving, and recommendation systems. The supply shortage is acute — Chinese universities produce many CS graduates, but experienced AI researchers are scarce.",
+          "For international engineers considering China: visa processes for high-skilled tech workers have been streamlined, particularly for AI researchers. Some companies offer 'overseas talent' packages with international-competitive compensation. However, the tech regulatory environment and cultural adjustment should be carefully considered.",
+        ],
+      },
+      {
+        heading: "Advice for Tech Professionals Considering China",
+        paragraphs: [
+          "For Chinese professionals benchmarking their salary: you're likely underpaid if you're at a traditional IT outsourcing company earning below $15,000. The tech talent market is competitive enough that job-hopping to a major tech company or well-funded startup can yield 30-50% salary increases. AI, cloud, and cybersecurity skills command the highest premiums.",
+          "For international professionals considering China: expect salaries 2-4x lower than the US in nominal terms, but factor in the lower cost of living, generous company benefits, and the unique professional experience. Mandarin proficiency is essential for most roles, though some international teams operate in English. Shanghai and Shenzhen are the most foreigner-friendly cities.",
+          "For companies hiring in China: the talent market is intensely competitive for top engineers. Offering 996-free work culture is increasingly a competitive advantage, as younger Chinese engineers prioritize work-life balance. Stock options, housing subsidies, and annual bonus structures are expected components of compensation packages.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "pilot-salary-worldwide-india-us-comparison-2026",
+    title: "Pilot Salary Worldwide: From India to the US (2026)",
+    description:
+      "How much do airline pilots earn around the world in 2026? Compare pilot salaries in India, the US, UK, Germany, UAE, and more — with purchasing power analysis.",
+    excerpt:
+      "Airline pilot is one of the highest-paying professions globally. But salaries vary wildly — from $18,000 in India to $300,000+ in the US. Here's the full breakdown.",
+    date: "2026-02-17",
+    category: "Occupation Guide",
+    readTime: 9,
+    keywords: [
+      "pilot salary",
+      "pilot salary india 2026",
+      "airline pilot salary",
+      "airline pilot salary india 2026",
+      "pilot salary worldwide",
+      "pilot salary comparison countries",
+      "pilot salary us vs india",
+      "how much do pilots make",
+      "commercial pilot salary",
+    ],
+    occupationSlug: "pilot",
+    sections: [
+      {
+        heading: "The Global Pilot Salary Landscape in 2026",
+        paragraphs: [
+          "Aviation is experiencing a worldwide pilot shortage that's driving salaries upward across nearly every market. Boeing estimates the industry will need 649,000 new pilots by 2041, while retirements and post-pandemic traffic recovery create immediate pressure. This supply-demand imbalance makes piloting one of the most geographically variable professions — and one where strategic career moves can multiply your earnings several times over.",
+          "Pilot salaries depend on several factors beyond just country: airline type (legacy carrier vs. low-cost vs. cargo), aircraft type (wide-body international vs. narrow-body domestic), seniority (first officer vs. captain), and flight hours. A first officer at a regional carrier in India earns a fraction of what a senior captain on international routes at Emirates or United Airlines makes.",
+          "The 2024-2026 period has been particularly favorable for pilots globally. Airlines that cut pilot training programs during COVID-19 now face acute shortages, giving experienced pilots significant bargaining power. Several US airlines have increased first-year first officer pay by 50-100% since 2023.",
+        ],
+      },
+      {
+        heading: "Pilot Salaries by Country",
+        paragraphs: [
+          "United States leads in absolute pay. US airline pilots earn $80,000-$350,000+ depending on seniority and airline. Major airline captains at United, Delta, and American earn $250,000-$350,000 after recent contract negotiations. Even regional first officers now start at $70,000-$100,000 (up from $30,000-$40,000 a decade ago). Cargo carriers like FedEx and UPS pay similarly high rates. When benefits, per diem, and profit sharing are included, total compensation for senior captains can exceed $400,000.",
+          "India is one of the fastest-growing aviation markets. Indian airline pilots earn ₹15-40 lakh ($18,000-$48,000 USD) for first officers and ₹40-80 lakh ($48,000-$96,000) for captains at major carriers like Air India, IndiGo, and Vistara. While these figures seem low compared to the US, purchasing power adjusted salaries (using PPP) are roughly equivalent to $60,000-$200,000, putting Indian captains in a comfortable upper-middle-class lifestyle. The investment required is significant: flight training in India costs ₹60-80 lakh ($72,000-$96,000).",
+          "United Kingdom and Germany offer £55,000-£170,000 ($70,000-$215,000) for pilots at major carriers like British Airways, Lufthansa, and easyJet. European pilots benefit from stronger labor protections and regulated duty hours. However, high tax rates (40-45% for top earners) reduce take-home pay significantly compared to US or Middle Eastern positions.",
+          "UAE and Gulf carriers (Emirates, Qatar Airways, Etihad) are among the world's most attractive for pilot compensation. Tax-free salaries of $100,000-$250,000, plus housing allowances, education allowances for children, and generous travel benefits. Total packages often exceed $300,000 in value. The catch: you live in the Middle East (which some love, others find challenging) and schedules can be demanding with ultra-long-haul operations.",
+          "Australia and Canada offer $80,000-$200,000 CAD/AUD for airline pilots. Both countries face acute pilot shortages, particularly for regional and domestic operations. Australia's Qantas and Virgin Australia have significantly increased pilot pay. Canadian pilots at Air Canada earn among the highest in the country. Both countries offer immigration pathways for qualified foreign pilots.",
+        ],
+      },
+      {
+        heading: "India Deep Dive: Pilot Career Path and Earnings",
+        paragraphs: [
+          "India's aviation market is booming — the country is set to become the world's third-largest aviation market by 2027. Indian airlines have ordered over 1,000 new aircraft, creating massive pilot demand. IndiGo alone operates 350+ aircraft and continues expanding. Air India (now Tata-owned) is rebuilding its fleet with 470 new aircraft on order.",
+          "The career path in India typically starts with obtaining a Commercial Pilot License (CPL) from a DGCA-approved flight school (cost: ₹60-80 lakh over 18-24 months). New CPL holders then face a competitive job market — airlines require 200-500 hours for first officer positions. Building hours through instructor roles or charter operations is common.",
+          "First officer pay at Indian carriers: IndiGo pays ₹12-18 lakh/year for new first officers, rising to ₹25-35 lakh with experience. Air India and Vistara (now merged) pay slightly higher at ₹18-30 lakh for first officers. Captain salaries jump significantly: ₹50-80 lakh at major carriers, with senior international captains earning ₹80 lakh-1 crore ($96,000-$120,000).",
+          "The Indian pilot salary trajectory is steep. A first officer earning ₹15 lakh at age 25 can expect ₹50-80 lakh as a captain by age 35-40. Those who move to Gulf carriers mid-career often double or triple their earning — many Indian pilots at Emirates and Qatar Airways earn $150,000-$200,000 tax-free, sending much of it home as savings.",
+        ],
+      },
+      {
+        heading: "Purchasing Power: Where Do Pilots Live Best?",
+        paragraphs: [
+          "Raw salary numbers are misleading for pilots because cost of living varies enormously. A US captain earning $300,000 in San Francisco faces federal + state taxes of ~40% and a mortgage of $5,000+/month, leaving perhaps $10,000/month in discretionary income.",
+          "Compare that to an Indian captain at Air India earning ₹70 lakh ($84,000): after tax (~30%), they take home about ₹50 lakh. With Indian living costs — a nice apartment in Mumbai for ₹40,000-₹80,000/month, domestic help, dining out — discretionary spending power can actually be competitive with a mid-tier US pilot.",
+          "The UAE offer is compelling in purchasing power terms: $180,000 with 0% income tax means $180,000 take-home. Housing allowances cover rent. Even with Dubai's high cost of living, disposable income exceeds most alternatives. Many pilots in the Gulf save 50-70% of their income — a savings rate virtually impossible in the US or Europe.",
+          "Using the Big Mac Index as an informal measure: a US captain's salary buys about 50,000 Big Macs per year. An Indian captain's salary buys about 25,000 Indian Big Macs. A UAE captain at Emirates can buy about 45,000 Big Macs. This puts the real value of pilot compensation in perspective — the gap between countries is smaller than raw salary figures suggest.",
+        ],
+      },
+      {
+        heading: "Future Outlook and Strategic Career Moves",
+        paragraphs: [
+          "The global pilot shortage is projected to intensify through 2030. This creates a seller's market for qualified pilots — particularly those with multi-type ratings, international experience, and clean safety records. Airlines are competing aggressively with signing bonuses ($50,000-$100,000 at some US carriers), retention bonuses, and improved quality-of-life provisions.",
+          "For Indian pilots: the domestic market is strong, but the greatest salary multiplier comes from gaining 2,000-3,000 hours at Indian carriers and then moving to Gulf or Asian carriers. Emirates, Qatar, and Singapore Airlines actively recruit experienced Indian pilots. The salary jump from ₹40 lakh to $180,000 tax-free is life-changing.",
+          "For aspiring pilots globally: despite the high training costs, the return on investment is strong. A $100,000 training investment can lead to $5-10 million in career earnings over 30 years at major airlines. The key is starting early — seniority drives everything in airline pilot compensation, and every year of delay costs more than the training investment itself.",
+          "Emerging opportunity: cargo and private aviation. FedEx, UPS, and DHL pilots earn comparably to (or more than) passenger airline captains with often more predictable schedules. Private/corporate aviation is growing rapidly, particularly in India and the Middle East, offering premium compensation with better lifestyle balance.",
+        ],
+      },
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
