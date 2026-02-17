@@ -54,8 +54,13 @@ const NON_US_PAIRS = [
   ["india", "united-kingdom"],
 ];
 
+// 상위 20 직업만 빌드 타임 생성, 나머지는 on-demand ISR (Vercel 75MB 제한 대응)
+import { TOP_OCCUPATIONS_FOR_SSG } from "@/lib/ssg-config";
+
 export function generateStaticParams() {
-  const occupations = getOccupations();
+  const occupations = getOccupations().filter((o) =>
+    TOP_OCCUPATIONS_FOR_SSG.includes(o.slug)
+  );
 
   const params: { occupation: string; pair: string }[] = [];
 
