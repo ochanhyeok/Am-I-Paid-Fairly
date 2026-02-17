@@ -11,6 +11,7 @@ import {
   getCitySalaryEntriesByCountry,
   getCity,
 } from "@/lib/data-loader";
+import { getCountryInsight } from "@/data/country-insights";
 import {
   calculateBigMacCount,
   calculateGlobalPercentile,
@@ -109,6 +110,8 @@ export default async function OccupationCountryPage({ params }: PageProps) {
   if (!salaryEntry) {
     redirect("/");
   }
+
+  const insight = getCountryInsight(country.code);
 
   const bigMacCount = calculateBigMacCount(country.code, salaryEntry.estimatedSalary);
   const globalPercentile = calculateGlobalPercentile(occSlug, salaryEntry.estimatedSalary);
@@ -766,6 +769,75 @@ export default async function OccupationCountryPage({ params }: PageProps) {
               </Link>
             </div>
           </div>
+
+          {/* Editorial Content — AdSense 승인용 고유 콘텐츠 */}
+          {insight && (
+            <section className="mt-12 space-y-8">
+              {/* Working as a [occupation] in [country] */}
+              <div className="bg-dark-card rounded-xl p-6 border border-dark-border">
+                <h2 className="text-xl font-bold text-slate-100 mb-3">
+                  Working as a {occupation.title} in {country.name}
+                </h2>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  {insight.economy} For {occupation.title}s specifically, this economic
+                  landscape shapes both the availability of positions and the compensation
+                  packages offered by employers. {insight.jobMarket} Understanding these
+                  dynamics is essential for anyone considering a career as a {occupation.title}{" "}
+                  in {country.name}, whether you are a local professional evaluating your
+                  current compensation or an international worker exploring relocation
+                  opportunities. The interplay between the broader economy and the specific
+                  demand for {occupation.title}s means that salaries can differ significantly
+                  from global averages, reflecting local market conditions, industry maturity,
+                  and the overall competitiveness of the talent pool in {country.name}.
+                </p>
+              </div>
+
+              {/* Tax System and Take-Home Pay */}
+              <div className="bg-dark-card rounded-xl p-6 border border-dark-border">
+                <h2 className="text-xl font-bold text-slate-100 mb-3">
+                  Tax System and Take-Home Pay in {country.name}
+                </h2>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  {insight.taxSystem} For a {occupation.title} earning an estimated{" "}
+                  {formatCurrency(salaryEntry.estimatedSalary)} USD per year in {country.name},
+                  these tax obligations can meaningfully affect take-home pay. It is important
+                  to consider net income rather than gross salary when evaluating a compensation
+                  offer, as the gap between the two can vary substantially depending on {country.name}&apos;s
+                  tax brackets and social contribution requirements. Additionally, the benefits
+                  funded by these taxes — such as healthcare, pension, and social security —
+                  should be factored into the overall value of the compensation package.
+                </p>
+              </div>
+
+              {/* Cost of Living and Quality of Life */}
+              <div className="bg-dark-card rounded-xl p-6 border border-dark-border">
+                <h2 className="text-xl font-bold text-slate-100 mb-3">
+                  Cost of Living and Quality of Life
+                </h2>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  {insight.costOfLiving} Beyond raw numbers, quality of life for a{" "}
+                  {occupation.title} in {country.name} is also influenced by work culture
+                  and lifestyle norms. {insight.workCulture} These factors combined — from
+                  housing and food costs to working hours and vacation policies — paint a
+                  more complete picture of what it truly means to earn a {occupation.title}{" "}
+                  salary in {country.name}.
+                </p>
+              </div>
+
+              {/* Key Industries and Employers */}
+              <div className="bg-dark-card rounded-xl p-6 border border-dark-border">
+                <h2 className="text-xl font-bold text-slate-100 mb-3">
+                  Key Industries and Employers
+                </h2>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  {insight.topIndustries} These industries represent the primary employers
+                  and sectors where {occupation.title}s in {country.name} are most likely
+                  to find opportunities, and they often set the benchmark for salary
+                  expectations across the country.
+                </p>
+              </div>
+            </section>
+          )}
 
           {/* FAQ Section */}
           <div className="bg-dark-card border border-dark-border rounded-2xl p-6">

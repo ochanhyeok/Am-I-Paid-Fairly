@@ -10,6 +10,7 @@ import {
   getBigMacEntry,
 } from "@/lib/data-loader";
 import { formatCurrency, formatNumber } from "@/lib/format";
+import { getCountryInsight } from "@/data/country-insights";
 import { calculateBigMacCount } from "@/lib/salary-calculator";
 import type { SalaryEntry, Country, BigMacEntry } from "@/types";
 
@@ -457,6 +458,127 @@ export default async function RankingsPage({ params }: PageProps) {
             </section>
           </div>
         </article>
+
+        {/* Regional Analysis — 에디토리얼 콘텐츠 (AdSense 승인용) */}
+        <section className="mt-12 space-y-8">
+          {/* 1. Regional Salary Analysis */}
+          <div className="bg-dark-card rounded-xl p-6 border border-dark-border">
+            <h2 className="text-xl font-bold text-slate-100 mb-3">
+              Regional Salary Analysis
+            </h2>
+            {(() => {
+              const topEntries = rankedCountries.slice(0, 3);
+              return topEntries.map((item, idx) => {
+                const insight = getCountryInsight(item.country.code);
+                if (!insight) return null;
+                return (
+                  <div key={item.country.code} className="mb-4 last:mb-0">
+                    <h3 className="text-base font-semibold text-emerald-400 mb-2">
+                      #{idx + 1} {item.country.flag} {item.country.name} — {formatCurrency(item.salaryEntry.estimatedSalary)}/year
+                    </h3>
+                    <p className="text-slate-300 text-sm leading-relaxed mb-3">
+                      {item.country.name} leads {idx === 0 ? "the global rankings" : `as the #${idx + 1} highest-paying country`} for {occupation.title}s,
+                      with an estimated annual salary of {formatCurrency(item.salaryEntry.estimatedSalary)} USD.
+                      This is closely tied to the nation&apos;s economic profile: {insight.economy}
+                    </p>
+                    <p className="text-slate-300 text-sm leading-relaxed mb-3">
+                      The key industries driving demand for {occupation.title}s in {item.country.name} include {insight.topIndustries.toLowerCase()}.
+                      These sectors create sustained demand for skilled professionals,
+                      which pushes compensation above the global average.
+                      {item.salaryEntry.pppAdjusted > 0 && (
+                        <> When adjusted for purchasing power, the salary translates to approximately {formatCurrency(item.salaryEntry.pppAdjusted)} USD in real terms.</>
+                      )}
+                    </p>
+                  </div>
+                );
+              });
+            })()}
+          </div>
+
+          {/* 2. Factors That Drive Global Salaries */}
+          <div className="bg-dark-card rounded-xl p-6 border border-dark-border">
+            <h2 className="text-xl font-bold text-slate-100 mb-3">
+              Factors That Drive Global {occupation.title} Salaries
+            </h2>
+            {(() => {
+              const highest = rankedCountries.length > 0 ? rankedCountries[0].salaryEntry.estimatedSalary : 0;
+              const lowest = rankedCountries.length > 0 ? rankedCountries[rankedCountries.length - 1].salaryEntry.estimatedSalary : 1;
+              const ratio = lowest > 0 ? Math.round(highest / lowest) : 0;
+              const avgSalary = rankedCountries.length > 0
+                ? Math.round(rankedCountries.reduce((sum, r) => sum + r.salaryEntry.estimatedSalary, 0) / rankedCountries.length)
+                : 0;
+              const aboveAvgCount = rankedCountries.filter((r) => r.salaryEntry.estimatedSalary > avgSalary).length;
+              return (
+                <>
+                  <p className="text-slate-300 text-sm leading-relaxed mb-3">
+                    {occupation.title} salaries vary dramatically across the {rankedCountries.length} countries in our dataset.
+                    The gap between the highest-paying country ({rankedCountries.length > 0 ? rankedCountries[0].country.name : "N/A"} at {formatCurrency(highest)}) and the lowest
+                    ({rankedCountries.length > 0 ? rankedCountries[rankedCountries.length - 1].country.name : "N/A"} at {formatCurrency(lowest)}) represents
+                    a {ratio}:1 ratio — meaning the top-paying market offers roughly {ratio} times the compensation of the lowest.
+                  </p>
+                  <p className="text-slate-300 text-sm leading-relaxed mb-3">
+                    Several structural factors explain these disparities. <strong className="text-slate-100">Economic development</strong> is the most significant driver:
+                    wealthier nations with higher GDP per capita tend to offer higher nominal salaries. <strong className="text-slate-100">Industry demand</strong> also
+                    plays a critical role — countries with thriving sectors that employ {occupation.title}s naturally bid up wages through
+                    competition for talent. Only {aboveAvgCount} out of {rankedCountries.length} countries pay above the global average of {formatCurrency(avgSalary)},
+                    highlighting how salary distribution is skewed toward a handful of high-income economies.
+                  </p>
+                  <p className="text-slate-300 text-sm leading-relaxed mb-3">
+                    <strong className="text-slate-100">Cost of living</strong> and <strong className="text-slate-100">labor supply</strong> further
+                    shape compensation. Countries with a limited pool of qualified {occupation.title}s and high living costs (like Switzerland or Norway)
+                    tend to offer premium salaries. Conversely, nations with large talent pools or lower living costs may offer lower nominal pay
+                    even when the purchasing power remains competitive.
+                  </p>
+                </>
+              );
+            })()}
+          </div>
+
+          {/* 3. Where Your Salary Goes Furthest */}
+          <div className="bg-dark-card rounded-xl p-6 border border-dark-border">
+            <h2 className="text-xl font-bold text-slate-100 mb-3">
+              Where Your Salary Goes Furthest
+            </h2>
+            {(() => {
+              const nominalTop = rankedCountries.length > 0 ? rankedCountries[0] : null;
+              const pppRanked = [...rankedCountries].sort(
+                (a, b) => b.salaryEntry.pppAdjusted - a.salaryEntry.pppAdjusted
+              );
+              const pppTop = pppRanked.length > 0 ? pppRanked[0] : null;
+              const pppTopThree = pppRanked.slice(0, 3);
+              return (
+                <>
+                  <p className="text-slate-300 text-sm leading-relaxed mb-3">
+                    A high nominal salary does not always mean greater purchasing power.
+                    {nominalTop && pppTop && nominalTop.country.code !== pppTop.country.code ? (
+                      <> While {nominalTop.country.flag} {nominalTop.country.name} ranks #1 in nominal salary at {formatCurrency(nominalTop.salaryEntry.estimatedSalary)},
+                        {pppTop.country.flag} {pppTop.country.name} takes the top spot when adjusted for purchasing power
+                        with a PPP-adjusted value of {formatCurrency(pppTop.salaryEntry.pppAdjusted)}.
+                        This means that {occupation.title}s in {pppTop.country.name} can afford more goods and services
+                        relative to their local cost of living.</>
+                    ) : nominalTop ? (
+                      <> {nominalTop.country.flag} {nominalTop.country.name} leads both nominal and PPP-adjusted rankings
+                        for {occupation.title}s, with a PPP-adjusted salary of {formatCurrency(nominalTop.salaryEntry.pppAdjusted)}.
+                        This indicates that the top nominal salary also translates into strong real purchasing power.</>
+                    ) : null}
+                  </p>
+                  <p className="text-slate-300 text-sm leading-relaxed mb-3">
+                    The top three countries by purchasing power for {occupation.title}s are{" "}
+                    {pppTopThree.map((item, idx) => (
+                      <span key={item.country.code}>
+                        {idx > 0 && idx < pppTopThree.length - 1 && ", "}
+                        {idx === pppTopThree.length - 1 && pppTopThree.length > 1 && ", and "}
+                        <strong className="text-slate-100">{item.country.name}</strong> ({formatCurrency(item.salaryEntry.pppAdjusted)} PPP)
+                      </span>
+                    ))}.
+                    When relocating or comparing job offers across borders, considering purchasing power alongside
+                    nominal salary is essential for understanding the true value of your compensation.
+                  </p>
+                </>
+              );
+            })()}
+          </div>
+        </section>
 
         {/* CTA + 네비게이션 */}
         <section className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">

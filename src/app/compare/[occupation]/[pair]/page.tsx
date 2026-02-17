@@ -18,6 +18,7 @@ import {
   formatPercentile,
   formatUSDShort,
 } from "@/lib/format";
+import { getCountryInsight } from "@/data/country-insights";
 
 // --- Static Params (SSG) ---
 
@@ -173,6 +174,10 @@ export default async function ComparePage({ params }: PageProps) {
   const percentileB = calculateGlobalPercentile(occSlug, salaryB.estimatedSalary);
   const localSalaryA = convertFromUSD(salaryA.estimatedSalary, countryA.code);
   const localSalaryB = convertFromUSD(salaryB.estimatedSalary, countryB.code);
+
+  // 국가별 인사이트 데이터 조회
+  const insightA = getCountryInsight(countryA.code);
+  const insightB = getCountryInsight(countryB.code);
 
   // 승자 판별
   const salaryDiff = salaryA.estimatedSalary - salaryB.estimatedSalary;
@@ -703,6 +708,154 @@ export default async function ComparePage({ params }: PageProps) {
               </Link>
             </div>
           </div>
+
+          {/* Editorial Content: Why Salaries Differ */}
+          {insightA && insightB && (
+            <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
+              <h2 className="text-xl font-bold text-slate-100 mb-3">
+                Why Salaries Differ Between {countryA.name} and {countryB.name}
+              </h2>
+              <div className="space-y-4">
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  Salary differences between {countryA.name} and {countryB.name} stem from
+                  fundamental economic structures, labor market dynamics, and cost of living
+                  disparities. Understanding these factors is essential for professionals
+                  considering relocation or evaluating international job offers for{" "}
+                  {occupation.title} roles.
+                </p>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  <strong className="text-slate-200">{countryA.name}:</strong>{" "}
+                  {insightA.economy}
+                </p>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  <strong className="text-slate-200">{countryB.name}:</strong>{" "}
+                  {insightB.economy}
+                </p>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  These economic fundamentals directly influence what employers can offer{" "}
+                  {occupation.title}s in each country. A{" "}
+                  {higherCountry === "A" ? countryA.name : countryB.name} employer operates
+                  within a {higherCountry === "A" ? "larger or more profitable" : "stronger"}{" "}
+                  economic context for this occupation, which partly explains the{" "}
+                  {percentageDiff > 0 ? `${percentageDiff}% salary gap` : "similar salary levels"}{" "}
+                  observed in the data.
+                </p>
+              </div>
+            </div>
+          )}
+
+          {/* Editorial Content: Tax and Take-Home Pay */}
+          {insightA && insightB && (
+            <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
+              <h2 className="text-xl font-bold text-slate-100 mb-3">
+                Tax and Take-Home Pay Comparison
+              </h2>
+              <div className="space-y-4">
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  Nominal salary figures only tell part of the story. The real question for any{" "}
+                  {occupation.title} comparing offers between {countryA.name} and{" "}
+                  {countryB.name} is: how much money actually reaches your bank account each
+                  month? Tax systems, social contributions, and mandated benefits vary
+                  significantly between these two countries.
+                </p>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  <strong className="text-slate-200">{countryA.name}:</strong>{" "}
+                  {insightA.taxSystem}
+                </p>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  <strong className="text-slate-200">{countryB.name}:</strong>{" "}
+                  {insightB.taxSystem}
+                </p>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  When evaluating a {occupation.title} position in either country, consider
+                  not just the gross salary but the effective take-home pay after all
+                  deductions. Countries with higher taxes often provide more public services
+                  (healthcare, education, pensions) that reduce out-of-pocket expenses
+                  elsewhere.
+                </p>
+              </div>
+            </div>
+          )}
+
+          {/* Editorial Content: Career Prospects and Job Market */}
+          {insightA && insightB && (
+            <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
+              <h2 className="text-xl font-bold text-slate-100 mb-3">
+                Career Prospects and Job Market
+              </h2>
+              <div className="space-y-4">
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  Beyond immediate salary, long-term career prospects and job market
+                  conditions matter greatly for {occupation.title}s deciding between{" "}
+                  {countryA.name} and {countryB.name}. Demand for your skills, employment
+                  stability, and growth opportunities differ between these markets.
+                </p>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  <strong className="text-slate-200">{countryA.name}:</strong>{" "}
+                  {insightA.jobMarket}
+                </p>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  <strong className="text-slate-200">{countryB.name}:</strong>{" "}
+                  {insightB.jobMarket}
+                </p>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  The key industries in {countryA.name} include {insightA.topIndustries} In{" "}
+                  {countryB.name}, the leading sectors are {insightB.topIndustries} These
+                  industry profiles shape demand and compensation for {occupation.title}{" "}
+                  professionals in each market.
+                </p>
+              </div>
+            </div>
+          )}
+
+          {/* Editorial Content: Work Culture and Lifestyle */}
+          {insightA && insightB && (
+            <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
+              <h2 className="text-xl font-bold text-slate-100 mb-3">
+                Work Culture and Lifestyle
+              </h2>
+              <div className="space-y-4">
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  Work culture significantly impacts day-to-day satisfaction and should be
+                  weighed alongside salary when choosing where to work as a{" "}
+                  {occupation.title}.
+                </p>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  <strong className="text-slate-200">{countryA.name}:</strong>{" "}
+                  {insightA.workCulture}
+                </p>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  <strong className="text-slate-200">{countryB.name}:</strong>{" "}
+                  {insightB.workCulture}
+                </p>
+              </div>
+            </div>
+          )}
+
+          {/* Editorial Content: Cost of Living Context */}
+          {insightA && insightB && (
+            <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
+              <h2 className="text-xl font-bold text-slate-100 mb-3">
+                Cost of Living Context
+              </h2>
+              <div className="space-y-4">
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  A higher salary does not always mean a better standard of living. Cost of
+                  living differences between {countryA.name} and {countryB.name} can
+                  significantly shift which country offers more real purchasing power for a{" "}
+                  {occupation.title}.
+                </p>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  <strong className="text-slate-200">{countryA.name}:</strong>{" "}
+                  {insightA.costOfLiving}
+                </p>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  <strong className="text-slate-200">{countryB.name}:</strong>{" "}
+                  {insightB.costOfLiving}
+                </p>
+              </div>
+            </div>
+          )}
 
           {/* FAQ Section */}
           <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
