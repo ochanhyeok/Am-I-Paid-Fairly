@@ -37,8 +37,22 @@ export async function generateMetadata({
     return { title: "Ranking Not Found | Am I Paid Fairly?" };
   }
 
+  // 메타 설명에 실제 연봉 숫자 포함 (SERP CTR 향상)
+  const entries = getSalaryEntries(slug);
+  const ranked = entries
+    .map((e) => {
+      const c = getCountry(e.countryCode);
+      return c ? { name: c.name, salary: e.estimatedSalary } : null;
+    })
+    .filter(Boolean)
+    .sort((a, b) => b!.salary - a!.salary) as { name: string; salary: number }[];
+  const topCountryName = ranked.length > 0 ? ranked[0].name : "";
+  const topSalary = ranked.length > 0 ? ranked[0].salary : 0;
+
   const title = `${occupation.title} Salary Rankings 2026 | AIPF`;
-  const description = `Global salary rankings for ${occupation.title}s across 42 countries. See which countries pay the highest salaries, PPP-adjusted wages, and Big Mac purchasing power.`;
+  const description = topCountryName
+    ? `${occupation.title} salary rankings 2026: ${topCountryName} leads at ${formatCurrency(topSalary)}. Compare ${ranked.length} countries by nominal salary and purchasing power.`
+    : `Global salary rankings for ${occupation.title}s. See which countries pay the highest salaries, PPP-adjusted wages, and Big Mac purchasing power.`;
 
   const ogParams = new URLSearchParams();
   ogParams.set("title", `Highest Paying Countries for ${occupation.title}s`);

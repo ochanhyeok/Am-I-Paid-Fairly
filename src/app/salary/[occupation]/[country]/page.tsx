@@ -12,6 +12,8 @@ import {
   getCity,
 } from "@/lib/data-loader";
 import { getCountryInsight } from "@/data/country-insights";
+import QuickCompareForm from "@/components/QuickCompareForm";
+import CountryQuickNav from "@/components/CountryQuickNav";
 import {
   calculateBigMacCount,
   calculateGlobalPercentile,
@@ -118,8 +120,19 @@ export async function generateMetadata({
     return { title: "Not Found | Am I Paid Fairly?" };
   }
 
+  // 메타 설명에 실제 연봉 숫자 포함 (SERP CTR 향상)
+  const salaryEntry = getSalaryEntry(occSlug, country.code);
+  const allEntries = getSalaryEntries(occSlug);
+  const sorted = allEntries
+    .map((e) => ({ code: e.countryCode, salary: e.estimatedSalary }))
+    .sort((a, b) => b.salary - a.salary);
+  const rank = sorted.findIndex((e) => e.code === country.code) + 1;
+  const localSalary = salaryEntry ? convertFromUSD(salaryEntry.estimatedSalary, country.code) : 0;
+
   const title = `${occupation.title} Salary in ${country.name} | AIPF`;
-  const description = `How much does a ${occupation.title} earn in ${country.name}? See estimated salary in USD and ${country.currency}, purchasing power-adjusted salary, Big Mac Index, and global percentile ranking.`;
+  const description = salaryEntry
+    ? `${occupation.title} salary in ${country.name}: ${formatCurrency(salaryEntry.estimatedSalary)} USD (${formatCurrency(localSalary, country.currencySymbol)} ${country.currency}). Ranked #${rank} of ${sorted.length} countries. See purchasing power and Big Mac Index.`
+    : `How much does a ${occupation.title} earn in ${country.name}? See estimated salary in USD and ${country.currency}, purchasing power, and global ranking.`;
 
   const ogParams = new URLSearchParams();
   ogParams.set("title", `${occupation.title} Salary in ${country.name}`);
@@ -143,6 +156,11 @@ export async function generateMetadata({
     },
     alternates: {
       canonical: `https://amipaidfairly.com/salary/${occSlug}/${countrySlug}`,
+    },
+    other: {
+      "tldr": salaryEntry
+        ? `${occupation.title} salary in ${country.name}: ${formatCurrency(salaryEntry.estimatedSalary)} USD/year, ranked #${rank} of ${sorted.length} countries globally.`
+        : `${occupation.title} salary in ${country.name}: see estimated salary, purchasing power, and global ranking.`,
     },
   };
 }
@@ -175,6 +193,12 @@ export default async function OccupationCountryPage({ params }: PageProps) {
   // 모든 국가의 급여 데이터 (랭킹용)
   const allEntries = getSalaryEntries(occSlug);
   const countries = getCountries();
+  const countryOptions = countries.map((c) => ({
+    code: c.code,
+    name: c.name,
+    slug: c.slug,
+    flag: c.flag,
+  }));
 
   // 국가별 급여 정보를 합쳐서 정렬
   const rankedCountries = allEntries
@@ -308,7 +332,42 @@ export default async function OccupationCountryPage({ params }: PageProps) {
               <span className="text-xl">{country.flag}</span>
               Estimated based on OECD &amp; BLS data
             </p>
+            <p className="text-slate-300 text-sm mt-2 max-w-xl mx-auto">
+              A {occupation.title} in {country.name} earns an estimated {formatCurrency(salaryEntry.estimatedSalary)} USD per year, ranking #{currentRank} out of {rankedCountries.length} countries globally.
+            </p>
+
+            {/* Country Quick Nav */}
+            <div className="mt-3 flex justify-center">
+              <CountryQuickNav
+                occupationSlug={occSlug}
+                currentCountrySlug={countrySlug}
+                countries={countries.map((c) => ({ slug: c.slug, name: c.name, flag: c.flag }))}
+              />
+            </div>
+
+            {/* Compact Percentile Indicator */}
+            <div className="flex items-center justify-center gap-3 mt-2">
+              <span className={`text-lg font-bold ${percentileTextColor}`}>
+                Top {100 - globalPercentile}%
+              </span>
+              <div className="w-32 bg-slate-800 rounded-full h-2 overflow-hidden">
+                <div
+                  className={`h-full rounded-full ${percentileColor}`}
+                  style={{ width: `${globalPercentile}%` }}
+                />
+              </div>
+              <span className="text-slate-500 text-xs">#{currentRank} of {rankedCountries.length}</span>
+            </div>
           </div>
+
+          {/* Quick Compare Form */}
+          <QuickCompareForm
+            occupationSlug={occSlug}
+            occupationTitle={occupation.title}
+            countrySlug={country.slug}
+            countryName={country.name}
+            countries={countryOptions}
+          />
 
           {/* Main Stats Card */}
           <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
@@ -357,6 +416,30 @@ export default async function OccupationCountryPage({ params }: PageProps) {
             </div>
           </div>
 
+          {/* Similar Salary Countries */}
+          {(() => {
+            const similar = rankedCountries.filter(
+              (r) => r.country.code !== country.code &&
+              Math.abs(r.estimatedSalary - salaryEntry.estimatedSalary) / salaryEntry.estimatedSalary <= 0.15
+            ).slice(0, 3);
+            if (similar.length === 0) return null;
+            return (
+              <div className="grid grid-cols-3 gap-2">
+                {similar.map((s) => (
+                  <Link
+                    key={s.country.code}
+                    href={`/salary/${occSlug}/${s.country.slug}`}
+                    className="bg-dark-card border border-dark-border rounded-xl p-3 text-center hover:border-emerald-500/30 transition-colors"
+                  >
+                    <div className="text-xl">{s.country.flag}</div>
+                    <div className="text-slate-300 text-xs mt-1 font-medium">{s.country.name}</div>
+                    <div className="text-slate-500 text-[10px] mt-0.5">{formatUSDShort(s.estimatedSalary)}</div>
+                  </Link>
+                ))}
+              </div>
+            );
+          })()}
+
           {/* How does it compare? */}
           <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
             <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
@@ -393,6 +476,45 @@ export default async function OccupationCountryPage({ params }: PageProps) {
               Ranked <span className="text-slate-300 font-medium">#{currentRank}</span> out of{" "}
               {rankedCountries.length} countries.
             </p>
+          </div>
+
+          {/* Visual Comparison Bar Chart */}
+          <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
+            <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
+              Top 5 {occupation.title} Salaries
+            </h2>
+            <div className="flex flex-col gap-3">
+              {top5.map((entry, idx) => {
+                const maxSalary = top5[0].estimatedSalary;
+                const widthPercent = Math.round((entry.estimatedSalary / maxSalary) * 100);
+                const isCurrentCountry = entry.country.code === country.code;
+                return (
+                  <div key={entry.country.code} className="flex items-center gap-3">
+                    <div className="w-24 sm:w-32 flex items-center gap-1.5 shrink-0">
+                      <span className="text-xs text-slate-500">{idx + 1}.</span>
+                      <span className="text-sm truncate">
+                        {entry.country.flag}{" "}
+                        <span className={isCurrentCountry ? "text-emerald-400 font-medium" : "text-slate-300"}>
+                          {entry.country.name}
+                        </span>
+                      </span>
+                    </div>
+                    <div className="flex-1 bg-slate-800 rounded-full h-6 overflow-hidden">
+                      <div
+                        className={`h-full rounded-full flex items-center justify-end pr-2 transition-all ${
+                          isCurrentCountry ? "bg-emerald-500/80" : "bg-blue-500/60"
+                        }`}
+                        style={{ width: `${widthPercent}%` }}
+                      >
+                        <span className="text-[10px] text-white font-medium whitespace-nowrap">
+                          ${formatUSDShort(entry.estimatedSalary)}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
           {/* Top 5 Highest-Paying Countries */}

@@ -110,8 +110,14 @@ export async function generateMetadata({
     return { title: "Not Found | Am I Paid Fairly?" };
   }
 
+  // 메타 설명에 실제 연봉 숫자 포함 (SERP CTR 향상)
+  const salaryA = getSalaryEntry(occSlug, countryA.code);
+  const salaryB = getSalaryEntry(occSlug, countryB.code);
+
   const title = `${occupation.title}: ${countryA.name} vs ${countryB.name} | AIPF`;
-  const description = `Compare ${occupation.title} salaries between ${countryA.name} and ${countryB.name}. See side-by-side salary in USD, local currency, purchasing power, Big Mac Index, and global percentile.`;
+  const description = salaryA && salaryB
+    ? `${occupation.title}: ${countryA.name} (${formatCurrency(salaryA.estimatedSalary)}) vs ${countryB.name} (${formatCurrency(salaryB.estimatedSalary)}). See which country pays more with PPP-adjusted comparison.`
+    : `Compare ${occupation.title} salaries between ${countryA.name} and ${countryB.name}. Side-by-side salary, purchasing power, and Big Mac Index.`;
 
   const ogParams = new URLSearchParams();
   ogParams.set("title", `${occupation.title} Salary`);

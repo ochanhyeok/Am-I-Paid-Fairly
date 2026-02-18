@@ -4,9 +4,11 @@ import Link from "next/link";
 import {
   getOccupations,
   getOccupation,
+  getCountries,
   getSalaryEntries,
   getCountry,
 } from "@/lib/data-loader";
+import QuickCompareForm from "@/components/QuickCompareForm";
 import { formatCurrency, formatNumber } from "@/lib/format";
 import { calculateBigMacCount } from "@/lib/salary-calculator";
 import { blogPosts } from "@/data/blog-posts";
@@ -32,8 +34,14 @@ export async function generateMetadata({
     return { title: "Not Found | Am I Paid Fairly?" };
   }
 
+  // 메타 설명에 실제 연봉 숫자 포함 (SERP CTR 향상)
+  const entries = getSalaryEntries(slug);
+  const salaries = entries.map((e) => e.estimatedSalary).sort((a, b) => a - b);
+  const lowestSalary = salaries.length > 0 ? salaries[0] : 0;
+  const highestSalary = salaries.length > 0 ? salaries[salaries.length - 1] : 0;
+
   const title = `${occupation.title} Salary Worldwide | AIPF`;
-  const description = `Compare ${occupation.title} salaries across 42 countries. See estimated earnings in USD, purchasing power-adjusted values, and Big Mac Index for every country.`;
+  const description = `${occupation.title} salaries range from $${Math.round(lowestSalary / 1000).toLocaleString("en-US")}k to $${Math.round(highestSalary / 1000).toLocaleString("en-US")}k across ${entries.length} countries. US average: ${formatCurrency(occupation.baseUSA)}. Compare globally with PPP and Big Mac Index.`;
 
   const ogParams = new URLSearchParams();
   ogParams.set("title", `${occupation.title} Salary Worldwide (2026)`);
@@ -58,6 +66,9 @@ export async function generateMetadata({
     },
     alternates: {
       canonical: `https://amipaidfairly.com/salary/${occupation.slug}`,
+    },
+    other: {
+      "tldr": `${occupation.title} salary worldwide: $${Math.round(lowestSalary / 1000)}k–$${Math.round(highestSalary / 1000)}k across ${entries.length} countries. US average: ${formatCurrency(occupation.baseUSA)}.`,
     },
   };
 }
@@ -290,6 +301,12 @@ export default async function OccupationSalaryPage({
   }
 
   const rows = buildCountryRows(occupation.slug);
+  const allCountries = getCountries().map((c) => ({
+    code: c.code,
+    name: c.name,
+    slug: c.slug,
+    flag: c.flag,
+  }));
 
   const totalCountries = rows.length;
   const globalAvg =
@@ -342,7 +359,19 @@ export default async function OccupationSalaryPage({
           <p className="text-slate-500 text-sm mt-2">
             Estimated based on OECD &amp; BLS data
           </p>
+          {rows.length >= 2 && (
+            <p className="text-slate-300 text-sm mt-2 max-w-xl mx-auto">
+              The average {occupation.title} earns {formatCurrency(occupation.baseUSA)} in the United States, with salaries ranging from {formatCurrency(rows[rows.length - 1].estimatedSalary)} to {formatCurrency(rows[0].estimatedSalary)} across {totalCountries} countries.
+            </p>
+          )}
         </header>
+
+        {/* Quick Compare Form */}
+        <QuickCompareForm
+          occupationSlug={occupation.slug}
+          occupationTitle={occupation.title}
+          countries={allCountries}
+        />
 
         {/* Stats row */}
         <div className="grid grid-cols-3 gap-3">

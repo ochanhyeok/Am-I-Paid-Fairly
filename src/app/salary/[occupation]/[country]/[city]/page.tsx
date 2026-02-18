@@ -14,6 +14,8 @@ import {
   getCitySalaryEntriesByCountry,
   getSalaryEntry,
 } from "@/lib/data-loader";
+import QuickCompareForm from "@/components/QuickCompareForm";
+import CityQuickNav from "@/components/CityQuickNav";
 import {
   calculateCityBigMacCount,
   calculateCityPercentile,
@@ -73,13 +75,16 @@ export async function generateMetadata({
     return { title: "Not Found | Am I Paid Fairly?" };
   }
 
+  // 메타 설명에 실제 연봉 숫자 포함 (SERP CTR 향상)
   const citySalary = getCitySalaryEntry(occSlug, citySlug);
-  const salaryText = citySalary
-    ? `${formatCurrency(citySalary.estimatedSalary)} USD`
-    : "salary data";
+  const colAdjustedText = citySalary
+    ? `Cost of living adjusted: ${formatCurrency(citySalary.colAdjusted)}.`
+    : "";
 
   const title = `${occupation.title} Salary in ${city.name}, ${country.name} (2026) | Am I Paid Fairly?`;
-  const description = `Estimated ${occupation.title} salary in ${city.name}: ${salaryText}. See cost of living adjustment, purchasing power, and how ${city.name} compares to 86 global cities.`;
+  const description = citySalary
+    ? `${occupation.title} salary in ${city.name}, ${country.name}: ${formatCurrency(citySalary.estimatedSalary)} USD. ${colAdjustedText} Compare with 86+ global cities.`
+    : `Estimated ${occupation.title} salary in ${city.name}. See cost of living adjustment, purchasing power, and global city comparison.`;
 
   const ogParams = new URLSearchParams();
   ogParams.set("title", `${occupation.title} Salary in ${city.name}`);
@@ -94,6 +99,11 @@ export async function generateMetadata({
     twitter: { card: "summary_large_image", title, description, images: [ogImage] },
     alternates: {
       canonical: `https://amipaidfairly.com/salary/${occSlug}/${countrySlug}/${citySlug}`,
+    },
+    other: {
+      "tldr": citySalary
+        ? `${occupation.title} salary in ${city.name}, ${country.name}: ${formatCurrency(citySalary.estimatedSalary)} USD/year, COL-adjusted: ${formatCurrency(citySalary.colAdjusted)} USD.`
+        : `${occupation.title} salary in ${city.name}, ${country.name}: see estimated salary and cost of living adjustment.`,
     },
   };
 }
@@ -120,6 +130,12 @@ export default async function CityDetailPage({ params }: PageProps) {
   const bigMacCount = calculateCityBigMacCount(country.code, citySalary.estimatedSalary);
   const cityPercentile = calculateCityPercentile(occSlug, citySalary.estimatedSalary);
   const localSalary = convertFromUSD(citySalary.estimatedSalary, country.code);
+  const countryOptions = getCountries().map((c) => ({
+    code: c.code,
+    name: c.name,
+    slug: c.slug,
+    flag: c.flag,
+  }));
 
   // 같은 나라의 다른 도시
   const sameCountryCities = getCitySalaryEntriesByCountry(occSlug, country.code);
@@ -273,7 +289,29 @@ export default async function CityDetailPage({ params }: PageProps) {
             <p className="text-slate-600 text-xs mt-2">
               Estimated based on OECD &amp; BLS data, adjusted for city cost of living
             </p>
+            <p className="text-slate-300 text-sm mt-2 max-w-xl mx-auto">
+              The estimated {occupation.title} salary in {city.name} is {formatCurrency(citySalary.estimatedSalary)} USD per year, with a cost-of-living adjusted value of {formatCurrency(citySalary.colAdjusted)} USD.
+            </p>
+
+            {/* City Quick Nav */}
+            <div className="mt-3 flex justify-center">
+              <CityQuickNav
+                occupationSlug={occSlug}
+                countrySlug={countrySlug}
+                currentCitySlug={citySlug}
+                cities={getCitiesByCountry(country.code).map((c) => ({ slug: c.slug, name: c.name }))}
+              />
+            </div>
           </div>
+
+          {/* Quick Compare Form */}
+          <QuickCompareForm
+            occupationSlug={occSlug}
+            occupationTitle={occupation.title}
+            countrySlug={country.slug}
+            countryName={country.name}
+            countries={countryOptions}
+          />
 
           {/* Salary Cards */}
           <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
@@ -373,6 +411,43 @@ export default async function CityDetailPage({ params }: PageProps) {
               </p>
             </div>
           </div>
+
+          {/* City Comparison Bar Chart */}
+          {sameCountryCitiesWithInfo.length > 1 && (
+            <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
+              <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
+                {occupation.title} Salary by City in {country.name}
+              </h2>
+              <div className="flex flex-col gap-3">
+                {sameCountryCitiesWithInfo.slice(0, 8).map((entry, idx) => {
+                  const maxSal = sameCountryCitiesWithInfo[0].estimatedSalary;
+                  const widthPct = Math.round((entry.estimatedSalary / maxSal) * 100);
+                  const isCurrent = entry.citySlug === citySlug;
+                  return (
+                    <div key={entry.citySlug} className="flex items-center gap-3">
+                      <div className="w-28 sm:w-36 shrink-0">
+                        <span className={`text-sm truncate ${isCurrent ? "text-emerald-400 font-medium" : "text-slate-300"}`}>
+                          {entry.city.name}
+                        </span>
+                      </div>
+                      <div className="flex-1 bg-slate-800 rounded-full h-6 overflow-hidden">
+                        <div
+                          className={`h-full rounded-full flex items-center justify-end pr-2 ${
+                            isCurrent ? "bg-emerald-500/80" : "bg-blue-500/60"
+                          }`}
+                          style={{ width: `${widthPct}%` }}
+                        >
+                          <span className="text-[10px] text-white font-medium whitespace-nowrap">
+                            ${formatUSDShort(entry.estimatedSalary)}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
 
           {/* Global City Percentile */}
           <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
@@ -502,6 +577,42 @@ export default async function CityDetailPage({ params }: PageProps) {
               </div>
             </div>
           )}
+
+          {/* Top Global Cities for This Job */}
+          {(() => {
+            const topGlobalCities = allCityEntries
+              .slice()
+              .sort((a, b) => b.estimatedSalary - a.estimatedSalary)
+              .slice(0, 6)
+              .map((entry) => {
+                const c = getCity(entry.citySlug);
+                const ctry = c ? getCountries().find((co) => co.code === entry.countryCode) : undefined;
+                if (!c || !ctry) return null;
+                return { citySlug: entry.citySlug, cityName: c.name, countrySlug: ctry.slug, estimatedSalary: entry.estimatedSalary };
+              })
+              .filter(Boolean) as { citySlug: string; cityName: string; countrySlug: string; estimatedSalary: number }[];
+
+            if (topGlobalCities.length === 0) return null;
+            return (
+              <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
+                <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-3">
+                  Top Cities for {occupation.title}s
+                </h3>
+                <div className="flex gap-2 overflow-x-auto pb-2 -mx-1 px-1">
+                  {topGlobalCities.map((entry) => (
+                    <Link
+                      key={entry.citySlug}
+                      href={`/salary/${occSlug}/${entry.countrySlug}/${entry.citySlug}`}
+                      className="shrink-0 bg-slate-800/50 border border-slate-700/50 rounded-xl p-3 text-center hover:border-emerald-500/30 transition-colors min-w-[100px]"
+                    >
+                      <div className="text-slate-300 text-xs font-medium truncate">{entry.cityName}</div>
+                      <div className="text-emerald-400 text-sm font-bold mt-1">{formatUSDShort(entry.estimatedSalary)}</div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            );
+          })()}
 
           {/* Narrative SEO Content */}
           <article className="flex flex-col gap-6">
