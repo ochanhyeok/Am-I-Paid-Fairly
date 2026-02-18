@@ -108,7 +108,7 @@ export async function generateMetadata({
   const salaryAText = salaryA ? formatUSDShort(salaryA.estimatedSalary) : "N/A";
   const salaryBText = salaryB ? formatUSDShort(salaryB.estimatedSalary) : "N/A";
 
-  const title = `Relocating as a ${occupation.title}: ${cityA.name} \u2192 ${cityB.name} (2026) | Am I Paid Fairly?`;
+  const title = `${occupation.title}: ${cityA.name} to ${cityB.name} | AIPF`;
   const description = `Should a ${occupation.title} relocate from ${cityA.name} to ${cityB.name}? Salary changes from ${salaryAText} to ${salaryBText}, but purchasing power... Compare cost of living, Big Mac Index, and get our verdict.`;
 
   const ogParams = new URLSearchParams();
@@ -349,8 +349,9 @@ export default async function RelocatePage({ params }: PageProps) {
             "@type": "BreadcrumbList",
             itemListElement: [
               { "@type": "ListItem", position: 1, name: "Home", item: "https://amipaidfairly.com" },
-              { "@type": "ListItem", position: 2, name: occupation.title, item: `https://amipaidfairly.com/salary/${occSlug}` },
-              { "@type": "ListItem", position: 3, name: `${cityA.name} \u2192 ${cityB.name}`, item: `https://amipaidfairly.com/relocate/${occSlug}/${pair}` },
+              { "@type": "ListItem", position: 2, name: "Relocate", item: "https://amipaidfairly.com/relocate" },
+              { "@type": "ListItem", position: 3, name: occupation.title, item: `https://amipaidfairly.com/salary/${occSlug}` },
+              { "@type": "ListItem", position: 4, name: `${cityA.name} \u2192 ${cityB.name}`, item: `https://amipaidfairly.com/relocate/${occSlug}/${pair}` },
             ],
           }),
         }}

@@ -24,6 +24,61 @@ import {
   formatUSDShort,
 } from "@/lib/format";
 
+// --- 국가+직업 FAQ 헬퍼 ---
+
+function buildCountryFaqItems(
+  occupationTitle: string,
+  countryName: string,
+  estimatedSalary: number,
+  localSalary: number,
+  currency: string,
+  currencySymbol: string,
+  pppAdjusted: number,
+  globalPercentile: number,
+  currentRank: number,
+  rankedCountries: { country: { name: string }; estimatedSalary: number }[],
+  bigMacCount: number,
+) {
+  // 인접 국가 비교 데이터 (현재 순위 기준 ±1)
+  const neighborAbove = currentRank > 1 ? rankedCountries[currentRank - 2] : null;
+  const neighborBelow = currentRank < rankedCountries.length ? rankedCountries[currentRank] : null;
+
+  const neighborComparison = neighborAbove && neighborBelow
+    ? `${countryName} ranks #${currentRank} globally, just behind ${neighborAbove.country.name} (${formatCurrency(neighborAbove.estimatedSalary)} USD) and ahead of ${neighborBelow.country.name} (${formatCurrency(neighborBelow.estimatedSalary)} USD).`
+    : neighborAbove
+      ? `${countryName} ranks #${currentRank} globally, just behind ${neighborAbove.country.name} (${formatCurrency(neighborAbove.estimatedSalary)} USD).`
+      : neighborBelow
+        ? `${countryName} ranks #${currentRank} globally, ahead of ${neighborBelow.country.name} (${formatCurrency(neighborBelow.estimatedSalary)} USD).`
+        : `${countryName} ranks #${currentRank} out of ${rankedCountries.length} countries.`;
+
+  const pppNote = pppAdjusted >= estimatedSalary
+    ? `The purchasing power-adjusted salary is ${formatCurrency(pppAdjusted)} USD, which is higher than the nominal figure, suggesting a relatively affordable cost of living in ${countryName}.`
+    : `The purchasing power-adjusted salary is ${formatCurrency(pppAdjusted)} USD, which is lower than the nominal figure, indicating a relatively higher cost of living in ${countryName}.`;
+
+  return [
+    {
+      question: `What is the average ${occupationTitle} salary in ${countryName}?`,
+      answer: `The estimated annual salary for a ${occupationTitle} in ${countryName} is ${formatCurrency(estimatedSalary)} USD, which is approximately ${formatCurrency(localSalary, currencySymbol)} ${currency} at current exchange rates. This places ${countryName} at #${currentRank} out of ${rankedCountries.length} countries for this occupation.`,
+    },
+    {
+      question: `How does ${countryName}'s tax system affect ${occupationTitle} take-home pay?`,
+      answer: `Tax structures vary significantly and directly impact the net income of a ${occupationTitle} earning ${formatCurrency(estimatedSalary)} USD in ${countryName}. While the gross salary provides a useful benchmark, the effective take-home pay depends on income tax brackets, social contributions, and mandatory benefits specific to ${countryName}'s tax code.`,
+    },
+    {
+      question: `Is ${countryName} a good place to work as a ${occupationTitle}?`,
+      answer: `${countryName} offers a ${occupationTitle} salary in the ${globalPercentile >= 50 ? "upper" : globalPercentile >= 30 ? "middle" : "lower"} range globally, ranking #${currentRank} out of ${rankedCountries.length} countries. ${bigMacCount > 0 ? `With a Big Mac purchasing power of ${formatNumber(bigMacCount)} burgers per year, ${countryName} ${pppAdjusted >= estimatedSalary ? "offers strong real purchasing power" : "has a higher cost of living that reduces real purchasing power"}.` : `The purchasing power-adjusted salary of ${formatCurrency(pppAdjusted)} USD provides additional context on the real value of this compensation.`}`,
+    },
+    {
+      question: `How does ${occupationTitle} salary in ${countryName} compare to neighboring countries?`,
+      answer: `${neighborComparison} Across all ${rankedCountries.length} countries tracked, ${occupationTitle}s in ${countryName} earn more than ${globalPercentile}% of their peers worldwide.`,
+    },
+    {
+      question: `What is the cost of living impact on ${occupationTitle} salary in ${countryName}?`,
+      answer: `${pppNote} ${bigMacCount > 0 ? `Using the Big Mac Index, this salary can purchase approximately ${formatNumber(bigMacCount)} Big Macs per year, providing an everyday measure of how far the salary stretches in ${countryName}.` : `Evaluating purchasing power alongside the nominal salary is essential when considering compensation in ${countryName}.`}`,
+    },
+  ];
+}
+
 // --- Static Params (SSG) ---
 // 상위 20 직업만 빌드 타임 생성, 나머지는 on-demand ISR (Vercel 75MB 제한 대응)
 
@@ -63,7 +118,7 @@ export async function generateMetadata({
     return { title: "Not Found | Am I Paid Fairly?" };
   }
 
-  const title = `${occupation.title} Salary in ${country.name} (2026) | Am I Paid Fairly?`;
+  const title = `${occupation.title} Salary in ${country.name} | AIPF`;
   const description = `How much does a ${occupation.title} earn in ${country.name}? See estimated salary in USD and ${country.currency}, purchasing power-adjusted salary, Big Mac Index, and global percentile ranking.`;
 
   const ogParams = new URLSearchParams();
@@ -183,29 +238,20 @@ export default async function OccupationCountryPage({ params }: PageProps) {
         ? "text-yellow-400"
         : "text-red-400";
 
-  // FAQ JSON-LD 구조화 데이터
-  const faqItems = [
-    {
-      question: `How much does a ${occupation.title} earn in ${country.name}?`,
-      answer: `The estimated annual salary for a ${occupation.title} in ${country.name} is ${formatCurrency(salaryEntry.estimatedSalary)} USD (approximately ${formatCurrency(localSalary, country.currencySymbol)} ${country.currency}). This is based on OECD and BLS data adjusted for the local economy.`,
-    },
-    {
-      question: `How does the ${occupation.title} salary in ${country.name} compare globally?`,
-      answer: `A ${occupation.title} in ${country.name} earns more than ${globalPercentile}% of ${occupation.title}s worldwide, ranking #${currentRank} out of ${rankedCountries.length} countries.`,
-    },
-    {
-      question: `What is the purchasing power of a ${occupation.title} salary in ${country.name}?`,
-      answer: bigMacCount > 0
-        ? `Based on the Big Mac Index, a ${occupation.title} salary in ${country.name} can buy approximately ${formatNumber(bigMacCount)} Big Macs per year. The purchasing power-adjusted salary is ${formatCurrency(salaryEntry.pppAdjusted)} USD.`
-        : `The purchasing power-adjusted salary for a ${occupation.title} in ${country.name} is ${formatCurrency(salaryEntry.pppAdjusted)} USD.`,
-    },
-    {
-      question: `Which country pays ${occupation.title}s the most?`,
-      answer: rankedCountries.length > 0
-        ? `${rankedCountries[0].country.name} pays the highest estimated salary for ${occupation.title}s at ${formatCurrency(rankedCountries[0].estimatedSalary)} USD per year.`
-        : `Data is currently being updated.`,
-    },
-  ];
+  // FAQ JSON-LD 구조화 데이터 — 국가+직업별 고유 질문/답변
+  const faqItems = buildCountryFaqItems(
+    occupation.title,
+    country.name,
+    salaryEntry.estimatedSalary,
+    localSalary,
+    country.currency,
+    country.currencySymbol,
+    salaryEntry.pppAdjusted,
+    globalPercentile,
+    currentRank,
+    rankedCountries,
+    bigMacCount,
+  );
 
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -257,6 +303,7 @@ export default async function OccupationCountryPage({ params }: PageProps) {
             <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-50 leading-tight">
               {occupation.title} Salary in {country.name} (2026)
             </h1>
+            <p className="text-xs text-slate-500 mt-1">Data last updated: February 2026</p>
             <p className="text-slate-500 text-sm mt-3 flex items-center justify-center gap-2">
               <span className="text-xl">{country.flag}</span>
               Estimated based on OECD &amp; BLS data

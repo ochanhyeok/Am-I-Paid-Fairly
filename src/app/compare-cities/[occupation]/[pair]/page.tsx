@@ -102,7 +102,7 @@ export async function generateMetadata({
   const countryA = getCountry(cityA.countryCode);
   const countryB = getCountry(cityB.countryCode);
 
-  const title = `${occupation.title} Salary: ${cityA.name} vs ${cityB.name} (2026) | Am I Paid Fairly?`;
+  const title = `${occupation.title}: ${cityA.name} vs ${cityB.name} | AIPF`;
   const description = `Compare ${occupation.title} salaries between ${cityA.name}${countryA ? `, ${countryA.name}` : ""} and ${cityB.name}${countryB ? `, ${countryB.name}` : ""}. Side-by-side comparison of salary, cost of living, purchasing power, and Big Mac Index.`;
 
   const ogParams = new URLSearchParams();
@@ -276,8 +276,9 @@ export default async function CompareCitiesPage({ params }: PageProps) {
             "@type": "BreadcrumbList",
             itemListElement: [
               { "@type": "ListItem", position: 1, name: "Home", item: "https://amipaidfairly.com" },
-              { "@type": "ListItem", position: 2, name: occupation.title, item: `https://amipaidfairly.com/salary/${occSlug}` },
-              { "@type": "ListItem", position: 3, name: `${cityA.name} vs ${cityB.name}`, item: `https://amipaidfairly.com/compare-cities/${occSlug}/${pair}` },
+              { "@type": "ListItem", position: 2, name: "City Comparison", item: "https://amipaidfairly.com/cities" },
+              { "@type": "ListItem", position: 3, name: occupation.title, item: `https://amipaidfairly.com/salary/${occSlug}` },
+              { "@type": "ListItem", position: 4, name: `${cityA.name} vs ${cityB.name}`, item: `https://amipaidfairly.com/compare-cities/${occSlug}/${pair}` },
             ],
           }),
         }}

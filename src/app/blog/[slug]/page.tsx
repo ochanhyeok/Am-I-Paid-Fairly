@@ -45,6 +45,7 @@ export async function generateMetadata({
       description: post.description,
       type: "article",
       publishedTime: post.date,
+      modifiedTime: post.date,
       images: [ogImage],
     },
     twitter: {
@@ -128,6 +129,32 @@ export default async function BlogPostPage({ params }: PageProps) {
     },
   };
 
+  // --- FAQ 자동 생성 (섹션 헤딩 기반) ---
+  const faqItems = (post.sections ?? []).slice(0, 3).map((section) => ({
+    question: section.heading.endsWith("?")
+      ? section.heading
+      : `What about ${section.heading.toLowerCase()}?`,
+    answer:
+      section.paragraphs[0].substring(0, 300) +
+      (section.paragraphs[0].length > 300 ? "..." : ""),
+  }));
+
+  const faqJsonLd =
+    faqItems.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: faq.answer,
+            },
+          })),
+        }
+      : null;
+
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-950 to-slate-900 px-4 py-12">
       <script
@@ -148,6 +175,14 @@ export default async function BlogPostPage({ params }: PageProps) {
           }),
         }}
       />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqJsonLd),
+          }}
+        />
+      )}
 
       <div className="max-w-3xl mx-auto">
         {/* Breadcrumb */}
@@ -263,6 +298,30 @@ export default async function BlogPostPage({ params }: PageProps) {
                     &rarr;
                   </span>
                 </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* FAQ Section */}
+        {faqItems.length > 0 && (
+          <section className="mt-12">
+            <h2 className="text-xl font-bold text-slate-100 mb-4">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-4">
+              {faqItems.map((faq, i) => (
+                <details
+                  key={i}
+                  className="bg-dark-card rounded-lg p-4 border border-dark-border"
+                >
+                  <summary className="text-slate-200 font-medium cursor-pointer">
+                    {faq.question}
+                  </summary>
+                  <p className="text-slate-400 text-sm mt-2 leading-relaxed">
+                    {faq.answer}
+                  </p>
+                </details>
               ))}
             </div>
           </section>

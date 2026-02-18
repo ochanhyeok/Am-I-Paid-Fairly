@@ -31,10 +31,17 @@
 - 5단계 판정: Strong Yes / Yes / Neutral / No / Strong No
 - COL 보정, PPP, 빅맥 지수 종합 분석
 
-### 블로그 (33개)
-- 국가별 연봉 가이드 (인도, 중국, 독일, 캐나다, 일본)
-- 직종별 분석 (파일럿, AI 엔지니어, 데이터 사이언티스트)
-- 트렌드 (원격근무, 주식 보상, 최고 연봉 국가)
+### 블로그 (50개)
+- 국가별 연봉 가이드 (인도, 중국, 독일, 캐나다, 일본, 유럽 테크)
+- 직종별 분석 (간호사, 의사, 교사, 변호사, 회계사, 파일럿, AI 엔지니어)
+- 재정 가이드 (연봉 협상, 세금, PPP, 환율, 해외이직 재정 계획)
+- 트렌드 (원격근무 연봉 조정, AI 영향, 성별 임금격차, 도시 추천)
+
+### 에디토리얼 콘텐츠
+- 42개국 country-insights 데이터 기반 국가별 고유 콘텐츠
+- Compare 페이지: 연봉 차이 이유, 세금, 커리어, 문화, 생활비 (5섹션)
+- Country 페이지: 직업 환경, 세금, 생활비, 핵심 산업 (4섹션)
+- Rankings 페이지: 지역 분석, 연봉 요인, 구매력 (3섹션)
 
 ### 랭킹
 - 175개 직업별 42개국 연봉 순위
@@ -67,9 +74,9 @@
   ↓ 수동 큐레이션 + Node.js 스크립트
 정적 JSON 데이터 (occupations, countries, salaries, cities, bigmac)
   ↓ Next.js generateStaticParams()
-~40,752 정적 HTML 페이지 생성
+~2,802 SSG pre-built + ~37,950 on-demand ISR
   ↓ Vercel CDN
-전 세계 Edge에서 서빙
+전 세계 Edge에서 서빙 (ISR: 첫 방문 시 자동 생성 + 캐싱)
 ```
 
 ---
@@ -86,8 +93,11 @@
 | Relocation (`/relocate/[occ]/[pair]`) | 4,375 |
 | 랭킹 (`/rankings/[occ]`) | 175 |
 | 도시 브라우즈 (`/cities/[city]`) | 98 |
-| 블로그 (`/blog/[slug]`) | 33 |
+| 블로그 (`/blog/[slug]`) | 50 |
 | 기타 (홈, browse, about 등) | ~21 |
+
+> SSG 최적화: Vercel 75MB 배포 크기 제한으로 상위 10개 직업만 빌드타임 생성 (~2,802 SSG).
+> 나머지는 on-demand ISR로 첫 방문 시 자동 생성. 사이트맵은 전체 40,752 URL 포함.
 
 ---
 
@@ -114,7 +124,7 @@ npm install
 # 개발 서버 (localhost:3000)
 npm run dev
 
-# 프로덕션 빌드 (~40,752 페이지 생성)
+# 프로덕션 빌드 (~2,802 SSG + ~37,950 on-demand ISR, 총 ~40,752 페이지)
 npm run build
 
 # 도시 연봉 데이터 재생성
@@ -144,8 +154,8 @@ src/
 │   ├── blog/                             # 블로그
 │   └── api/og/                           # OG Image 생성 (Edge)
 ├── components/                           # 공통 컴포넌트
-├── data/                                 # 정적 JSON 데이터 + 블로그
-├── lib/                                  # 데이터 로더 + 계산 로직
+├── data/                                 # 정적 JSON 데이터 + 블로그 + country-insights
+├── lib/                                  # 데이터 로더 + 계산 로직 + SSG 설정
 └── types/                                # TypeScript 타입 정의
 ```
 

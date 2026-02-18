@@ -255,6 +255,7 @@ export default async function CityDetailPage({ params }: PageProps) {
             <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-50 leading-tight">
               {occupation.title} Salary in {city.name} (2026)
             </h1>
+            <p className="text-xs text-slate-500 mt-1">Data last updated: February 2026</p>
             <p className="text-slate-500 text-sm mt-3 flex items-center justify-center gap-2">
               <span className="text-xl">{country.flag}</span>
               {city.name}, {country.name}

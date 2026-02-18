@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const country = getCountry(city.countryCode);
 
-  const title = `All Salaries in ${city.name}, ${country?.name || ""} (2026) | Am I Paid Fairly?`;
+  const title = `Salaries in ${city.name} (2026) | AIPF`;
   const description = `Browse estimated salaries for 175+ occupations in ${city.name}, ${country?.name || ""}. See city-adjusted salaries, cost of living data, and compare with other global cities.`;
 
   const ogParams = new URLSearchParams();

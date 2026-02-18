@@ -110,7 +110,7 @@ export async function generateMetadata({
     return { title: "Not Found | Am I Paid Fairly?" };
   }
 
-  const title = `${occupation.title} Salary: ${countryA.name} vs ${countryB.name} (2026) | Am I Paid Fairly?`;
+  const title = `${occupation.title}: ${countryA.name} vs ${countryB.name} | AIPF`;
   const description = `Compare ${occupation.title} salaries between ${countryA.name} and ${countryB.name}. See side-by-side salary in USD, local currency, purchasing power, Big Mac Index, and global percentile.`;
 
   const ogParams = new URLSearchParams();
@@ -235,25 +235,39 @@ export default async function ComparePage({ params }: PageProps) {
     );
   }
 
-  // FAQ JSON-LD 구조화 데이터
+  // FAQ JSON-LD 구조화 데이터 — 비교 페이지 고유 질문/답변
+  const winnerName = higherCountry === "A" ? countryA.name : countryB.name;
+  const loserName = higherCountry === "A" ? countryB.name : countryA.name;
+  const winnerSalary = higherCountry === "A" ? salaryA.estimatedSalary : salaryB.estimatedSalary;
+  const loserSalary = higherCountry === "A" ? salaryB.estimatedSalary : salaryA.estimatedSalary;
+  const pppWinner = salaryA.pppAdjusted >= salaryB.pppAdjusted ? countryA.name : countryB.name;
+  const pppLoser = salaryA.pppAdjusted >= salaryB.pppAdjusted ? countryB.name : countryA.name;
+  const pppHigher = Math.max(salaryA.pppAdjusted, salaryB.pppAdjusted);
+  const pppLower = Math.min(salaryA.pppAdjusted, salaryB.pppAdjusted);
+  const pppDiffPct = pppLower > 0 ? Math.round(((pppHigher - pppLower) / pppLower) * 100) : 0;
+
   const faqItems = [
     {
-      question: `Who pays ${occupation.title}s more: ${countryA.name} or ${countryB.name}?`,
-      answer:
-        higherCountry === "A"
-          ? `${countryA.name} pays ${occupation.title}s an estimated ${formatCurrency(salaryA.estimatedSalary)} USD per year, which is ${percentageDiff}% more than ${countryB.name}'s estimated ${formatCurrency(salaryB.estimatedSalary)} USD.`
-          : `${countryB.name} pays ${occupation.title}s an estimated ${formatCurrency(salaryB.estimatedSalary)} USD per year, which is ${percentageDiff}% more than ${countryA.name}'s estimated ${formatCurrency(salaryA.estimatedSalary)} USD.`,
+      question: `Which country pays ${occupation.title}s more, ${countryA.name} or ${countryB.name}?`,
+      answer: percentageDiff > 0
+        ? `${winnerName} pays ${occupation.title}s ${percentageDiff}% more than ${loserName}. The estimated annual salary is ${formatCurrency(winnerSalary)} USD in ${winnerName} compared to ${formatCurrency(loserSalary)} USD in ${loserName}, based on OECD and BLS data.`
+        : `${countryA.name} and ${countryB.name} offer very similar salaries for ${occupation.title}s, at ${formatCurrency(salaryA.estimatedSalary)} USD and ${formatCurrency(salaryB.estimatedSalary)} USD respectively.`,
     },
     {
-      question: `What is the purchasing power-adjusted salary for a ${occupation.title} in ${countryA.name} vs ${countryB.name}?`,
-      answer: `The purchasing power-adjusted salary is ${formatCurrency(salaryA.pppAdjusted)} USD in ${countryA.name} and ${formatCurrency(salaryB.pppAdjusted)} USD in ${countryB.name}. This adjustment uses the Big Mac Index to account for cost of living differences.`,
+      question: `How does cost of living compare between ${countryA.name} and ${countryB.name} for ${occupation.title}s?`,
+      answer: `When adjusted for purchasing power, ${pppWinner} leads with a PPP-adjusted salary of ${formatCurrency(pppHigher)} USD compared to ${formatCurrency(pppLower)} USD in ${pppLoser}${pppDiffPct > 0 ? ` — a ${pppDiffPct}% difference` : ""}. ${bigMacCountA > 0 && bigMacCountB > 0 ? `Using the Big Mac Index, a ${occupation.title}'s salary buys ${formatNumber(bigMacCountA)} burgers per year in ${countryA.name} versus ${formatNumber(bigMacCountB)} in ${countryB.name}.` : "This PPP adjustment accounts for differences in the cost of goods and services between both countries."}`,
     },
     {
-      question: `How does the purchasing power compare for ${occupation.title}s?`,
-      answer:
-        bigMacCountA > 0 && bigMacCountB > 0
-          ? `Using the Big Mac Index, a ${occupation.title} in ${countryA.name} can buy about ${formatNumber(bigMacCountA)} Big Macs per year, while in ${countryB.name} it's about ${formatNumber(bigMacCountB)} Big Macs.`
-          : `Purchasing power-adjusted values show ${formatCurrency(salaryA.pppAdjusted)} in ${countryA.name} vs ${formatCurrency(salaryB.pppAdjusted)} in ${countryB.name}.`,
+      question: `Should I relocate from ${countryA.name} to ${countryB.name} as a ${occupation.title}?`,
+      answer: `Relocation decisions involve more than salary alone. ${countryB.name} offers an estimated ${formatCurrency(salaryB.estimatedSalary)} USD salary for ${occupation.title}s${salaryB.estimatedSalary > salaryA.estimatedSalary ? `, which is ${Math.round(((salaryB.estimatedSalary - salaryA.estimatedSalary) / salaryA.estimatedSalary) * 100)}% higher than ${countryA.name}` : `, compared to ${formatCurrency(salaryA.estimatedSalary)} USD in ${countryA.name}`}. However, you should also consider cost of living (PPP-adjusted: ${formatCurrency(salaryB.pppAdjusted)} vs ${formatCurrency(salaryA.pppAdjusted)}), tax structures, work culture, and visa requirements before deciding.`,
+    },
+    {
+      question: `What are the tax differences for ${occupation.title}s between ${countryA.name} and ${countryB.name}?`,
+      answer: `Tax systems differ significantly between ${countryA.name} and ${countryB.name}, impacting take-home pay for ${occupation.title}s. While nominal salaries show a ${percentageDiff > 0 ? `${percentageDiff}% gap favoring ${winnerName}` : "similar level"}, effective tax rates and social contributions can narrow or widen this difference. Countries with higher taxes often provide more public services such as healthcare and pensions that offset out-of-pocket costs.`,
+    },
+    {
+      question: `Which country has better career growth for ${occupation.title}s, ${countryA.name} or ${countryB.name}?`,
+      answer: `Career growth depends on industry demand, job market conditions, and economic development. ${countryA.name} offers a ${formatPercentile(percentileA)} global percentile for ${occupation.title} compensation, while ${countryB.name} sits at ${formatPercentile(percentileB)}. ${percentileA > percentileB ? `${countryA.name}'s stronger compensation ranking` : percentileB > percentileA ? `${countryB.name}'s stronger compensation ranking` : "Both countries' similar compensation levels"} may indicate ${percentileA > percentileB ? "higher" : percentileB > percentileA ? "higher" : "comparable"} demand for ${occupation.title}s in that market.`,
     },
   ];
 

@@ -10,6 +10,8 @@ const organizationJsonLd = {
   url: "https://amipaidfairly.com",
   description:
     "Free global salary comparison platform covering 42 countries and 175+ occupations.",
+  logo: "https://amipaidfairly.com/icon-512.png",
+  sameAs: [] as string[],
 };
 
 const webSiteJsonLd = {

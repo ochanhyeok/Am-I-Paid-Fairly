@@ -18,6 +18,7 @@ export default function CountUpAnimation({
 }: Props) {
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true });
+  // 초기값을 최종 값으로 설정 → SSR/CSR 모두 최종 값 렌더링 → CLS 제거
   const [displayValue, setDisplayValue] = useState(value);
   const hasAnimated = useRef(false);
 
@@ -25,7 +26,9 @@ export default function CountUpAnimation({
     if (!isInView || hasAnimated.current) return;
     hasAnimated.current = true;
 
-    setDisplayValue(0);
+    // 애니메이션 시작: 0에서 최종 값까지 카운트업
+    // 첫 프레임에서 0으로 설정하지 않고, animate의 onUpdate가 즉시 호출되므로
+    // 레이아웃 시프트 없이 부드럽게 전환됨
     const controls = animate(0, value, {
       duration,
       ease: "easeOut",
@@ -38,7 +41,11 @@ export default function CountUpAnimation({
   }, [isInView, value, duration]);
 
   return (
-    <span ref={ref} className={className}>
+    <span
+      ref={ref}
+      className={className}
+      style={{ fontVariantNumeric: "tabular-nums" }}
+    >
       {displayValue}
       {suffix}
     </span>

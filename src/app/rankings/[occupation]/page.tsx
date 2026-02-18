@@ -37,7 +37,7 @@ export async function generateMetadata({
     return { title: "Ranking Not Found | Am I Paid Fairly?" };
   }
 
-  const title = `Highest Paying Countries for ${occupation.title}s (2026) | Am I Paid Fairly?`;
+  const title = `${occupation.title} Salary Rankings 2026 | AIPF`;
   const description = `Global salary rankings for ${occupation.title}s across 42 countries. See which countries pay the highest salaries, PPP-adjusted wages, and Big Mac purchasing power.`;
 
   const ogParams = new URLSearchParams();
@@ -118,39 +118,60 @@ export default async function RankingsPage({ params }: PageProps) {
   const top10 = rankedCountries.slice(0, 10);
   const maxSalary = top10.length > 0 ? top10[0].salaryEntry.estimatedSalary : 1;
 
-  // JSON-LD FAQ 구조화 데이터
+  // 랭킹 FAQ용 통계 계산
+  const globalAvgSalary = rankedCountries.length > 0
+    ? Math.round(rankedCountries.reduce((sum, r) => sum + r.salaryEntry.estimatedSalary, 0) / rankedCountries.length)
+    : 0;
+  const aboveAvgCount = rankedCountries.filter((r) => r.salaryEntry.estimatedSalary > globalAvgSalary).length;
+  const pppSorted = [...rankedCountries].sort(
+    (a, b) => b.salaryEntry.pppAdjusted - a.salaryEntry.pppAdjusted
+  );
+  const pppTop = pppSorted.length > 0 ? pppSorted[0] : null;
+  const topCountry = rankedCountries.length > 0 ? rankedCountries[0] : null;
+  const bottomCountry = rankedCountries.length > 0 ? rankedCountries[rankedCountries.length - 1] : null;
+  const salaryRatioTopBottom = topCountry && bottomCountry && bottomCountry.salaryEntry.estimatedSalary > 0
+    ? Math.round(topCountry.salaryEntry.estimatedSalary / bottomCountry.salaryEntry.estimatedSalary)
+    : 0;
+
+  // JSON-LD FAQ 구조화 데이터 — 랭킹 페이지 고유 질문/답변
+  const faqItems = [
+    {
+      question: `Which country pays ${occupation.title}s the most in 2026?`,
+      answer: topCountry
+        ? `${topCountry.country.name} pays the highest estimated salary for ${occupation.title}s in 2026 at ${formatCurrency(topCountry.salaryEntry.estimatedSalary)} USD per year. This is ${salaryRatioTopBottom > 0 ? `roughly ${salaryRatioTopBottom}x more than the lowest-paying country, ${bottomCountry!.country.name}, at ${formatCurrency(bottomCountry!.salaryEntry.estimatedSalary)} USD` : "significantly more than the lowest-paying country"}.`
+        : `Data is not yet available for ${occupation.title}s.`,
+    },
+    {
+      question: `Where do ${occupation.title}s have the highest purchasing power?`,
+      answer: pppTop
+        ? `${pppTop.country.name} offers the highest purchasing power for ${occupation.title}s with a PPP-adjusted salary of ${formatCurrency(pppTop.salaryEntry.pppAdjusted)} USD.${topCountry && pppTop.country.code !== topCountry.country.code ? ` This differs from the nominal ranking where ${topCountry.country.name} leads, highlighting how cost of living adjustments can change which country truly offers the most value.` : ` ${pppTop.country.name} leads both nominal and purchasing-power-adjusted rankings, indicating strong real earning potential.`}`
+        : `Purchasing power data is being updated for ${occupation.title}s.`,
+    },
+    {
+      question: `Why do ${occupation.title} salaries vary so much between countries?`,
+      answer: `${occupation.title} salaries range from ${bottomCountry ? formatCurrency(bottomCountry.salaryEntry.estimatedSalary) : "N/A"} to ${topCountry ? formatCurrency(topCountry.salaryEntry.estimatedSalary) : "N/A"} USD across ${rankedCountries.length} countries${salaryRatioTopBottom > 0 ? `, a ${salaryRatioTopBottom}:1 ratio` : ""}. This variation is driven by differences in economic development, cost of living, labor supply and demand, industry maturity, and government wage policies. Countries with higher GDP per capita and greater demand for ${occupation.title}s tend to offer significantly higher compensation.`,
+    },
+    {
+      question: `How many countries pay above-average ${occupation.title} salaries?`,
+      answer: `Only ${aboveAvgCount} out of ${rankedCountries.length} countries pay above the global average ${occupation.title} salary of ${formatCurrency(globalAvgSalary)} USD. This means the majority of countries (${rankedCountries.length - aboveAvgCount}) fall below the global average, reflecting how salary distribution is heavily skewed toward a small number of high-income economies.`,
+    },
+    {
+      question: `What is the global average ${occupation.title} salary?`,
+      answer: `The global average ${occupation.title} salary across ${rankedCountries.length} countries is approximately ${formatCurrency(globalAvgSalary)} USD per year. However, this average can be misleading since salaries range from ${bottomCountry ? formatCurrency(bottomCountry.salaryEntry.estimatedSalary) : "N/A"} to ${topCountry ? formatCurrency(topCountry.salaryEntry.estimatedSalary) : "N/A"} USD. The median and purchasing-power-adjusted figures provide a more accurate picture of typical ${occupation.title} compensation worldwide.`,
+    },
+  ];
+
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: `Which country pays ${occupation.title}s the most?`,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text:
-            rankedCountries.length > 0
-              ? `${rankedCountries[0].country.name} pays the highest estimated salary for ${occupation.title}s at ${formatCurrency(rankedCountries[0].salaryEntry.estimatedSalary)} USD per year.`
-              : `Data is not yet available for ${occupation.title}s.`,
-        },
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
       },
-      {
-        "@type": "Question",
-        name: `How much do ${occupation.title}s earn globally?`,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: `${occupation.title} salaries vary widely across ${rankedCountries.length} countries, ranging from ${rankedCountries.length > 0 ? formatCurrency(rankedCountries[rankedCountries.length - 1].salaryEntry.estimatedSalary) : "N/A"} to ${rankedCountries.length > 0 ? formatCurrency(rankedCountries[0].salaryEntry.estimatedSalary) : "N/A"} USD per year.`,
-        },
-      },
-      {
-        "@type": "Question",
-        name: `What is the purchasing power of a ${occupation.title}'s salary?`,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: `Purchasing power varies significantly by country. We use the Big Mac Index and PPP adjustments to compare real purchasing power across ${rankedCountries.length} countries.`,
-        },
-      },
-    ],
+    })),
   };
 
   return (
@@ -577,6 +598,30 @@ export default async function RankingsPage({ params }: PageProps) {
                 </>
               );
             })()}
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="mb-12">
+          <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
+            <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
+              Frequently Asked Questions
+            </h2>
+            <div className="flex flex-col gap-4">
+              {faqItems.map((item, idx) => (
+                <details key={idx} className="group">
+                  <summary className="text-slate-300 text-sm font-medium cursor-pointer hover:text-slate-100 transition-colors list-none flex items-center justify-between">
+                    {item.question}
+                    <span className="text-slate-600 group-open:rotate-180 transition-transform ml-2">
+                      &#9662;
+                    </span>
+                  </summary>
+                  <p className="text-slate-500 text-sm mt-2 leading-relaxed">
+                    {item.answer}
+                  </p>
+                </details>
+              ))}
+            </div>
           </div>
         </section>
 

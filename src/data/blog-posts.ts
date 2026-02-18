@@ -260,6 +260,7 @@ export const blogPosts: BlogPost[] = [
       "work from anywhere salary",
       "remote work compensation",
     ],
+    occupationSlug: "software-engineer",
     sections: [
       {
         heading: "The Location Premium Myth",
@@ -458,6 +459,7 @@ export const blogPosts: BlogPost[] = [
       "developer salary comparison",
       "salary reversal",
     ],
+    occupationSlug: "software-engineer",
     sections: [
       {
         heading: "The American Assumption: Tech Always Pays More",
@@ -725,6 +727,7 @@ export const blogPosts: BlogPost[] = [
       "best cities for remote work",
       "nomad budget guide",
     ],
+    occupationSlug: "software-engineer",
     sections: [
       {
         heading: "The Digital Nomad Cost Reality Check",
@@ -946,6 +949,7 @@ export const blogPosts: BlogPost[] = [
       "city salary comparison",
       "cost of living tech",
     ],
+    occupationSlug: "software-engineer",
     sections: [
       {
         heading:
@@ -1321,6 +1325,7 @@ export const blogPosts: BlogPost[] = [
       "civil engineer salary worldwide",
       "electrical engineer salary global",
     ],
+    occupationSlug: "mechanical-engineer",
     sections: [
       {
         heading: "Why Engineering Salaries Vary So Much Globally",
@@ -1366,6 +1371,7 @@ export const blogPosts: BlogPost[] = [
       "tech salary germany",
       "moving to germany salary",
     ],
+    occupationSlug: "software-engineer",
     sections: [
       {
         heading: "The German Salary Landscape: What to Expect",
@@ -1411,6 +1417,7 @@ export const blogPosts: BlogPost[] = [
       "canada vs usa salary",
       "express entry canada salary",
     ],
+    occupationSlug: "software-engineer",
     sections: [
       {
         heading: "Canadian Salaries: The Reality Behind the Marketing",
@@ -1546,6 +1553,7 @@ export const blogPosts: BlogPost[] = [
       "healthcare salary trends",
       "nursing shortage salary impact",
     ],
+    occupationSlug: "nurse",
     sections: [
       {
         heading: "The Scale of the Crisis",
@@ -1634,6 +1642,7 @@ export const blogPosts: BlogPost[] = [
       "total compensation comparison",
       "equity vs salary tech",
     ],
+    occupationSlug: "software-engineer",
     sections: [
       {
         heading: "The Total Compensation Gap Between Countries",
@@ -1679,6 +1688,7 @@ export const blogPosts: BlogPost[] = [
       "japan visa work",
       "japan cost of living",
     ],
+    occupationSlug: "software-engineer",
     sections: [
       {
         heading: "Japan's Salary Reality: Lower Than You Think, Better Than You Fear",
@@ -1723,6 +1733,7 @@ export const blogPosts: BlogPost[] = [
       "best countries for finance careers",
       "accountant salary global",
     ],
+    occupationSlug: "financial-analyst",
     sections: [
       {
         heading: "Finance: A Tale of Two Salary Worlds",
@@ -1772,6 +1783,7 @@ export const blogPosts: BlogPost[] = [
       "india salary guide",
       "best cities for jobs in india",
     ],
+    occupationSlug: "software-engineer",
     sections: [
       {
         heading: "India's Salary Landscape in 2026",
@@ -2404,6 +2416,7 @@ export const blogPosts: BlogPost[] = [
       "remote work pay cut",
       "remote salary negotiation",
     ],
+    occupationSlug: "software-engineer",
     sections: [
       {
         heading: "The State of Remote Work Compensation in 2026",
@@ -2465,6 +2478,7 @@ export const blogPosts: BlogPost[] = [
       "software engineer europe",
       "european tech hubs",
     ],
+    occupationSlug: "software-engineer",
     sections: [
       {
         heading: "Europe's Tech Boom: Why More Engineers Are Looking East (and West) of Silicon Valley",
@@ -2774,6 +2788,7 @@ export const blogPosts: BlogPost[] = [
       "AI salary trends 2026",
       "future of work salaries",
     ],
+    occupationSlug: "software-engineer",
     sections: [
       {
         heading: "The AI Salary Boom: Who Is Winning?",

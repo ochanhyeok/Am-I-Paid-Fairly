@@ -32,7 +32,7 @@ export async function generateMetadata({
     return { title: "Not Found | Am I Paid Fairly?" };
   }
 
-  const title = `${occupation.title} Salary Worldwide (2026) | Am I Paid Fairly?`;
+  const title = `${occupation.title} Salary Worldwide | AIPF`;
   const description = `Compare ${occupation.title} salaries across 42 countries. See estimated earnings in USD, purchasing power-adjusted values, and Big Mac Index for every country.`;
 
   const ogParams = new URLSearchParams();
@@ -103,8 +103,22 @@ function buildCountryRows(occupationSlug: string): CountryRow[] {
   return rows;
 }
 
-// ---------- FAQ 구조화 데이터 ----------
-function buildFaqJsonLd(occupationTitle: string, rows: CountryRow[]) {
+// ---------- 슬러그 기반 해시 (결정적 선택용) ----------
+function slugHash(slug: string): number {
+  let hash = 0;
+  for (let i = 0; i < slug.length; i++) {
+    hash = (hash * 31 + slug.charCodeAt(i)) | 0;
+  }
+  return Math.abs(hash);
+}
+
+// ---------- FAQ 구조화 데이터 (카테고리별 다양화) ----------
+function buildFaqJsonLd(
+  occupationTitle: string,
+  category: string,
+  occupationSlug: string,
+  rows: CountryRow[]
+) {
   const highestCountry = rows[0];
   const lowestCountry = rows[rows.length - 1];
   const avgSalary =
@@ -114,7 +128,8 @@ function buildFaqJsonLd(occupationTitle: string, rows: CountryRow[]) {
         )
       : 0;
 
-  const faqs = [
+  // --- 공통 FAQ 풀 (모든 카테고리에서 사용) ---
+  const genericPool: { question: string; answer: string }[] = [
     {
       question: `What is the average ${occupationTitle} salary worldwide?`,
       answer: `The estimated global average salary for a ${occupationTitle} across ${rows.length} countries is approximately ${formatCurrency(avgSalary)} USD per year. This is based on OECD and BLS data.`,
@@ -126,25 +141,134 @@ function buildFaqJsonLd(occupationTitle: string, rows: CountryRow[]) {
         : `Data is not available at this time.`,
     },
     {
-      question: `Which country pays ${occupationTitle}s the least?`,
-      answer: lowestCountry
-        ? `${lowestCountry.name} has the lowest estimated salary for ${occupationTitle}s at ${formatCurrency(lowestCountry.estimatedSalary)} USD per year among the countries we track.`
-        : `Data is not available at this time.`,
-    },
-    {
       question: `How are these salary estimates calculated?`,
       answer: `Salary estimates are calculated using U.S. Bureau of Labor Statistics (BLS) occupational data as a baseline, adjusted per country using OECD average wage data, GDP per capita, and sector-specific multipliers. Purchasing power-adjusted values use the Big Mac Index from The Economist as a cost-of-living proxy.`,
     },
     {
-      question: `What does the purchasing power-adjusted salary mean?`,
-      answer: `The purchasing power-adjusted salary reflects what a salary can actually buy in a given country, using the Big Mac Index as a cost-of-living proxy. A lower nominal salary in one country may go further than a higher salary in another due to differences in cost of living.`,
+      question: `What does PPP-adjusted salary mean?`,
+      answer: `PPP (Purchasing Power Parity) adjusted salary reflects what a salary can actually buy in a given country, using the Big Mac Index as a cost-of-living proxy. A lower nominal salary in one country may go further than a higher salary in another due to differences in cost of living.`,
+    },
+    {
+      question: `What factors influence ${occupationTitle} salary differences between countries?`,
+      answer: `Key factors include the country's GDP per capita, cost of living, local demand for ${occupationTitle}s, labor supply, government regulations, industry maturity, and the relative strength of the local currency. Tax structures and social benefits also play a role in overall compensation packages.`,
+    },
+    {
+      question: `How does experience level affect ${occupationTitle} pay globally?`,
+      answer: `Experience significantly impacts ${occupationTitle} salaries worldwide. Entry-level positions typically earn 30-50% less than the average shown here, while senior professionals with 10+ years of experience can earn 50-100% more. The experience premium varies by country and local market conditions.`,
+    },
+    {
+      question: `Are ${occupationTitle} salaries rising or falling worldwide?`,
+      answer: `${occupationTitle} salaries have generally trended upward in most OECD countries, though growth rates vary. High-demand markets and economies with labor shortages tend to see faster salary growth. Our estimates are updated periodically to reflect the latest publicly available data from BLS and OECD sources.`,
+    },
+    {
+      question: `Which regions offer the best work-life balance for ${occupationTitle}s?`,
+      answer: `European countries, particularly the Nordics (Sweden, Norway, Denmark, Finland) and Western Europe (Germany, Netherlands, France), typically offer ${occupationTitle}s stronger work-life balance through generous vacation policies, shorter working hours, and robust labor protections — though salaries may be lower than in the United States.`,
     },
   ];
+
+  // --- 카테고리별 특화 FAQ ---
+  const categoryPools: Record<string, { question: string; answer: string }[]> = {
+    Tech: [
+      {
+        question: `How does remote work affect ${occupationTitle} salaries?`,
+        answer: `Remote work has significantly impacted ${occupationTitle} compensation. Many companies now offer location-adjusted salaries, meaning remote workers in lower-cost areas may earn less than those in tech hubs. However, remote-friendly policies have also expanded access to higher-paying opportunities regardless of location.`,
+      },
+      {
+        question: `Which tech hubs pay the most for ${occupationTitle}s?`,
+        answer: `The highest-paying tech hubs for ${occupationTitle}s include Silicon Valley, New York, Seattle, and Zurich. In Asia, Singapore and select cities in Australia also offer competitive tech salaries. European tech hubs like London, Berlin, and Amsterdam are growing but generally offer lower nominal pay than U.S. counterparts.`,
+      },
+      {
+        question: `Is demand for ${occupationTitle}s expected to grow?`,
+        answer: `Yes, demand for ${occupationTitle}s is projected to remain strong globally, driven by digital transformation, AI adoption, and increasing reliance on technology across all industries. Countries investing heavily in tech infrastructure tend to see the strongest salary growth for this role.`,
+      },
+    ],
+    Healthcare: [
+      {
+        question: `Is there a global shortage of ${occupationTitle}s?`,
+        answer: `Many countries face shortages of qualified ${occupationTitle}s, particularly in rural and underserved areas. This shortage tends to drive higher salaries in countries with acute demand. Aging populations in OECD countries are expected to increase demand for healthcare professionals further.`,
+      },
+      {
+        question: `How do public vs private sector salaries compare for ${occupationTitle}s?`,
+        answer: `In most countries, ${occupationTitle}s in the private sector earn 15-40% more than their public sector counterparts. However, public sector positions often offer better job security, pensions, and benefits. Countries with universal healthcare systems (e.g., UK, Canada) may have smaller public-private pay gaps.`,
+      },
+      {
+        question: `Do ${occupationTitle}s need different certifications in different countries?`,
+        answer: `Yes, healthcare certifications and licensing requirements vary significantly by country. Most countries require ${occupationTitle}s to hold local licenses or pass equivalency exams before practicing. This can affect salary timelines for professionals relocating internationally.`,
+      },
+    ],
+    Finance: [
+      {
+        question: `How do bonus structures vary by country for ${occupationTitle}s?`,
+        answer: `Bonus structures for ${occupationTitle}s differ widely. In the United States and United Kingdom, performance bonuses can add 20-100% on top of base salary, particularly in investment banking. Continental European countries tend to have more modest bonus structures, while Asian financial centers like Singapore and Hong Kong offer competitive variable pay.`,
+      },
+      {
+        question: `Which financial centers pay the most for ${occupationTitle}s?`,
+        answer: `The highest-paying financial centers for ${occupationTitle}s include New York, London, Hong Kong, Singapore, and Zurich. These cities serve as global or regional financial hubs where competition for talent drives premium compensation packages.`,
+      },
+      {
+        question: `How do regulations affect ${occupationTitle} compensation globally?`,
+        answer: `Financial regulations impact ${occupationTitle} pay in several ways. Stricter regulatory environments (like the EU's bonus caps for bankers) can limit variable compensation. However, increased regulatory complexity can also drive demand for compliance-skilled professionals, pushing base salaries higher.`,
+      },
+    ],
+    Education: [
+      {
+        question: `How do ${occupationTitle} salaries compare between public and private institutions?`,
+        answer: `Private institutions often pay ${occupationTitle}s 10-30% more than public schools, though this varies significantly by country. In some nations like Finland and South Korea, public sector education salaries are highly competitive and come with strong job security and benefits.`,
+      },
+      {
+        question: `Do ${occupationTitle}s get paid more in countries with higher education spending?`,
+        answer: `There is a strong correlation between national education spending as a percentage of GDP and ${occupationTitle} compensation. Countries like Luxembourg, Switzerland, and the Nordic nations invest heavily in education and tend to offer higher salaries and better working conditions for educators.`,
+      },
+    ],
+    Engineering: [
+      {
+        question: `Which industries pay ${occupationTitle}s the most?`,
+        answer: `For ${occupationTitle}s, the highest-paying industries typically include oil and gas, aerospace and defense, semiconductor manufacturing, and automotive. Industry demand and specialization significantly impact salary, with niche expertise often commanding a premium above the averages shown here.`,
+      },
+      {
+        question: `How does infrastructure investment affect ${occupationTitle} demand?`,
+        answer: `Countries with large infrastructure investment programs tend to have higher demand and salaries for ${occupationTitle}s. Rapidly developing economies and nations with aging infrastructure both create sustained demand for engineering talent, though at different salary levels.`,
+      },
+    ],
+  };
+
+  // 해당 카테고리의 특화 풀 가져오기 (없으면 빈 배열)
+  const categorySpecific = categoryPools[category] || [];
+
+  // 최종 FAQ 선택: 카테고리 특화 2개 + 일반 풀 3개 (총 5개)
+  // 슬러그 해시로 결정적 선택
+  const hash = slugHash(occupationSlug);
+
+  let selectedFaqs: { question: string; answer: string }[];
+
+  if (categorySpecific.length >= 2) {
+    // 카테고리 특화 풀에서 2개 선택
+    const catIdx1 = hash % categorySpecific.length;
+    const catIdx2 = (hash + 1) % categorySpecific.length;
+    const catFaqs = [categorySpecific[catIdx1]];
+    if (catIdx2 !== catIdx1) catFaqs.push(categorySpecific[catIdx2]);
+
+    // 일반 풀에서 나머지 채움 (5개 맞추기)
+    const remaining = 5 - catFaqs.length;
+    const genStart = hash % genericPool.length;
+    const genFaqs: { question: string; answer: string }[] = [];
+    for (let i = 0; i < remaining; i++) {
+      genFaqs.push(genericPool[(genStart + i) % genericPool.length]);
+    }
+    selectedFaqs = [...catFaqs, ...genFaqs];
+  } else {
+    // 카테고리 특화 풀이 부족하면 일반 풀에서 5개 선택
+    const start = hash % genericPool.length;
+    selectedFaqs = [];
+    for (let i = 0; i < 5; i++) {
+      selectedFaqs.push(genericPool[(start + i) % genericPool.length]);
+    }
+  }
 
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
+    mainEntity: selectedFaqs.map((faq) => ({
       "@type": "Question",
       name: faq.question,
       acceptedAnswer: {
@@ -175,7 +299,7 @@ export default async function OccupationSalaryPage({
         )
       : 0;
 
-  const faqJsonLd = buildFaqJsonLd(occupation.title, rows);
+  const faqJsonLd = buildFaqJsonLd(occupation.title, occupation.category, occupation.slug, rows);
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-950 to-slate-900 px-4 py-10">
@@ -214,6 +338,7 @@ export default async function OccupationSalaryPage({
             {occupation.title} Salary Worldwide{" "}
             <span className="text-slate-500">(2026)</span>
           </h1>
+          <p className="text-xs text-slate-500 mt-1">Data last updated: February 2026</p>
           <p className="text-slate-500 text-sm mt-2">
             Estimated based on OECD &amp; BLS data
           </p>

@@ -10,6 +10,14 @@ interface Props {
 
 const ADSENSE_ID = process.env.NEXT_PUBLIC_ADSENSE_ID;
 
+// 광고 포맷별 최소 높이 (CLS 방지)
+const MIN_HEIGHT: Record<string, string> = {
+  rectangle: "min-h-[250px]",
+  horizontal: "min-h-[90px]",
+  vertical: "min-h-[600px]",
+  auto: "min-h-[90px]",
+};
+
 export default function AdUnit({ slot, format = "auto", className = "" }: Props) {
   const adRef = useRef<HTMLModElement>(null);
   const pushed = useRef(false);
@@ -27,8 +35,12 @@ export default function AdUnit({ slot, format = "auto", className = "" }: Props)
 
   if (!ADSENSE_ID) return null;
 
+  const minH = MIN_HEIGHT[format] ?? MIN_HEIGHT.auto;
+
   return (
-    <div className={`overflow-hidden ${className}`}>
+    <div
+      className={`overflow-hidden ${minH} flex items-center justify-center bg-white/5 rounded-lg ${className}`}
+    >
       <ins
         ref={adRef}
         className="adsbygoogle"
