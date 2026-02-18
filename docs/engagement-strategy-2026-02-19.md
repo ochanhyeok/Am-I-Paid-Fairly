@@ -212,7 +212,45 @@
 
 ---
 
-## 7. 참고 소스
+## 7. 경쟁사 심층 분석 업데이트 (2026-02-19)
+
+> 상세 분석: `docs/competitor-analysis-2026-02-19.md` 참조
+
+### 7-1. 경쟁사별 이탈률 감소 핵심 전략 (심층 조사 결과)
+
+| 경쟁사 | 핵심 이탈률 감소 전략 | 우리에게 적용 가능 여부 |
+|--------|----------------------|----------------------|
+| Glassdoor | Salary Explorer (직업/위치/경력 실시간 변경) + 퍼센타일 범위 바 + 유저 위치 마커 | QuickCompareForm으로 부분 구현, 퍼센타일 바 미구현 |
+| PayScale | Progressive Disclosure 10단계 Survey + Career Path 트리 + 스킬별 급여 차이 | 구현 안 됨 (장기 과제) |
+| Levels.fyi | 무한 탐색 루프 (회사→레벨→위치→다른 회사) + Blurred Rows 호기심 유발 | 탐색 루프 일부 구현 (QuickNav) |
+| Numbeo | 개인 급여 등가 계산 ("SF $10K = London $9,170.5") + 항목별 842개 가격 비교 | Relocate에서 부분 구현 |
+| Salary.com | 기간 변환기 (연간/월간/시급) + 직급별 I~V 세분화 | 미구현 (즉시 가능) |
+| SalaryExpert | 5년 전망 차트 + 보너스 분리 + PDF 내보내기 | 미구현 (중기 과제) |
+
+### 7-2. 이미 구현된 이탈률 감소 전략 (2026-02-19)
+
+| 전략 | 경쟁사 출처 | 구현 상태 | 대상 페이지 |
+|------|-----------|----------|-----------|
+| QuickCompareForm (인라인 비교 폼) | Glassdoor Salary Explorer | ✅ 구현 | salary 3페이지 |
+| CityQuickNav / CountryQuickNav | PayScale What-if | ✅ 구현 | city/country 페이지 |
+| CSS 비교 바차트 | Rankings 성공 패턴 복제 | ✅ 구현 | country/city 페이지 |
+| AI 검색 최적화 (key answer + tldr) | 자체 전략 | ✅ 구현 | 전 페이지 |
+| 메타 디스크립션 연봉 숫자 | Glassdoor SERP | ✅ 구현 | 5페이지 |
+| Similar Salary Countries 카드 | Zillow Similar Homes | ✅ 구현 | country 페이지 |
+| Top Cities 가로 스크롤 | Levels.fyi 탐색 루프 | ✅ 구현 | country 페이지 |
+| Above-fold 퍼센타일 시각화 | Glassdoor Most Likely Range | ✅ 구현 | country 페이지 |
+
+### 7-3. 다음 우선순위 (미구현, 높은 효과)
+
+1. **기간 변환기** (연간/월간/시급) — Salary.com 패턴, Low Effort, +5초 체류
+2. **Occupation JSON-LD 스키마** — PayScale/Levels.fyi MonetaryAmountDistribution, SERP 리치 결과
+3. **퍼센타일 분포 바** (10th/25th/50th/75th/90th) — Glassdoor/Salary.com, Medium Effort
+4. **PPP on/off 토글** — Levels.fyi 히트맵 패턴, Medium Effort
+5. **5년 급여 전망 차트** — SalaryExpert 유일 기능, Medium Effort
+
+---
+
+## 8. 참고 소스
 
 - Glassdoor Know Your Worth: glassdoor.com/blog/introducing-know-worth-glassdoor
 - PayScale Harvard Case Study: d3.harvard.edu/platform-digit/submission/payscale-bringing-data-to-compensation
@@ -225,3 +263,6 @@
 - Gamification +100-150% Engagement: amplifai.com/blog/gamification-statistics
 - Progressive Disclosure: conversion-rate-experts.com/progressive-disclosure
 - Bounce Rate Benchmarks 2025: causalfunnel.com/blog/average-bounce-rate-by-industry-2025-benchmarks
+- Glassdoor SEO Strategy: buildd.co/marketing/glassdoor-seo-strategy (520M 백링크)
+- PayScale pSEO: practicalprogrammatic.com/examples/payscale (2.9M 트래픽)
+- Google Occupation Schema: developers.google.com/search/docs/appearance/structured-data/estimated-salary

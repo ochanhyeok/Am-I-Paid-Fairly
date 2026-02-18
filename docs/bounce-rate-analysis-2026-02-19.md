@@ -177,3 +177,39 @@ Rankings 페이지와 다른 페이지의 구조적 차이:
 | 검색 CTR | 0.29% | 1.5% | +1.2%p |
 | 재방문율 | 0.8% | 5% | +4.2%p |
 | 세션당 페이지뷰 | ~1.1 | ~1.8 | +0.7 |
+
+---
+
+## 8. 이탈률 보완 작업 구현 완료 (2026-02-19)
+
+### 완료된 P0/P1/P2 작업
+
+| 작업 | 구현 | 대상 | 경쟁사 참조 |
+|------|------|------|-----------|
+| P0-1. QuickCompareForm | 인라인 연봉 비교 폼 (직업 프리필, 연봉 입력) | salary 3페이지 | Glassdoor Salary Explorer |
+| P0-2. CSS 비교 바차트 | Country Top5 수평 바 + City 도시별 바 | country/city 페이지 | Rankings 성공 패턴 복제 |
+| P0-3. 메타 디스크립션 연봉 | $XX,XXX 숫자 포함 | 5개 페이지 | Glassdoor SERP |
+| P1-1. CityQuickNav + CountryQuickNav | "What if?" 도시/국가 전환 드롭다운 | city/country 페이지 | PayScale What-if |
+| P1-2. Above-fold 퍼센타일 | 컴팩트 시각화 (Country 히어로) | country 페이지 | Glassdoor Most Likely Range |
+| P1-3. Similar Countries + Top Cities | 카드 3개 + 가로 스크롤 | country 페이지 | Zillow Similar Homes |
+| P2-1. AI 검색 최적화 | key answer 요약문 + tldr 메타 태그 | 전 페이지 | ChatGPT/Perplexity 대응 |
+
+### 경쟁사 대비 현재 위치 (상세: `docs/competitor-analysis-2026-02-19.md`)
+
+| 이탈률 전략 | 우리 | Glassdoor | PayScale | Levels.fyi | Numbeo |
+|------------|------|-----------|----------|------------|--------|
+| 인라인 비교 폼 | ✅ | ✅ Salary Explorer | ✅ Survey | ❌ | ✅ COL Calculator |
+| What-if 시나리오 전환 | ✅ 드롭다운 | ✅ 실시간 변경 | ✅ 10단계 변수 | ✅ 회사/레벨 변경 | ✅ 도시 변경 |
+| 시각적 비교 차트 | ✅ CSS 바차트 | ✅ 벨커브+범위바 | ✅ 퍼센타일 그래디언트 | ✅ 박스플롯+산점도 | ✅ 컬럼차트 |
+| 기간 변환 (연/월/시급) | ❌ | ✅ | ❌ | ✅ | ❌ |
+| 퍼센타일 분포 (10th~90th) | ❌ | ✅ | ✅ | ✅ | ❌ |
+| PPP 토글 on/off | ❌ | ❌ | ❌ | ✅ COL 토글 | ❌ |
+| 재방문 개인화 | ❌ | ✅ 주간 재계산 | ✅ 프로필 기반 | ✅ 알림 구독 | ❌ |
+| 공유 기능 | ✅ ShareCard+OG | ❌ | ❌ | ✅ 공유링크 | ❌ |
+
+### 다음 실행 항목 (미구현, 이탈률 직접 영향)
+
+1. **기간 변환기** — 연간↔월간↔시급 토글 (Low Effort, 즉시)
+2. **Occupation JSON-LD 스키마** — SERP 리치 결과로 CTR 개선 (Low Effort)
+3. **퍼센타일 분포 시각화** — 10th/25th/50th/75th/90th 바 (Medium Effort)
+4. **PPP on/off 토글** — 명목↔구매력 전환 (Medium Effort)
