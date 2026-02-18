@@ -607,9 +607,9 @@ export default async function OccupationSalaryPage({
             .slice(0, 3);
           return relatedPosts.length > 0 ? (
             <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
-              <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
+              <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
                 Related Articles
-              </h2>
+              </h3>
               <div className="flex flex-col gap-3">
                 {relatedPosts.map((post) => (
                   <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
@@ -626,9 +626,9 @@ export default async function OccupationSalaryPage({
 
         {/* FAQ Section */}
         <section>
-          <h2 className="text-slate-200 font-bold text-lg mb-4">
+          <h3 className="text-slate-200 font-bold text-lg mb-4">
             Frequently Asked Questions
-          </h2>
+          </h3>
           <div className="flex flex-col gap-3">
             {faqJsonLd.mainEntity.map(
               (item: { name: string; acceptedAnswer: { text: string } }, i: number) => (

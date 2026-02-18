@@ -1,5 +1,3 @@
-"use client";
-
 import type { CountryComparison } from "@/types";
 import { formatPercentile } from "@/lib/format";
 

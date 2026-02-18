@@ -758,9 +758,9 @@ export default async function OccupationCountryPage({ params }: PageProps) {
 
           {/* Internal Links: Other Jobs in this Country */}
           <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
-            <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
+            <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
               Other Jobs in {country.name}
-            </h2>
+            </h3>
             <div className="flex flex-wrap gap-2">
               {getOccupations()
                 .filter((o) => o.slug !== occSlug)
@@ -793,9 +793,9 @@ export default async function OccupationCountryPage({ params }: PageProps) {
 
           {/* Internal Links: Other Countries */}
           <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
-            <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
+            <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
               {occupation.title} Salary in Other Countries
-            </h2>
+            </h3>
             <div className="flex flex-wrap gap-2">
               {otherCountries.map((entry) => (
                 <Link
@@ -822,9 +822,9 @@ export default async function OccupationCountryPage({ params }: PageProps) {
             <section className="mt-12 space-y-8">
               {/* Working as a [occupation] in [country] */}
               <div className="bg-dark-card rounded-xl p-6 border border-dark-border">
-                <h2 className="text-xl font-bold text-slate-100 mb-3">
+                <h3 className="text-xl font-bold text-slate-100 mb-3">
                   Working as a {occupation.title} in {country.name}
-                </h2>
+                </h3>
                 <p className="text-slate-300 text-sm leading-relaxed">
                   {insight.economy} For {occupation.title}s specifically, this economic
                   landscape shapes both the availability of positions and the compensation
@@ -841,9 +841,9 @@ export default async function OccupationCountryPage({ params }: PageProps) {
 
               {/* Tax System and Take-Home Pay */}
               <div className="bg-dark-card rounded-xl p-6 border border-dark-border">
-                <h2 className="text-xl font-bold text-slate-100 mb-3">
+                <h3 className="text-xl font-bold text-slate-100 mb-3">
                   Tax System and Take-Home Pay in {country.name}
-                </h2>
+                </h3>
                 <p className="text-slate-300 text-sm leading-relaxed">
                   {insight.taxSystem} For a {occupation.title} earning an estimated{" "}
                   {formatCurrency(salaryEntry.estimatedSalary)} USD per year in {country.name},
@@ -858,9 +858,9 @@ export default async function OccupationCountryPage({ params }: PageProps) {
 
               {/* Cost of Living and Quality of Life */}
               <div className="bg-dark-card rounded-xl p-6 border border-dark-border">
-                <h2 className="text-xl font-bold text-slate-100 mb-3">
+                <h3 className="text-xl font-bold text-slate-100 mb-3">
                   Cost of Living and Quality of Life
-                </h2>
+                </h3>
                 <p className="text-slate-300 text-sm leading-relaxed">
                   {insight.costOfLiving} Beyond raw numbers, quality of life for a{" "}
                   {occupation.title} in {country.name} is also influenced by work culture
@@ -873,9 +873,9 @@ export default async function OccupationCountryPage({ params }: PageProps) {
 
               {/* Key Industries and Employers */}
               <div className="bg-dark-card rounded-xl p-6 border border-dark-border">
-                <h2 className="text-xl font-bold text-slate-100 mb-3">
+                <h3 className="text-xl font-bold text-slate-100 mb-3">
                   Key Industries and Employers
-                </h2>
+                </h3>
                 <p className="text-slate-300 text-sm leading-relaxed">
                   {insight.topIndustries} These industries represent the primary employers
                   and sectors where {occupation.title}s in {country.name} are most likely
@@ -888,9 +888,9 @@ export default async function OccupationCountryPage({ params }: PageProps) {
 
           {/* FAQ Section */}
           <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
-            <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
+            <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
               Frequently Asked Questions
-            </h2>
+            </h3>
             <div className="flex flex-col gap-4">
               {faqItems.map((item, idx) => (
                 <details key={idx} className="group">

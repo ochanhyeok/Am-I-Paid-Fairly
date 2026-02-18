@@ -620,9 +620,9 @@ export default async function CityDetailPage({ params }: PageProps) {
 
           {/* Other Jobs in this City */}
           <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
-            <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
+            <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
               Other Jobs in {city.name}
-            </h2>
+            </h3>
             <div className="flex flex-wrap gap-2">
               {getOccupations()
                 .filter((o) => o.slug !== occSlug)
@@ -654,9 +654,9 @@ export default async function CityDetailPage({ params }: PageProps) {
 
           {/* Related Links */}
           <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
-            <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
+            <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
               Explore More
-            </h2>
+            </h3>
             <div className="flex flex-wrap gap-2">
               <Link
                 href={`/salary/${occSlug}/${countrySlug}`}
@@ -687,9 +687,9 @@ export default async function CityDetailPage({ params }: PageProps) {
 
           {/* FAQ */}
           <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
-            <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
+            <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
               Frequently Asked Questions
-            </h2>
+            </h3>
             <div className="flex flex-col gap-4">
               {faqItems.map((item, idx) => (
                 <details key={idx} className="group">

@@ -692,9 +692,9 @@ export default async function ComparePage({ params }: PageProps) {
 
           {/* Internal Links */}
           <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
-            <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
+            <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
               Explore More
-            </h2>
+            </h3>
             <div className="flex flex-wrap gap-2">
               <Link
                 href={`/salary/${occSlug}/${countryA.slug}`}
@@ -726,9 +726,9 @@ export default async function ComparePage({ params }: PageProps) {
           {/* Editorial Content: Why Salaries Differ */}
           {insightA && insightB && (
             <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
-              <h2 className="text-xl font-bold text-slate-100 mb-3">
+              <h3 className="text-xl font-bold text-slate-100 mb-3">
                 Why Salaries Differ Between {countryA.name} and {countryB.name}
-              </h2>
+              </h3>
               <div className="space-y-4">
                 <p className="text-slate-300 text-sm leading-relaxed">
                   Salary differences between {countryA.name} and {countryB.name} stem from
@@ -761,9 +761,9 @@ export default async function ComparePage({ params }: PageProps) {
           {/* Editorial Content: Tax and Take-Home Pay */}
           {insightA && insightB && (
             <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
-              <h2 className="text-xl font-bold text-slate-100 mb-3">
+              <h3 className="text-xl font-bold text-slate-100 mb-3">
                 Tax and Take-Home Pay Comparison
-              </h2>
+              </h3>
               <div className="space-y-4">
                 <p className="text-slate-300 text-sm leading-relaxed">
                   Nominal salary figures only tell part of the story. The real question for any{" "}
@@ -794,9 +794,9 @@ export default async function ComparePage({ params }: PageProps) {
           {/* Editorial Content: Career Prospects and Job Market */}
           {insightA && insightB && (
             <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
-              <h2 className="text-xl font-bold text-slate-100 mb-3">
+              <h3 className="text-xl font-bold text-slate-100 mb-3">
                 Career Prospects and Job Market
-              </h2>
+              </h3>
               <div className="space-y-4">
                 <p className="text-slate-300 text-sm leading-relaxed">
                   Beyond immediate salary, long-term career prospects and job market
@@ -825,9 +825,9 @@ export default async function ComparePage({ params }: PageProps) {
           {/* Editorial Content: Work Culture and Lifestyle */}
           {insightA && insightB && (
             <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
-              <h2 className="text-xl font-bold text-slate-100 mb-3">
+              <h3 className="text-xl font-bold text-slate-100 mb-3">
                 Work Culture and Lifestyle
-              </h2>
+              </h3>
               <div className="space-y-4">
                 <p className="text-slate-300 text-sm leading-relaxed">
                   Work culture significantly impacts day-to-day satisfaction and should be
@@ -849,9 +849,9 @@ export default async function ComparePage({ params }: PageProps) {
           {/* Editorial Content: Cost of Living Context */}
           {insightA && insightB && (
             <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
-              <h2 className="text-xl font-bold text-slate-100 mb-3">
+              <h3 className="text-xl font-bold text-slate-100 mb-3">
                 Cost of Living Context
-              </h2>
+              </h3>
               <div className="space-y-4">
                 <p className="text-slate-300 text-sm leading-relaxed">
                   A higher salary does not always mean a better standard of living. Cost of
@@ -873,9 +873,9 @@ export default async function ComparePage({ params }: PageProps) {
 
           {/* FAQ Section */}
           <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
-            <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
+            <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
               Frequently Asked Questions
-            </h2>
+            </h3>
             <div className="flex flex-col gap-4">
               {faqItems.map((item, idx) => (
                 <details key={idx} className="group">

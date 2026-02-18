@@ -5,7 +5,7 @@ export default function NotFound() {
     <main className="min-h-[calc(100dvh-3.5rem)] bg-gradient-to-br from-slate-950 to-slate-900 flex flex-col items-center justify-center px-4 py-12">
       <div className="text-center max-w-md">
         {/* 404 숫자 */}
-        <p className="text-8xl font-black bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent leading-none">
+        <p className="text-8xl font-extrabold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent leading-none">
           404
         </p>
 

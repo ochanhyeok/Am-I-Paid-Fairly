@@ -247,9 +247,9 @@ export default async function BlogPostPage({ params }: PageProps) {
 
         {/* Explore the Data */}
         <div className="mt-10 bg-dark-card border border-dark-border rounded-2xl p-6">
-          <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
+          <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
             Explore the Data
-          </h2>
+          </h3>
           <div className="flex flex-col gap-2">
             {post.occupationSlug && (() => {
               const occupation = getOccupation(post.occupationSlug);
@@ -276,9 +276,9 @@ export default async function BlogPostPage({ params }: PageProps) {
         {/* Related posts */}
         {relatedPosts.length > 0 && (
           <section className="mt-12 border-t border-dark-border pt-8">
-            <h2 className="text-lg font-bold text-slate-200 mb-4">
+            <h3 className="text-lg font-bold text-slate-200 mb-4">
               More Articles
-            </h2>
+            </h3>
             <div className="flex flex-col gap-3">
               {relatedPosts.map((rp) => (
                 <Link
@@ -306,9 +306,9 @@ export default async function BlogPostPage({ params }: PageProps) {
         {/* FAQ Section */}
         {faqItems.length > 0 && (
           <section className="mt-12">
-            <h2 className="text-xl font-bold text-slate-100 mb-4">
+            <h3 className="text-xl font-bold text-slate-100 mb-4">
               Frequently Asked Questions
-            </h2>
+            </h3>
             <div className="space-y-4">
               {faqItems.map((faq, i) => (
                 <details

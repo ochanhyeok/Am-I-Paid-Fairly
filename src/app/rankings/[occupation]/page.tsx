@@ -359,9 +359,9 @@ export default async function RankingsPage({ params }: PageProps) {
 
         {/* Country Comparisons Section */}
         <section className="mb-12">
-          <h2 className="text-xl font-bold text-slate-200 mb-4">
+          <h3 className="text-xl font-bold text-slate-200 mb-4">
             Country Comparisons
-          </h2>
+          </h3>
           <p className="text-slate-400 text-sm mb-4">
             Compare {occupation.title} salaries between the United States and other top-paying countries
           </p>
@@ -382,9 +382,9 @@ export default async function RankingsPage({ params }: PageProps) {
         <article className="mb-12">
           <div className="flex flex-col gap-6">
             <section>
-              <h2 className="text-xl font-bold text-slate-200 mb-3">
+              <h3 className="text-xl font-bold text-slate-200 mb-3">
                 {occupation.title} Salary Rankings: Key Insights
-              </h2>
+              </h3>
               <div className="text-slate-400 text-sm leading-relaxed space-y-3">
                 <p>
                   Our global salary rankings for {occupation.title}s cover{" "}
@@ -484,9 +484,9 @@ export default async function RankingsPage({ params }: PageProps) {
         <section className="mt-12 space-y-8">
           {/* 1. Regional Salary Analysis */}
           <div className="bg-dark-card rounded-xl p-6 border border-dark-border">
-            <h2 className="text-xl font-bold text-slate-100 mb-3">
+            <h3 className="text-xl font-bold text-slate-100 mb-3">
               Regional Salary Analysis
-            </h2>
+            </h3>
             {(() => {
               const topEntries = rankedCountries.slice(0, 3);
               return topEntries.map((item, idx) => {
@@ -518,9 +518,9 @@ export default async function RankingsPage({ params }: PageProps) {
 
           {/* 2. Factors That Drive Global Salaries */}
           <div className="bg-dark-card rounded-xl p-6 border border-dark-border">
-            <h2 className="text-xl font-bold text-slate-100 mb-3">
+            <h3 className="text-xl font-bold text-slate-100 mb-3">
               Factors That Drive Global {occupation.title} Salaries
-            </h2>
+            </h3>
             {(() => {
               const highest = rankedCountries.length > 0 ? rankedCountries[0].salaryEntry.estimatedSalary : 0;
               const lowest = rankedCountries.length > 0 ? rankedCountries[rankedCountries.length - 1].salaryEntry.estimatedSalary : 1;
@@ -557,9 +557,9 @@ export default async function RankingsPage({ params }: PageProps) {
 
           {/* 3. Where Your Salary Goes Furthest */}
           <div className="bg-dark-card rounded-xl p-6 border border-dark-border">
-            <h2 className="text-xl font-bold text-slate-100 mb-3">
+            <h3 className="text-xl font-bold text-slate-100 mb-3">
               Where Your Salary Goes Furthest
-            </h2>
+            </h3>
             {(() => {
               const nominalTop = rankedCountries.length > 0 ? rankedCountries[0] : null;
               const pppRanked = [...rankedCountries].sort(
@@ -604,9 +604,9 @@ export default async function RankingsPage({ params }: PageProps) {
         {/* FAQ Section */}
         <section className="mb-12">
           <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
-            <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
+            <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
               Frequently Asked Questions
-            </h2>
+            </h3>
             <div className="flex flex-col gap-4">
               {faqItems.map((item, idx) => (
                 <details key={idx} className="group">

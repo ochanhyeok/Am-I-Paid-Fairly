@@ -202,9 +202,9 @@ export default async function CityAllSalariesPage({ params }: PageProps) {
 
         {/* Full salary table */}
         <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
-          <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
+          <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
             All Salaries ({occupationSalaries.length} occupations)
-          </h2>
+          </h3>
 
           {categories.map((category) => {
             const catOccs = occupationSalaries.filter(
@@ -257,9 +257,9 @@ export default async function CityAllSalariesPage({ params }: PageProps) {
         {/* Same Country Cities */}
         {sameCountryCities.length > 0 && (
           <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
-            <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
+            <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
               Other Cities in {country.name}
-            </h2>
+            </h3>
             <div className="flex flex-wrap gap-2">
               {sameCountryCities.map((otherCity) => (
                 <Link

@@ -1,5 +1,3 @@
-"use client";
-
 import CountUpAnimation from "./CountUpAnimation";
 
 interface Props {
@@ -37,7 +35,7 @@ export default function ResultCard({ percentile, occupationTitle }: Props) {
         </span>
         <CountUpAnimation
           value={displayValue}
-          className="text-6xl font-black text-white leading-none"
+          className="text-6xl font-extrabold text-white leading-none"
         />
       </div>
       <p className={`${lightTextColor} text-sm`}>
