@@ -38,7 +38,7 @@
 | 연봉 입력 폼 | Landing+QuickCompare | Know Your Worth | Survey 10단계 | 없음 (열람만) | COL Calculator | Compensation Hub |
 | What-if 시나리오 | CountryQuickNav/CityQuickNav | Salary Explorer (직업/위치/경력 변경) | 회사/학위/성별/위치 변경 | 레벨/회사 변경 | 도시+금액 개인화 | Relocation Assessor |
 | 시각화 | 세계지도+바차트+퍼센타일바 | 벨커브+범위바+파이 | 퍼센타일 그래디언트+캐리어트리 | 박스플롯+산점도+히트맵 | 컬럼차트+테이블 | 라인차트(5년전망)+파이 |
-| 기간 변환 | 없음 | 연간/월간/시급 | 없음 | 연간 | 없음 | 연간/시급 |
+| 기간 변환 | ✅ 연간/월간/시급 | 연간/월간/시급 | 없음 | 연간 | 없음 | 연간/시급 |
 | 정렬/필터 | 없음 (정적) | 위치/경력/산업 | 도시/경력/스킬/고용주 | 회사/레벨/위치/경력 | 없음 | 없음 |
 | 공유 기능 | **ShareCard+OG이미지** | 없음 | 없음 | 공유링크 | 없음 | PDF 내보내기 |
 | 재방문 개인화 | 없음 | 주간 시장가치 재계산 | 완료 프로필 기반 | 알림 구독 | 없음 | 없음 |
@@ -48,9 +48,9 @@
 | 기능 | AIPF | Glassdoor | PayScale | Levels.fyi | Numbeo | SalaryExpert |
 |------|------|-----------|----------|------------|--------|-------------|
 | 총 페이지 수 | ~40K | 수백만 | 수백만 | ~50만 | ~5만 | ~20만 |
-| JSON-LD 스키마 | FAQPage+BreadcrumbList+Organization+WebSite | Occupation+MonetaryAmountDistribution | OccupationAggregation+FAQ | Occupation+FAQ+Breadcrumb | 없음 | 미확인 |
+| JSON-LD 스키마 | FAQPage+BreadcrumbList+Organization+WebSite+**Occupation+MonetaryAmountDistribution** | Occupation+MonetaryAmountDistribution | OccupationAggregation+FAQ | Occupation+FAQ+Breadcrumb | 없음 | 미확인 |
 | 프로그래매틱 SEO | 직업×국가×도시×비교 | 직업×도시×회사 | 직업×도시×경력×스킬×회사 | 직업×회사×레벨×위치 | 도시×카테고리 | 직업×국가×도시 |
-| 내부 링크 밀도 | 중 (5-10개/페이지) | 높 (10+개/페이지) | 높 (50+개/페이지) | 높 (10+개/페이지) | 중 (5-10개) | 높 (20+개) |
+| 내부 링크 밀도 | **높 (12-15+개/페이지)** | 높 (10+개/페이지) | 높 (50+개/페이지) | 높 (10+개/페이지) | 중 (5-10개) | 높 (20+개) |
 | 블로그/콘텐츠 | 50개 | 수천 개 | 수백 개 | 수십 개 | 없음 | 수십 개 |
 
 ---
@@ -174,12 +174,12 @@
 
 ### 즉시 구현 가능 (Low Effort, High Impact)
 
-| 기능 | 경쟁사 출처 | 구현 난이도 | 예상 효과 |
-|------|-----------|-----------|----------|
-| **기간 변환기** (연간/월간/시급) | Salary.com, Glassdoor | 낮음 | 참여시간 +5초, 인터랙션 +1 |
-| **Occupation 스키마** (MonetaryAmountDistribution) | PayScale, Levels.fyi | 낮음 | SERP 리치 결과 가능 |
-| **데이터 소스 강조** ("Based on OECD+BLS data") | Indeed | 낮음 | 신뢰도 향상 |
-| **내부 링크 밀도 강화** (페이지당 20+개) | PayScale | 중간 | 이탈률 -5%p |
+| 기능 | 경쟁사 출처 | 구현 난이도 | 예상 효과 | 상태 |
+|------|-----------|-----------|----------|------|
+| **기간 변환기** (연간/월간/시급) | Salary.com, Glassdoor | 낮음 | 참여시간 +5초, 인터랙션 +1 | ✅ DONE (2026-02-19) |
+| **Occupation 스키마** (MonetaryAmountDistribution) | PayScale, Levels.fyi | 낮음 | SERP 리치 결과 가능 | ✅ DONE (2026-02-19) |
+| **데이터 소스 강조** ("Based on OECD+BLS data") | Indeed | 낮음 | 신뢰도 향상 | |
+| **내부 링크 밀도 강화** (페이지당 20+개) | PayScale | 중간 | 이탈률 -5%p | ✅ DONE (2026-02-19) |
 
 ### 중기 구현 (Medium Effort, High Impact)
 
@@ -205,12 +205,12 @@
 
 ## 5. 우선순위 실행 계획
 
-### Phase 1: 즉시 (1주 이내)
+### Phase 1: 즉시 (1주 이내) — ✅ 3/4 완료 (2026-02-19)
 
-1. **Occupation 스키마 추가**: `MonetaryAmountDistribution` + `estimatedSalary` JSON-LD
-2. **기간 변환 버튼**: 연간/월간/시급 토글 (salary 3페이지)
+1. ✅ **Occupation 스키마 추가**: `MonetaryAmountDistribution` + `estimatedSalary` JSON-LD — DONE
+2. ✅ **기간 변환 버튼**: 연간/월간/시급 토글 (salary 3페이지) — DONE
 3. **데이터 소스 배너 강화**: "Based on OECD, BLS, World Bank & Big Mac Index data"
-4. **내부 링크 20+ 목표**: 각 salary 페이지에 관련 링크 추가
+4. ✅ **내부 링크 20+ 목표**: compare 4→15+, rankings 7→15+, compare-cities 5→12+ — DONE
 
 ### Phase 2: 2~4주
 

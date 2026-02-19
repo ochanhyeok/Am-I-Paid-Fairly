@@ -6,6 +6,7 @@ import {
   getOccupation,
   getCountryBySlug,
   getSalaryEntry,
+  getCities,
 } from "@/lib/data-loader";
 import {
   calculateBigMacCount,
@@ -696,7 +697,7 @@ export default async function ComparePage({ params }: PageProps) {
             </p>
           </div>
 
-          {/* Internal Links */}
+          {/* Internal Links — Explore More */}
           <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
             <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
               Explore More
@@ -728,6 +729,92 @@ export default async function ComparePage({ params }: PageProps) {
               </Link>
             </div>
           </div>
+
+          {/* Other Comparisons */}
+          <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
+            <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
+              Other Country Comparisons
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {(() => {
+                const allPairs = [
+                  ...US_VS_COUNTRIES.map((c) => ["united-states", c] as [string, string]),
+                  ...NON_US_PAIRS,
+                ];
+                const currentPairKey = `${countryA.slug}-vs-${countryB.slug}`;
+                const relatedPairs = allPairs
+                  .filter(([a, b]) => {
+                    const key = `${a}-vs-${b}`;
+                    return key !== currentPairKey && (a === countryA.slug || b === countryA.slug || a === countryB.slug || b === countryB.slug);
+                  })
+                  .slice(0, 5);
+                return relatedPairs.map(([a, b]) => (
+                  <Link
+                    key={`${a}-vs-${b}`}
+                    href={`/compare/${occSlug}/${a}-vs-${b}`}
+                    className="text-xs bg-slate-800/50 hover:bg-slate-700/50 text-slate-400 hover:text-emerald-400 transition-colors px-3 py-1.5 rounded-lg border border-slate-700/50"
+                  >
+                    {a.split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")} vs{" "}
+                    {b.split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")}
+                  </Link>
+                ));
+              })()}
+            </div>
+          </div>
+
+          {/* Related Occupations */}
+          <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
+            <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
+              Related Occupations
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {getOccupations()
+                .filter((o) => o.slug !== occSlug && o.category === occupation.category)
+                .slice(0, 3)
+                .map((o) => (
+                  <Link
+                    key={o.slug}
+                    href={`/compare/${o.slug}/${pair}`}
+                    className="text-xs bg-slate-800/50 hover:bg-slate-700/50 text-slate-400 hover:text-slate-200 transition-colors px-3 py-1.5 rounded-lg border border-slate-700/50"
+                  >
+                    {o.title}: {countryA.name} vs {countryB.name}
+                  </Link>
+                ))}
+            </div>
+          </div>
+
+          {/* City Comparisons */}
+          {(() => {
+            const citiesA = getCities().filter((c) => c.countryCode === countryA.code).slice(0, 1);
+            const citiesB = getCities().filter((c) => c.countryCode === countryB.code).slice(0, 1);
+            if (citiesA.length === 0 || citiesB.length === 0) return null;
+            return (
+              <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
+                <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
+                  City-Level Comparisons
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {citiesA.flatMap((cA) =>
+                    citiesB.map((cB) => (
+                      <Link
+                        key={`${cA.slug}-${cB.slug}`}
+                        href={`/compare-cities/${occSlug}/${cA.slug}-vs-${cB.slug}`}
+                        className="text-xs bg-slate-800/50 hover:bg-slate-700/50 text-slate-400 hover:text-emerald-400 transition-colors px-3 py-1.5 rounded-lg border border-slate-700/50"
+                      >
+                        {cA.name} vs {cB.name}
+                      </Link>
+                    ))
+                  )}
+                  <Link
+                    href={`/relocate/${occSlug}/${citiesA[0].slug}-to-${citiesB[0].slug}`}
+                    className="text-xs bg-slate-800/50 hover:bg-slate-700/50 text-slate-400 hover:text-emerald-400 transition-colors px-3 py-1.5 rounded-lg border border-slate-700/50"
+                  >
+                    Relocate: {citiesA[0].name} → {citiesB[0].name}
+                  </Link>
+                </div>
+              </div>
+            );
+          })()}
 
           {/* Editorial Content: Why Salaries Differ */}
           {insightA && insightB && (

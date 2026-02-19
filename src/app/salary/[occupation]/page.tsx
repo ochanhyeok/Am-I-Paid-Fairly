@@ -9,8 +9,9 @@ import {
   getCountry,
 } from "@/lib/data-loader";
 import QuickCompareForm from "@/components/QuickCompareForm";
-import { formatCurrency, formatNumber } from "@/lib/format";
-import { calculateBigMacCount } from "@/lib/salary-calculator";
+import { formatCurrency, formatNumber, toMonthly, toHourly, formatHourly } from "@/lib/format";
+import { calculateBigMacCount, calculatePercentileDistribution } from "@/lib/salary-calculator";
+import SalaryPeriodToggle from "@/components/SalaryPeriodToggle";
 import { blogPosts } from "@/data/blog-posts";
 import type { SalaryEntry } from "@/types";
 
@@ -318,6 +319,29 @@ export default async function OccupationSalaryPage({
 
   const faqJsonLd = buildFaqJsonLd(occupation.title, occupation.category, occupation.slug, rows);
 
+  // Occupation JSON-LD (Google estimatedSalary rich result)
+  const percentileDist = calculatePercentileDistribution(occupation.slug);
+  const occupationJsonLd = percentileDist
+    ? {
+        "@context": "https://schema.org/",
+        "@type": "Occupation",
+        name: occupation.title,
+        estimatedSalary: [
+          {
+            "@type": "MonetaryAmountDistribution",
+            name: "base",
+            currency: "USD",
+            unitText: "YEAR",
+            median: percentileDist.median,
+            percentile10: percentileDist.percentile10,
+            percentile25: percentileDist.percentile25,
+            percentile75: percentileDist.percentile75,
+            percentile90: percentileDist.percentile90,
+          },
+        ],
+      }
+    : null;
+
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-950 to-slate-900 px-4 py-10">
       {/* 구조화 데이터 */}
@@ -325,6 +349,12 @@ export default async function OccupationSalaryPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
+      {occupationJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(occupationJsonLd) }}
+        />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -377,9 +407,11 @@ export default async function OccupationSalaryPage({
         <div className="grid grid-cols-3 gap-3">
           <div className="bg-dark-card rounded-2xl p-4 border border-dark-border text-center">
             <p className="text-slate-500 text-xs mb-1">US Salary (BLS)</p>
-            <p className="text-xl md:text-2xl font-bold text-slate-50">
-              {formatCurrency(occupation.baseUSA)}
-            </p>
+            <SalaryPeriodToggle
+              yearly={formatCurrency(occupation.baseUSA)}
+              monthly={formatCurrency(toMonthly(occupation.baseUSA))}
+              hourly={formatHourly(toHourly(occupation.baseUSA))}
+            />
           </div>
           <div className="bg-dark-card rounded-2xl p-4 border border-dark-border text-center">
             <p className="text-slate-500 text-xs mb-1">Countries</p>
@@ -389,9 +421,11 @@ export default async function OccupationSalaryPage({
           </div>
           <div className="bg-dark-card rounded-2xl p-4 border border-dark-border text-center">
             <p className="text-slate-500 text-xs mb-1">Global Average</p>
-            <p className="text-xl md:text-2xl font-bold text-slate-50">
-              {formatCurrency(globalAvg)}
-            </p>
+            <SalaryPeriodToggle
+              yearly={formatCurrency(globalAvg)}
+              monthly={formatCurrency(toMonthly(globalAvg))}
+              hourly={formatHourly(toHourly(globalAvg))}
+            />
           </div>
         </div>
 

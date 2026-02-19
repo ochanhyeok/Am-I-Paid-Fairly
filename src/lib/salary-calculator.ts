@@ -154,6 +154,32 @@ export function pickRepresentativeCountries(
   return picks;
 }
 
+// --- Occupation JSON-LD용 퍼센타일 분포 계산 ---
+
+export interface PercentileDistribution {
+  percentile10: number;
+  percentile25: number;
+  median: number;
+  percentile75: number;
+  percentile90: number;
+}
+
+export function calculatePercentileDistribution(
+  occupationSlug: string
+): PercentileDistribution | null {
+  const entries = getSalaryEntries(occupationSlug);
+  const salaries = entries.map((e) => e.estimatedSalary).sort((a, b) => a - b);
+  const n = salaries.length;
+  if (n === 0) return null;
+  return {
+    percentile10: salaries[Math.floor(n * 0.1)],
+    percentile25: salaries[Math.floor(n * 0.25)],
+    median: salaries[Math.floor(n * 0.5)],
+    percentile75: salaries[Math.floor(n * 0.75)],
+    percentile90: salaries[Math.min(Math.floor(n * 0.9), n - 1)],
+  };
+}
+
 // --- 도시 관련 계산 함수 ---
 
 // 도시 연봉의 빅맥 환산

@@ -18,13 +18,18 @@ import {
   calculateBigMacCount,
   calculateGlobalPercentile,
   convertFromUSD,
+  calculatePercentileDistribution,
 } from "@/lib/salary-calculator";
 import {
   formatCurrency,
   formatNumber,
   formatPercentile,
   formatUSDShort,
+  toMonthly,
+  toHourly,
+  formatHourly,
 } from "@/lib/format";
+import SalaryPeriodToggle from "@/components/SalaryPeriodToggle";
 
 // --- 국가+직업 FAQ 헬퍼 ---
 
@@ -290,6 +295,33 @@ export default async function OccupationCountryPage({ params }: PageProps) {
     })),
   };
 
+  // Occupation JSON-LD (Google estimatedSalary rich result) — 국가별
+  const percentileDist = calculatePercentileDistribution(occSlug);
+  const occupationJsonLd = percentileDist
+    ? {
+        "@context": "https://schema.org/",
+        "@type": "Occupation",
+        name: occupation.title,
+        occupationLocation: {
+          "@type": "Country",
+          name: country.name,
+        },
+        estimatedSalary: [
+          {
+            "@type": "MonetaryAmountDistribution",
+            name: "base",
+            currency: "USD",
+            unitText: "YEAR",
+            median: salaryEntry.estimatedSalary,
+            percentile10: percentileDist.percentile10,
+            percentile25: percentileDist.percentile25,
+            percentile75: percentileDist.percentile75,
+            percentile90: percentileDist.percentile90,
+          },
+        ],
+      }
+    : null;
+
   return (
     <>
       {/* JSON-LD 구조화 데이터 */}
@@ -311,6 +343,12 @@ export default async function OccupationCountryPage({ params }: PageProps) {
           }),
         }}
       />
+      {occupationJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(occupationJsonLd) }}
+        />
+      )}
 
       <main className="min-h-screen bg-gradient-to-br from-slate-950 to-slate-900 px-4 py-8">
         <div className="max-w-2xl mx-auto flex flex-col gap-8">
@@ -378,10 +416,11 @@ export default async function OccupationCountryPage({ params }: PageProps) {
               {/* Estimated Salary (USD) */}
               <div className="bg-slate-800/50 rounded-xl p-4">
                 <p className="text-slate-500 text-xs mb-1">Estimated Salary (USD)</p>
-                <p className="text-2xl font-bold text-slate-50">
-                  {formatCurrency(salaryEntry.estimatedSalary)}
-                </p>
-                <p className="text-slate-500 text-xs mt-1">per year</p>
+                <SalaryPeriodToggle
+                  yearly={formatCurrency(salaryEntry.estimatedSalary)}
+                  monthly={formatCurrency(toMonthly(salaryEntry.estimatedSalary))}
+                  hourly={formatHourly(toHourly(salaryEntry.estimatedSalary))}
+                />
               </div>
 
               {/* Local Currency */}

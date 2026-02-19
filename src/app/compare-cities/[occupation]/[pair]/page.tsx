@@ -530,7 +530,7 @@ export default async function CompareCitiesPage({ params }: PageProps) {
             <p className="text-slate-600 text-xs mt-2">Free &middot; No login required</p>
           </div>
 
-          {/* Internal Links */}
+          {/* Internal Links — Explore More */}
           <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
             <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
               Explore More
@@ -569,6 +569,79 @@ export default async function CompareCitiesPage({ params }: PageProps) {
                 className="text-xs bg-slate-800/50 hover:bg-slate-700/50 text-slate-400 hover:text-slate-200 transition-colors px-3 py-1.5 rounded-lg border border-slate-700/50"
               >
                 {occupation.title} Global Rankings
+              </Link>
+            </div>
+          </div>
+
+          {/* Other City Comparisons */}
+          <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
+            <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
+              Other City Comparisons
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {CITY_PAIRS
+                .filter(([a, b]) => {
+                  const key = `${a}-vs-${b}`;
+                  return key !== pair && (a === cityA.slug || b === cityA.slug || a === cityB.slug || b === cityB.slug);
+                })
+                .slice(0, 3)
+                .map(([a, b]) => (
+                  <Link
+                    key={`${a}-vs-${b}`}
+                    href={`/compare-cities/${occSlug}/${a}-vs-${b}`}
+                    className="text-xs bg-slate-800/50 hover:bg-slate-700/50 text-slate-400 hover:text-emerald-400 transition-colors px-3 py-1.5 rounded-lg border border-slate-700/50"
+                  >
+                    {a.split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")} vs{" "}
+                    {b.split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")}
+                  </Link>
+                ))}
+            </div>
+          </div>
+
+          {/* Related Occupations */}
+          <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
+            <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
+              Related Occupations
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {getOccupations()
+                .filter((o) => o.slug !== occSlug && o.category === occupation.category)
+                .slice(0, 3)
+                .map((o) => (
+                  <Link
+                    key={o.slug}
+                    href={`/compare-cities/${o.slug}/${pair}`}
+                    className="text-xs bg-slate-800/50 hover:bg-slate-700/50 text-slate-400 hover:text-slate-200 transition-colors px-3 py-1.5 rounded-lg border border-slate-700/50"
+                  >
+                    {o.title}: {cityA.name} vs {cityB.name}
+                  </Link>
+                ))}
+            </div>
+          </div>
+
+          {/* Relocate Link */}
+          <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
+            <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
+              Thinking About Relocating?
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              <Link
+                href={`/relocate/${occSlug}/${cityA.slug}-to-${cityB.slug}`}
+                className="text-xs bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 transition-colors px-3 py-1.5 rounded-lg border border-emerald-500/30"
+              >
+                Relocate: {cityA.name} → {cityB.name}
+              </Link>
+              <Link
+                href={`/relocate/${occSlug}/${cityB.slug}-to-${cityA.slug}`}
+                className="text-xs bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 transition-colors px-3 py-1.5 rounded-lg border border-emerald-500/30"
+              >
+                Relocate: {cityB.name} → {cityA.name}
+              </Link>
+              <Link
+                href="/relocate"
+                className="text-xs bg-slate-800/50 hover:bg-slate-700/50 text-slate-400 hover:text-slate-200 transition-colors px-3 py-1.5 rounded-lg border border-slate-700/50"
+              >
+                Relocation Calculator
               </Link>
             </div>
           </div>

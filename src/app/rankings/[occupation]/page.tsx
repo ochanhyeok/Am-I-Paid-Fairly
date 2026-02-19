@@ -12,6 +12,7 @@ import {
 import { formatCurrency, formatNumber } from "@/lib/format";
 import { getCountryInsight } from "@/data/country-insights";
 import { calculateBigMacCount } from "@/lib/salary-calculator";
+import { blogPosts } from "@/data/blog-posts";
 import type { SalaryEntry, Country, BigMacEntry } from "@/types";
 
 // --- 정적 파라미터 생성 (30개 직업 전부) ---
@@ -391,6 +392,83 @@ export default async function RankingsPage({ params }: PageProps) {
             ))}
           </div>
         </section>
+
+        {/* Related Rankings */}
+        <section className="mb-12">
+          <h3 className="text-xl font-bold text-slate-200 mb-4">
+            Related Rankings
+          </h3>
+          <div className="flex flex-wrap gap-2">
+            {getOccupations()
+              .filter((o) => o.slug !== slug && o.category === occupation.category)
+              .slice(0, 5)
+              .map((o) => (
+                <Link
+                  key={o.slug}
+                  href={`/rankings/${o.slug}`}
+                  className="text-sm bg-dark-card hover:bg-slate-800/50 border border-dark-border hover:border-slate-600 text-slate-300 hover:text-emerald-400 transition-colors px-4 py-2 rounded-lg"
+                >
+                  {o.title} Rankings
+                </Link>
+              ))}
+          </div>
+        </section>
+
+        {/* Explore Cities */}
+        <section className="mb-12">
+          <h3 className="text-xl font-bold text-slate-200 mb-4">
+            Explore Top Cities
+          </h3>
+          <div className="flex flex-wrap gap-2">
+            <Link
+              href={`/cities`}
+              className="text-sm bg-dark-card hover:bg-slate-800/50 border border-dark-border hover:border-slate-600 text-slate-300 hover:text-emerald-400 transition-colors px-4 py-2 rounded-lg"
+            >
+              Browse All Cities
+            </Link>
+            {["new-york", "london", "tokyo"].map((citySlug) => (
+              <Link
+                key={citySlug}
+                href={`/cities/${citySlug}`}
+                className="text-sm bg-dark-card hover:bg-slate-800/50 border border-dark-border hover:border-slate-600 text-slate-300 hover:text-emerald-400 transition-colors px-4 py-2 rounded-lg"
+              >
+                All Salaries in {citySlug.split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")}
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* Related Articles */}
+        {(() => {
+          const relatedPosts = blogPosts
+            .filter(
+              (post) =>
+                post.occupationSlug === slug ||
+                post.keywords.some((kw) =>
+                  kw.toLowerCase().includes(occupation.title.toLowerCase())
+                )
+            )
+            .slice(0, 2);
+          return relatedPosts.length > 0 ? (
+            <section className="mb-12">
+              <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
+                <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
+                  Related Articles
+                </h3>
+                <div className="flex flex-col gap-3">
+                  {relatedPosts.map((post) => (
+                    <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
+                      <p className="text-slate-300 text-sm font-medium group-hover:text-emerald-400 transition-colors">
+                        {post.title}
+                      </p>
+                      <p className="text-slate-500 text-xs mt-1">{post.readTime} min read</p>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </section>
+          ) : null;
+        })()}
 
         {/* Narrative Content — SEO 본문 텍스트 */}
         <article className="mb-12">

@@ -224,7 +224,7 @@
 | PayScale | Progressive Disclosure 10단계 Survey + Career Path 트리 + 스킬별 급여 차이 | 구현 안 됨 (장기 과제) |
 | Levels.fyi | 무한 탐색 루프 (회사→레벨→위치→다른 회사) + Blurred Rows 호기심 유발 | 탐색 루프 일부 구현 (QuickNav) |
 | Numbeo | 개인 급여 등가 계산 ("SF $10K = London $9,170.5") + 항목별 842개 가격 비교 | Relocate에서 부분 구현 |
-| Salary.com | 기간 변환기 (연간/월간/시급) + 직급별 I~V 세분화 | 미구현 (즉시 가능) |
+| Salary.com | 기간 변환기 (연간/월간/시급) + 직급별 I~V 세분화 | ✅ 기간 변환기 구현 완료 (2026-02-19) |
 | SalaryExpert | 5년 전망 차트 + 보너스 분리 + PDF 내보내기 | 미구현 (중기 과제) |
 
 ### 7-2. 이미 구현된 이탈률 감소 전략 (2026-02-19)
@@ -239,14 +239,23 @@
 | Similar Salary Countries 카드 | Zillow Similar Homes | ✅ 구현 | country 페이지 |
 | Top Cities 가로 스크롤 | Levels.fyi 탐색 루프 | ✅ 구현 | country 페이지 |
 | Above-fold 퍼센타일 시각화 | Glassdoor Most Likely Range | ✅ 구현 | country 페이지 |
+| SalaryPeriodToggle (연간/월간/시급) | Salary.com 기간 변환기 | ✅ 구현 (2026-02-19) | salary 3페이지 |
+| Occupation JSON-LD 스키마 | PayScale MonetaryAmountDistribution | ✅ 구현 (2026-02-19) | salary/[occ], salary/[occ]/[country] |
+| 내부 링크 밀도 강화 (12-15+/페이지) | PayScale 내부 링크 전략 | ✅ 구현 (2026-02-19) | compare, rankings, compare-cities |
 
-### 7-3. 다음 우선순위 (미구현, 높은 효과)
+### 7-3. 구현 완료 (2026-02-19)
 
-1. **기간 변환기** (연간/월간/시급) — Salary.com 패턴, Low Effort, +5초 체류
-2. **Occupation JSON-LD 스키마** — PayScale/Levels.fyi MonetaryAmountDistribution, SERP 리치 결과
-3. **퍼센타일 분포 바** (10th/25th/50th/75th/90th) — Glassdoor/Salary.com, Medium Effort
-4. **PPP on/off 토글** — Levels.fyi 히트맵 패턴, Medium Effort
-5. **5년 급여 전망 차트** — SalaryExpert 유일 기능, Medium Effort
+| 항목 | 경쟁사 출처 | 구현 내용 |
+|------|-----------|----------|
+| ✅ **기간 변환기** (연간/월간/시급) | Salary.com, Glassdoor | `SalaryPeriodToggle` 컴포넌트, salary 3페이지 적용. `toMonthly()`, `toHourly()`, `formatHourly()` 헬퍼 |
+| ✅ **Occupation JSON-LD 스키마** | PayScale, Levels.fyi | `MonetaryAmountDistribution` (p10/p25/median/p75/p90), salary/[occupation] + salary/[occupation]/[country] |
+| ✅ **내부 링크 밀도 강화** (20+개/페이지) | PayScale | compare 4→15+, rankings 7→15+, compare-cities 5→12+ (Other Comparisons, Related Occupations, Relocate 링크 등) |
+
+### 7-4. 다음 우선순위 (미구현, 높은 효과)
+
+1. **퍼센타일 분포 바** (10th/25th/50th/75th/90th) — Glassdoor/Salary.com, Medium Effort
+2. **PPP on/off 토글** — Levels.fyi 히트맵 패턴, Medium Effort
+3. **5년 급여 전망 차트** — SalaryExpert 유일 기능, Medium Effort
 
 ---
 

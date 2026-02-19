@@ -26,7 +26,11 @@ import {
   formatNumber,
   formatPercentile,
   formatUSDShort,
+  toMonthly,
+  toHourly,
+  formatHourly,
 } from "@/lib/format";
+import SalaryPeriodToggle from "@/components/SalaryPeriodToggle";
 
 // --- Static Params (SSG) ---
 // 상위 20 직업만 빌드 타임 생성, 나머지는 on-demand ISR (Vercel 75MB 제한 대응)
@@ -321,10 +325,11 @@ export default async function CityDetailPage({ params }: PageProps) {
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-slate-800/50 rounded-xl p-4">
                 <p className="text-slate-500 text-xs mb-1">City Salary (USD)</p>
-                <p className="text-2xl font-bold text-slate-50">
-                  {formatCurrency(citySalary.estimatedSalary)}
-                </p>
-                <p className="text-slate-500 text-xs mt-1">per year</p>
+                <SalaryPeriodToggle
+                  yearly={formatCurrency(citySalary.estimatedSalary)}
+                  monthly={formatCurrency(toMonthly(citySalary.estimatedSalary))}
+                  hourly={formatHourly(toHourly(citySalary.estimatedSalary))}
+                />
               </div>
 
               <div className="bg-slate-800/50 rounded-xl p-4">
