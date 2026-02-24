@@ -1,12 +1,19 @@
 import { MetadataRoute } from "next";
 import { getOccupations, getCountries, getCities } from "@/lib/data-loader";
 import { blogPosts } from "@/data/blog-posts";
+import { TOP_OCCUPATIONS_FOR_SITEMAP } from "@/lib/ssg-config";
 
 const BASE_URL = "https://amipaidfairly.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const occupations = getOccupations();
   const countries = getCountries();
+
+  // ISR Write 절감: ISR 라우트는 TOP 30 직업만 사이트맵에 포함
+  // 나머지 145개 직업은 /browse, /salary/[occ] 내부 링크로 자연 발견
+  const sitemapOccupations = occupations.filter((occ) =>
+    TOP_OCCUPATIONS_FOR_SITEMAP.includes(occ.slug)
+  );
 
   const staticPages: MetadataRoute.Sitemap = [
     {
@@ -25,8 +32,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  // /salary/[occupation]/[country] 페이지 (30×42 = 1,260개)
-  const occupationCountryPages: MetadataRoute.Sitemap = occupations.flatMap(
+  // /salary/[occupation]/[country] 페이지 (TOP 30 × 42 = 1,260개)
+  const occupationCountryPages: MetadataRoute.Sitemap = sitemapOccupations.flatMap(
     (occ) =>
       countries.map((country) => ({
         url: `${BASE_URL}/salary/${occ.slug}/${country.slug}`,
@@ -64,7 +71,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["united-kingdom", "ireland"], ["china", "japan"],
     ["brazil", "mexico"], ["india", "united-kingdom"],
   ];
-  const comparePages: MetadataRoute.Sitemap = occupations.flatMap((occ) => [
+  const comparePages: MetadataRoute.Sitemap = sitemapOccupations.flatMap((occ) => [
     ...usVsCountries.map((countrySlug) => ({
       url: `${BASE_URL}/compare/${occ.slug}/united-states-vs-${countrySlug}`,
       lastModified: new Date(),
@@ -135,6 +142,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
+  const blogCategoryPages: MetadataRoute.Sitemap = [
+    "rankings",
+    "guides",
+    "analysis",
+    "career-finance",
+  ].map((cat) => ({
+    url: `${BASE_URL}/blog/category/${cat}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
+
   const blogPostPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
     url: `${BASE_URL}/blog/${post.slug}`,
     lastModified: new Date(post.date),
@@ -163,8 +182,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  // /salary/[occupation]/[country]/[city] 도시 상세 페이지
-  const cityDetailPages: MetadataRoute.Sitemap = occupations.flatMap((occ) =>
+  // /salary/[occupation]/[country]/[city] 도시 상세 페이지 (TOP 30만)
+  const cityDetailPages: MetadataRoute.Sitemap = sitemapOccupations.flatMap((occ) =>
     cities.map((city) => {
       const country = countries.find((c) => c.code === city.countryCode);
       if (!country) return null;
@@ -193,7 +212,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["munich", "berlin"], ["boston", "new-york"],
     ["toronto", "london"], ["shanghai", "singapore"],
   ];
-  const compareCityPages: MetadataRoute.Sitemap = occupations.flatMap((occ) =>
+  const compareCityPages: MetadataRoute.Sitemap = sitemapOccupations.flatMap((occ) =>
     cityPairs.map(([a, b]) => ({
       url: `${BASE_URL}/compare-cities/${occ.slug}/${a}-vs-${b}`,
       lastModified: new Date(),
@@ -212,7 +231,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  const relocatePages: MetadataRoute.Sitemap = occupations.flatMap((occ) =>
+  const relocatePages: MetadataRoute.Sitemap = sitemapOccupations.flatMap((occ) =>
     cityPairs.map(([a, b]) => ({
       url: `${BASE_URL}/relocate/${occ.slug}/${a}-vs-${b}`,
       lastModified: new Date(),
@@ -229,6 +248,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...comparePages,
     ...infoPages,
     ...blogListPage,
+    ...blogCategoryPages,
     ...blogPostPages,
     ...citiesBrowsePage,
     ...cityPages,

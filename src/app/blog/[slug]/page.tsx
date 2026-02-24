@@ -103,9 +103,13 @@ export default async function BlogPostPage({ params }: PageProps) {
   }
 
   const allPosts = getAllBlogPosts();
-  const relatedPosts = allPosts
-    .filter((p) => p.slug !== slug)
-    .slice(0, 3);
+  const sameCategoryPosts = allPosts.filter(
+    (p) => p.slug !== slug && p.category === post.category
+  );
+  const otherPosts = allPosts.filter(
+    (p) => p.slug !== slug && p.category !== post.category
+  );
+  const relatedPosts = [...sameCategoryPosts, ...otherPosts].slice(0, 3);
 
   // JSON-LD
   const jsonLd = {
@@ -217,6 +221,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             <span className="text-slate-600 text-xs">
               {post.readTime} min read
             </span>
+            <span className="text-slate-600 text-xs">by AIPF Research</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-50 leading-tight">
             {post.title}

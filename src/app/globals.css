@@ -51,4 +51,13 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #475569;
   }
+
+  /* 스크롤바 숨김 (필터 탭 등 가로 스크롤) */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }

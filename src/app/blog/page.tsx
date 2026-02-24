@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllBlogPosts } from "@/data/blog-posts";
+import BlogFilterClient from "@/components/BlogFilterClient";
+import NewsletterSignup from "@/components/NewsletterSignup";
 
 export const metadata: Metadata = {
   title: "Salary Insights Blog | Am I Paid Fairly?",
@@ -19,12 +21,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://amipaidfairly.com/blog",
   },
-};
-
-const categoryColors: Record<string, string> = {
-  "Salary Rankings": "bg-blue-500/20 text-blue-400",
-  Guides: "bg-emerald-500/20 text-emerald-400",
-  Analysis: "bg-purple-500/20 text-purple-400",
 };
 
 export default function BlogPage() {
@@ -46,11 +42,40 @@ export default function BlogPage() {
     })),
   };
 
+  const searchActionJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    url: "https://amipaidfairly.com",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: "https://amipaidfairly.com/blog?q={search_term_string}",
+      },
+      "query-input": "required name=search_term_string",
+    },
+  };
+
+  // Serialize only the fields needed by the client component
+  const clientPosts = posts.map((post) => ({
+    slug: post.slug,
+    title: post.title,
+    excerpt: post.excerpt,
+    date: post.date,
+    category: post.category,
+    readTime: post.readTime,
+    keywords: post.keywords,
+  }));
+
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-950 to-slate-900 px-4 py-12">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(searchActionJsonLd) }}
       />
 
       <div className="max-w-3xl mx-auto">
@@ -74,42 +99,12 @@ export default function BlogPage() {
           </p>
         </header>
 
-        {/* Post list */}
-        <div className="flex flex-col gap-4">
-          {posts.map((post) => (
-            <Link
-              key={post.slug}
-              href={`/blog/${post.slug}`}
-              className="group bg-dark-card border border-dark-border hover:border-slate-600 rounded-xl p-6 transition-colors"
-            >
-              <div className="flex items-center gap-3 mb-3">
-                <span
-                  className={`text-[10px] font-medium px-2 py-0.5 rounded-full ${
-                    categoryColors[post.category] ||
-                    "bg-slate-500/20 text-slate-400"
-                  }`}
-                >
-                  {post.category}
-                </span>
-                <span className="text-slate-600 text-xs">{post.date}</span>
-                <span className="text-slate-600 text-xs">
-                  {post.readTime} min read
-                </span>
-              </div>
+        {/* Filter + Post list */}
+        <BlogFilterClient posts={clientPosts} />
 
-              <h2 className="text-lg font-bold text-slate-200 group-hover:text-white transition-colors mb-2">
-                {post.title}
-              </h2>
-
-              <p className="text-slate-400 text-sm leading-relaxed">
-                {post.excerpt}
-              </p>
-
-              <span className="inline-block mt-3 text-emerald-400 text-sm font-medium group-hover:text-emerald-300 transition-colors">
-                Read more &rarr;
-              </span>
-            </Link>
-          ))}
+        {/* Newsletter */}
+        <div className="mt-10 mb-6">
+          <NewsletterSignup />
         </div>
 
         {/* CTA */}
