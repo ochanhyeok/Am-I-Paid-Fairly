@@ -10,6 +10,8 @@ import {
   getSalaryEntries,
   getCitySalaryEntriesByCountry,
   getCity,
+  getOccupationDetails,
+  getExperienceLevels,
 } from "@/lib/data-loader";
 import { getCountryInsight } from "@/data/country-insights";
 import QuickCompareForm from "@/components/QuickCompareForm";
@@ -30,6 +32,10 @@ import {
   formatHourly,
 } from "@/lib/format";
 import SalaryPeriodToggle from "@/components/SalaryPeriodToggle";
+import PercentileDistributionBar from "@/components/PercentileDistributionBar";
+import PPPToggle from "@/components/PPPToggle";
+import ExperienceLevelSection from "@/components/ExperienceLevelSection";
+import SpecializationsGrid from "@/components/SpecializationsGrid";
 
 // --- 국가+직업 FAQ 헬퍼 ---
 
@@ -107,6 +113,8 @@ export function generateStaticParams() {
 
   return params;
 }
+
+export const revalidate = false;
 
 // --- SEO Metadata ---
 
@@ -252,18 +260,22 @@ export default async function OccupationCountryPage({ params }: PageProps) {
     vsAvg: number;
   }[];
 
-  // Percentile bar 색상
+  // 경력 레벨 + 전문분야 데이터
+  const occupationDetails = getOccupationDetails(occSlug);
+  const experienceLevels = getExperienceLevels(occSlug, occupation.category);
+
+  // Percentile bar 색상 (70/40 임계값 통일)
   const percentileColor =
-    globalPercentile >= 50
+    globalPercentile >= 70
       ? "bg-emerald-500"
-      : globalPercentile >= 30
+      : globalPercentile >= 40
         ? "bg-yellow-500"
         : "bg-red-500";
 
   const percentileTextColor =
-    globalPercentile >= 50
+    globalPercentile >= 70
       ? "text-emerald-400"
-      : globalPercentile >= 30
+      : globalPercentile >= 40
         ? "text-yellow-400"
         : "text-red-400";
 
@@ -302,6 +314,8 @@ export default async function OccupationCountryPage({ params }: PageProps) {
         "@context": "https://schema.org/",
         "@type": "Occupation",
         name: occupation.title,
+        ...(occupationDetails?.description ? { description: occupationDetails.description } : {}),
+        ...(occupationDetails?.typicalEducation ? { educationRequirements: occupationDetails.typicalEducation } : {}),
         occupationLocation: {
           "@type": "Country",
           name: country.name,
@@ -352,20 +366,25 @@ export default async function OccupationCountryPage({ params }: PageProps) {
 
       <main className="min-h-screen bg-gradient-to-br from-slate-950 to-slate-900 px-4 py-8">
         <div className="max-w-2xl mx-auto flex flex-col gap-8">
-          {/* Back link */}
-          <Link
-            href={`/salary/${occSlug}`}
-            className="text-slate-500 text-sm hover:text-slate-300 transition-colors"
-          >
-            &larr; {occupation.title} in all countries
-          </Link>
+          {/* Breadcrumb */}
+          <nav className="text-sm text-slate-500">
+            <Link href="/" className="hover:text-slate-300 transition-colors">
+              Home
+            </Link>
+            <span className="mx-2">/</span>
+            <Link href={`/salary/${occSlug}`} className="hover:text-slate-300 transition-colors">
+              {occupation.title}
+            </Link>
+            <span className="mx-2">/</span>
+            <span className="text-slate-300">{country.flag} {country.name}</span>
+          </nav>
 
           {/* H1 & Subtitle */}
           <div className="text-center">
             <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-50 leading-tight">
               {occupation.title} Salary in {country.name} (2026)
             </h1>
-            <p className="text-xs text-slate-500 mt-1">Data last updated: February 2026</p>
+            <p className="text-xs text-slate-500 mt-1">Data last updated: March 2026</p>
             <p className="text-slate-500 text-sm mt-3 flex items-center justify-center gap-2">
               <span className="text-xl">{country.flag}</span>
               Estimated based on OECD &amp; BLS data
@@ -413,13 +432,12 @@ export default async function OccupationCountryPage({ params }: PageProps) {
               Salary Overview
             </h2>
             <div className="grid grid-cols-2 gap-4">
-              {/* Estimated Salary (USD) */}
+              {/* Estimated Salary with PPP Toggle */}
               <div className="bg-slate-800/50 rounded-xl p-4">
-                <p className="text-slate-500 text-xs mb-1">Estimated Salary (USD)</p>
-                <SalaryPeriodToggle
-                  yearly={formatCurrency(salaryEntry.estimatedSalary)}
-                  monthly={formatCurrency(toMonthly(salaryEntry.estimatedSalary))}
-                  hourly={formatHourly(toHourly(salaryEntry.estimatedSalary))}
+                <p className="text-slate-500 text-xs mb-1">Estimated Salary</p>
+                <PPPToggle
+                  nominal={formatCurrency(salaryEntry.estimatedSalary)}
+                  pppAdjusted={formatCurrency(salaryEntry.pppAdjusted)}
                 />
               </div>
 
@@ -434,13 +452,14 @@ export default async function OccupationCountryPage({ params }: PageProps) {
                 <p className="text-slate-500 text-xs mt-1">per year</p>
               </div>
 
-              {/* Purchasing Power */}
+              {/* Period Toggle */}
               <div className="bg-slate-800/50 rounded-xl p-4">
-                <p className="text-slate-500 text-xs mb-1">Purchasing Power</p>
-                <p className="text-2xl font-bold text-slate-50">
-                  {formatCurrency(salaryEntry.pppAdjusted)}
-                </p>
-                <p className="text-slate-500 text-xs mt-1">purchasing power</p>
+                <p className="text-slate-500 text-xs mb-1">By Period</p>
+                <SalaryPeriodToggle
+                  yearly={formatCurrency(salaryEntry.estimatedSalary)}
+                  monthly={formatCurrency(toMonthly(salaryEntry.estimatedSalary))}
+                  hourly={formatHourly(toHourly(salaryEntry.estimatedSalary))}
+                />
               </div>
 
               {/* Big Mac Count */}
@@ -472,7 +491,7 @@ export default async function OccupationCountryPage({ params }: PageProps) {
                   >
                     <div className="text-xl">{s.country.flag}</div>
                     <div className="text-slate-300 text-xs mt-1 font-medium">{s.country.name}</div>
-                    <div className="text-slate-500 text-[10px] mt-0.5">{formatUSDShort(s.estimatedSalary)}</div>
+                    <div className="text-slate-500 text-xs mt-0.5">{formatUSDShort(s.estimatedSalary)}</div>
                   </Link>
                 ))}
               </div>
@@ -517,6 +536,44 @@ export default async function OccupationCountryPage({ params }: PageProps) {
             </p>
           </div>
 
+          {/* Where Country Ranks — Percentile Distribution */}
+          {percentileDist && (
+            <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
+              <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-2">
+                Where {country.name} Ranks
+              </h2>
+              <p className="text-slate-500 text-xs mb-4">
+                {country.flag} {country.name}&apos;s {occupation.title} salary within the global distribution
+              </p>
+              <PercentileDistributionBar
+                percentile10={percentileDist.percentile10}
+                percentile25={percentileDist.percentile25}
+                median={percentileDist.median}
+                percentile75={percentileDist.percentile75}
+                percentile90={percentileDist.percentile90}
+                highlightValue={salaryEntry.estimatedSalary}
+                highlightLabel={`${country.name} ${formatCurrency(salaryEntry.estimatedSalary)}`}
+              />
+            </div>
+          )}
+
+          {/* Experience Level Section */}
+          <ExperienceLevelSection
+            baseSalary={salaryEntry.estimatedSalary}
+            experienceLevels={experienceLevels}
+            occupationTitle={occupation.title}
+            context={`in ${country.name}`}
+          />
+
+          {/* Specializations Grid */}
+          {occupationDetails?.specializations && occupationDetails.specializations.length > 0 && (
+            <SpecializationsGrid
+              specializations={occupationDetails.specializations}
+              baseSalary={salaryEntry.estimatedSalary}
+              occupationTitle={occupation.title}
+            />
+          )}
+
           {/* Visual Comparison Bar Chart */}
           <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
             <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
@@ -545,7 +602,7 @@ export default async function OccupationCountryPage({ params }: PageProps) {
                         }`}
                         style={{ width: `${widthPercent}%` }}
                       >
-                        <span className="text-[10px] text-white font-medium whitespace-nowrap">
+                        <span className="text-xs text-white font-medium whitespace-nowrap">
                           ${formatUSDShort(entry.estimatedSalary)}
                         </span>
                       </div>
@@ -696,7 +753,7 @@ export default async function OccupationCountryPage({ params }: PageProps) {
                           >
                             {entry.city.name}
                             {entry.city.isTechHub && (
-                              <span className="ml-1.5 text-[9px] bg-blue-500/20 text-blue-400 px-1 py-0.5 rounded">
+                              <span className="ml-1.5 text-xs bg-blue-500/20 text-blue-400 px-1 py-0.5 rounded">
                                 Tech
                               </span>
                             )}
@@ -1071,12 +1128,12 @@ export default async function OccupationCountryPage({ params }: PageProps) {
 
           {/* Data Source Disclaimer */}
           <div className="text-center pb-6">
-            <p className="text-slate-600 text-[10px]">
+            <p className="text-slate-600 text-xs">
               Estimated based on OECD &amp; BLS data. Actual salaries vary by
               experience, company, and region. Data is for informational
               purposes only.
             </p>
-            <p className="text-slate-700 text-[10px] mt-1">
+            <p className="text-slate-700 text-xs mt-1">
               Sources:{" "}
               <a
                 href="https://www.bls.gov/oes/"

@@ -254,7 +254,7 @@ export default function BlogFilterClient({ posts }: { posts: BlogPostData[] }) {
                   </span>
                   <span className="text-slate-600 text-xs">{post.date}</span>
                   <span className="text-slate-600 text-xs">{post.readTime} min read</span>
-                  <span className="text-slate-600 text-xs hidden sm:inline">by AIPF Research</span>
+                  <span className="text-slate-600 text-xs hidden sm:inline">by Chanhyeog Oh</span>
                 </div>
 
                 <h2 className="text-lg font-bold text-slate-200 group-hover:text-white transition-colors mb-1.5 leading-snug">

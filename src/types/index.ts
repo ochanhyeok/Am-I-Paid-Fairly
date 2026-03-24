@@ -68,6 +68,33 @@ export interface CitySalaryEntry {
   colAdjusted: number;      // 생활비 보정 실질 구매력
 }
 
+// 경력 레벨 + 전문분야
+export interface ExperienceLevel {
+  multiplier: number;
+  yearsRange: string;
+}
+
+export interface ExperienceLevels {
+  entry: ExperienceLevel;
+  mid: ExperienceLevel;
+  senior: ExperienceLevel;
+}
+
+export interface Specialization {
+  name: string;
+  slug: string;
+  multiplier: number;
+  description: string;
+}
+
+export interface OccupationDetails {
+  slug: string;
+  description: string;
+  typicalEducation: string;
+  experienceLevels: ExperienceLevels;
+  specializations?: Specialization[];
+}
+
 // Relocation Calculator 결과
 export interface RelocationResult {
   occupation: Occupation;

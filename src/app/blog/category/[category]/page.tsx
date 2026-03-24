@@ -53,6 +53,8 @@ export function generateStaticParams() {
   return VALID_SLUGS.map((category) => ({ category }));
 }
 
+export const revalidate = false;
+
 // --- Metadata ---
 interface PageProps {
   params: Promise<{ category: string }>;
@@ -126,6 +128,11 @@ export default async function BlogCategoryPage({ params }: PageProps) {
       description: post.description,
       datePublished: post.date,
       url: `https://amipaidfairly.com/blog/${post.slug}`,
+      author: {
+        "@type": "Person",
+        name: "Chanhyeog Oh",
+        url: "https://amipaidfairly.com/about",
+      },
     })),
   };
 
@@ -212,7 +219,7 @@ export default async function BlogCategoryPage({ params }: PageProps) {
                 </span>
                 <span className="text-slate-600 text-xs">{post.date}</span>
                 <span className="text-slate-600 text-xs">{post.readTime} min read</span>
-                <span className="text-slate-600 text-xs hidden sm:inline">by AIPF Research</span>
+                <span className="text-slate-600 text-xs hidden sm:inline">by Chanhyeog Oh</span>
               </div>
 
               <h2 className="text-lg font-bold text-slate-200 group-hover:text-white transition-colors mb-2">

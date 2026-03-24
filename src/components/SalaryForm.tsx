@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import type { Occupation, Country } from "@/types";
 import AutocompleteInput from "./AutocompleteInput";
 import CountryCombobox from "./CountryCombobox";
+import { saveRecentSearch } from "./RecentSearches";
 
 interface Props {
   occupations: Occupation[];
@@ -43,6 +44,23 @@ export default function SalaryForm({ occupations, countries }: Props) {
     }
 
     const numericSalary = salary.replace(/,/g, "");
+
+    // localStorage에 최근 검색 저장
+    if (selectedCountry) {
+      try {
+        saveRecentSearch({
+          occupationSlug: selectedOccupation.slug,
+          occupationTitle: selectedOccupation.title,
+          countryCode: selectedCountry.code,
+          countryName: selectedCountry.name,
+          countryFlag: selectedCountry.flag,
+          salary: numericSalary,
+        });
+      } catch {
+        // localStorage 비활성 시 무시
+      }
+    }
+
     const params = new URLSearchParams();
     params.set("job", selectedOccupation.slug);
     params.set("country", countryCode);

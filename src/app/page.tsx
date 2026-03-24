@@ -1,5 +1,6 @@
 import Link from "next/link";
 import SalaryForm from "@/components/SalaryForm";
+import RecentSearches from "@/components/RecentSearches";
 import { getOccupations, getCountries } from "@/lib/data-loader";
 
 // JSON-LD 구조화 데이터
@@ -172,6 +173,11 @@ export default function Home() {
           </Link>
         </div>
 
+        {/* Recent Searches */}
+        <div className="mt-8">
+          <RecentSearches />
+        </div>
+
         {/* Popular Comparisons */}
         <div className="mt-8 w-full max-w-md">
           <h2 className="text-sm font-semibold text-slate-300 mb-3 text-center">
@@ -204,7 +210,7 @@ export default function Home() {
 
         {/* Last Updated + Disclaimer */}
         <p className="text-slate-600 text-[11px] mt-3 text-center">
-          Data last updated: February 2026
+          Data last updated: March 2026
         </p>
         <p className="text-slate-700 text-[11px] mt-1 text-center max-w-sm">
           Estimated based on OECD &amp; BLS data. Actual salaries vary by

@@ -32,7 +32,8 @@ export default function CountryCombobox({ countries, value, onChange }: Props) {
         )
       : [];
 
-  const displayList = query.length > 0 ? filtered : popularCountries;
+  const isSelectedText = selected ? query === `${selected.flag} ${selected.name}` : false;
+  const displayList = query.length > 0 && !isSelectedText ? filtered : popularCountries;
 
   // 외부 클릭 시 닫기
   useEffect(() => {
@@ -105,9 +106,9 @@ export default function CountryCombobox({ countries, value, onChange }: Props) {
         }}
         onFocus={() => {
           setIsOpen(true);
-          // 포커스 시 텍스트 선택하여 바로 타이핑 가능하게
+          // 포커스 시 텍스트 전체 선택 (기존 값 유지, 타이핑하면 덮어쓰기)
           if (selected) {
-            setQuery("");
+            inputRef.current?.select();
           }
         }}
         onKeyDown={handleKeyDown}
@@ -116,8 +117,8 @@ export default function CountryCombobox({ countries, value, onChange }: Props) {
       />
       {isOpen && displayList.length > 0 && (
         <ul className="absolute z-50 w-full mt-1 bg-dark-card border border-dark-border rounded-lg shadow-xl max-h-64 overflow-y-auto">
-          {query.length === 0 && (
-            <li className="px-4 py-1.5 text-slate-600 text-[10px] uppercase tracking-wider font-semibold pointer-events-none">
+          {(query.length === 0 || isSelectedText) && (
+            <li className="px-4 py-1.5 text-slate-600 text-xs uppercase tracking-wider font-semibold pointer-events-none">
               Popular
             </li>
           )}
@@ -133,7 +134,7 @@ export default function CountryCombobox({ countries, value, onChange }: Props) {
             >
               <span className="text-base shrink-0">{country.flag}</span>
               <span className="font-medium">
-                {query.length > 0 ? highlightMatch(country.name, query) : country.name}
+                {query.length > 0 && !isSelectedText ? highlightMatch(country.name, query) : country.name}
               </span>
               <span className="text-slate-600 text-xs ml-auto">{country.code}</span>
             </li>

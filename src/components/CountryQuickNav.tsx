@@ -15,7 +15,7 @@ export default function CountryQuickNav({ occupationSlug, currentCountrySlug, co
     <div className="flex items-center gap-2 flex-wrap">
       <span className="text-slate-500 text-xs">Compare with</span>
       <select
-        className="bg-slate-800 border border-slate-700 text-slate-300 text-sm rounded-lg px-3 py-1.5 focus:ring-emerald-500 focus:border-emerald-500"
+        className="bg-dark-card border border-dark-border text-slate-300 text-sm rounded-lg px-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-accent-blue focus:border-accent-blue"
         value={currentCountrySlug}
         onChange={(e) => router.push(`/salary/${occupationSlug}/${e.target.value}`)}
       >

@@ -1,0 +1,4391 @@
+[
+  {
+    "slug": "software-engineer",
+    "description": "Designs, develops, tests, and maintains software applications and systems.",
+    "typicalEducation": "Bachelor's in Computer Science or related field",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.7,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.4,
+        "yearsRange": "8+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "Frontend Development",
+        "slug": "frontend",
+        "multiplier": 0.88,
+        "description": "Builds user interfaces and client-side logic with JavaScript frameworks like React, Vue, or Angular."
+      },
+      {
+        "name": "Backend Development",
+        "slug": "backend",
+        "multiplier": 0.91,
+        "description": "Develops server-side logic, APIs, and database integrations for web applications."
+      },
+      {
+        "name": "DevOps / SRE",
+        "slug": "devops-sre",
+        "multiplier": 1.1,
+        "description": "Manages infrastructure, CI/CD pipelines, and site reliability to ensure system uptime."
+      },
+      {
+        "name": "Machine Learning / AI",
+        "slug": "ml-ai",
+        "multiplier": 1.27,
+        "description": "Builds and deploys machine learning models and AI-powered features in production systems."
+      },
+      {
+        "name": "Full-Stack Development",
+        "slug": "full-stack",
+        "multiplier": 0.95,
+        "description": "Works across both frontend and backend, handling end-to-end feature development."
+      }
+    ]
+  },
+  {
+    "slug": "data-scientist",
+    "description": "Extracts insights from complex datasets using statistical analysis, machine learning, and data visualization techniques.",
+    "typicalEducation": "Master's or PhD in Data Science, Statistics, or Computer Science",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.7,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.4,
+        "yearsRange": "8+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "NLP",
+        "slug": "nlp",
+        "multiplier": 1.12,
+        "description": "Specializes in natural language processing, text analytics, and language model applications."
+      },
+      {
+        "name": "Computer Vision",
+        "slug": "computer-vision",
+        "multiplier": 1.15,
+        "description": "Develops image recognition, object detection, and visual AI systems."
+      },
+      {
+        "name": "Business Analytics",
+        "slug": "business-analytics",
+        "multiplier": 0.85,
+        "description": "Applies data analysis to business problems, creating dashboards and actionable insights."
+      },
+      {
+        "name": "MLOps",
+        "slug": "mlops",
+        "multiplier": 1.05,
+        "description": "Manages ML model deployment, monitoring, and lifecycle in production environments."
+      }
+    ]
+  },
+  {
+    "slug": "product-manager",
+    "description": "Defines product strategy and roadmap, coordinating cross-functional teams to deliver products that meet market needs.",
+    "typicalEducation": "Bachelor's in Business, Engineering, or related field; MBA valued",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.7,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.4,
+        "yearsRange": "8+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "Growth PM",
+        "slug": "growth-pm",
+        "multiplier": 0.95,
+        "description": "Focuses on user acquisition, retention, and revenue optimization through experimentation."
+      },
+      {
+        "name": "Platform PM",
+        "slug": "platform-pm",
+        "multiplier": 1.05,
+        "description": "Manages internal platforms and developer tools that other teams build upon."
+      },
+      {
+        "name": "Data PM",
+        "slug": "data-pm",
+        "multiplier": 1.08,
+        "description": "Leads data infrastructure and analytics product development for data-driven organizations."
+      },
+      {
+        "name": "Technical PM",
+        "slug": "technical-pm",
+        "multiplier": 1.1,
+        "description": "Manages highly technical products requiring deep engineering knowledge and API design."
+      }
+    ]
+  },
+  {
+    "slug": "ux-designer",
+    "description": "Researches user needs and designs intuitive digital experiences through wireframes, prototypes, and usability testing.",
+    "typicalEducation": "Bachelor's in Design, HCI, or Psychology; portfolio essential",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.7,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.4,
+        "yearsRange": "8+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "UX Research",
+        "slug": "ux-research",
+        "multiplier": 0.92,
+        "description": "Conducts user studies, interviews, and usability tests to inform design decisions."
+      },
+      {
+        "name": "Interaction Design",
+        "slug": "interaction-design",
+        "multiplier": 0.95,
+        "description": "Designs interactive behaviors, transitions, and micro-interactions in digital products."
+      },
+      {
+        "name": "Visual Design",
+        "slug": "visual-design",
+        "multiplier": 0.88,
+        "description": "Creates visual elements including icons, illustrations, and design system components."
+      },
+      {
+        "name": "Service Design",
+        "slug": "service-design",
+        "multiplier": 1.05,
+        "description": "Designs end-to-end service experiences across multiple touchpoints and channels."
+      }
+    ]
+  },
+  {
+    "slug": "devops-engineer",
+    "description": "Builds and maintains CI/CD pipelines, infrastructure automation, and monitoring systems to improve software delivery.",
+    "typicalEducation": "Bachelor's in Computer Science or IT; cloud certifications valued",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.7,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.4,
+        "yearsRange": "8+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "Cloud Infrastructure",
+        "slug": "cloud-infrastructure",
+        "multiplier": 1.08,
+        "description": "Manages cloud platforms (AWS/Azure/GCP), IaC, and cloud-native architectures."
+      },
+      {
+        "name": "Platform Engineering",
+        "slug": "platform-engineering",
+        "multiplier": 1.12,
+        "description": "Builds internal developer platforms, toolchains, and self-service infrastructure."
+      },
+      {
+        "name": "Security Engineering",
+        "slug": "security-engineering",
+        "multiplier": 1.15,
+        "description": "Implements security automation, compliance scanning, and DevSecOps practices."
+      },
+      {
+        "name": "Release Engineering",
+        "slug": "release-engineering",
+        "multiplier": 0.9,
+        "description": "Manages build systems, release pipelines, and deployment automation."
+      }
+    ]
+  },
+  {
+    "slug": "web-developer",
+    "description": "Builds and maintains websites and web applications using HTML, CSS, JavaScript, and modern frameworks.",
+    "typicalEducation": "Bachelor's in Computer Science or self-taught with strong portfolio",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.7,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.4,
+        "yearsRange": "8+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "Frontend",
+        "slug": "frontend",
+        "multiplier": 0.88,
+        "description": "Builds responsive user interfaces using modern JavaScript frameworks and CSS."
+      },
+      {
+        "name": "Backend",
+        "slug": "backend",
+        "multiplier": 0.91,
+        "description": "Develops server-side applications, REST APIs, and database-driven web services."
+      },
+      {
+        "name": "Full-Stack",
+        "slug": "full-stack",
+        "multiplier": 0.95,
+        "description": "Handles both client and server-side development for complete web applications."
+      },
+      {
+        "name": "WordPress / CMS",
+        "slug": "wordpress-cms",
+        "multiplier": 0.72,
+        "description": "Builds and customizes websites using WordPress or other content management systems."
+      }
+    ]
+  },
+  {
+    "slug": "cybersecurity-analyst",
+    "description": "Protects organizations from cyber threats by monitoring systems, analyzing vulnerabilities, and implementing security measures.",
+    "typicalEducation": "Bachelor's in Cybersecurity or IT; CISSP/CEH certifications valued",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.7,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.4,
+        "yearsRange": "8+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "Penetration Testing",
+        "slug": "penetration-testing",
+        "multiplier": 1.15,
+        "description": "Simulates cyber attacks to identify vulnerabilities in systems and networks."
+      },
+      {
+        "name": "Incident Response",
+        "slug": "incident-response",
+        "multiplier": 1.05,
+        "description": "Investigates and responds to security breaches, containing threats and recovering systems."
+      },
+      {
+        "name": "GRC (Governance, Risk, Compliance)",
+        "slug": "grc",
+        "multiplier": 0.9,
+        "description": "Manages security policies, risk assessments, and regulatory compliance frameworks."
+      },
+      {
+        "name": "Cloud Security",
+        "slug": "cloud-security",
+        "multiplier": 1.18,
+        "description": "Secures cloud infrastructure, implements zero-trust architectures, and manages cloud access."
+      }
+    ]
+  },
+  {
+    "slug": "accountant",
+    "description": "Prepares financial statements, manages tax compliance, and provides financial advice to organizations and individuals.",
+    "typicalEducation": "Bachelor's in Accounting; CPA certification preferred",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.72,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.45,
+        "yearsRange": "8+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "Tax Accounting",
+        "slug": "tax-accounting",
+        "multiplier": 1.05,
+        "description": "Prepares tax returns, plans tax strategies, and ensures compliance with tax regulations."
+      },
+      {
+        "name": "Forensic Accounting",
+        "slug": "forensic-accounting",
+        "multiplier": 1.15,
+        "description": "Investigates financial fraud, embezzlement, and disputes through detailed analysis."
+      },
+      {
+        "name": "Management Accounting",
+        "slug": "management-accounting",
+        "multiplier": 0.95,
+        "description": "Provides internal financial analysis for budgeting, forecasting, and strategic decisions."
+      },
+      {
+        "name": "Auditing",
+        "slug": "auditing",
+        "multiplier": 0.92,
+        "description": "Examines financial records for accuracy, compliance, and proper internal controls."
+      }
+    ]
+  },
+  {
+    "slug": "financial-analyst",
+    "description": "Evaluates financial data, market trends, and investment opportunities to guide business and investment decisions.",
+    "typicalEducation": "Bachelor's in Finance or Economics; CFA designation valued",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.72,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.45,
+        "yearsRange": "8+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "Equity Research",
+        "slug": "equity-research",
+        "multiplier": 1.1,
+        "description": "Analyzes stocks and provides investment recommendations based on financial modeling."
+      },
+      {
+        "name": "FP&A",
+        "slug": "fpa",
+        "multiplier": 0.95,
+        "description": "Manages financial planning, budgeting, and forecasting for organizational decision-making."
+      },
+      {
+        "name": "Risk Analysis",
+        "slug": "risk-analysis",
+        "multiplier": 1.08,
+        "description": "Assesses financial risks and develops strategies to mitigate potential losses."
+      },
+      {
+        "name": "Quantitative Analysis",
+        "slug": "quantitative-analysis",
+        "multiplier": 1.22,
+        "description": "Develops mathematical models for pricing, trading, and risk management."
+      }
+    ]
+  },
+  {
+    "slug": "investment-banker",
+    "description": "Advises corporations on mergers, acquisitions, capital raising, and other complex financial transactions.",
+    "typicalEducation": "Bachelor's in Finance; MBA from top program strongly preferred",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.72,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.45,
+        "yearsRange": "8+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "M&A",
+        "slug": "ma",
+        "multiplier": 1.15,
+        "description": "Advises on mergers and acquisitions, performing valuation analysis and deal structuring."
+      },
+      {
+        "name": "ECM (Equity Capital Markets)",
+        "slug": "ecm",
+        "multiplier": 1.05,
+        "description": "Manages IPOs, secondary offerings, and equity-linked transactions."
+      },
+      {
+        "name": "DCM (Debt Capital Markets)",
+        "slug": "dcm",
+        "multiplier": 0.95,
+        "description": "Structures and executes bond issuances and debt financing transactions."
+      },
+      {
+        "name": "Restructuring",
+        "slug": "restructuring",
+        "multiplier": 1.2,
+        "description": "Advises financially distressed companies on debt restructuring and turnaround strategies."
+      }
+    ]
+  },
+  {
+    "slug": "nurse",
+    "description": "Provides direct patient care, administers medications, monitors health conditions, and educates patients on wellness.",
+    "typicalEducation": "Bachelor of Science in Nursing (BSN); RN license required",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.22,
+        "yearsRange": "9+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "ICU / Critical Care",
+        "slug": "icu-critical-care",
+        "multiplier": 1.15,
+        "description": "Provides intensive care to critically ill patients requiring continuous monitoring."
+      },
+      {
+        "name": "Emergency",
+        "slug": "emergency",
+        "multiplier": 1.1,
+        "description": "Delivers rapid assessment and treatment in emergency department settings."
+      },
+      {
+        "name": "Nurse Practitioner",
+        "slug": "nurse-practitioner",
+        "multiplier": 1.25,
+        "description": "Practices independently with prescriptive authority and advanced clinical responsibilities."
+      },
+      {
+        "name": "Pediatric",
+        "slug": "pediatric",
+        "multiplier": 0.95,
+        "description": "Specializes in nursing care for infants, children, and adolescents."
+      },
+      {
+        "name": "OR / Surgical",
+        "slug": "or-surgical",
+        "multiplier": 1.08,
+        "description": "Assists surgeons during operations and manages perioperative patient care."
+      }
+    ]
+  },
+  {
+    "slug": "doctor",
+    "description": "Diagnoses and treats illnesses, prescribes medications, and provides preventive care across a range of medical conditions.",
+    "typicalEducation": "Doctor of Medicine (MD) or DO; residency completion; state license",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.22,
+        "yearsRange": "9+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "Cardiology",
+        "slug": "cardiology",
+        "multiplier": 1.25,
+        "description": "Specializes in diagnosing and treating heart and cardiovascular system diseases."
+      },
+      {
+        "name": "Dermatology",
+        "slug": "dermatology",
+        "multiplier": 1.3,
+        "description": "Treats skin, hair, and nail conditions including cosmetic and surgical procedures."
+      },
+      {
+        "name": "Emergency Medicine",
+        "slug": "emergency-medicine",
+        "multiplier": 1.05,
+        "description": "Provides immediate medical care for acute illnesses and injuries in the ER."
+      },
+      {
+        "name": "Family Medicine",
+        "slug": "family-medicine",
+        "multiplier": 0.85,
+        "description": "Delivers comprehensive primary care for patients of all ages."
+      },
+      {
+        "name": "Orthopedics",
+        "slug": "orthopedics",
+        "multiplier": 1.35,
+        "description": "Treats musculoskeletal conditions including bones, joints, ligaments, and tendons."
+      }
+    ]
+  },
+  {
+    "slug": "pharmacist",
+    "description": "Dispenses prescription medications, advises patients on drug interactions, and ensures safe pharmaceutical practices.",
+    "typicalEducation": "Doctor of Pharmacy (PharmD); state licensure required",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.22,
+        "yearsRange": "9+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "Clinical Pharmacist",
+        "slug": "clinical-pharmacist",
+        "multiplier": 1.08,
+        "description": "Works directly with healthcare teams to optimize medication therapy for patients."
+      },
+      {
+        "name": "Hospital Pharmacist",
+        "slug": "hospital-pharmacist",
+        "multiplier": 1.05,
+        "description": "Manages medication dispensing and pharmaceutical services in hospital settings."
+      },
+      {
+        "name": "Retail Pharmacist",
+        "slug": "retail-pharmacist",
+        "multiplier": 0.88,
+        "description": "Dispenses prescriptions and provides medication counseling in community pharmacies."
+      },
+      {
+        "name": "Research Pharmacist",
+        "slug": "research-pharmacist",
+        "multiplier": 1.12,
+        "description": "Conducts pharmaceutical research and supports clinical trials for new drugs."
+      }
+    ]
+  },
+  {
+    "slug": "dentist",
+    "description": "Diagnoses and treats oral health conditions including tooth decay, gum disease, and provides preventive dental care.",
+    "typicalEducation": "Doctor of Dental Surgery (DDS) or DMD; state licensure required",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.22,
+        "yearsRange": "9+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "Orthodontics",
+        "slug": "orthodontics",
+        "multiplier": 1.3,
+        "description": "Corrects teeth alignment and jaw positioning using braces and aligners."
+      },
+      {
+        "name": "Oral Surgery",
+        "slug": "oral-surgery",
+        "multiplier": 1.35,
+        "description": "Performs surgical procedures including tooth extractions and jaw reconstruction."
+      },
+      {
+        "name": "Cosmetic Dentistry",
+        "slug": "cosmetic-dentistry",
+        "multiplier": 1.2,
+        "description": "Improves dental aesthetics through veneers, whitening, and smile design."
+      },
+      {
+        "name": "Pediatric Dentistry",
+        "slug": "pediatric-dentistry",
+        "multiplier": 0.95,
+        "description": "Provides dental care specialized for infants, children, and adolescents."
+      }
+    ]
+  },
+  {
+    "slug": "physical-therapist",
+    "description": "Helps patients recover mobility and manage pain through exercise programs, manual therapy, and rehabilitation plans.",
+    "typicalEducation": "Doctor of Physical Therapy (DPT); state licensure required",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.22,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "teacher",
+    "description": "Educates students in K-12 settings by developing lesson plans, assessing progress, and creating engaging learning environments.",
+    "typicalEducation": "Bachelor's in Education; state teaching certification required",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.82,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-10 years"
+      },
+      "senior": {
+        "multiplier": 1.2,
+        "yearsRange": "11+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "STEM Teaching",
+        "slug": "stem-teaching",
+        "multiplier": 1.05,
+        "description": "Teaches science, technology, engineering, or math subjects in K-12 settings."
+      },
+      {
+        "name": "Special Education",
+        "slug": "special-education",
+        "multiplier": 1.08,
+        "description": "Works with students with disabilities using individualized education approaches."
+      },
+      {
+        "name": "International Schools",
+        "slug": "international-schools",
+        "multiplier": 1.15,
+        "description": "Teaches in international school settings, often with IB or AP curricula."
+      },
+      {
+        "name": "Early Childhood",
+        "slug": "early-childhood",
+        "multiplier": 0.85,
+        "description": "Educates young children (Pre-K to 2nd grade) through developmentally appropriate methods."
+      }
+    ]
+  },
+  {
+    "slug": "professor",
+    "description": "Teaches university courses, conducts academic research, publishes scholarly work, and mentors graduate students.",
+    "typicalEducation": "PhD in relevant discipline; postdoctoral experience often required",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.82,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-10 years"
+      },
+      "senior": {
+        "multiplier": 1.2,
+        "yearsRange": "11+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "STEM Fields",
+        "slug": "stem-fields",
+        "multiplier": 1.1,
+        "description": "Teaches and conducts research in science, technology, engineering, or mathematics."
+      },
+      {
+        "name": "Business School",
+        "slug": "business-school",
+        "multiplier": 1.2,
+        "description": "Teaches MBA and business courses, often combining academia with industry consulting."
+      },
+      {
+        "name": "Humanities",
+        "slug": "humanities",
+        "multiplier": 0.85,
+        "description": "Teaches liberal arts subjects including literature, philosophy, and history."
+      },
+      {
+        "name": "Medical School",
+        "slug": "medical-school",
+        "multiplier": 1.25,
+        "description": "Teaches medical students while maintaining clinical practice and research."
+      }
+    ]
+  },
+  {
+    "slug": "mechanical-engineer",
+    "description": "Designs, analyzes, and manufactures mechanical systems including engines, machines, and thermal devices.",
+    "typicalEducation": "Bachelor's in Mechanical Engineering; PE license for some roles",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "Automotive",
+        "slug": "automotive",
+        "multiplier": 0.95,
+        "description": "Designs vehicle systems, powertrain components, and automotive manufacturing processes."
+      },
+      {
+        "name": "Aerospace",
+        "slug": "aerospace",
+        "multiplier": 1.15,
+        "description": "Develops aircraft and spacecraft mechanical systems and propulsion components."
+      },
+      {
+        "name": "Robotics",
+        "slug": "robotics",
+        "multiplier": 1.2,
+        "description": "Designs robotic systems, actuators, and mechanical automation solutions."
+      },
+      {
+        "name": "HVAC Design",
+        "slug": "hvac-design",
+        "multiplier": 0.88,
+        "description": "Designs heating, ventilation, and air conditioning systems for buildings."
+      }
+    ]
+  },
+  {
+    "slug": "civil-engineer",
+    "description": "Plans and designs infrastructure projects including roads, bridges, buildings, and water systems.",
+    "typicalEducation": "Bachelor's in Civil Engineering; PE license required for senior roles",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "Structural",
+        "slug": "structural",
+        "multiplier": 1.05,
+        "description": "Designs load-bearing structures including buildings, bridges, and foundations."
+      },
+      {
+        "name": "Transportation",
+        "slug": "transportation",
+        "multiplier": 0.95,
+        "description": "Plans and designs roads, highways, airports, and transit infrastructure."
+      },
+      {
+        "name": "Water Resources",
+        "slug": "water-resources",
+        "multiplier": 0.92,
+        "description": "Manages water supply, flood control, and stormwater management systems."
+      },
+      {
+        "name": "Geotechnical",
+        "slug": "geotechnical",
+        "multiplier": 1.08,
+        "description": "Analyzes soil and rock mechanics for foundation design and slope stability."
+      }
+    ]
+  },
+  {
+    "slug": "electrical-engineer",
+    "description": "Designs, develops, and tests electrical systems and components including power generation and electronics.",
+    "typicalEducation": "Bachelor's in Electrical Engineering; PE license for some roles",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "Power Systems",
+        "slug": "power-systems",
+        "multiplier": 1.05,
+        "description": "Designs electrical power generation, transmission, and distribution systems."
+      },
+      {
+        "name": "Electronics",
+        "slug": "electronics",
+        "multiplier": 0.95,
+        "description": "Develops electronic circuits, components, and embedded systems."
+      },
+      {
+        "name": "Control Systems",
+        "slug": "control-systems",
+        "multiplier": 1.08,
+        "description": "Designs automated control systems for manufacturing and industrial processes."
+      },
+      {
+        "name": "Telecommunications",
+        "slug": "telecommunications",
+        "multiplier": 0.92,
+        "description": "Develops communication networks, wireless systems, and signal processing."
+      }
+    ]
+  },
+  {
+    "slug": "lawyer",
+    "description": "Advises and represents clients in legal matters, drafts legal documents, and advocates in court proceedings.",
+    "typicalEducation": "Juris Doctor (JD); bar admission required",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.68,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.5,
+        "yearsRange": "9+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "Corporate Law",
+        "slug": "corporate-law",
+        "multiplier": 1.15,
+        "description": "Advises businesses on transactions, governance, compliance, and corporate structuring."
+      },
+      {
+        "name": "Litigation",
+        "slug": "litigation",
+        "multiplier": 1.05,
+        "description": "Represents clients in civil or criminal court proceedings and disputes."
+      },
+      {
+        "name": "IP Law",
+        "slug": "ip-law",
+        "multiplier": 1.2,
+        "description": "Handles patents, trademarks, copyrights, and intellectual property protection."
+      },
+      {
+        "name": "Criminal Law",
+        "slug": "criminal-law",
+        "multiplier": 0.8,
+        "description": "Defends or prosecutes individuals accused of criminal offenses."
+      },
+      {
+        "name": "Tax Law",
+        "slug": "tax-law",
+        "multiplier": 1.1,
+        "description": "Advises on tax planning, compliance, and disputes with tax authorities."
+      }
+    ]
+  },
+  {
+    "slug": "marketing-manager",
+    "description": "Develops marketing strategies, manages campaigns, and analyzes market trends to drive brand growth and revenue.",
+    "typicalEducation": "Bachelor's in Marketing or Business; MBA valued for senior roles",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.72,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.45,
+        "yearsRange": "8+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "Digital Marketing",
+        "slug": "digital-marketing",
+        "multiplier": 0.92,
+        "description": "Manages online marketing channels including SEO, SEM, email, and social media."
+      },
+      {
+        "name": "Brand Marketing",
+        "slug": "brand-marketing",
+        "multiplier": 0.95,
+        "description": "Develops brand strategy, positioning, and creative campaigns for brand awareness."
+      },
+      {
+        "name": "Performance Marketing",
+        "slug": "performance-marketing",
+        "multiplier": 1.05,
+        "description": "Optimizes paid advertising campaigns for measurable ROI and conversion goals."
+      },
+      {
+        "name": "Product Marketing",
+        "slug": "product-marketing",
+        "multiplier": 1.08,
+        "description": "Drives go-to-market strategy, messaging, and competitive positioning for products."
+      }
+    ]
+  },
+  {
+    "slug": "graphic-designer",
+    "description": "Creates visual content for branding, advertising, and digital media using design software and creative techniques.",
+    "typicalEducation": "Bachelor's in Graphic Design or Visual Arts; portfolio essential",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.68,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.5,
+        "yearsRange": "8+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "Brand / Identity",
+        "slug": "brand-identity",
+        "multiplier": 1.05,
+        "description": "Develops brand identities including logos, style guides, and visual systems."
+      },
+      {
+        "name": "Motion Graphics",
+        "slug": "motion-graphics",
+        "multiplier": 1.1,
+        "description": "Creates animated graphics for video, advertising, and digital platforms."
+      },
+      {
+        "name": "Packaging",
+        "slug": "packaging",
+        "multiplier": 0.92,
+        "description": "Designs product packaging that combines visual appeal with functionality."
+      },
+      {
+        "name": "Digital / Web",
+        "slug": "digital-web",
+        "multiplier": 0.95,
+        "description": "Designs user interfaces and visual elements for websites and digital products."
+      }
+    ]
+  },
+  {
+    "slug": "chef",
+    "description": "Plans menus, prepares food, manages kitchen operations, and ensures quality and safety standards in culinary settings.",
+    "typicalEducation": "Culinary arts degree or apprenticeship; years of kitchen experience",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.8,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-6 years"
+      },
+      "senior": {
+        "multiplier": 1.25,
+        "yearsRange": "7+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "Pastry Chef",
+        "slug": "pastry-chef",
+        "multiplier": 0.85,
+        "description": "Specializes in baking and creating desserts, pastries, and confections."
+      },
+      {
+        "name": "Sous Chef",
+        "slug": "sous-chef",
+        "multiplier": 0.8,
+        "description": "Serves as second-in-command, managing kitchen operations under the head chef."
+      },
+      {
+        "name": "Executive Chef",
+        "slug": "executive-chef",
+        "multiplier": 1.25,
+        "description": "Leads the entire kitchen operation, menu design, and culinary team management."
+      },
+      {
+        "name": "Private Chef",
+        "slug": "private-chef",
+        "multiplier": 1.15,
+        "description": "Prepares personalized meals for private clients or households."
+      }
+    ]
+  },
+  {
+    "slug": "journalist",
+    "description": "Researches, writes, and reports news stories for print, broadcast, or digital media outlets.",
+    "typicalEducation": "Bachelor's in Journalism or Communications",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.7,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.4,
+        "yearsRange": "8+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "Investigative",
+        "slug": "investigative",
+        "multiplier": 1.1,
+        "description": "Conducts in-depth research to uncover hidden truths and public interest stories."
+      },
+      {
+        "name": "Data Journalism",
+        "slug": "data-journalism",
+        "multiplier": 1.05,
+        "description": "Uses data analysis and visualization to tell evidence-based news stories."
+      },
+      {
+        "name": "Political",
+        "slug": "political",
+        "multiplier": 0.95,
+        "description": "Covers government, elections, policy, and political developments."
+      },
+      {
+        "name": "Foreign Correspondent",
+        "slug": "foreign-correspondent",
+        "multiplier": 1.15,
+        "description": "Reports international news from overseas bureaus and conflict zones."
+      }
+    ]
+  },
+  {
+    "slug": "architect",
+    "description": "Designs buildings and structures balancing aesthetics, functionality, safety, and environmental sustainability.",
+    "typicalEducation": "Bachelor's or Master's in Architecture; licensure (AIA) required",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "Residential",
+        "slug": "residential",
+        "multiplier": 0.85,
+        "description": "Designs homes and residential buildings focusing on livability and local codes."
+      },
+      {
+        "name": "Commercial",
+        "slug": "commercial",
+        "multiplier": 1.05,
+        "description": "Designs office buildings, retail spaces, and commercial developments."
+      },
+      {
+        "name": "Sustainable / Green",
+        "slug": "sustainable-green",
+        "multiplier": 1.12,
+        "description": "Specializes in environmentally sustainable building design and LEED certification."
+      },
+      {
+        "name": "Urban Design",
+        "slug": "urban-design",
+        "multiplier": 0.95,
+        "description": "Plans large-scale urban spaces, streetscapes, and public realm projects."
+      }
+    ]
+  },
+  {
+    "slug": "project-manager",
+    "description": "Plans, executes, and closes projects by managing scope, timeline, budget, and cross-functional team coordination.",
+    "typicalEducation": "Bachelor's in Business or related field; PMP certification valued",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.72,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.45,
+        "yearsRange": "8+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "IT PM",
+        "slug": "it-pm",
+        "multiplier": 1.05,
+        "description": "Manages technology projects including software development and system implementations."
+      },
+      {
+        "name": "Construction PM",
+        "slug": "construction-pm",
+        "multiplier": 1.08,
+        "description": "Oversees building and infrastructure construction projects on-site."
+      },
+      {
+        "name": "Agile / Scrum Master",
+        "slug": "agile-scrum-master",
+        "multiplier": 0.95,
+        "description": "Facilitates agile development processes and removes team impediments."
+      },
+      {
+        "name": "Program Manager",
+        "slug": "program-manager",
+        "multiplier": 1.15,
+        "description": "Coordinates multiple related projects aligned to strategic business objectives."
+      }
+    ]
+  },
+  {
+    "slug": "human-resources-manager",
+    "description": "Oversees recruitment, employee relations, benefits administration, and organizational development programs.",
+    "typicalEducation": "Bachelor's in HR Management or Business; SHRM certification valued",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.72,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.45,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "police-officer",
+    "description": "Enforces laws, responds to emergencies, conducts investigations, and maintains public safety in communities.",
+    "typicalEducation": "High school diploma or Associate's; police academy training required",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.8,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-10 years"
+      },
+      "senior": {
+        "multiplier": 1.25,
+        "yearsRange": "11+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "Detective",
+        "slug": "detective",
+        "multiplier": 1.15,
+        "description": "Investigates crimes, gathers evidence, interviews witnesses, and builds cases."
+      },
+      {
+        "name": "SWAT",
+        "slug": "swat",
+        "multiplier": 1.12,
+        "description": "Serves on tactical teams for high-risk operations including hostage situations."
+      },
+      {
+        "name": "Cybercrime",
+        "slug": "cybercrime",
+        "multiplier": 1.18,
+        "description": "Investigates digital crimes including hacking, fraud, and online exploitation."
+      },
+      {
+        "name": "Community Policing",
+        "slug": "community-policing",
+        "multiplier": 0.9,
+        "description": "Builds relationships with community members to prevent crime proactively."
+      }
+    ]
+  },
+  {
+    "slug": "pilot",
+    "description": "Operates aircraft to transport passengers and cargo safely, managing navigation, communications, and flight systems.",
+    "typicalEducation": "Bachelor's degree; ATP certificate; 1,500+ flight hours",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-10 years"
+      },
+      "senior": {
+        "multiplier": 1.25,
+        "yearsRange": "11+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "Commercial Airline",
+        "slug": "commercial-airline",
+        "multiplier": 1,
+        "description": "Flies scheduled passenger routes for major and regional airlines."
+      },
+      {
+        "name": "Cargo",
+        "slug": "cargo",
+        "multiplier": 1.05,
+        "description": "Operates freight aircraft transporting goods for logistics companies."
+      },
+      {
+        "name": "Charter / Private",
+        "slug": "charter-private",
+        "multiplier": 0.9,
+        "description": "Flies on-demand private and charter flights for individual clients."
+      },
+      {
+        "name": "Helicopter",
+        "slug": "helicopter",
+        "multiplier": 0.85,
+        "description": "Operates rotary-wing aircraft for medical, utility, or tourism purposes."
+      }
+    ]
+  },
+  {
+    "slug": "ai-engineer",
+    "description": "Develops and deploys artificial intelligence systems including machine learning models and neural networks.",
+    "typicalEducation": "Master's or PhD in AI, ML, or Computer Science",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.7,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.4,
+        "yearsRange": "8+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "LLM / NLP",
+        "slug": "llm-nlp",
+        "multiplier": 1.15,
+        "description": "Develops and fine-tunes large language models for text understanding and generation."
+      },
+      {
+        "name": "Computer Vision",
+        "slug": "computer-vision",
+        "multiplier": 1.1,
+        "description": "Builds visual AI systems for image recognition and video analysis."
+      },
+      {
+        "name": "Robotics AI",
+        "slug": "robotics-ai",
+        "multiplier": 1.08,
+        "description": "Develops AI systems for autonomous robots and physical world interaction."
+      },
+      {
+        "name": "MLOps",
+        "slug": "mlops",
+        "multiplier": 0.92,
+        "description": "Manages ML model deployment pipelines, monitoring, and production infrastructure."
+      }
+    ]
+  },
+  {
+    "slug": "cloud-architect",
+    "description": "Designs and oversees cloud computing strategies, infrastructure, and migration plans for organizations.",
+    "typicalEducation": "Bachelor's in CS or IT; AWS/Azure/GCP architect certifications",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.7,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.4,
+        "yearsRange": "8+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "AWS",
+        "slug": "aws",
+        "multiplier": 1,
+        "description": "Designs cloud architectures using Amazon Web Services ecosystem and best practices."
+      },
+      {
+        "name": "Azure",
+        "slug": "azure",
+        "multiplier": 0.98,
+        "description": "Architects solutions on Microsoft Azure including hybrid cloud environments."
+      },
+      {
+        "name": "GCP",
+        "slug": "gcp",
+        "multiplier": 0.97,
+        "description": "Builds cloud infrastructure on Google Cloud Platform with data and ML focus."
+      },
+      {
+        "name": "Multi-Cloud",
+        "slug": "multi-cloud",
+        "multiplier": 1.1,
+        "description": "Designs cross-cloud architectures spanning multiple cloud providers."
+      }
+    ]
+  },
+  {
+    "slug": "mobile-developer",
+    "description": "Builds native and cross-platform mobile applications for iOS and Android devices.",
+    "typicalEducation": "Bachelor's in Computer Science or Software Engineering",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.7,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.4,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "qa-engineer",
+    "description": "Designs and executes test plans to identify software defects and ensure product quality before release.",
+    "typicalEducation": "Bachelor's in Computer Science or Software Engineering",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.7,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.4,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "database-administrator",
+    "description": "Manages, optimizes, and secures database systems to ensure data availability, integrity, and performance.",
+    "typicalEducation": "Bachelor's in CS or IT; Oracle/SQL Server certifications valued",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.7,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.4,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "it-manager",
+    "description": "Oversees IT operations, manages technical teams, and aligns technology strategy with business objectives.",
+    "typicalEducation": "Bachelor's in IT or CS; MBA or ITIL certification valued",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.7,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.4,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "systems-administrator",
+    "description": "Installs, configures, and maintains server infrastructure, networks, and operating systems for organizations.",
+    "typicalEducation": "Bachelor's in IT or CS; CompTIA/Microsoft certifications valued",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.7,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.4,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "network-engineer",
+    "description": "Designs, implements, and maintains computer networks including LANs, WANs, and cloud networking infrastructure.",
+    "typicalEducation": "Bachelor's in CS or IT; CCNA/CCNP certifications valued",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.7,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.4,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "game-developer",
+    "description": "Creates video games by programming gameplay mechanics, graphics engines, and interactive experiences.",
+    "typicalEducation": "Bachelor's in Computer Science or Game Development",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.7,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.4,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "machine-learning-engineer",
+    "description": "Builds and deploys production ML systems, optimizing model performance and scalability for real-world applications.",
+    "typicalEducation": "Master's or PhD in ML, AI, or Computer Science",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.7,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.4,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "blockchain-developer",
+    "description": "Develops decentralized applications, smart contracts, and blockchain protocols for various platforms.",
+    "typicalEducation": "Bachelor's in Computer Science; blockchain specialization",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.7,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.4,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "technical-writer",
+    "description": "Creates clear documentation including user guides, API references, and technical specifications for software products.",
+    "typicalEducation": "Bachelor's in English, Technical Writing, or CS",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.7,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.4,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "ui-designer",
+    "description": "Designs visual interfaces for digital products focusing on layout, typography, color, and interactive elements.",
+    "typicalEducation": "Bachelor's in Design or HCI; strong portfolio required",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.7,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.4,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "surgeon",
+    "description": "Performs surgical operations to treat injuries, diseases, and deformities using specialized instruments and techniques.",
+    "typicalEducation": "MD + surgical residency (5-7 years); board certification",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.22,
+        "yearsRange": "9+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "Cardiac Surgery",
+        "slug": "cardiac-surgery",
+        "multiplier": 1.2,
+        "description": "Performs heart surgeries including bypass, valve repair, and transplants."
+      },
+      {
+        "name": "Neurosurgery",
+        "slug": "neurosurgery",
+        "multiplier": 1.25,
+        "description": "Operates on the brain, spinal cord, and nervous system conditions."
+      },
+      {
+        "name": "Orthopedic Surgery",
+        "slug": "orthopedic-surgery",
+        "multiplier": 1.15,
+        "description": "Performs surgeries on bones, joints, and musculoskeletal injuries."
+      },
+      {
+        "name": "Plastic Surgery",
+        "slug": "plastic-surgery",
+        "multiplier": 1.18,
+        "description": "Performs reconstructive and cosmetic surgical procedures."
+      }
+    ]
+  },
+  {
+    "slug": "psychiatrist",
+    "description": "Diagnoses and treats mental health disorders through medication management, psychotherapy, and comprehensive psychiatric evaluation.",
+    "typicalEducation": "MD + psychiatry residency (4 years); board certification",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.22,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "radiologist",
+    "description": "Interprets medical images including X-rays, CT scans, and MRIs to diagnose diseases and guide treatment.",
+    "typicalEducation": "MD + radiology residency (5 years); board certification",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.22,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "veterinarian",
+    "description": "Diagnoses and treats diseases and injuries in animals, performs surgeries, and advises on animal health care.",
+    "typicalEducation": "Doctor of Veterinary Medicine (DVM); state licensure required",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.22,
+        "yearsRange": "9+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "Small Animal",
+        "slug": "small-animal",
+        "multiplier": 0.9,
+        "description": "Treats companion animals including dogs, cats, and household pets."
+      },
+      {
+        "name": "Large Animal",
+        "slug": "large-animal",
+        "multiplier": 0.95,
+        "description": "Provides medical care for livestock, horses, and farm animals."
+      },
+      {
+        "name": "Emergency / Critical Care",
+        "slug": "emergency-critical-care",
+        "multiplier": 1.12,
+        "description": "Delivers urgent and intensive veterinary care for critical cases."
+      },
+      {
+        "name": "Exotic / Zoo",
+        "slug": "exotic-zoo",
+        "multiplier": 1.05,
+        "description": "Treats exotic animals, wildlife, and zoo species with specialized expertise."
+      }
+    ]
+  },
+  {
+    "slug": "optometrist",
+    "description": "Examines eyes, diagnoses vision problems, prescribes corrective lenses, and treats certain eye conditions.",
+    "typicalEducation": "Doctor of Optometry (OD); state licensure required",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.22,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "paramedic",
+    "description": "Provides advanced emergency medical care in pre-hospital settings including medication administration and advanced airway management.",
+    "typicalEducation": "EMT-Paramedic certification (1,200+ hours training); state license",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.22,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "medical-lab-technician",
+    "description": "Performs laboratory tests on patient samples to help physicians diagnose and treat diseases.",
+    "typicalEducation": "Associate's or Bachelor's in Medical Lab Technology; certification",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.22,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "occupational-therapist",
+    "description": "Helps patients develop or recover daily living and work skills through therapeutic activities and adaptive techniques.",
+    "typicalEducation": "Master's or Doctorate in Occupational Therapy; state license",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.22,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "speech-pathologist",
+    "description": "Assesses and treats communication and swallowing disorders in patients across all age groups.",
+    "typicalEducation": "Master's in Speech-Language Pathology; CCC-SLP certification",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.22,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "anesthesiologist",
+    "description": "Administers anesthesia during surgical procedures, monitors patient vital signs, and manages pain management.",
+    "typicalEducation": "MD + anesthesiology residency (4 years); board certification",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.22,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "chiropractor",
+    "description": "Diagnoses and treats musculoskeletal conditions through spinal adjustments and manual manipulation techniques.",
+    "typicalEducation": "Doctor of Chiropractic (DC); state licensure required",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.22,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "physician-assistant",
+    "description": "Practices medicine under physician supervision, diagnosing conditions, prescribing medications, and performing procedures.",
+    "typicalEducation": "Master's in Physician Assistant Studies; NCCPA certification",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.22,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "dental-hygienist",
+    "description": "Cleans teeth, examines patients for oral diseases, and provides preventive dental care education.",
+    "typicalEducation": "Associate's or Bachelor's in Dental Hygiene; state licensure",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.22,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "medical-assistant",
+    "description": "Performs administrative and clinical tasks in medical offices including taking vitals and managing patient records.",
+    "typicalEducation": "Certificate or Associate's in Medical Assisting; CMA certification",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.22,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "actuary",
+    "description": "Analyzes financial risk using mathematics, statistics, and financial theory for insurance and pension industries.",
+    "typicalEducation": "Bachelor's in Actuarial Science or Math; SOA/CAS exams",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.72,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.45,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "tax-advisor",
+    "description": "Provides expert guidance on tax planning, compliance, and optimization strategies for individuals and businesses.",
+    "typicalEducation": "Bachelor's in Accounting; CPA or EA designation",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.72,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.45,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "bank-teller",
+    "description": "Processes customer banking transactions including deposits, withdrawals, and account inquiries at bank branches.",
+    "typicalEducation": "High school diploma; on-the-job training",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.72,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.45,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "loan-officer",
+    "description": "Evaluates and authorizes loan applications by assessing creditworthiness and financial documentation of applicants.",
+    "typicalEducation": "Bachelor's in Finance or Business; NMLS registration required",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.72,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.45,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "financial-controller",
+    "description": "Manages financial reporting, budgeting, and internal controls to ensure accurate financial statements and compliance.",
+    "typicalEducation": "Bachelor's in Accounting; CPA required; MBA valued",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.72,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.45,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "auditor",
+    "description": "Examines financial records and operations to ensure accuracy, compliance with regulations, and proper internal controls.",
+    "typicalEducation": "Bachelor's in Accounting; CPA or CIA certification",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.72,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.45,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "hedge-fund-manager",
+    "description": "Manages pooled investment funds using advanced strategies to generate returns for institutional and high-net-worth investors.",
+    "typicalEducation": "MBA from top program; CFA designation; extensive trading experience",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.72,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.45,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "financial-planner",
+    "description": "Helps individuals plan for financial goals including retirement, education, and wealth management through personalized strategies.",
+    "typicalEducation": "Bachelor's in Finance; CFP certification required",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.72,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.45,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "stockbroker",
+    "description": "Executes buy and sell orders for securities on behalf of clients, providing investment advice and market analysis.",
+    "typicalEducation": "Bachelor's in Finance; Series 7 and 63 licenses required",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.72,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.45,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "credit-analyst",
+    "description": "Evaluates creditworthiness of individuals and companies by analyzing financial data and credit risk factors.",
+    "typicalEducation": "Bachelor's in Finance, Accounting, or Economics",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.72,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.45,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "aerospace-engineer",
+    "description": "Designs and tests aircraft, spacecraft, satellites, and propulsion systems for aviation and space exploration.",
+    "typicalEducation": "Bachelor's or Master's in Aerospace Engineering",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "chemical-engineer",
+    "description": "Designs chemical manufacturing processes and develops solutions for producing chemicals, fuels, and pharmaceuticals.",
+    "typicalEducation": "Bachelor's in Chemical Engineering; PE license for some roles",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "environmental-engineer",
+    "description": "Develops solutions to environmental problems including water treatment, air pollution control, and waste management.",
+    "typicalEducation": "Bachelor's in Environmental Engineering; PE license valued",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "biomedical-engineer",
+    "description": "Designs medical devices, prosthetics, and biological systems to improve healthcare diagnostics and treatment.",
+    "typicalEducation": "Bachelor's or Master's in Biomedical Engineering",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "industrial-engineer",
+    "description": "Optimizes manufacturing processes, supply chains, and organizational systems to improve efficiency and reduce costs.",
+    "typicalEducation": "Bachelor's in Industrial Engineering",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "petroleum-engineer",
+    "description": "Designs methods for extracting oil and gas from underground reservoirs, optimizing production and recovery techniques.",
+    "typicalEducation": "Bachelor's in Petroleum Engineering",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "software-architect",
+    "description": "Designs high-level software system structures, makes key technology decisions, and establishes coding standards.",
+    "typicalEducation": "Bachelor's in CS; 10+ years development experience",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "materials-engineer",
+    "description": "Develops and tests materials including metals, ceramics, and composites for use in manufacturing and construction.",
+    "typicalEducation": "Bachelor's in Materials Science or Engineering",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "mining-engineer",
+    "description": "Plans and designs mining operations to extract minerals and metals safely and efficiently from the earth.",
+    "typicalEducation": "Bachelor's in Mining Engineering; PE license for senior roles",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "ceo",
+    "description": "Leads overall company strategy, operations, and stakeholder relationships as the top executive of an organization.",
+    "typicalEducation": "MBA or equivalent; extensive executive leadership experience",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.72,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.45,
+        "yearsRange": "8+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "Startup",
+        "slug": "startup",
+        "multiplier": 0.7,
+        "description": "Leads early-stage companies with focus on product-market fit and fundraising."
+      },
+      {
+        "name": "Mid-Market",
+        "slug": "mid-market",
+        "multiplier": 0.9,
+        "description": "Manages mid-size companies with established operations and scaling challenges."
+      },
+      {
+        "name": "Enterprise",
+        "slug": "enterprise",
+        "multiplier": 1.3,
+        "description": "Leads large corporations with complex global operations and governance."
+      },
+      {
+        "name": "Non-Profit",
+        "slug": "non-profit",
+        "multiplier": 0.6,
+        "description": "Runs non-profit organizations focused on mission-driven impact over profit."
+      }
+    ]
+  },
+  {
+    "slug": "coo",
+    "description": "Oversees daily business operations, implements strategic plans, and ensures operational efficiency across departments.",
+    "typicalEducation": "MBA or related graduate degree; senior management experience",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.72,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.45,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "cfo",
+    "description": "Manages financial strategy, planning, reporting, and risk management as the senior financial leader of an organization.",
+    "typicalEducation": "MBA or Master's in Finance; CPA preferred; extensive finance experience",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.72,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.45,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "sales-manager",
+    "description": "Leads sales teams, sets revenue targets, develops sales strategies, and manages key client relationships.",
+    "typicalEducation": "Bachelor's in Business or Marketing; proven sales track record",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.72,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.45,
+        "yearsRange": "8+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "Enterprise Sales",
+        "slug": "enterprise-sales",
+        "multiplier": 1.15,
+        "description": "Manages complex, high-value B2B sales cycles with large organizations."
+      },
+      {
+        "name": "SaaS Sales",
+        "slug": "saas-sales",
+        "multiplier": 1.1,
+        "description": "Leads subscription-based software sales teams with recurring revenue models."
+      },
+      {
+        "name": "Retail Sales",
+        "slug": "retail-sales",
+        "multiplier": 0.75,
+        "description": "Manages in-store sales teams and retail performance metrics."
+      },
+      {
+        "name": "Channel Sales",
+        "slug": "channel-sales",
+        "multiplier": 0.95,
+        "description": "Develops and manages partner and distributor sales channels."
+      }
+    ]
+  },
+  {
+    "slug": "operations-manager",
+    "description": "Manages daily business operations, improves processes, and ensures efficient resource utilization across departments.",
+    "typicalEducation": "Bachelor's in Business Administration or Operations Management",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.72,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.45,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "business-analyst",
+    "description": "Analyzes business processes and requirements, recommends solutions, and bridges the gap between stakeholders and technical teams.",
+    "typicalEducation": "Bachelor's in Business, IT, or related field; CBAP certification valued",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.72,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.45,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "supply-chain-manager",
+    "description": "Oversees the end-to-end supply chain including procurement, logistics, inventory, and distribution operations.",
+    "typicalEducation": "Bachelor's in Supply Chain Management or Business; CSCP certification",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.72,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.45,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "real-estate-agent",
+    "description": "Facilitates property buying, selling, and renting transactions by connecting clients with suitable properties.",
+    "typicalEducation": "High school diploma; real estate license; state-specific coursework",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.72,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.45,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "management-consultant",
+    "description": "Advises organizations on strategy, operations, and organizational improvement to enhance business performance.",
+    "typicalEducation": "MBA from top program; Bachelor's in Business or Engineering",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.72,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.45,
+        "yearsRange": "8+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "Strategy",
+        "slug": "strategy",
+        "multiplier": 1.2,
+        "description": "Advises C-suite on corporate strategy, market entry, and competitive positioning."
+      },
+      {
+        "name": "Operations",
+        "slug": "operations",
+        "multiplier": 0.95,
+        "description": "Improves operational efficiency, supply chain, and process optimization."
+      },
+      {
+        "name": "IT Consulting",
+        "slug": "it-consulting",
+        "multiplier": 1.05,
+        "description": "Advises on technology strategy, digital transformation, and system implementation."
+      },
+      {
+        "name": "HR Consulting",
+        "slug": "hr-consulting",
+        "multiplier": 0.88,
+        "description": "Designs organizational structures, talent strategies, and change management."
+      }
+    ]
+  },
+  {
+    "slug": "entrepreneur",
+    "description": "Identifies business opportunities, launches ventures, manages operations, and drives growth of new enterprises.",
+    "typicalEducation": "Varies widely; MBA or domain expertise valued",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.72,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.45,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "retail-manager",
+    "description": "Manages retail store operations including sales, inventory, staffing, customer service, and merchandising.",
+    "typicalEducation": "Bachelor's in Business or Retail Management; extensive retail experience",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.72,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.45,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "customer-success-manager",
+    "description": "Ensures clients achieve desired outcomes with products, driving retention, expansion, and customer satisfaction.",
+    "typicalEducation": "Bachelor's in Business or Communications",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.72,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.45,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "recruiter",
+    "description": "Sources, screens, and places candidates for job openings, managing the full hiring process for organizations.",
+    "typicalEducation": "Bachelor's in HR, Business, or Psychology",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.72,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.45,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "paralegal",
+    "description": "Assists lawyers with legal research, document preparation, case management, and client communication.",
+    "typicalEducation": "Associate's or Bachelor's with paralegal certificate",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.68,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.5,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "judge",
+    "description": "Presides over court proceedings, interprets laws, instructs juries, and renders legal decisions and sentences.",
+    "typicalEducation": "Juris Doctor (JD); extensive legal experience; judicial appointment or election",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.68,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.5,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "legal-secretary",
+    "description": "Provides administrative support to lawyers including document preparation, scheduling, and client correspondence.",
+    "typicalEducation": "Associate's degree or legal secretary certificate",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.68,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.5,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "compliance-officer",
+    "description": "Ensures organizational adherence to laws, regulations, and internal policies through monitoring and training programs.",
+    "typicalEducation": "Bachelor's in Law, Business, or Finance; CCEP certification valued",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.68,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.5,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "patent-attorney",
+    "description": "Specializes in intellectual property law, handling patent applications, prosecution, and infringement litigation.",
+    "typicalEducation": "JD + technical degree (engineering/science); patent bar admission",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.68,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.5,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "corporate-lawyer",
+    "description": "Advises businesses on corporate law matters including contracts, M&A, governance, and regulatory compliance.",
+    "typicalEducation": "JD from top law school; bar admission; corporate law experience",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.68,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.5,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "school-counselor",
+    "description": "Guides students on academic planning, career exploration, and personal development in educational settings.",
+    "typicalEducation": "Master's in School Counseling; state licensure required",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.82,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-10 years"
+      },
+      "senior": {
+        "multiplier": 1.2,
+        "yearsRange": "11+ years"
+      }
+    }
+  },
+  {
+    "slug": "librarian",
+    "description": "Manages library collections, assists patrons with research, and develops programs to promote literacy and learning.",
+    "typicalEducation": "Master's in Library Science (MLS/MLIS)",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.82,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-10 years"
+      },
+      "senior": {
+        "multiplier": 1.2,
+        "yearsRange": "11+ years"
+      }
+    }
+  },
+  {
+    "slug": "special-education-teacher",
+    "description": "Teaches and supports students with disabilities by developing individualized education programs and adaptive strategies.",
+    "typicalEducation": "Bachelor's in Special Education; state teaching certification",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.82,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-10 years"
+      },
+      "senior": {
+        "multiplier": 1.2,
+        "yearsRange": "11+ years"
+      }
+    }
+  },
+  {
+    "slug": "esl-teacher",
+    "description": "Teaches English language skills to non-native speakers using immersive and communicative teaching methods.",
+    "typicalEducation": "Bachelor's in Education or English; TESOL/TEFL certification",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.82,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-10 years"
+      },
+      "senior": {
+        "multiplier": 1.2,
+        "yearsRange": "11+ years"
+      }
+    }
+  },
+  {
+    "slug": "preschool-teacher",
+    "description": "Educates young children through play-based learning activities that develop social, cognitive, and motor skills.",
+    "typicalEducation": "Associate's or Bachelor's in Early Childhood Education",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.82,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-10 years"
+      },
+      "senior": {
+        "multiplier": 1.2,
+        "yearsRange": "11+ years"
+      }
+    }
+  },
+  {
+    "slug": "school-principal",
+    "description": "Leads school administration, manages staff, sets academic standards, and ensures a positive learning environment.",
+    "typicalEducation": "Master's in Educational Administration; principal certification",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.82,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-10 years"
+      },
+      "senior": {
+        "multiplier": 1.2,
+        "yearsRange": "11+ years"
+      }
+    }
+  },
+  {
+    "slug": "instructional-designer",
+    "description": "Designs effective learning experiences and training materials using pedagogical principles and educational technology.",
+    "typicalEducation": "Master's in Instructional Design or Educational Technology",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.82,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-10 years"
+      },
+      "senior": {
+        "multiplier": 1.2,
+        "yearsRange": "11+ years"
+      }
+    }
+  },
+  {
+    "slug": "tutor",
+    "description": "Provides one-on-one or small group academic instruction to help students improve understanding and performance.",
+    "typicalEducation": "Bachelor's degree; subject matter expertise; teaching experience",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.82,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-10 years"
+      },
+      "senior": {
+        "multiplier": 1.2,
+        "yearsRange": "11+ years"
+      }
+    }
+  },
+  {
+    "slug": "electrician",
+    "description": "Installs, maintains, and repairs electrical wiring, systems, and fixtures in residential and commercial buildings.",
+    "typicalEducation": "High school diploma; 4-5 year apprenticeship; state licensure",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "plumber",
+    "description": "Installs and repairs water, gas, and drainage pipe systems in residential, commercial, and industrial buildings.",
+    "typicalEducation": "High school diploma; 4-5 year apprenticeship; state licensure",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "carpenter",
+    "description": "Constructs, installs, and repairs structures and fixtures made of wood and other materials in buildings.",
+    "typicalEducation": "High school diploma; 3-4 year apprenticeship",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "welder",
+    "description": "Joins metal parts using welding equipment and techniques for manufacturing, construction, and repair applications.",
+    "typicalEducation": "High school diploma; welding certification (AWS); vocational training",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "hvac-technician",
+    "description": "Installs, maintains, and repairs heating, ventilation, air conditioning, and refrigeration systems.",
+    "typicalEducation": "Postsecondary HVAC program; EPA Section 608 certification",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "auto-mechanic",
+    "description": "Diagnoses, repairs, and maintains automobiles including engines, transmissions, brakes, and electrical systems.",
+    "typicalEducation": "Postsecondary automotive training; ASE certification valued",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "machinist",
+    "description": "Operates precision machine tools to cut and shape metal parts to exact specifications for manufacturing.",
+    "typicalEducation": "High school diploma; apprenticeship or vocational training",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "construction-worker",
+    "description": "Performs physical labor on construction sites including building, demolition, excavation, and site preparation.",
+    "typicalEducation": "High school diploma; on-the-job training; OSHA certification",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "locksmith",
+    "description": "Installs, repairs, and opens locks and security devices for residential, commercial, and automotive applications.",
+    "typicalEducation": "High school diploma; apprenticeship or vocational training; state license",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "painter",
+    "description": "Applies paint, stain, and coatings to walls, buildings, bridges, and other structures for protection and decoration.",
+    "typicalEducation": "High school diploma; apprenticeship or on-the-job training",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "roofer",
+    "description": "Installs, repairs, and replaces roofs using shingles, metal, membrane, and other roofing materials.",
+    "typicalEducation": "High school diploma; on-the-job training or apprenticeship",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "physicist",
+    "description": "Conducts research to understand fundamental principles of matter, energy, and their interactions.",
+    "typicalEducation": "PhD in Physics; postdoctoral research for academic roles",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "chemist",
+    "description": "Studies the composition, properties, and reactions of substances to develop new materials and chemical processes.",
+    "typicalEducation": "Bachelor's or Master's in Chemistry; PhD for research",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "biologist",
+    "description": "Studies living organisms and their relationships to understand life processes, ecosystems, and evolution.",
+    "typicalEducation": "Bachelor's or Master's in Biology; PhD for research positions",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "research-scientist",
+    "description": "Designs and conducts scientific experiments, analyzes data, and publishes findings to advance knowledge.",
+    "typicalEducation": "PhD in relevant scientific discipline",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "geologist",
+    "description": "Studies earth materials and processes to locate natural resources and assess environmental and geological risks.",
+    "typicalEducation": "Bachelor's or Master's in Geology; PG licensure for some roles",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "meteorologist",
+    "description": "Analyzes atmospheric conditions to forecast weather patterns, study climate trends, and inform the public.",
+    "typicalEducation": "Bachelor's in Meteorology or Atmospheric Science",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "astronomer",
+    "description": "Studies celestial objects and space phenomena using telescopes, satellites, and computational models.",
+    "typicalEducation": "PhD in Astronomy or Astrophysics",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "microbiologist",
+    "description": "Studies microscopic organisms including bacteria, viruses, and fungi and their effects on health and environment.",
+    "typicalEducation": "Bachelor's or Master's in Microbiology; PhD for research",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "environmental-scientist",
+    "description": "Analyzes environmental problems and develops solutions to protect human health and natural ecosystems.",
+    "typicalEducation": "Bachelor's or Master's in Environmental Science",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "barista",
+    "description": "Prepares and serves coffee beverages, operates espresso machines, and provides friendly customer service.",
+    "typicalEducation": "High school diploma; on-the-job training",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.8,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-6 years"
+      },
+      "senior": {
+        "multiplier": 1.25,
+        "yearsRange": "7+ years"
+      }
+    }
+  },
+  {
+    "slug": "waiter",
+    "description": "Takes orders, serves food and beverages, and ensures positive dining experiences for restaurant customers.",
+    "typicalEducation": "High school diploma; on-the-job training",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.8,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-6 years"
+      },
+      "senior": {
+        "multiplier": 1.25,
+        "yearsRange": "7+ years"
+      }
+    }
+  },
+  {
+    "slug": "hotel-manager",
+    "description": "Oversees hotel operations including guest services, staff management, revenue optimization, and facility maintenance.",
+    "typicalEducation": "Bachelor's in Hospitality Management or Business",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.8,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-6 years"
+      },
+      "senior": {
+        "multiplier": 1.25,
+        "yearsRange": "7+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "Luxury Hotels",
+        "slug": "luxury-hotels",
+        "multiplier": 1.2,
+        "description": "Manages premium hospitality operations with high-end service standards."
+      },
+      {
+        "name": "Resort Management",
+        "slug": "resort-management",
+        "multiplier": 1.1,
+        "description": "Oversees resort operations including recreation, dining, and guest activities."
+      },
+      {
+        "name": "Budget Hotels",
+        "slug": "budget-hotels",
+        "multiplier": 0.8,
+        "description": "Manages budget-friendly hotel operations focused on efficiency and occupancy."
+      },
+      {
+        "name": "Boutique Hotels",
+        "slug": "boutique-hotels",
+        "multiplier": 0.95,
+        "description": "Runs unique, smaller-scale hotels with personalized guest experiences."
+      }
+    ]
+  },
+  {
+    "slug": "flight-attendant",
+    "description": "Ensures passenger safety and comfort on commercial flights, conducting safety demonstrations and providing in-flight service.",
+    "typicalEducation": "High school diploma; airline-specific training program",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.8,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-6 years"
+      },
+      "senior": {
+        "multiplier": 1.25,
+        "yearsRange": "7+ years"
+      }
+    }
+  },
+  {
+    "slug": "hairdresser",
+    "description": "Cuts, colors, and styles hair based on client preferences, providing consultation on hair care treatments.",
+    "typicalEducation": "Cosmetology license; vocational beauty school training",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.8,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-6 years"
+      },
+      "senior": {
+        "multiplier": 1.25,
+        "yearsRange": "7+ years"
+      }
+    }
+  },
+  {
+    "slug": "bartender",
+    "description": "Mixes and serves beverages, manages bar inventory, and creates a welcoming atmosphere for patrons.",
+    "typicalEducation": "High school diploma; responsible beverage service certification",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.8,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-6 years"
+      },
+      "senior": {
+        "multiplier": 1.25,
+        "yearsRange": "7+ years"
+      }
+    }
+  },
+  {
+    "slug": "restaurant-manager",
+    "description": "Manages daily restaurant operations including staff, menu planning, food costs, and guest satisfaction.",
+    "typicalEducation": "Bachelor's in Hospitality or Business; extensive restaurant experience",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.8,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-6 years"
+      },
+      "senior": {
+        "multiplier": 1.25,
+        "yearsRange": "7+ years"
+      }
+    }
+  },
+  {
+    "slug": "housekeeper",
+    "description": "Cleans and maintains guest rooms and common areas in hotels or private residences.",
+    "typicalEducation": "High school diploma; on-the-job training",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.8,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-6 years"
+      },
+      "senior": {
+        "multiplier": 1.25,
+        "yearsRange": "7+ years"
+      }
+    }
+  },
+  {
+    "slug": "concierge",
+    "description": "Assists guests with reservations, travel arrangements, local recommendations, and special requests.",
+    "typicalEducation": "High school diploma; hospitality experience; multilingual skills valued",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.8,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-6 years"
+      },
+      "senior": {
+        "multiplier": 1.25,
+        "yearsRange": "7+ years"
+      }
+    }
+  },
+  {
+    "slug": "event-planner",
+    "description": "Coordinates all aspects of events including venue selection, vendor management, budgeting, and logistics.",
+    "typicalEducation": "Bachelor's in Hospitality or Marketing; CMP certification valued",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.8,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-6 years"
+      },
+      "senior": {
+        "multiplier": 1.25,
+        "yearsRange": "7+ years"
+      }
+    }
+  },
+  {
+    "slug": "truck-driver",
+    "description": "Transports goods over long distances by operating heavy commercial vehicles safely and on schedule.",
+    "typicalEducation": "High school diploma; Commercial Driver's License (CDL) required",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-10 years"
+      },
+      "senior": {
+        "multiplier": 1.25,
+        "yearsRange": "11+ years"
+      }
+    }
+  },
+  {
+    "slug": "ship-captain",
+    "description": "Commands commercial vessels, manages crew, navigates routes, and ensures maritime safety compliance.",
+    "typicalEducation": "Maritime academy degree; Master Mariner license",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-10 years"
+      },
+      "senior": {
+        "multiplier": 1.25,
+        "yearsRange": "11+ years"
+      }
+    }
+  },
+  {
+    "slug": "air-traffic-controller",
+    "description": "Directs aircraft movements on the ground and in airspace to prevent collisions and manage efficient flow.",
+    "typicalEducation": "Bachelor's degree; FAA Academy training",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-10 years"
+      },
+      "senior": {
+        "multiplier": 1.25,
+        "yearsRange": "11+ years"
+      }
+    }
+  },
+  {
+    "slug": "bus-driver",
+    "description": "Operates buses to transport passengers along routes, ensuring safety and schedule adherence.",
+    "typicalEducation": "High school diploma; CDL with passenger endorsement",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-10 years"
+      },
+      "senior": {
+        "multiplier": 1.25,
+        "yearsRange": "11+ years"
+      }
+    }
+  },
+  {
+    "slug": "train-conductor",
+    "description": "Manages train operations including passenger safety, ticketing, and coordination with engineering crew.",
+    "typicalEducation": "High school diploma; railroad training; conductor certification",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-10 years"
+      },
+      "senior": {
+        "multiplier": 1.25,
+        "yearsRange": "11+ years"
+      }
+    }
+  },
+  {
+    "slug": "delivery-driver",
+    "description": "Picks up and delivers packages or food orders following optimized routes and delivery schedules.",
+    "typicalEducation": "High school diploma; valid driver's license",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-10 years"
+      },
+      "senior": {
+        "multiplier": 1.25,
+        "yearsRange": "11+ years"
+      }
+    }
+  },
+  {
+    "slug": "taxi-driver",
+    "description": "Transports passengers to destinations in urban areas, providing safe door-to-door transportation service.",
+    "typicalEducation": "High school diploma; valid driver's license; taxi permit",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-10 years"
+      },
+      "senior": {
+        "multiplier": 1.25,
+        "yearsRange": "11+ years"
+      }
+    }
+  },
+  {
+    "slug": "interior-designer",
+    "description": "Plans and designs functional, aesthetically pleasing interior spaces for residential and commercial environments.",
+    "typicalEducation": "Bachelor's in Interior Design; NCIDQ certification",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.68,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.5,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "fashion-designer",
+    "description": "Creates original clothing and accessory designs by sketching concepts, selecting fabrics, and overseeing production.",
+    "typicalEducation": "Bachelor's in Fashion Design",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.68,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.5,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "industrial-designer",
+    "description": "Designs manufactured products combining art, engineering, and business to improve form, function, and usability.",
+    "typicalEducation": "Bachelor's in Industrial Design or Product Design",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.68,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.5,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "landscape-architect",
+    "description": "Designs outdoor spaces including parks and public areas balancing sustainability with aesthetic appeal.",
+    "typicalEducation": "Bachelor's or Master's in Landscape Architecture; state licensure",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.68,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.5,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "art-director",
+    "description": "Manages visual style and creative direction for advertising, publications, film, or product packaging.",
+    "typicalEducation": "Bachelor's in Graphic Design or Fine Arts",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.68,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.5,
+        "yearsRange": "8+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "Advertising",
+        "slug": "advertising",
+        "multiplier": 1.05,
+        "description": "Directs visual creative for advertising campaigns across print and digital media."
+      },
+      {
+        "name": "Film / TV",
+        "slug": "film-tv",
+        "multiplier": 1.15,
+        "description": "Oversees production design and visual storytelling for film and television."
+      },
+      {
+        "name": "Gaming",
+        "slug": "gaming",
+        "multiplier": 1.1,
+        "description": "Manages art style and visual direction for video game development."
+      },
+      {
+        "name": "Publishing",
+        "slug": "publishing",
+        "multiplier": 0.85,
+        "description": "Directs visual design for books, magazines, and editorial publications."
+      }
+    ]
+  },
+  {
+    "slug": "animator",
+    "description": "Creates animated sequences for films, games, and digital media using 2D and 3D animation techniques.",
+    "typicalEducation": "Bachelor's in Animation or Computer Graphics",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.68,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.5,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "video-editor",
+    "description": "Assembles footage into finished productions by cutting, splicing, and adding effects, music, and graphics.",
+    "typicalEducation": "Bachelor's in Film or Media Production",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.7,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.4,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "photographer",
+    "description": "Captures professional images for commercial, editorial, or artistic purposes using cameras and editing software.",
+    "typicalEducation": "Bachelor's in Photography or Fine Arts; portfolio essential",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.7,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.4,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "social-media-manager",
+    "description": "Develops social media strategies, creates content, and analyzes engagement metrics to grow brand presence.",
+    "typicalEducation": "Bachelor's in Marketing or Communications",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.7,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.4,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "copywriter",
+    "description": "Writes persuasive marketing copy for advertisements, websites, and brand communications.",
+    "typicalEducation": "Bachelor's in English, Marketing, or Communications",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.7,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.4,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "content-creator",
+    "description": "Produces original digital content including articles, videos, and social media posts to engage audiences.",
+    "typicalEducation": "Bachelor's in Communications or Marketing; portfolio essential",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.7,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.4,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "broadcast-journalist",
+    "description": "Reports news stories on television or radio, delivering live broadcasts and conducting interviews.",
+    "typicalEducation": "Bachelor's in Journalism or Broadcasting",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.7,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.4,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "editor",
+    "description": "Reviews and revises written content for accuracy, clarity, style, and grammar across publications.",
+    "typicalEducation": "Bachelor's in English or Journalism",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.7,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.4,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "public-relations-specialist",
+    "description": "Manages public image and communications through media relations, press releases, and strategic messaging.",
+    "typicalEducation": "Bachelor's in Public Relations or Communications",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.7,
+        "yearsRange": "0-2 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "3-7 years"
+      },
+      "senior": {
+        "multiplier": 1.4,
+        "yearsRange": "8+ years"
+      }
+    }
+  },
+  {
+    "slug": "firefighter",
+    "description": "Responds to fires and emergencies, performs rescue operations, and conducts fire prevention education.",
+    "typicalEducation": "High school diploma; fire academy training; EMT certification",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.8,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-10 years"
+      },
+      "senior": {
+        "multiplier": 1.25,
+        "yearsRange": "11+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "Wildland",
+        "slug": "wildland",
+        "multiplier": 0.9,
+        "description": "Fights wildfires in forests and rural areas using specialized containment techniques."
+      },
+      {
+        "name": "Airport / Industrial",
+        "slug": "airport-industrial",
+        "multiplier": 1.1,
+        "description": "Responds to fires at airports and industrial facilities with specialized equipment."
+      },
+      {
+        "name": "Hazmat",
+        "slug": "hazmat",
+        "multiplier": 1.12,
+        "description": "Handles hazardous materials emergencies including chemical spills and contamination."
+      },
+      {
+        "name": "Paramedic / Fire",
+        "slug": "paramedic-fire",
+        "multiplier": 1.05,
+        "description": "Provides advanced medical care alongside firefighting duties."
+      }
+    ]
+  },
+  {
+    "slug": "military-officer",
+    "description": "Leads military personnel in operations, training, and strategic planning to defend national security.",
+    "typicalEducation": "Bachelor's degree; military academy, ROTC, or OCS commissioning",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.8,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-10 years"
+      },
+      "senior": {
+        "multiplier": 1.25,
+        "yearsRange": "11+ years"
+      }
+    }
+  },
+  {
+    "slug": "social-worker",
+    "description": "Helps individuals cope with challenges by providing counseling, resources, and advocacy for social change.",
+    "typicalEducation": "Bachelor's (BSW) or Master's (MSW) in Social Work; state licensure",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.8,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-10 years"
+      },
+      "senior": {
+        "multiplier": 1.25,
+        "yearsRange": "11+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "Clinical",
+        "slug": "clinical",
+        "multiplier": 1.1,
+        "description": "Provides therapy and mental health treatment as a licensed clinical social worker."
+      },
+      {
+        "name": "Child Welfare",
+        "slug": "child-welfare",
+        "multiplier": 0.9,
+        "description": "Protects children from abuse and neglect through investigation and family services."
+      },
+      {
+        "name": "Substance Abuse",
+        "slug": "substance-abuse",
+        "multiplier": 0.95,
+        "description": "Counsels individuals struggling with addiction and substance use disorders."
+      },
+      {
+        "name": "Healthcare Social Work",
+        "slug": "healthcare-social-work",
+        "multiplier": 1.05,
+        "description": "Supports patients and families navigating healthcare systems and chronic illness."
+      }
+    ]
+  },
+  {
+    "slug": "city-planner",
+    "description": "Develops land use plans and community development strategies to manage urban growth and livability.",
+    "typicalEducation": "Master's in Urban Planning; AICP certification valued",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.8,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-10 years"
+      },
+      "senior": {
+        "multiplier": 1.25,
+        "yearsRange": "11+ years"
+      }
+    }
+  },
+  {
+    "slug": "diplomat",
+    "description": "Represents national interests abroad through negotiation, policy advocacy, and relationship building with foreign governments.",
+    "typicalEducation": "Master's in International Relations; foreign service exam",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.8,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-10 years"
+      },
+      "senior": {
+        "multiplier": 1.25,
+        "yearsRange": "11+ years"
+      }
+    }
+  },
+  {
+    "slug": "park-ranger",
+    "description": "Protects natural resources in parks, enforces regulations, educates visitors, and conducts conservation programs.",
+    "typicalEducation": "Bachelor's in Natural Resource Management or Environmental Science",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.8,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-10 years"
+      },
+      "senior": {
+        "multiplier": 1.25,
+        "yearsRange": "11+ years"
+      }
+    }
+  },
+  {
+    "slug": "emt",
+    "description": "Provides basic emergency medical care and transportation for patients in pre-hospital crisis settings.",
+    "typicalEducation": "High school diploma; EMT-Basic certification; state license",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.8,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-10 years"
+      },
+      "senior": {
+        "multiplier": 1.25,
+        "yearsRange": "11+ years"
+      }
+    }
+  },
+  {
+    "slug": "correctional-officer",
+    "description": "Maintains order and security in correctional facilities by supervising inmates and enforcing regulations.",
+    "typicalEducation": "High school diploma; corrections academy training",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.8,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-10 years"
+      },
+      "senior": {
+        "multiplier": 1.25,
+        "yearsRange": "11+ years"
+      }
+    }
+  },
+  {
+    "slug": "farm-manager",
+    "description": "Oversees agricultural operations including crop planning, livestock management, and farm business finances.",
+    "typicalEducation": "Bachelor's in Agriculture or Agribusiness",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.25,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "agricultural-engineer",
+    "description": "Designs agricultural equipment and processes to improve farming efficiency and food production.",
+    "typicalEducation": "Bachelor's in Agricultural or Biosystems Engineering",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.25,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "forester",
+    "description": "Manages forest lands for conservation, timber production, and wildlife habitat through sustainable practices.",
+    "typicalEducation": "Bachelor's in Forestry or Natural Resource Management",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.25,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "agricultural-scientist",
+    "description": "Researches crop genetics, soil health, and farming practices to improve food production and sustainability.",
+    "typicalEducation": "Master's or PhD in Agricultural Science",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.25,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "veterinary-technician",
+    "description": "Assists veterinarians with animal care including medications, lab tests, and surgical preparation.",
+    "typicalEducation": "Associate's in Veterinary Technology; VTNE certification",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.25,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "food-scientist",
+    "description": "Studies food chemistry and microbiology to develop safe processing methods and improve food quality.",
+    "typicalEducation": "Bachelor's or Master's in Food Science",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "statistician",
+    "description": "Applies mathematical and statistical methods to analyze data for solving real-world problems across industries.",
+    "typicalEducation": "Master's in Statistics or Biostatistics",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "economist",
+    "description": "Studies economic trends, analyzes resource distribution data, and forecasts market conditions to inform policy.",
+    "typicalEducation": "Master's or PhD in Economics",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.75,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.3,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "psychologist",
+    "description": "Studies human behavior and mental processes, providing assessment, diagnosis, and therapy for psychological disorders.",
+    "typicalEducation": "Doctorate (PhD or PsyD) in Psychology; state licensure",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.22,
+        "yearsRange": "9+ years"
+      }
+    },
+    "specializations": [
+      {
+        "name": "Clinical",
+        "slug": "clinical",
+        "multiplier": 1,
+        "description": "Provides therapy and assessment for mental health disorders in clinical settings."
+      },
+      {
+        "name": "Industrial-Organizational",
+        "slug": "industrial-organizational",
+        "multiplier": 1.15,
+        "description": "Applies psychology to workplace issues including hiring, training, and culture."
+      },
+      {
+        "name": "Neuropsychology",
+        "slug": "neuropsychology",
+        "multiplier": 1.1,
+        "description": "Assesses brain-behavior relationships and cognitive functioning disorders."
+      },
+      {
+        "name": "Forensic",
+        "slug": "forensic",
+        "multiplier": 1.05,
+        "description": "Applies psychological expertise to legal and criminal justice contexts."
+      }
+    ]
+  },
+  {
+    "slug": "massage-therapist",
+    "description": "Applies manual techniques to muscles and soft tissues to relieve pain, reduce stress, and promote wellness.",
+    "typicalEducation": "Postsecondary massage therapy program; state license",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.22,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "nutritionist",
+    "description": "Advises on dietary choices and nutrition plans to promote health, manage diseases, and achieve wellness goals.",
+    "typicalEducation": "Bachelor's or Master's in Nutrition; RD/RDN certification",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.22,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "sonographer",
+    "description": "Operates ultrasound equipment to produce diagnostic images of internal organs and tissues.",
+    "typicalEducation": "Associate's or Bachelor's in Diagnostic Medical Sonography; ARDMS",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.22,
+        "yearsRange": "9+ years"
+      }
+    }
+  },
+  {
+    "slug": "respiratory-therapist",
+    "description": "Treats patients with breathing disorders by administering treatments and managing ventilators.",
+    "typicalEducation": "Associate's or Bachelor's in Respiratory Therapy; RRT certification",
+    "experienceLevels": {
+      "entry": {
+        "multiplier": 0.78,
+        "yearsRange": "0-3 years"
+      },
+      "mid": {
+        "multiplier": 1,
+        "yearsRange": "4-8 years"
+      },
+      "senior": {
+        "multiplier": 1.22,
+        "yearsRange": "9+ years"
+      }
+    }
+  }
+]

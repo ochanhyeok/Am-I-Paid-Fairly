@@ -1,4 +1,5 @@
-import type { Occupation, Country, SalaryEntry, BigMacEntry, City, CitySalaryEntry } from "@/types";
+import type { Occupation, Country, SalaryEntry, BigMacEntry, City, CitySalaryEntry, OccupationDetails, ExperienceLevels } from "@/types";
+import { getCategoryExperienceDefaults } from "./experience-defaults";
 
 import occupationsData from "@/data/occupations.json";
 import countriesData from "@/data/countries.json";
@@ -6,6 +7,7 @@ import salariesData from "@/data/salaries.json";
 import bigmacData from "@/data/bigmac.json";
 import citiesData from "@/data/cities.json";
 import citySalariesData from "@/data/city-salaries.json";
+import occupationDetailsData from "@/data/occupation-details.json";
 
 // 타입 캐스팅 (JSON 모듈은 타입 추론이 불완전)
 const occupations = occupationsData as Occupation[];
@@ -14,6 +16,7 @@ const salaries = salariesData as SalaryEntry[];
 const bigmacEntries = bigmacData as BigMacEntry[];
 const cities = citiesData as City[];
 const citySalaries = citySalariesData as CitySalaryEntry[];
+const occupationDetails = occupationDetailsData as OccupationDetails[];
 
 export function getOccupations(): Occupation[] {
   return occupations;
@@ -90,4 +93,16 @@ export function getCitySalaryEntriesByCountry(
 
 export function getCitySalaryEntriesByCity(citySlug: string): CitySalaryEntry[] {
   return citySalaries.filter((s) => s.citySlug === citySlug);
+}
+
+// --- 직업 상세 데이터 로더 ---
+
+export function getOccupationDetails(slug: string): OccupationDetails | undefined {
+  return occupationDetails.find((d) => d.slug === slug);
+}
+
+export function getExperienceLevels(slug: string, category: string): ExperienceLevels {
+  const details = occupationDetails.find((d) => d.slug === slug);
+  if (details) return details.experienceLevels;
+  return getCategoryExperienceDefaults(category);
 }

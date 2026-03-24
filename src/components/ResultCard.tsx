@@ -9,18 +9,18 @@ export default function ResultCard({ percentile, occupationTitle }: Props) {
   const isTop = percentile >= 50;
   const displayValue = Math.max(isTop ? 100 - percentile : percentile, 1);
 
-  // 색상: 상위 50%↑ → green, 30~50% → yellow, 30%↓ → red
+  // 색상: 상위 70%↑ → green (Top 30%), 40~70% → yellow (Middle), 40%↓ → red (Bottom 40%)
   const bgColor =
-    percentile >= 50
+    percentile >= 70
       ? "bg-emerald-500"
-      : percentile >= 30
+      : percentile >= 40
         ? "bg-yellow-500"
         : "bg-red-500";
 
   const lightTextColor =
-    percentile >= 50
+    percentile >= 70
       ? "text-emerald-100"
-      : percentile >= 30
+      : percentile >= 40
         ? "text-yellow-100"
         : "text-red-100";
 

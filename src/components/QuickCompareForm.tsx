@@ -44,7 +44,7 @@ export default function QuickCompareForm({
   }
 
   return (
-    <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-4">
+    <div className="bg-dark-card border border-dark-border rounded-xl p-4">
       <p className="text-slate-400 text-xs font-medium mb-3">
         How do you compare as a {occupationTitle}?
       </p>
@@ -53,7 +53,7 @@ export default function QuickCompareForm({
         <select
           value={selectedCountry}
           onChange={(e) => setSelectedCountry(e.target.value)}
-          className="flex-1 min-w-0 bg-slate-900/80 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-300 focus:outline-none focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 appearance-none cursor-pointer"
+          className="flex-1 min-w-0 bg-slate-900/80 border border-dark-border rounded-lg px-3 py-2 text-sm text-slate-300 focus:outline-none focus:ring-1 focus:ring-accent-blue focus:border-accent-blue appearance-none cursor-pointer"
           required
         >
           <option value="" disabled>
@@ -73,7 +73,7 @@ export default function QuickCompareForm({
           onChange={(e) => setSalary(e.target.value)}
           placeholder="Your salary (USD)"
           min={1}
-          className="flex-1 min-w-0 bg-slate-900/80 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-300 placeholder:text-slate-600 focus:outline-none focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+          className="flex-1 min-w-0 bg-slate-900/80 border border-dark-border rounded-lg px-3 py-2 text-sm text-slate-300 placeholder:text-slate-600 focus:outline-none focus:ring-1 focus:ring-accent-blue focus:border-accent-blue [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
           required
         />
 

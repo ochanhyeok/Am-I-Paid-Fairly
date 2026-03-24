@@ -61,6 +61,8 @@ export function generateStaticParams() {
   return params;
 }
 
+export const revalidate = false;
+
 // --- SEO Metadata ---
 
 interface PageProps {
@@ -182,18 +184,18 @@ export default async function CityDetailPage({ params }: PageProps) {
       100
   );
 
-  // Percentile 색상
+  // Percentile 색상 (70/40 임계값 통일)
   const percentileColor =
-    cityPercentile >= 50
+    cityPercentile >= 70
       ? "bg-emerald-500"
-      : cityPercentile >= 30
+      : cityPercentile >= 40
         ? "bg-yellow-500"
         : "bg-red-500";
 
   const percentileTextColor =
-    cityPercentile >= 50
+    cityPercentile >= 70
       ? "text-emerald-400"
-      : cityPercentile >= 30
+      : cityPercentile >= 40
         ? "text-yellow-400"
         : "text-red-400";
 
@@ -259,6 +261,10 @@ export default async function CityDetailPage({ params }: PageProps) {
         <div className="max-w-2xl mx-auto flex flex-col gap-8">
           {/* Breadcrumb */}
           <nav className="flex items-center gap-1.5 text-slate-500 text-sm flex-wrap">
+            <Link href="/" className="hover:text-slate-300 transition-colors">
+              Home
+            </Link>
+            <span>/</span>
             <Link href={`/salary/${occSlug}`} className="hover:text-slate-300 transition-colors">
               {occupation.title}
             </Link>
@@ -275,17 +281,17 @@ export default async function CityDetailPage({ params }: PageProps) {
             <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-50 leading-tight">
               {occupation.title} Salary in {city.name} (2026)
             </h1>
-            <p className="text-xs text-slate-500 mt-1">Data last updated: February 2026</p>
+            <p className="text-xs text-slate-500 mt-1">Data last updated: March 2026</p>
             <p className="text-slate-500 text-sm mt-3 flex items-center justify-center gap-2">
               <span className="text-xl">{country.flag}</span>
               {city.name}, {country.name}
               {city.isTechHub && (
-                <span className="bg-blue-500/20 text-blue-400 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded">
+                <span className="bg-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded">
                   Tech Hub
                 </span>
               )}
               {city.isCapital && (
-                <span className="bg-amber-500/20 text-amber-400 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded">
+                <span className="bg-amber-500/20 text-amber-400 text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded">
                   Capital
                 </span>
               )}
@@ -442,7 +448,7 @@ export default async function CityDetailPage({ params }: PageProps) {
                           }`}
                           style={{ width: `${widthPct}%` }}
                         >
-                          <span className="text-[10px] text-white font-medium whitespace-nowrap">
+                          <span className="text-xs text-white font-medium whitespace-nowrap">
                             ${formatUSDShort(entry.estimatedSalary)}
                           </span>
                         </div>
@@ -618,6 +624,109 @@ export default async function CityDetailPage({ params }: PageProps) {
               </div>
             );
           })()}
+
+          {/* Top 5 Jobs in this City */}
+          {(() => {
+            const topJobs = getOccupations()
+              .map((occ) => {
+                const entry = getCitySalaryEntry(occ.slug, citySlug);
+                if (!entry) return null;
+                return { occupation: occ, salary: entry.estimatedSalary, colAdjusted: entry.colAdjusted };
+              })
+              .filter(Boolean)
+              .sort((a, b) => b!.salary - a!.salary)
+              .slice(0, 5) as { occupation: { slug: string; title: string }; salary: number; colAdjusted: number }[];
+
+            if (topJobs.length === 0) return null;
+            return (
+              <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
+                <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
+                  Top 5 Highest-Paying Jobs in {city.name}
+                </h2>
+                <div className="flex flex-col gap-2">
+                  {topJobs.map((job, idx) => {
+                    const maxSal = topJobs[0].salary;
+                    const widthPct = Math.round((job.salary / maxSal) * 100);
+                    const isCurrent = job.occupation.slug === occSlug;
+                    return (
+                      <div key={job.occupation.slug} className="flex items-center gap-3">
+                        <div className="w-28 sm:w-36 shrink-0 flex items-center gap-1.5">
+                          <span className="text-xs text-slate-500">{idx + 1}.</span>
+                          {isCurrent ? (
+                            <span className="text-sm text-emerald-400 font-medium truncate">{job.occupation.title}</span>
+                          ) : (
+                            <Link
+                              href={`/salary/${job.occupation.slug}/${countrySlug}/${citySlug}`}
+                              className="text-sm text-slate-300 hover:text-accent-blue transition-colors truncate"
+                            >
+                              {job.occupation.title}
+                            </Link>
+                          )}
+                        </div>
+                        <div className="flex-1 bg-slate-800 rounded-full h-6 overflow-hidden">
+                          <div
+                            className={`h-full rounded-full flex items-center justify-end pr-2 ${
+                              isCurrent ? "bg-emerald-500/80" : "bg-blue-500/60"
+                            }`}
+                            style={{ width: `${widthPct}%` }}
+                          >
+                            <span className="text-xs text-white font-medium whitespace-nowrap">
+                              ${formatUSDShort(job.salary)}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })()}
+
+          {/* COL Multiplier Explanation */}
+          <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
+            <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-3">
+              Cost of Living in {city.name}
+            </h2>
+            <div className="flex items-center gap-4 mb-3">
+              <div className="text-center">
+                <p className="text-2xl font-bold text-slate-100">{city.colMultiplier}x</p>
+                <p className="text-xs text-slate-500">COL Multiplier</p>
+              </div>
+              <div className="flex-1 bg-slate-800 rounded-full h-4 overflow-hidden">
+                <div
+                  className={`h-full rounded-full ${
+                    city.colMultiplier > 1.1 ? "bg-red-500/70" : city.colMultiplier < 0.9 ? "bg-emerald-500/70" : "bg-yellow-500/70"
+                  }`}
+                  style={{ width: `${Math.min((city.colMultiplier / 1.5) * 100, 100)}%` }}
+                />
+              </div>
+              <span className="text-xs text-slate-500 shrink-0">1.5x</span>
+            </div>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              {city.colMultiplier > 1.1
+                ? `${city.name} is ${Math.round((city.colMultiplier - 1) * 100)}% more expensive than the national average. The nominal salary of ${formatCurrency(citySalary.estimatedSalary)} adjusts to ${formatCurrency(citySalary.colAdjusted)} in real purchasing power.`
+                : city.colMultiplier < 0.9
+                  ? `${city.name} is ${Math.round((1 - city.colMultiplier) * 100)}% less expensive than the national average. Your salary of ${formatCurrency(citySalary.estimatedSalary)} stretches to ${formatCurrency(citySalary.colAdjusted)} in real purchasing power.`
+                  : `${city.name} has a cost of living close to the ${country.name} national average. Nominal and COL-adjusted salaries are closely aligned.`}
+            </p>
+          </div>
+
+          {/* Compare with Another City CTA */}
+          <div className="bg-gradient-to-r from-blue-500/10 to-emerald-500/10 border border-dark-border rounded-2xl p-6 text-center">
+            <p className="text-slate-200 font-semibold text-sm mb-2">
+              Thinking about relocating?
+            </p>
+            <p className="text-slate-400 text-xs mb-4">
+              Compare {occupation.title} salaries across cities with our relocation calculator
+            </p>
+            <Link
+              href={`/relocate`}
+              className="inline-block bg-accent-blue hover:bg-blue-600 text-white font-semibold text-sm px-6 py-2.5 rounded-xl transition-colors"
+            >
+              Compare Cities
+            </Link>
+          </div>
 
           {/* Narrative SEO Content */}
           <article className="flex flex-col gap-6">
@@ -825,11 +934,11 @@ export default async function CityDetailPage({ params }: PageProps) {
 
           {/* Data Source Disclaimer */}
           <div className="text-center pb-6">
-            <p className="text-slate-600 text-[10px]">
+            <p className="text-slate-600 text-xs">
               Estimated based on OECD &amp; BLS data, adjusted for city-level cost of
               living. Actual salaries vary by experience, company, and neighborhood.
             </p>
-            <p className="text-slate-700 text-[10px] mt-1">
+            <p className="text-slate-700 text-xs mt-1">
               Sources:{" "}
               <a href="https://www.bls.gov/oes/" target="_blank" rel="noopener noreferrer" className="underline hover:text-slate-500">BLS OEWS</a>
               {" "}&middot;{" "}

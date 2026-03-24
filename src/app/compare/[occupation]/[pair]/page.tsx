@@ -86,6 +86,8 @@ export function generateStaticParams() {
   return params;
 }
 
+export const revalidate = false;
+
 // --- SEO Metadata ---
 
 interface PageProps {

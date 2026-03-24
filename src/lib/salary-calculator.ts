@@ -1,4 +1,4 @@
-import type { SalaryResult, CountryComparison, City, CitySalaryEntry, RelocationResult } from "@/types";
+import type { SalaryResult, CountryComparison, City, CitySalaryEntry, RelocationResult, ExperienceLevels } from "@/types";
 import {
   getOccupation,
   getCountry,
@@ -177,6 +177,25 @@ export function calculatePercentileDistribution(
     median: salaries[Math.floor(n * 0.5)],
     percentile75: salaries[Math.floor(n * 0.75)],
     percentile90: salaries[Math.min(Math.floor(n * 0.9), n - 1)],
+  };
+}
+
+// --- 경력 레벨별 연봉 계산 ---
+
+export interface ExperienceSalaries {
+  entry: number;
+  mid: number;
+  senior: number;
+}
+
+export function calculateExperienceSalaries(
+  baseSalary: number,
+  experienceLevels: ExperienceLevels
+): ExperienceSalaries {
+  return {
+    entry: Math.round(baseSalary * experienceLevels.entry.multiplier),
+    mid: Math.round(baseSalary * experienceLevels.mid.multiplier),
+    senior: Math.round(baseSalary * experienceLevels.senior.multiplier),
   };
 }
 

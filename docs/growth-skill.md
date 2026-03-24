@@ -1,6 +1,6 @@
 # 성장 전략 가이드 (경쟁사 · 이탈률 · 콘텐츠)
 
-최종 업데이트: 2026-02-23
+최종 업데이트: 2026-03-13
 
 ---
 
@@ -31,32 +31,34 @@
 
 | 기능 | 경쟁사 | 우리 | 상태 | 구현 난이도 |
 |------|--------|------|------|-----------|
-| 퍼센타일 분포 시각화 (바 차트) | Salary.com, PayScale | JSON-LD만 있음 | **미구현** | 중간 |
-| PPP on/off 토글 | Numbeo | 없음 | **미구현** | 낮음 |
+| 퍼센타일 분포 시각화 (바 차트) | Salary.com, PayScale | ✅ PercentileDistributionBar | 완료 | — |
+| PPP on/off 토글 | Numbeo | ✅ PPPToggle + CountrySalaryTable | 완료 | — |
 | 기간 변환기 (연/월/시급) | PayScale, Indeed | ✅ 구현 완료 | 완료 | — |
 | Occupation JSON-LD | Salary.com | ✅ 구현 완료 | 완료 | — |
 | 내부 링크 15+ | Glassdoor | ✅ 구현 완료 | 완료 | — |
-| 경력별 연봉 (entry/mid/senior) | Glassdoor, Levels.fyi | 없음 | **미구현** | 높음 (데이터 필요) |
+| 경력별 연봉 (entry/mid/senior) | Glassdoor, Levels.fyi | ✅ ExperienceLevelSection | 완료 | — |
 | 5년 전망 차트 | SalaryExpert | 없음 | **미구현** | 높음 (시계열 데이터 필요) |
 | 세금 계산기 | SalaryExpert | 없음 | **미구현** | 높음 (42개국 세법) |
-| 직업 설명/요구사항 | Indeed, Glassdoor | 없음 | **미구현** | 중간 (BLS 데이터) |
+| 직업 설명/요구사항 | Indeed, Glassdoor | ✅ occupation-details.json | 완료 | — |
 | COL 카테고리 분해 | Numbeo | colMultiplier만 | **미구현** | 중간 |
 
 ---
 
 ## 이탈률 분석 & 대응
 
-### 현재 이탈률 (GA4, 2026-02-19)
+### 현재 이탈률 (GA4, 2026-02-28)
 
 | 페이지 타입 | 이탈률 | 상태 | 성공/실패 요인 |
 |------------|--------|------|--------------|
-| Rankings | 42.9% | 양호 | 바차트 시각화 + 다수 탐색 경로 |
-| Blog | ~60% | 보통 | 콘텐츠 depth, 관련 포스트 |
-| Landing | ~75% | 나쁨 | 폼 완료 전 이탈 |
-| Salary/Country | 91.7% | 심각 | 정적 데이터만, 인터랙티브 없음 |
-| City | 91.7% | 심각 | 같은 문제 |
+| Browse Occupations | 0.0% | 우수 | 탐색 허브, 모든 직업 링크 |
+| Network Engineer | 0.0% | 우수 | 인터랙티브 요소 + 내부 링크 |
+| Rankings (Top 10) | 79.2% | 보통 | 바차트 시각화 (이전 42.9%보다 높아짐) |
+| Landing | 83.5% | 나쁨 | 폼 완료 전 이탈 |
+| Nurses Rankings | 88.9% | 심각 | 단일 직업 페이지 |
+| Truck Driver | 91.7% | 심각 | 정적 데이터만 |
+| Vet Tech | 91.7% | 심각 | 정적 데이터만 |
 
-**업계 평균**: 44% | **우리**: ~85% | **갭**: 41%p
+**업계 평균**: 44% | **우리**: ~80% | **갭**: 36%p (이전 41%p에서 5%p 개선)
 
 ### 구현 완료된 이탈률 대응
 
@@ -70,6 +72,18 @@
 | ✅ AI 최적화 (tldr 메타) | 전체 | ChatGPT/Perplexity 대응 |
 | ✅ Popular Comparisons | result, landing | 국가 6쌍 + 도시 3쌍 |
 | ✅ Blog 크로스링크 | salary/[occ] ↔ blog | 양방향 연결 |
+| ✅ 디자인 통일 (2026-03-01) | 전체 | 포커스 링/border/배경/텍스트 크기 일관성 |
+| ✅ Combobox 포커스 개선 | landing, relocate | select-all 패턴 (기존값 유지) |
+| ✅ 모바일 Rankings 노출 | Header | hidden sm:block 제거 |
+| ✅ Salary Breadcrumb 개선 | salary 3페이지 | Home 추가, 일관된 경로 |
+| ✅ 블로그 공유 버튼 | blog/[slug] | X/LinkedIn/Copy Link |
+| ✅ PercentileDistributionBar | salary/[occ], salary/[occ]/[country] | p10-p90 레인지 바, 하이라이트 마커 |
+| ✅ PPPToggle | salary/[occ]/[country] | Nominal/PPP 전환 토글 |
+| ✅ CountrySalaryTable | salary/[occ] | PPP 토글 포함 국가 테이블 |
+| ✅ RecentSearches | landing | localStorage 최근 검색 5개 재방문 유도 |
+| ✅ City Top 5 Jobs 바차트 | salary/[city] | 도시 내 최고 연봉 직업 시각화 |
+| ✅ COL Multiplier 시각화 | salary/[city] | 바 + 설명 텍스트 |
+| ✅ Relocate CTA | salary/[city] | "Compare Cities" 배너 |
 
 ### 미구현 체류시간 전략 (Tier 2-3)
 
@@ -89,26 +103,27 @@
 | Career Path Explorer | 직업 간 연봉 비교 경로 | Levels.fyi |
 | 피드백 위젯 | 유저 만족도 수집 | NerdWallet |
 
-### 90일 KPI 목표
+### 90일 KPI 목표 (2026-03-01 기준, 실적 반영)
 
-| 지표 | 현재 | 30일 | 60일 | 90일 |
-|------|------|------|------|------|
-| 이탈률 | 85% | 70% | 55% | 45% |
-| 평균 체류시간 | 12초 | 25초 | 40초 | 55초 |
-| 페이지/세션 | 1.1 | 1.5 | 2.0 | 2.5 |
+| 지표 | 1월 실적 | 2월 실적 | 30일 목표 | 60일 목표 | 90일 목표 |
+|------|---------|---------|----------|----------|----------|
+| 활성 사용자 | 360 | 690 | 1,000 | 2,000 | 3,000 |
+| 이탈률 | ~85% | ~80% | 70% | 55% | 45% |
+| 평균 체류시간 | 12초 | 17초 | 25초 | 35초 | 50초 |
+| 재방문율 | ~2% | ~1.4% | 5% | 8% | 12% |
 
 ---
 
 ## 콘텐츠 전략
 
-### 블로그 현황 (50개)
+### 블로그 현황 (53개)
 
 | 카테고리 그룹 | 수 | 대표 토픽 |
 |-------------|---|----------|
 | Rankings | 9 | 국가별 Top 10, 직업별 글로벌 랭킹 |
-| Guides | 16 | 독일/캐나다/일본 가이드, 이주, 원격근무 |
-| Analysis | 13 | AI 영향, 환율, 트렌드, PPP 분석 |
-| Career & Finance | 12 | 협상, 세금, 금융, 헬스케어, 교육 |
+| Guides | 17 | 독일/캐나다/일본 가이드, 이주, 원격근무, 창립 스토리 |
+| Analysis | 14 | AI 영향, 환율, 트렌드, PPP 분석, 42개국 데이터 인사이트 |
+| Career & Finance | 13 | 협상, 세금, 금융, 헬스케어, 교육, 데이터 기반 협상 |
 
 ### 블로그 UX 기능
 
@@ -133,15 +148,17 @@
 
 ---
 
-## 트래픽 채널 분석
+## 트래픽 채널 분석 (2026-03-04 업데이트, 2/4~3/3 기준)
 
-| 채널 | 비율 | 현황 | 전략 |
-|------|------|------|------|
-| Google 오가닉 | 24% | 순위 22위 평균 | 도메인 에이징 대기 + 콘텐츠 강화 |
-| Direct | 60% | 봇 60%+ 포함 | 실질 10-15% |
-| ChatGPT | 8% | 29명/28일 | AI 최적화 (tldr 메타, key answer) |
-| Bing | 6% | 자연 유입 | 별도 대응 불필요 |
-| 소셜 | 2% | 거의 없음 | 블로그 공유 유도 검토 |
+| 채널 | 사용자 | 비율 | 참여시간 | 재방문 | 전략 |
+|------|--------|------|---------|--------|------|
+| Organic Search | 272 | **32.5%** | **30초** | 17명(77%) | 핵심 성장 엔진, 노출 8배 증가 |
+| Direct | 493 | 58.9% | 8초 | 2명 | 대부분 봇, 실질 15-20% |
+| Referral (ChatGPT 등) | 25 | 3.0% | **41초** | 3명 | 최고 품질 채널, AI 최적화 유지 |
+| Unassigned | 51 | 6.1% | 12초 | 0명 | ChatGPT/Perplexity 일부 포함 추정 |
+| Organic Social | 2 | 0.2% | 4초 | 0명 | 미미, 블로그 공유 유도 검토 |
+
+**핵심 발견**: Organic Search(30초) + Referral(41초) = 고품질, Direct(8초) = 봇
 
 ### AI 검색 대응 (ChatGPT, Perplexity)
 

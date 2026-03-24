@@ -3,9 +3,9 @@ import Link from "next/link";
 import ContactModal from "@/components/ContactModal";
 
 export const metadata: Metadata = {
-  title: "About | Am I Paid Fairly?",
+  title: "About Us | Am I Paid Fairly?",
   description:
-    "Learn about Am I Paid Fairly? — a free global salary comparison tool that lets you see how your pay compares to the same job in 42 countries.",
+    "Meet the team behind Am I Paid Fairly — a free global salary comparison platform covering 42 countries and 175+ occupations. Learn our story, methodology, and mission.",
   alternates: {
     canonical: "https://amipaidfairly.com/about",
   },
@@ -14,6 +14,33 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-950 to-slate-900 px-4 py-12">
+      {/* JSON-LD: AboutPage + Person */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            name: "About Am I Paid Fairly?",
+            description: "Free global salary comparison platform covering 42 countries and 175+ occupations.",
+            mainEntity: {
+              "@type": "Organization",
+              name: "Am I Paid Fairly?",
+              url: "https://amipaidfairly.com",
+              logo: "https://amipaidfairly.com/icon-512.png",
+              founder: {
+                "@type": "Person",
+                name: "Chanhyeog Oh",
+                jobTitle: "Founder & Data Engineer",
+                url: "https://amipaidfairly.com/about",
+              },
+              foundingDate: "2025",
+              description: "A free, transparent salary comparison tool powered by OECD, BLS, and Big Mac Index data.",
+            },
+          }),
+        }}
+      />
+
       <div className="max-w-3xl mx-auto">
         {/* Breadcrumb */}
         <nav className="text-sm text-slate-500 mb-8">
@@ -30,138 +57,203 @@ export default function AboutPage() {
             About Am I Paid Fairly?
           </h1>
           <p className="text-slate-400 text-sm mt-3 max-w-lg mx-auto">
-            A free, open tool to compare your salary with the same job across
-            42 countries worldwide.
+            A free, transparent tool to compare your salary across 42 countries
+            &mdash; built by a data engineer who wanted to answer one simple question.
           </p>
         </header>
 
-        {/* Content */}
         <div className="flex flex-col gap-10">
-          {/* What is Am I Paid Fairly? */}
-          <section>
-            <h2 className="text-xl font-bold text-slate-100 mb-3">
-              What is Am I Paid Fairly?
-            </h2>
-            <div className="bg-dark-card rounded-xl border border-dark-border p-5">
-              <p className="text-slate-300 text-sm leading-relaxed">
-                Am I Paid Fairly? is a global salary comparison platform. Enter
-                your job title, country, and annual salary, and we instantly show
-                you where you stand compared to professionals doing the same work
-                around the world. You can see your global percentile ranking,
-                explore an interactive world salary map, and compare what your
-                job pays in 42 countries &mdash; all without creating an
-                account or paying a fee.
-              </p>
-            </div>
-          </section>
-
-          {/* How It Works */}
+          {/* Founder Story */}
           <section>
             <h2 className="text-xl font-bold text-slate-100 mb-4">
-              How It Works
+              Why I Built This
             </h2>
-            <div className="grid gap-4 sm:grid-cols-3">
-              {/* Step 1 */}
-              <div className="bg-dark-card rounded-xl border border-dark-border p-5 text-center">
-                <div className="w-10 h-10 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center mx-auto mb-3">
-                  <span className="text-emerald-400 font-bold text-sm">1</span>
+            <div className="bg-dark-card rounded-xl border border-dark-border p-6">
+              {/* Founder profile card */}
+              <div className="flex items-start gap-4 mb-5 pb-5 border-b border-dark-border">
+                {/* Placeholder profile image — 교체 필요: public/images/founder.jpg */}
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center text-white text-xl font-bold shrink-0">
+                  CO
                 </div>
-                <h3 className="text-sm font-semibold text-slate-200 mb-1.5">
-                  Enter Your Info
-                </h3>
-                <p className="text-slate-400 text-xs leading-relaxed">
-                  Select your occupation, choose your country, and enter your
-                  annual salary.
-                </p>
+                <div>
+                  <p className="text-slate-100 font-bold text-lg">Chanhyeog Oh</p>
+                  <p className="text-slate-400 text-sm">Founder &amp; Data Engineer</p>
+                  <p className="text-slate-500 text-xs mt-1">
+                    Building data-driven tools for salary transparency since 2025
+                  </p>
+                </div>
               </div>
 
-              {/* Step 2 */}
-              <div className="bg-dark-card rounded-xl border border-dark-border p-5 text-center">
-                <div className="w-10 h-10 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center mx-auto mb-3">
-                  <span className="text-emerald-400 font-bold text-sm">2</span>
-                </div>
-                <h3 className="text-sm font-semibold text-slate-200 mb-1.5">
-                  See Your Global Ranking
-                </h3>
-                <p className="text-slate-400 text-xs leading-relaxed">
-                  Find out your global percentile &mdash; are you in the top 10%
-                  or bottom 50% worldwide?
+              <div className="text-slate-300 text-sm leading-relaxed space-y-4">
+                <p>
+                  In 2025, I was exploring career opportunities across different countries and
+                  hit a frustrating wall: there was no single tool that could tell me what the
+                  same job pays in different countries, adjusted for purchasing power. Glassdoor
+                  focuses on individual companies. PayScale requires sign-up. Numbeo covers
+                  cost of living but not occupation-specific salaries.
                 </p>
-              </div>
-
-              {/* Step 3 */}
-              <div className="bg-dark-card rounded-xl border border-dark-border p-5 text-center">
-                <div className="w-10 h-10 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center mx-auto mb-3">
-                  <span className="text-emerald-400 font-bold text-sm">3</span>
-                </div>
-                <h3 className="text-sm font-semibold text-slate-200 mb-1.5">
-                  Compare with 42 Countries
-                </h3>
-                <p className="text-slate-400 text-xs leading-relaxed">
-                  Explore a world map and detailed country list showing estimated
-                  salaries, PPP values, and Big Mac purchasing power.
+                <p>
+                  So I built <strong className="text-slate-100">Am I Paid Fairly?</strong> &mdash;
+                  a free tool that combines data from the U.S. Bureau of Labor Statistics (BLS),
+                  OECD average wages, World Bank GDP figures, and The Economist&apos;s Big Mac
+                  Index to estimate what any job pays across 42 countries and 98 cities. No
+                  login, no paywall, no hidden data.
+                </p>
+                <p>
+                  The goal was simple: <em>help people make more informed career and relocation
+                  decisions by making salary data transparent and globally comparable.</em> Whether
+                  you&apos;re a software engineer in Seoul weighing a move to Berlin, or a nurse in
+                  Manila considering opportunities in Australia, this tool gives you a data-backed
+                  starting point.
+                </p>
+                <p>
+                  As a data engineer, I care deeply about methodology. Every salary estimate on this
+                  site is calculated using a transparent, documented formula &mdash; not scraped from
+                  job postings or user-submitted data. You can read exactly how we compute each figure
+                  in the methodology section below.
                 </p>
               </div>
             </div>
           </section>
 
-          {/* Our Data */}
+          {/* Mission */}
           <section>
-            <h2 className="text-xl font-bold text-slate-100 mb-3">
-              Our Data
+            <h2 className="text-xl font-bold text-slate-100 mb-4">
+              Our Mission
             </h2>
-            <div className="bg-dark-card rounded-xl border border-dark-border p-5">
-              <p className="text-slate-300 text-sm leading-relaxed mb-3">
-                We estimate global salaries using a transparent, multi-step
-                methodology:
+            <div className="bg-dark-card rounded-xl border border-dark-border p-6">
+              <div className="text-slate-300 text-sm leading-relaxed space-y-3">
+                <p>
+                  <strong className="text-slate-100">Salary transparency should be free and global.</strong>{" "}
+                  Most salary tools focus on a single country (usually the United States) or require
+                  you to share your own salary data before showing you anything. We believe
+                  that knowing how your pay compares internationally is a basic right, not a
+                  premium feature.
+                </p>
+                <p>
+                  Am I Paid Fairly? is built on three principles:
+                </p>
+                <ul className="space-y-2 ml-4">
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-400 mt-0.5">1.</span>
+                    <span><strong className="text-slate-200">Transparent methodology</strong> &mdash; Every
+                    number can be traced back to its source (BLS, OECD, World Bank, Big Mac Index).
+                    No black boxes.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-400 mt-0.5">2.</span>
+                    <span><strong className="text-slate-200">Free and open access</strong> &mdash; No
+                    login walls, no &quot;give us your salary to see data&quot; tricks, no premium tiers.
+                    Everything is available to everyone.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-emerald-400 mt-0.5">3.</span>
+                    <span><strong className="text-slate-200">Global perspective</strong> &mdash; Covering
+                    42 countries (38 OECD members + India, China, Singapore, and Brazil) with
+                    purchasing power adjustments that go beyond simple currency conversion.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* What We Cover */}
+          <section>
+            <h2 className="text-xl font-bold text-slate-100 mb-4">
+              What We Cover
+            </h2>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <div className="bg-dark-card rounded-xl border border-dark-border p-4 text-center">
+                <p className="text-2xl font-bold text-emerald-400">42</p>
+                <p className="text-slate-500 text-xs mt-1">Countries</p>
+              </div>
+              <div className="bg-dark-card rounded-xl border border-dark-border p-4 text-center">
+                <p className="text-2xl font-bold text-emerald-400">175</p>
+                <p className="text-slate-500 text-xs mt-1">Occupations</p>
+              </div>
+              <div className="bg-dark-card rounded-xl border border-dark-border p-4 text-center">
+                <p className="text-2xl font-bold text-emerald-400">98</p>
+                <p className="text-slate-500 text-xs mt-1">Cities</p>
+              </div>
+              <div className="bg-dark-card rounded-xl border border-dark-border p-4 text-center">
+                <p className="text-2xl font-bold text-emerald-400">40K+</p>
+                <p className="text-slate-500 text-xs mt-1">Data Pages</p>
+              </div>
+            </div>
+            <div className="bg-dark-card rounded-xl border border-dark-border p-5 mt-3">
+              <p className="text-slate-300 text-sm leading-relaxed">
+                Every occupation page shows salary estimates in nominal USD, purchasing power
+                parity (PPP), and the Big Mac Index &mdash; giving you three different ways to
+                understand what a salary actually means in each country. We also offer country
+                comparisons, city-level data, relocation calculators, and global rankings for
+                every tracked occupation.
               </p>
-              <ol className="list-decimal list-inside text-slate-400 text-sm space-y-2 ml-2">
+            </div>
+          </section>
+
+          {/* Methodology */}
+          <section>
+            <h2 className="text-xl font-bold text-slate-100 mb-4">
+              Our Methodology
+            </h2>
+            <div className="bg-dark-card rounded-xl border border-dark-border p-6">
+              <p className="text-slate-300 text-sm leading-relaxed mb-4">
+                We estimate global salaries using a transparent, reproducible formula
+                based on publicly available data from trusted institutions:
+              </p>
+              <ol className="list-decimal list-inside text-slate-400 text-sm space-y-3 ml-2">
                 <li>
-                  <span className="text-slate-300 font-medium">
-                    BLS Baseline
-                  </span>{" "}
-                  &mdash; Start with the U.S. Bureau of Labor Statistics median
-                  salary for each of 830+ occupations.
+                  <span className="text-slate-300 font-medium">BLS Baseline</span>{" "}
+                  &mdash; Start with the U.S. Bureau of Labor Statistics Occupational
+                  Employment and Wage Statistics (OEWS) median salary for each occupation.
+                  This provides a well-documented, annually updated baseline for 830+
+                  occupations in the U.S. labor market.
                 </li>
                 <li>
-                  <span className="text-slate-300 font-medium">
-                    OECD Country Ratio
-                  </span>{" "}
-                  &mdash; Adjust the baseline using each OECD country&apos;s
-                  average wage relative to the U.S. average wage, reflecting
-                  national wage levels.
+                  <span className="text-slate-300 font-medium">OECD Country Ratio</span>{" "}
+                  &mdash; Adjust the U.S. baseline using each country&apos;s average wage
+                  relative to the U.S. average wage, as reported by OECD. This captures
+                  the overall wage level of each economy.
                 </li>
                 <li>
-                  <span className="text-slate-300 font-medium">
-                    Sector Multiplier
-                  </span>{" "}
-                  &mdash; Apply sector-specific adjustments to account for how
-                  different industries pay differently across countries.
+                  <span className="text-slate-300 font-medium">Sector Multiplier</span>{" "}
+                  &mdash; Apply an occupation-specific sector multiplier that accounts for
+                  how different industries (tech, healthcare, finance, etc.) pay differently
+                  relative to the national average. These multipliers are derived from
+                  cross-country industry wage data.
                 </li>
                 <li>
-                  <span className="text-slate-300 font-medium">
-                    PPP Adjustment
-                  </span>{" "}
-                  &mdash; Convert to purchasing power parity using World Bank
-                  PPP factors so you can compare real buying power.
+                  <span className="text-slate-300 font-medium">PPP Adjustment</span>{" "}
+                  &mdash; Convert to purchasing power parity using the Big Mac Index from
+                  The Economist, which provides an intuitive real-world benchmark for what
+                  your salary can actually buy in each country.
                 </li>
                 <li>
-                  <span className="text-slate-300 font-medium">
-                    Big Mac Index
-                  </span>{" "}
-                  &mdash; Show how many Big Macs your annual salary can buy,
-                  providing an intuitive cost-of-living comparison.
+                  <span className="text-slate-300 font-medium">City-Level Refinement</span>{" "}
+                  &mdash; For 98 cities, we further adjust using cost-of-living multipliers
+                  derived from Numbeo data and apply a tech hub bonus (1.08x) for technology
+                  occupations in major tech centers.
                 </li>
               </ol>
+              <p className="text-slate-500 text-xs mt-4 leading-relaxed">
+                <strong className="text-slate-400">Formula:</strong>{" "}
+                Country salary = BLS base salary &times; OECD country ratio &times; sector multiplier.{" "}
+                City salary = Country salary &times; COL multiplier &times; tech hub bonus.{" "}
+                PPP salary = Nominal salary &times; (US Big Mac price / Local Big Mac price).
+              </p>
             </div>
           </section>
 
           {/* Data Sources */}
           <section>
-            <h2 className="text-xl font-bold text-slate-100 mb-3">
+            <h2 className="text-xl font-bold text-slate-100 mb-4">
               Data Sources
             </h2>
             <div className="bg-dark-card rounded-xl border border-dark-border p-5">
+              <p className="text-slate-400 text-sm mb-4">
+                All data used on this site comes from publicly available, trusted institutions.
+                We do not scrape job postings or rely on user-submitted salary data.
+              </p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1.5 shrink-0" />
@@ -175,8 +267,7 @@ export default function AboutPage() {
                       U.S. Bureau of Labor Statistics (BLS)
                     </a>
                     <p className="text-slate-400 text-xs mt-0.5">
-                      Occupational Employment and Wage Statistics for 830+
-                      occupations
+                      Occupational Employment and Wage Statistics for 830+ occupations
                     </p>
                   </div>
                 </li>
@@ -192,7 +283,7 @@ export default function AboutPage() {
                       OECD Average Wages
                     </a>
                     <p className="text-slate-400 text-xs mt-0.5">
-                      Average annual wages for 42 countries
+                      Average annual wages for 42 OECD and partner countries
                     </p>
                   </div>
                 </li>
@@ -224,7 +315,7 @@ export default function AboutPage() {
                       The Economist Big Mac Index
                     </a>
                     <p className="text-slate-400 text-xs mt-0.5">
-                      Informal exchange rate and cost-of-living comparison
+                      Informal exchange rate and cost-of-living comparison used since 1986
                     </p>
                   </div>
                 </li>
@@ -232,15 +323,15 @@ export default function AboutPage() {
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1.5 shrink-0" />
                   <div>
                     <a
-                      href="https://www.exchangerate-api.com/"
+                      href="https://www.numbeo.com/cost-of-living/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-sm font-semibold text-emerald-400 underline hover:text-emerald-300 transition-colors"
                     >
-                      ExchangeRate API
+                      Numbeo Cost of Living
                     </a>
                     <p className="text-slate-400 text-xs mt-0.5">
-                      Currency exchange rates for local salary conversion
+                      City-level cost of living indices used to derive our COL multipliers
                     </p>
                   </div>
                 </li>
@@ -248,50 +339,65 @@ export default function AboutPage() {
             </div>
           </section>
 
-          {/* Accuracy Disclaimer */}
+          {/* Limitations & Honesty */}
           <section>
-            <h2 className="text-xl font-bold text-slate-100 mb-3">
-              Accuracy Disclaimer
+            <h2 className="text-xl font-bold text-slate-100 mb-4">
+              Limitations &amp; What We Don&apos;t Cover
             </h2>
-            <div className="bg-dark-card rounded-xl border border-dark-border p-5">
-              <p className="text-slate-300 text-sm leading-relaxed">
-                All salary figures displayed on this site are{" "}
-                <span className="text-slate-100 font-semibold">estimates</span>{" "}
-                based on publicly available data. Actual salaries vary
-                significantly depending on experience level, company size,
-                specific location within a country, industry sector, education,
-                and many other factors. The data should be used as a general
-                reference point, not as a guarantee of compensation for any
-                specific role.
-              </p>
-            </div>
-          </section>
-
-          {/* Open & Free */}
-          <section>
-            <h2 className="text-xl font-bold text-slate-100 mb-3">
-              Open &amp; Free
-            </h2>
-            <div className="bg-dark-card rounded-xl border border-dark-border p-5">
-              <p className="text-slate-300 text-sm leading-relaxed">
-                Am I Paid Fairly? is completely free to use. There is no login,
-                no registration, and no paywall. We believe salary transparency
-                should be accessible to everyone. All data sources we use are
-                publicly available, and our methodology is openly described
-                above.
-              </p>
+            <div className="bg-dark-card rounded-xl border border-dark-border p-6">
+              <div className="text-slate-300 text-sm leading-relaxed space-y-3">
+                <p>
+                  We believe in being upfront about what this tool can and cannot do:
+                </p>
+                <ul className="space-y-2 ml-4 text-slate-400">
+                  <li className="flex items-start gap-2">
+                    <span className="text-slate-500 mt-0.5">&bull;</span>
+                    <span><strong className="text-slate-300">Estimates, not exact figures.</strong>{" "}
+                    Our numbers are statistical estimates based on national averages. Your actual
+                    salary depends on experience, company, specific city, education, and negotiation.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-slate-500 mt-0.5">&bull;</span>
+                    <span><strong className="text-slate-300">No experience-level breakdown.</strong>{" "}
+                    We currently show median/average figures. Entry-level positions typically earn
+                    30-50% less, while senior roles may earn 50-100% more.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-slate-500 mt-0.5">&bull;</span>
+                    <span><strong className="text-slate-300">No tax calculations.</strong>{" "}
+                    All figures are gross (before tax). Take-home pay varies significantly by country
+                    due to different tax structures and social contributions.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-slate-500 mt-0.5">&bull;</span>
+                    <span><strong className="text-slate-300">Not real-time data.</strong>{" "}
+                    Our data is updated periodically based on the latest available releases from
+                    BLS, OECD, and other sources. Salary markets can shift faster than official
+                    statistics.</span>
+                  </li>
+                </ul>
+                <p>
+                  We recommend using Am I Paid Fairly? as a <em>starting point</em> for your
+                  research, combined with local job market data, employer reviews, and professional
+                  salary surveys for the most complete picture.
+                </p>
+              </div>
             </div>
           </section>
 
           {/* Contact */}
           <section>
-            <h2 className="text-xl font-bold text-slate-100 mb-3">
-              Contact Us
+            <h2 className="text-xl font-bold text-slate-100 mb-4">
+              Get in Touch
             </h2>
-            <div className="bg-dark-card rounded-xl border border-dark-border p-5">
-              <p className="text-slate-300 text-sm leading-relaxed">
-                Have questions, feedback, or data correction requests? We&apos;d
-                love to hear from you. Reach out via email or visit our{" "}
+            <div className="bg-dark-card rounded-xl border border-dark-border p-6">
+              <p className="text-slate-300 text-sm leading-relaxed mb-3">
+                Have questions about our methodology? Found a data error? Want to suggest
+                a feature? I read every message and respond as quickly as I can.
+              </p>
+              <ContactModal />
+              <p className="text-slate-500 text-xs mt-3">
+                You can also reach me through the{" "}
                 <Link
                   href="/contact"
                   className="text-emerald-400 hover:text-emerald-300 underline transition-colors"
@@ -300,7 +406,6 @@ export default function AboutPage() {
                 </Link>
                 .
               </p>
-              <ContactModal />
             </div>
           </section>
 

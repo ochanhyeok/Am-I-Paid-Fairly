@@ -7,11 +7,17 @@ import {
   getCountries,
   getSalaryEntries,
   getCountry,
+  getOccupationDetails,
+  getExperienceLevels,
 } from "@/lib/data-loader";
 import QuickCompareForm from "@/components/QuickCompareForm";
 import { formatCurrency, formatNumber, toMonthly, toHourly, formatHourly } from "@/lib/format";
 import { calculateBigMacCount, calculatePercentileDistribution } from "@/lib/salary-calculator";
 import SalaryPeriodToggle from "@/components/SalaryPeriodToggle";
+import PercentileDistributionBar from "@/components/PercentileDistributionBar";
+import CountrySalaryTable from "@/components/CountrySalaryTable";
+import ExperienceLevelSection from "@/components/ExperienceLevelSection";
+import SpecializationsGrid from "@/components/SpecializationsGrid";
 import { blogPosts } from "@/data/blog-posts";
 import type { SalaryEntry } from "@/types";
 
@@ -20,6 +26,8 @@ export function generateStaticParams() {
   const occupations = getOccupations();
   return occupations.map((o) => ({ occupation: o.slug }));
 }
+
+export const revalidate = false;
 
 // ---------- Dynamic SEO meta ----------
 interface PageParams {
@@ -319,6 +327,10 @@ export default async function OccupationSalaryPage({
 
   const faqJsonLd = buildFaqJsonLd(occupation.title, occupation.category, occupation.slug, rows);
 
+  // 경력 레벨 + 전문분야 데이터
+  const occupationDetails = getOccupationDetails(occupation.slug);
+  const experienceLevels = getExperienceLevels(occupation.slug, occupation.category);
+
   // Occupation JSON-LD (Google estimatedSalary rich result)
   const percentileDist = calculatePercentileDistribution(occupation.slug);
   const occupationJsonLd = percentileDist
@@ -326,6 +338,8 @@ export default async function OccupationSalaryPage({
         "@context": "https://schema.org/",
         "@type": "Occupation",
         name: occupation.title,
+        ...(occupationDetails?.description ? { description: occupationDetails.description } : {}),
+        ...(occupationDetails?.typicalEducation ? { educationRequirements: occupationDetails.typicalEducation } : {}),
         estimatedSalary: [
           {
             "@type": "MonetaryAmountDistribution",
@@ -385,7 +399,7 @@ export default async function OccupationSalaryPage({
             {occupation.title} Salary Worldwide{" "}
             <span className="text-slate-500">(2026)</span>
           </h1>
-          <p className="text-xs text-slate-500 mt-1">Data last updated: February 2026</p>
+          <p className="text-xs text-slate-500 mt-1">Data last updated: March 2026</p>
           <p className="text-slate-500 text-sm mt-2">
             Estimated based on OECD &amp; BLS data
           </p>
@@ -429,57 +443,66 @@ export default async function OccupationSalaryPage({
           </div>
         </div>
 
-        {/* Country comparison table */}
-        <section>
-          <h2 className="text-slate-200 font-bold text-lg mb-4">
-            Salary by Country
-          </h2>
+        {/* Global Salary Distribution */}
+        {percentileDist && (
+          <section className="bg-dark-card border border-dark-border rounded-2xl p-6">
+            <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-2">
+              Global Salary Distribution
+            </h2>
+            <p className="text-slate-500 text-xs mb-4">
+              {occupation.title} salary range across {totalCountries} countries (10th–90th percentile)
+            </p>
+            <PercentileDistributionBar
+              percentile10={percentileDist.percentile10}
+              percentile25={percentileDist.percentile25}
+              median={percentileDist.median}
+              percentile75={percentileDist.percentile75}
+              percentile90={percentileDist.percentile90}
+            />
+          </section>
+        )}
 
-          {/* Table header (desktop) */}
-          <div className="hidden md:grid md:grid-cols-[2.5rem_1fr_8rem_8rem_6rem] gap-3 px-4 pb-2 text-xs text-slate-500 font-medium">
-            <span>#</span>
-            <span>Country</span>
-            <span className="text-right">Salary (USD)</span>
-            <span className="text-right">Purchasing Power</span>
-            <span className="text-right">Big Macs</span>
+        {/* Experience Level Section */}
+        <ExperienceLevelSection
+          baseSalary={occupation.baseUSA}
+          experienceLevels={experienceLevels}
+          occupationTitle={occupation.title}
+        />
+
+        {/* Specializations Grid */}
+        {occupationDetails?.specializations && occupationDetails.specializations.length > 0 && (
+          <SpecializationsGrid
+            specializations={occupationDetails.specializations}
+            baseSalary={occupation.baseUSA}
+            occupationTitle={occupation.title}
+          />
+        )}
+
+        {/* About this occupation */}
+        {occupationDetails && (
+          <div className="bg-dark-card border border-dark-border rounded-2xl p-6">
+            <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-2">
+              About {occupation.title}
+            </h2>
+            <p className="text-slate-300 text-sm leading-relaxed">
+              {occupationDetails.description}
+            </p>
+            <p className="text-slate-500 text-xs mt-2">
+              Typical education: {occupationDetails.typicalEducation}
+            </p>
           </div>
+        )}
 
-          <div className="flex flex-col gap-1.5">
-            {rows.map((row, index) => (
-              <Link
-                key={row.code}
-                href={`/salary/${occupation.slug}/${row.slug}`}
-                className="group flex items-center gap-3 px-4 py-3 rounded-xl bg-dark-card border border-dark-border hover:border-slate-600 transition-colors"
-              >
-                {/* Rank */}
-                <span className="text-slate-600 text-xs font-mono w-6 shrink-0 text-right">
-                  {index + 1}
-                </span>
-
-                {/* Flag + Name */}
-                <span className="text-2xl shrink-0">{row.flag}</span>
-                <span className="flex-1 min-w-0 text-slate-200 font-semibold text-sm truncate group-hover:text-white transition-colors">
-                  {row.name}
-                </span>
-
-                {/* Salary (USD) */}
-                <span className="text-slate-100 font-bold text-sm text-right w-20 md:w-[8rem] shrink-0">
-                  {formatCurrency(row.estimatedSalary)}
-                </span>
-
-                {/* Purchasing Power - hidden on mobile */}
-                <span className="hidden md:block text-slate-400 text-sm text-right w-[8rem] shrink-0">
-                  {formatCurrency(row.pppAdjusted)}
-                </span>
-
-                {/* Big Mac count - hidden on mobile */}
-                <span className="hidden md:block text-slate-400 text-sm text-right w-[6rem] shrink-0">
-                  {formatNumber(row.bigMacCount)}
-                </span>
-              </Link>
-            ))}
-          </div>
-        </section>
+        {/* Country comparison table with PPP toggle */}
+        <CountrySalaryTable
+          rows={rows.map((row) => ({
+            ...row,
+            formattedSalary: formatCurrency(row.estimatedSalary),
+            formattedPPP: formatCurrency(row.pppAdjusted),
+            formattedBigMac: formatNumber(row.bigMacCount),
+          }))}
+          occupationSlug={occupation.slug}
+        />
 
         {/* Compare Countries Section */}
         <section>
@@ -727,7 +750,7 @@ export default async function OccupationSalaryPage({
 
         {/* Data source disclaimer */}
         <footer className="border-t border-dark-border pt-6 pb-8">
-          <p className="text-slate-600 text-[11px] text-center leading-relaxed">
+          <p className="text-slate-600 text-xs text-center leading-relaxed">
             All salary figures are estimates derived from publicly available
             data. Actual salaries vary by experience, company, location, and
             other factors.{" "}

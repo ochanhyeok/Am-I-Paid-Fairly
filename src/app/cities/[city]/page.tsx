@@ -19,6 +19,8 @@ export function generateStaticParams() {
   return cities.map((city) => ({ city: city.slug }));
 }
 
+export const revalidate = false;
+
 // --- Metadata ---
 
 interface PageProps {

@@ -40,7 +40,7 @@ export default function Header() {
           </Link>
           <Link
             href="/top-paying-jobs"
-            className="hidden sm:block px-2 sm:px-3 py-1.5 text-slate-400 hover:text-slate-100 hover:bg-slate-800 rounded-lg transition-colors"
+            className="px-2 sm:px-3 py-1.5 text-slate-400 hover:text-slate-100 hover:bg-slate-800 rounded-lg transition-colors"
           >
             Rankings
           </Link>

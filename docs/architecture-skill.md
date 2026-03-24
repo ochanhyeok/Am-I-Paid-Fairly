@@ -1,6 +1,6 @@
 # 기술 아키텍처 레퍼런스
 
-최종 업데이트: 2026-02-23
+최종 업데이트: 2026-03-13
 
 ---
 
@@ -40,6 +40,7 @@
 | `city-salaries.json` | 2.3MB | 17,150 | occupationSlug, countryCode, citySlug, estimatedSalary, pppAdjusted, colAdjusted |
 | `blog-posts.ts` | 392KB | 50개 | slug, title, sections, keywords, category, occupationSlug? |
 | `country-insights.ts` | 79KB | 42개 | code, economy, taxSystem, topIndustries, jobMarket, costOfLiving, workCulture |
+| `occupation-details.json` | ~85KB | 175개 | slug, description, typicalEducation, experienceLevels, specializations? |
 
 ### 데이터 소스
 
@@ -71,6 +72,16 @@ estimatedSalary = countryEstimatedSalary × colMultiplier × techHubBonus
 colAdjusted = estimatedSalary / colMultiplier  // 실질 구매력
 ```
 
+### 경력 레벨
+
+```
+experienceSalary = baseSalary × experienceMultiplier
+  entry = 0.68~0.82 (카테고리별 상이)
+  mid = 1.00
+  senior = 1.20~1.50 (카테고리별 상이)
+specializationSalary = baseSalary × specMultiplier
+```
+
 ### 퍼센타일
 
 ```
@@ -100,8 +111,8 @@ colAdjustedChange = (toCity.colAdjusted - fromCity.colAdjusted) / fromCity.colAd
 |--------|------|-----|-----|---------|
 | `/` | 1 | ✅ | — | SalaryForm, Organization/WebSite JSON-LD |
 | `/result` | 1 | — | 동적 | ResultClient, ChoroplethMap, CountryComparison |
-| `/salary/[occ]` | 175 | ✅ 전부 | — | QuickCompareForm, SalaryPeriodToggle |
-| `/salary/[occ]/[country]` | 7,350 | 420 | 6,930 | CountryQuickNav, FAQ, Editorial |
+| `/salary/[occ]` | 175 | ✅ 전부 | — | QuickCompareForm, SalaryPeriodToggle, CountrySalaryTable, PercentileDistributionBar |
+| `/salary/[occ]/[country]` | 7,350 | 420 | 6,930 | CountryQuickNav, PPPToggle, PercentileDistributionBar, FAQ, Editorial |
 | `/salary/[occ]/[country]/[city]` | 17,150 | 980 | 16,170 | CityQuickNav |
 | `/rankings/[occ]` | 175 | ✅ 전부 | — | 바차트, Editorial |
 | `/compare/[occ]/[pair]` | 7,000 | 400 | 6,600 | Editorial 5섹션 |
@@ -131,6 +142,7 @@ colAdjustedChange = (toCity.colAdjusted - fromCity.colAdjusted) / fromCity.colAd
 | Footer.tsx | 4컬럼 푸터 (Top Salaries, Rankings, Data Sources, Explore) |
 | ResultCard.tsx | 퍼센타일 표시 (Top X%, 색상 코딩) |
 | CountryMiniCards.tsx | 대표 국가 3개 미니 카드 |
+| PercentileDistributionBar.tsx | 수평 레인지 바 (p10-p90, 하이라이트 마커) |
 
 ### 클라이언트 컴포넌트 ("use client")
 
@@ -146,6 +158,9 @@ colAdjustedChange = (toCity.colAdjusted - fromCity.colAdjusted) / fromCity.colAd
 | CountryQuickNav.tsx | "What if?" 국가 전환 | 드롭다운 |
 | CityQuickNav.tsx | "What if?" 도시 전환 | 드롭다운 |
 | SalaryPeriodToggle.tsx | 연/월/시급 토글 | 3버튼 토글 |
+| PPPToggle.tsx | Nominal/PPP 토글 | 2버튼 토글 |
+| CountrySalaryTable.tsx | 국가별 연봉 테이블 | PPP 토글 포함 |
+| RecentSearches.tsx | 최근 검색 5개 | localStorage 기반 |
 | BlogFilterClient.tsx | 블로그 필터 | 5탭 + 검색 + Show More |
 | NewsletterSignup.tsx | 뉴스레터 | 이메일 입력 (백엔드 미연동) |
 | ShareCard.tsx | 결과 공유 | Twitter/LinkedIn/Copy |
@@ -154,6 +169,18 @@ colAdjustedChange = (toCity.colAdjusted - fromCity.colAdjusted) / fromCity.colAd
 | AdSense.tsx / AdUnit.tsx | 광고 | 스크립트 주입, min-height CLS |
 | RelocationClient.tsx | 이주 계산기 | 폼 + verdict 결과 |
 | BrowseClient.tsx | 직업 브라우즈 | 카테고리 탭 + 검색 |
+| BlogShareButtons.tsx | 블로그 공유 | X/LinkedIn/Copy Link (blog/[slug]/) |
+
+### 디자인 시스템 규칙 (2026-03-01 통일)
+
+| 항목 | 규칙 | 비고 |
+|------|------|------|
+| 포커스 링 | `focus:outline-none focus:border-accent-blue focus:ring-1 focus:ring-accent-blue` | 모든 input/select |
+| 테두리 | `border-dark-border` | slate-700 대신 사용 |
+| 배경 | `bg-dark-card` | slate-800 대신 사용 |
+| 퍼센타일 색상 | ≥70: emerald, ≥40: yellow, <40: red | 3개 파일 통일 |
+| 텍스트 크기 | `text-xs` (12px) 최소 | text-[9px]/[10px]/[11px] 금지 |
+| Combobox 포커스 | `inputRef.select()` (기존 텍스트 유지) | setQuery("") 금지 |
 
 ---
 
@@ -282,7 +309,7 @@ src/
 │   ├── browse/, countries/ # 브라우즈
 │   ├── about/, privacy/    # 정적
 │   └── api/og/             # Edge OG 이미지
-├── components/             # 22개 컴포넌트
+├── components/             # 26개 컴포넌트
 ├── data/                   # 8개 데이터 파일 (JSON + TS)
 ├── lib/                    # 4개 유틸 (loader, calculator, format, ssg-config)
 ├── types/                  # 타입 정의

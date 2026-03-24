@@ -1,3 +1,17 @@
+export interface BlogAuthor {
+  name: string;
+  role: string;
+  bio: string;
+}
+
+export const AUTHORS: Record<string, BlogAuthor> = {
+  chanhyeog: {
+    name: "Chanhyeog Oh",
+    role: "Founder & Data Engineer",
+    bio: "Built Am I Paid Fairly? to make global salary data transparent and accessible. Passionate about data engineering and labor market analytics.",
+  },
+};
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -7,6 +21,8 @@ export interface BlogPost {
   category: string;
   readTime: number;
   keywords: string[];
+  // 저자 키 (AUTHORS에서 조회, 기본값: "chanhyeog")
+  authorKey?: string;
   // 데이터 기반 포스트는 occupationSlug를 참조
   occupationSlug?: string;
   // 에디토리얼 포스트는 sections 사용
@@ -3012,6 +3028,195 @@ export const blogPosts: BlogPost[] = [
           "On our salary comparison platform, all salaries are presented in US dollars using current exchange rates for the nominal figure. This allows direct comparison across countries but is subject to the exchange rate at the time of viewing. If you check the same occupation a month later, the figures may differ slightly due to currency movements, even if underlying salaries in local currency have not changed.",
           "Our PPP-adjusted figures provide a more stable comparison because PPP factors change slowly (they are updated annually by the World Bank) and reflect fundamental economic differences rather than short-term currency speculation. When making major career decisions, PPP-adjusted figures are more reliable than nominal dollar conversions.",
           "The Big Mac Index on our platform offers yet another perspective on currency valuation. If a country's Big Mac is significantly cheaper than the US price, it suggests the local currency is undervalued — meaning your purchasing power when spending locally may be better than the nominal salary suggests. Conversely, expensive Big Macs suggest an overvalued currency. Use all three metrics together — nominal, PPP-adjusted, and Big Mac count — for the most complete understanding of what any international salary truly offers.",
+        ],
+      },
+    ],
+  },
+  // --- Case Study / Founder Posts (E-E-A-T) ---
+  {
+    slug: "my-journey-building-a-global-salary-comparison-tool",
+    title: "My Journey Building a Global Salary Comparison Tool",
+    description:
+      "How and why I built Am I Paid Fairly — from a personal frustration with opaque salary data to a platform covering 42 countries and 175 occupations.",
+    excerpt:
+      "When I relocated for work, I could not find a single tool that compared salaries across countries using real purchasing power. So I built one. Here is the story of how a personal frustration became a platform used by thousands.",
+    date: "2026-03-10",
+    category: "Guides",
+    readTime: 10,
+    keywords: [
+      "salary tool",
+      "building a salary comparison website",
+      "global salary data",
+      "founder story",
+      "data engineering project",
+      "am i paid fairly",
+    ],
+    authorKey: "chanhyeog",
+    sections: [
+      {
+        heading: "The Problem That Started It All",
+        paragraphs: [
+          "In early 2025, I was considering a job offer in a different country. The salary looked good on paper — higher than what I earned at home. But when I tried to figure out whether it was actually a good deal after accounting for cost of living, purchasing power, and taxes, I hit a wall. Every salary comparison site I found either covered only the US, required me to create an account and fill out surveys, or gave vague ranges without context.",
+          "Glassdoor wanted me to submit my own salary before showing me anything useful. PayScale required a 15-minute questionnaire. Indeed only showed US data. Numbeo had cost-of-living data but no salary information by occupation. I spent an entire weekend with browser tabs open across five different sites, manually converting currencies and adjusting for PPP using World Bank data. That weekend, I decided there had to be a better way.",
+          "The core question was simple: if I do the same job in a different country, am I actually better off? Not just in nominal dollars, but in terms of what my salary can buy — groceries, rent, healthcare, a comfortable life. No existing tool answered this question directly.",
+        ],
+      },
+      {
+        heading: "Choosing the Data Sources",
+        paragraphs: [
+          "The first technical decision was where to get reliable salary data. I needed a source that covered many countries with consistent methodology. After weeks of research, I settled on a combination: the US Bureau of Labor Statistics (BLS) Occupational Employment and Wage Statistics for baseline salaries, OECD average wage data for cross-country ratios, and World Bank GDP per capita figures for fine-tuning.",
+          "The formula is straightforward: take the US baseline salary for an occupation, multiply by the country's wage ratio relative to the US, and adjust with a sector-specific multiplier. It is an estimate — I am very clear about this on every page — but it produces figures that are directionally correct and internally consistent across all 42 countries.",
+          "For purchasing power, I use two separate measures. The World Bank PPP conversion factors give an economist's view of purchasing power. The Economist's Big Mac Index gives an intuitive, everyday measure. Showing both lets users understand the difference between theoretical purchasing power and practical grocery-store reality. The Big Mac comparison resonates with people in a way that abstract PPP numbers do not.",
+        ],
+      },
+      {
+        heading: "Technical Decisions: Why Static Generation",
+        paragraphs: [
+          "I built the platform with Next.js using Static Site Generation (SSG). Every salary page — all 40,000+ of them — is pre-rendered at build time or generated on first visit via ISR (Incremental Static Regeneration). This means pages load in under 200 milliseconds from Vercel's CDN. For a data tool where users want quick answers, speed matters enormously.",
+          "The alternative would have been a database-backed application that calculates salaries on each request. I chose against this for three reasons: cost (static hosting is essentially free), speed (CDN-served HTML is faster than any server-rendered page), and reliability (no database means no database outages). The trade-off is that data updates require a rebuild, but since salary data changes slowly — OECD updates annually — this is acceptable.",
+          "Each page includes three types of structured data for search engines: FAQPage schema with occupation-specific questions, MonetaryAmountDistribution with percentile data (10th, 25th, 50th, 75th, 90th), and BreadcrumbList for navigation. This structured data helps Google understand and display the content in search results.",
+        ],
+      },
+      {
+        heading: "What I Got Wrong (And Fixed)",
+        paragraphs: [
+          "The first version of the site was embarrassingly basic. It showed a single number — the estimated salary — with no context. Users would land on a page, see a number, and leave. The bounce rate was over 90%. I learned quickly that a salary number without context is almost useless.",
+          "The fix was adding comparison. I built country comparison pages (US vs Germany, UK vs Japan, etc.), purchasing power adjustments, and the Big Mac Index visualization. Suddenly users had a reason to explore. They would check their own country, then click to compare with another, then look at the global rankings. The bounce rate on comparison pages dropped to under 50%.",
+          "Another early mistake was ignoring city-level data. A software engineer salary in 'Germany' means very little when Munich pays 40% more than Leipzig. Adding 98 cities with cost-of-living multipliers made the data far more actionable. The Relocation Calculator — which tells you whether moving from City A to City B is financially worth it — became one of the most-used features.",
+        ],
+      },
+      {
+        heading: "Lessons for Other Data Projects",
+        paragraphs: [
+          "If you are building a data-driven tool, here is what I have learned. First, transparency about methodology builds trust. I explain exactly how every salary figure is calculated, what data sources are used, and what the limitations are. Users appreciate honesty about estimates more than false precision.",
+          "Second, comparison is more valuable than raw data. Nobody remembers that a nurse in Germany earns $52,000. But 'German nurses earn 35% less than American nurses, but have 22% more purchasing power' — that sticks. Always present data in relative terms.",
+          "Third, build for the question, not the data. I started by thinking about what data I had (salary estimates). I should have started by thinking about what questions users ask ('Should I take this job abroad?' 'Am I underpaid?' 'Where would my salary go furthest?'). Reorienting around user questions made the product 10x better.",
+          "This project started as a weekend frustration and grew into something I work on every day. The salary data landscape is still surprisingly opaque, especially for international comparisons. If this tool helps even a few people make more informed career decisions, the hundreds of hours I have invested are worthwhile.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "what-i-learned-analyzing-salaries-in-42-countries",
+    title: "What I Learned Analyzing Salaries in 42 Countries",
+    description:
+      "Surprising patterns, counterintuitive findings, and practical insights from building a salary database covering 42 countries, 175 occupations, and 98 cities.",
+    excerpt:
+      "After months of collecting and analyzing salary data across 42 countries, I have found patterns that challenge common assumptions about global compensation. Here are the most surprising insights.",
+    date: "2026-03-08",
+    category: "Analysis",
+    readTime: 9,
+    keywords: [
+      "global salary analysis",
+      "salary data insights",
+      "salary comparison findings",
+      "purchasing power parity",
+      "international salary trends",
+      "salary data patterns",
+    ],
+    authorKey: "chanhyeog",
+    sections: [
+      {
+        heading: "The Highest Salary Is Rarely the Best Deal",
+        paragraphs: [
+          "The most consistent finding across all 175 occupations in our database is this: the country that pays the highest nominal salary is almost never the country where your money goes the furthest. Switzerland tops the salary rankings for nearly every profession, but Swiss prices are so high that purchasing power often falls behind countries like the US, Australia, or even South Korea.",
+          "For software engineers, Switzerland pays approximately $115,000 — the highest nominal figure in our dataset. But adjusted for purchasing power (PPP), that salary is equivalent to about $85,000 in US purchasing terms. Meanwhile, a software engineer in Poland earning $42,000 nominal has a PPP-adjusted value of nearly $72,000, because Polish prices are dramatically lower. The Polish engineer's money stretches 85% as far as the Swiss engineer's, despite earning 63% less in nominal terms.",
+          "This pattern repeats across professions. For nurses, accountants, teachers, and engineers alike, the countries ranking 5th-10th in nominal salary frequently outperform the top 3 when adjusted for purchasing power. The practical lesson: never evaluate an international job offer on nominal salary alone.",
+        ],
+      },
+      {
+        heading: "The Profession Determines the Country Ranking More Than You Expect",
+        paragraphs: [
+          "I assumed before building this tool that rich countries would pay more for every profession. That is largely true at the top (the US, Switzerland, and Australia are consistently in the top 5), but the middle and bottom of the rankings shift dramatically depending on the occupation.",
+          "Japan, for example, ranks surprisingly low for software engineers (around 15th of 42 countries) but ranks in the top 10 for chefs. Germany pays doctors well (top 5) but ranks only 12th for marketing managers. South Korea pays data scientists competitively with Western Europe but lags for teachers and nurses.",
+          "The reason is that each country's economy has different supply-demand dynamics by profession. Japan has a surplus of tech workers but values culinary expertise highly. Germany's healthcare system pays well but its corporate sector is less competitive with Anglo-Saxon countries for business roles. Understanding these profession-specific dynamics is crucial for anyone considering international career moves.",
+        ],
+      },
+      {
+        heading: "The Big Mac Index Reveals What PPP Hides",
+        paragraphs: [
+          "When I first added the Big Mac Index to the platform, I expected it would simply track PPP adjustments. It does not. The Big Mac Index frequently disagrees with World Bank PPP data, and the disagreements are informative.",
+          "In India, PPP data suggests strong purchasing power — an Indian software engineer's PPP-adjusted salary looks competitive. But the Big Mac Index tells a different story: Big Macs in India are cheap in dollar terms, but relative to local salaries, they represent a larger share of income than in most developed countries. The discrepancy arises because PPP weights essential goods (food, housing, transport) while the Big Mac Index captures a specific consumer good that includes rent, labor, and imported ingredients.",
+          "The practical takeaway is that neither metric alone tells the full story. PPP is better for understanding overall living standards. The Big Mac Index is better for understanding the cost of 'Western' consumer goods and imported items. If you are an expat who buys imported foods, electronics, and international brands, the Big Mac Index is more relevant to your experience than PPP. If you are living like a local, PPP is more accurate.",
+        ],
+      },
+      {
+        heading: "City-Level Data Changed Everything I Thought I Knew",
+        paragraphs: [
+          "Adding city-level data was the single biggest improvement to our salary estimates. Before cities, we showed one salary for 'Germany.' After adding cities, we show that a software engineer in Munich earns approximately 25% more than one in Berlin, and 40% more than one in Leipzig. But Berlin has a cost-of-living multiplier of 1.02 while Munich is at 1.11 — so the Munich premium barely covers the cost difference.",
+          "The most extreme within-country variation is in the United States. A software engineer in San Francisco (COL multiplier 1.38) earns about 45% more than one in Austin (COL multiplier 1.04), but after cost-of-living adjustment, the Austin engineer's money goes further. Similar patterns exist in the UK (London vs Manchester), Japan (Tokyo vs Osaka), and India (Bangalore vs Pune).",
+          "This data point matters because most salary comparison tools give you a country-level number. If you are choosing between a job in Zurich and one in Austin, the country-level data for Switzerland vs the US is nearly useless. You need city-level comparisons with cost-of-living adjustment. That realization drove the development of our Relocation Calculator.",
+        ],
+      },
+      {
+        heading: "What the Data Cannot Tell You",
+        paragraphs: [
+          "After analyzing all this data, I want to be honest about what it misses. Our estimates do not account for individual factors that massively affect compensation: years of experience, company size, specific skills, education level, and negotiation ability. A senior software engineer at a FAANG company in the US might earn 3-5x our median figure. A junior at a startup might earn half.",
+          "The data also cannot capture benefits, which vary enormously by country. German workers get 6 weeks of vacation, universal healthcare, and strong unemployment protection. US workers may earn higher nominal salaries but spend thousands on health insurance and get 2-3 weeks of vacation. Japanese workers often receive semi-annual bonuses worth 2-6 months of salary that are not reflected in base salary figures.",
+          "Use our data as a starting point for research, not as the final word. Compare our estimates with Glassdoor reviews for specific companies, check Numbeo for detailed city cost breakdowns, and talk to people actually working in your target country and profession. The best career decisions combine data with personal research and conversations.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "5-salary-negotiation-lessons-from-our-data",
+    title: "5 Salary Negotiation Lessons from Our Data",
+    description:
+      "Data-backed negotiation strategies based on analyzing 7,350 salary entries across 42 countries and 175 occupations.",
+    excerpt:
+      "After analyzing salary data across 42 countries, I have identified five negotiation strategies that are backed by real numbers. These insights can help you earn what you deserve, whether negotiating locally or internationally.",
+    date: "2026-03-06",
+    category: "Career Advice",
+    readTime: 8,
+    keywords: [
+      "salary negotiation",
+      "salary negotiation tips",
+      "how to negotiate salary",
+      "salary data negotiation",
+      "international salary negotiation",
+      "salary comparison negotiation",
+    ],
+    authorKey: "chanhyeog",
+    sections: [
+      {
+        heading: "Lesson 1: Know the Spread, Not Just the Average",
+        paragraphs: [
+          "The single most powerful number in a salary negotiation is not the average — it is the spread between the 25th and 75th percentile. In our data, this spread averages 35-45% for most occupations. That means the top quartile of earners in any given profession and country earn 35-45% more than the bottom quartile for the same job title.",
+          "This spread represents the negotiation space. If you are offered a salary at the 25th percentile and the 75th percentile is 40% higher, there is real room to negotiate. Employers know this range exists. When you say 'I have looked at salary data for this role in this market and I am seeing a range of X to Y,' you are demonstrating knowledge that shifts the dynamic.",
+          "Our percentile distribution data (p10, p25, median, p75, p90) on each salary page gives you exactly this information. Before your next negotiation, check the spread for your occupation in your country. If the offer falls below the median, you have strong data-backed grounds to negotiate up.",
+        ],
+      },
+      {
+        heading: "Lesson 2: Use PPP When Negotiating International Offers",
+        paragraphs: [
+          "When a company offers you a role in a different country, they will almost certainly anchor the salary discussion to local market rates. If you are moving from the US to Germany, they will say 'German software engineers earn around EUR 65,000.' This is technically correct but strategically incomplete.",
+          "The data-backed response is to discuss PPP-adjusted values. You can say: 'I understand the local market rate is EUR 65,000. However, when adjusted for purchasing power, that is equivalent to approximately $58,000 in US terms — which is below the 25th percentile for my role in the US. For this move to be financially neutral, I would need EUR 78,000 to maintain my current purchasing power.' This frames the discussion around real value rather than nominal numbers.",
+          "Companies relocating employees internationally expect this kind of discussion. They have HR consultants who calculate exactly these adjustments. When you bring PPP data to the table, you signal that you have done your homework and cannot be lowballed with a number that sounds high in the local currency but represents a real pay cut.",
+        ],
+      },
+      {
+        heading: "Lesson 3: City Matters More Than Country",
+        paragraphs: [
+          "In our data, the salary difference between cities within the same country often exceeds the difference between countries. A software engineer in San Francisco earns approximately 40% more than one in Austin. A finance professional in London earns 30% more than one in Manchester. These within-country differences are larger than many between-country differences.",
+          "This creates negotiation opportunities. If a company is offering you a role in their London office, the salary should reflect London costs, not the UK average. If they try to offer Manchester-level compensation for a London role, the data clearly shows a 25-30% city premium. Similarly, if you are open to working from a lower-cost city, you can frame this as a win for both sides: 'I am willing to work from the Leeds office, which saves you the London salary premium, in exchange for remote flexibility.'",
+          "Our city salary data and cost-of-living multipliers give you precise figures for these conversations. Check the specific city, not just the country.",
+        ],
+      },
+      {
+        heading: "Lesson 4: Sector Multipliers Create Hidden Leverage",
+        paragraphs: [
+          "Our salary calculation includes sector multipliers that adjust base salaries by industry. Technology roles carry a multiplier of 1.08 in tech hub cities, reflecting the premium that tech companies pay. But this premium varies significantly by occupation and location.",
+          "The negotiation insight is that some employers pay above or below their sector's norm. A nurse working at a tech company's onsite health clinic may be able to negotiate closer to tech-sector compensation, even though nursing typically has lower salary multipliers. An accountant at a hedge fund earns more than an accountant at a nonprofit, and the data quantifies this difference.",
+          "When researching salaries for negotiation, do not just look at your occupation — look at the intersection of your occupation and your employer's sector. If you are joining a high-paying sector, your leverage is greater than the occupation average suggests. Use the rankings page to see where your sector-adjusted salary falls in the global distribution.",
+        ],
+      },
+      {
+        heading: "Lesson 5: The Relocation Premium Is Real and Quantifiable",
+        paragraphs: [
+          "Our Relocation Calculator data shows that approximately 60% of city-to-city relocations result in a net financial loss when salaries are adjusted for cost of living. That means most people who relocate for work are implicitly accepting a pay cut in purchasing power terms. The average loss is 8-12% in real purchasing power.",
+          "This finding gives you concrete leverage in relocation negotiations. If a company asks you to relocate from Austin to New York, our data shows the cost-of-living difference requires approximately a 27% salary increase just to break even. If they offer 15%, you can point to the data: 'Based on cost-of-living analysis, this relocation represents a 12% effective pay cut. I am open to the move, but the compensation needs to at least match my current purchasing power.'",
+          "Smart companies already factor this into relocation packages. But many smaller or less sophisticated employers do not. Having specific, data-backed numbers transforms a subjective conversation ('I feel like New York is expensive') into an objective one ('Cost-of-living data shows a 1.27x multiplier for New York versus Austin, requiring a 27% salary adjustment for purchasing power parity').",
+          "The key to all five of these lessons is the same: data shifts negotiation dynamics. When you walk into a salary discussion with specific, sourced figures — percentile distributions, PPP adjustments, city-level comparisons — you move from 'I think I deserve more' to 'The data shows this offer is below market.' The former is easily dismissed; the latter requires a substantive response.",
         ],
       },
     ],

@@ -96,7 +96,7 @@ export default function ResultClient({
                   placeholder="Enter new salary"
                   value={newSalary}
                   onChange={(e) => setNewSalary(e.target.value)}
-                  className="w-full bg-slate-800 rounded-lg pl-8 pr-3 py-2.5 text-sm text-slate-200 border border-dark-border focus:border-emerald-500 outline-none"
+                  className="w-full bg-slate-800 rounded-lg pl-8 pr-3 py-2.5 text-sm text-slate-200 border border-dark-border focus:outline-none focus:border-accent-blue focus:ring-1 focus:ring-accent-blue"
                   required
                   min="1"
                 />
@@ -188,7 +188,7 @@ export default function ResultClient({
                   <p className="text-emerald-400 font-bold text-sm">
                     ${Math.round(city.estimatedSalary).toLocaleString("en-US")}
                   </p>
-                  <p className="text-slate-500 text-[10px]">
+                  <p className="text-slate-500 text-xs">
                     Real value: ${Math.round(city.colAdjusted).toLocaleString("en-US")}
                   </p>
                 </Link>
@@ -227,7 +227,7 @@ export default function ResultClient({
             ))}
           </div>
           <div className="border-t border-dark-border mt-3 pt-3">
-            <p className="text-slate-500 text-[10px] mb-2">City Comparisons</p>
+            <p className="text-slate-500 text-xs mb-2">City Comparisons</p>
             <div className="flex flex-col gap-1.5">
               {[
                 { pair: "new-york-vs-london", label: "New York vs London" },
@@ -280,7 +280,7 @@ export default function ResultClient({
         </div>
 
         {/* Disclaimer */}
-        <p className="text-slate-600 text-[10px] text-center pb-4">
+        <p className="text-slate-600 text-xs text-center pb-4">
           Estimated based on OECD &amp; BLS data. Actual salaries vary by
           experience, company, and region.{" "}
           <a

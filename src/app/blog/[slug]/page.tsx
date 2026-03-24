@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import { blogPosts, getBlogPost, getAllBlogPosts } from "@/data/blog-posts";
+import { blogPosts, getBlogPost, getAllBlogPosts, AUTHORS } from "@/data/blog-posts";
 import {
   getOccupation,
   getSalaryEntries,
@@ -15,6 +15,8 @@ import { formatCurrency, formatNumber } from "@/lib/format";
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
 }
+
+export const revalidate = false;
 
 // --- Metadata ---
 interface PageProps {
@@ -102,6 +104,8 @@ export default async function BlogPostPage({ params }: PageProps) {
     redirect("/blog");
   }
 
+  const author = AUTHORS[post.authorKey || "chanhyeog"];
+
   const allPosts = getAllBlogPosts();
   const sameCategoryPosts = allPosts.filter(
     (p) => p.slug !== slug && p.category === post.category
@@ -119,9 +123,10 @@ export default async function BlogPostPage({ params }: PageProps) {
     description: post.description,
     datePublished: post.date,
     author: {
-      "@type": "Organization",
-      name: "Am I Paid Fairly?",
-      url: "https://amipaidfairly.com",
+      "@type": "Person",
+      name: author.name,
+      jobTitle: author.role,
+      url: "https://amipaidfairly.com/about",
     },
     publisher: {
       "@type": "Organization",
@@ -221,7 +226,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             <span className="text-slate-600 text-xs">
               {post.readTime} min read
             </span>
-            <span className="text-slate-600 text-xs">by AIPF Research</span>
+            <span className="text-slate-600 text-xs">by {author.name}</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-50 leading-tight">
             {post.title}
@@ -229,6 +234,9 @@ export default async function BlogPostPage({ params }: PageProps) {
           <p className="text-slate-400 text-base mt-4 leading-relaxed">
             {post.excerpt}
           </p>
+
+          {/* Share buttons */}
+          <BlogShareButtons slug={slug} title={post.title} />
         </header>
 
         {/* Article body */}
@@ -250,8 +258,23 @@ export default async function BlogPostPage({ params }: PageProps) {
           ) : null}
         </article>
 
+        {/* Author bio */}
+        <div className="mt-10 bg-dark-card border border-dark-border rounded-2xl p-6 flex items-start gap-4">
+          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-emerald-500 flex items-center justify-center text-white text-sm font-bold shrink-0">
+            {author.name.split(" ").map((w) => w[0]).join("")}
+          </div>
+          <div>
+            <p className="text-slate-200 font-semibold text-sm">{author.name}</p>
+            <p className="text-slate-500 text-xs">{author.role}</p>
+            <p className="text-slate-400 text-xs mt-1.5 leading-relaxed">{author.bio}</p>
+            <Link href="/about" className="text-emerald-400 text-xs mt-1.5 inline-block hover:text-emerald-300 transition-colors">
+              About the author &rarr;
+            </Link>
+          </div>
+        </div>
+
         {/* Explore the Data */}
-        <div className="mt-10 bg-dark-card border border-dark-border rounded-2xl p-6">
+        <div className="mt-6 bg-dark-card border border-dark-border rounded-2xl p-6">
           <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">
             Explore the Data
           </h3>
@@ -358,7 +381,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
         {/* Disclaimer */}
         <footer className="border-t border-dark-border pt-6 pb-4">
-          <p className="text-slate-600 text-[11px] text-center leading-relaxed">
+          <p className="text-slate-600 text-xs text-center leading-relaxed">
             All salary figures are estimates based on OECD &amp; BLS data.
             Actual salaries vary by experience, company, and region. Data is
             for informational purposes only.
@@ -368,6 +391,9 @@ export default async function BlogPostPage({ params }: PageProps) {
     </main>
   );
 }
+
+// --- 블로그 공유 버튼 (클라이언트 컴포넌트) ---
+import BlogShareButtons from "./BlogShareButtons";
 
 // --- 에디토리얼 콘텐츠 (sections 기반) ---
 function EditorialContent({

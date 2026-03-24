@@ -23,6 +23,8 @@ export function generateStaticParams() {
   }));
 }
 
+export const revalidate = false;
+
 // --- 메타데이터 ---
 interface MetadataProps {
   params: Promise<{ occupation: string }>;

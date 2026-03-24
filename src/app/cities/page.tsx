@@ -93,16 +93,16 @@ export default function CitiesBrowsePage() {
                         </div>
                         <div className="flex items-center gap-1.5 mt-2">
                           {city.isTechHub && (
-                            <span className="text-[9px] bg-blue-500/20 text-blue-400 px-1.5 py-0.5 rounded font-medium">
+                            <span className="text-xs bg-blue-500/20 text-blue-400 px-1.5 py-0.5 rounded font-medium">
                               Tech Hub
                             </span>
                           )}
                           {city.isCapital && (
-                            <span className="text-[9px] bg-amber-500/20 text-amber-400 px-1.5 py-0.5 rounded font-medium">
+                            <span className="text-xs bg-amber-500/20 text-amber-400 px-1.5 py-0.5 rounded font-medium">
                               Capital
                             </span>
                           )}
-                          <span className="text-[9px] bg-slate-700/50 text-slate-400 px-1.5 py-0.5 rounded">
+                          <span className="text-xs bg-slate-700/50 text-slate-400 px-1.5 py-0.5 rounded">
                             COL {city.colMultiplier}x
                           </span>
                         </div>
